@@ -25,7 +25,7 @@
     width: 1.75rem;
     height: 1.75rem;
     border-radius: 0.45rem;
-    background: var(--#{$prefix}-brand-gold);
+    background: var(--#{$prefix}-color-primary);
   }
 
   &__name {
@@ -34,7 +34,7 @@
     font-weight: var(--#{$prefix}-weight-semibold);
     letter-spacing: -0.03em;
 
-    span { color: var(--#{$prefix}-brand-gold-bright); }
+    span { color: var(--#{$prefix}-color-primary-bright); }
   }
 
   &__body {

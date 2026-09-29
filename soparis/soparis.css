@@ -1,70 +1,118 @@
 @charset "UTF-8";
 :root {
-  --soparis-primitive-ink-50: #f8fafc;
-  --soparis-primitive-ink-100: #e2e8f0;
-  --soparis-primitive-ink-200: #cbd5e1;
-  --soparis-primitive-ink-300: #94a3b8;
-  --soparis-primitive-ink-400: #64748b;
-  --soparis-primitive-ink-500: #475569;
-  --soparis-primitive-ink-600: #334155;
-  --soparis-primitive-ink-700: #0f1729;
-  --soparis-primitive-ink-800: #1e293b;
-  --soparis-primitive-ink-850: #111827;
-  --soparis-primitive-ink-900: #0f1729;
-  --soparis-primitive-ink-950: #020617;
+  --soparis-primitive-ink-50: #fafafa;
+  --soparis-primitive-ink-100: #f4f4f5;
+  --soparis-primitive-ink-200: #e4e4e7;
+  --soparis-primitive-ink-300: #d4d4d8;
+  --soparis-primitive-ink-400: #a1a1aa;
+  --soparis-primitive-ink-500: #71717a;
+  --soparis-primitive-ink-600: #52525b;
+  --soparis-primitive-ink-700: #3f3f46;
+  --soparis-primitive-ink-800: #18181b;
+  --soparis-primitive-ink-850: #18181b;
+  --soparis-primitive-ink-900: #09090b;
+  --soparis-primitive-ink-950: #000000;
   --soparis-primitive-canvas-50: #ffffff;
-  --soparis-primitive-canvas-100: #f8fafc;
-  --soparis-primitive-canvas-200: #fcfcfc;
-  --soparis-primitive-canvas-300: #f1f5f9;
-  --soparis-primitive-canvas-400: #e2e8f0;
-  --soparis-primitive-canvas-500: #cbd5e1;
-  --soparis-primitive-canvas-600: #94a3b8;
-  --soparis-primitive-gold-50: #eef0fe;
-  --soparis-primitive-gold-100: #dce0fd;
-  --soparis-primitive-gold-200: #c4cafc;
-  --soparis-primitive-gold-300: #6573f6;
-  --soparis-primitive-gold-400: #4d5cf4;
-  --soparis-primitive-gold-500: #3548f3;
-  --soparis-primitive-gold-600: #2f40e0;
-  --soparis-primitive-gold-700: #2a3ad4;
-  --soparis-primitive-gold-800: #1c278f;
-  --soparis-primitive-gold-900: #161c4d;
-  --soparis-primitive-gold-950: #0c1033;
-  --soparis-primitive-connect-50: #fdf1ee;
-  --soparis-primitive-connect-100: #f8d2c8;
-  --soparis-primitive-connect-200: #f0a892;
-  --soparis-primitive-connect-300: #ea866c;
-  --soparis-primitive-connect-500: #e76e50;
-  --soparis-primitive-connect-600: #d45a3d;
-  --soparis-primitive-connect-700: #c24f35;
-  --soparis-primitive-connect-800: #8f3a27;
-  --soparis-primitive-connect-900: #4a2218;
-  --soparis-primitive-danger-50: #fbe8ea;
-  --soparis-primitive-danger-100: #f3a3aa;
-  --soparis-primitive-danger-500: #c2303a;
-  --soparis-primitive-danger-600: #a21f2b;
-  --soparis-primitive-danger-700: #7a1520;
-  --soparis-primitive-danger-900: #3a171b;
-  --soparis-primitive-warning-50: #fbf0d9;
-  --soparis-primitive-warning-100: #f3d08a;
-  --soparis-primitive-warning-500: #c4841d;
-  --soparis-primitive-warning-700: #6d4708;
-  --soparis-primitive-warning-900: #3a2c12;
-  --soparis-primitive-info-50: #e8f2fb;
-  --soparis-primitive-info-100: #9fd0ff;
-  --soparis-primitive-info-500: #1d6fbf;
-  --soparis-primitive-info-700: #0c3d6e;
-  --soparis-primitive-info-900: #132536;
-  --soparis-primitive-night-50: #3c4556;
-  --soparis-primitive-night-100: #2a3140;
-  --soparis-primitive-night-200: #262e3b;
-  --soparis-primitive-night-300: #1e2530;
-  --soparis-primitive-night-400: #171c24;
-  --soparis-primitive-night-500: #12171f;
-  --soparis-primitive-night-600: #11151c;
-  --soparis-primitive-night-700: #0f1729;
-  --soparis-primitive-night-800: #0a0d12;
-  --soparis-primitive-night-900: #05070a;
+  --soparis-primitive-canvas-100: #fafafa;
+  --soparis-primitive-canvas-200: #fafafa;
+  --soparis-primitive-canvas-300: #f4f4f5;
+  --soparis-primitive-canvas-400: #e4e4e7;
+  --soparis-primitive-canvas-500: #d4d4d8;
+  --soparis-primitive-canvas-600: #a1a1aa;
+  --soparis-primitive-gold-50: #f0fdf4;
+  --soparis-primitive-gold-100: #dcfce7;
+  --soparis-primitive-gold-200: #bbf7d0;
+  --soparis-primitive-gold-300: #86efac;
+  --soparis-primitive-gold-400: #4ade80;
+  --soparis-primitive-gold-500: #22c55e;
+  --soparis-primitive-gold-600: #16a34a;
+  --soparis-primitive-gold-700: #15803d;
+  --soparis-primitive-gold-800: #166534;
+  --soparis-primitive-gold-900: #14532d;
+  --soparis-primitive-gold-950: #052e16;
+  --soparis-primitive-connect-50: #eff6ff;
+  --soparis-primitive-connect-100: #dbeafe;
+  --soparis-primitive-connect-200: #bfdbfe;
+  --soparis-primitive-connect-300: #93c5fd;
+  --soparis-primitive-connect-400: #60a5fa;
+  --soparis-primitive-connect-500: #3b82f6;
+  --soparis-primitive-connect-600: #2563eb;
+  --soparis-primitive-connect-700: #1d4ed8;
+  --soparis-primitive-connect-800: #1e40af;
+  --soparis-primitive-connect-900: #1e3a8a;
+  --soparis-primitive-danger-50: #fef2f2;
+  --soparis-primitive-danger-100: #fecaca;
+  --soparis-primitive-danger-200: #fca5a5;
+  --soparis-primitive-danger-300: #f87171;
+  --soparis-primitive-danger-500: #ef4444;
+  --soparis-primitive-danger-600: #dc2626;
+  --soparis-primitive-danger-700: #b91c1c;
+  --soparis-primitive-danger-900: #7f1d1d;
+  --soparis-primitive-warning-50: #fefce8;
+  --soparis-primitive-warning-100: #fef08a;
+  --soparis-primitive-warning-200: #fde047;
+  --soparis-primitive-warning-300: #fbbf24;
+  --soparis-primitive-warning-500: #eab308;
+  --soparis-primitive-warning-600: #ca8a04;
+  --soparis-primitive-warning-700: #a16207;
+  --soparis-primitive-warning-900: #713f12;
+  --soparis-primitive-info-50: #e0f7fa;
+  --soparis-primitive-info-100: #b2ebf2;
+  --soparis-primitive-info-200: #80deea;
+  --soparis-primitive-info-500: #03a9f4;
+  --soparis-primitive-info-600: #0288d1;
+  --soparis-primitive-info-700: #01579b;
+  --soparis-primitive-info-900: #0d3b4c;
+  --soparis-primitive-night-50: #3f3f46;
+  --soparis-primitive-night-100: #27272a;
+  --soparis-primitive-night-200: #1c1c1f;
+  --soparis-primitive-night-300: #18181b;
+  --soparis-primitive-night-400: #18181b;
+  --soparis-primitive-night-500: #121214;
+  --soparis-primitive-night-600: #0c0c0e;
+  --soparis-primitive-night-700: #09090b;
+  --soparis-primitive-night-800: #050506;
+  --soparis-primitive-night-900: #000000;
+  --soparis-primitive-todolist-50: #f0fdf4;
+  --soparis-primitive-todolist-100: #dcfce7;
+  --soparis-primitive-todolist-500: #22c55e;
+  --soparis-primitive-todolist-600: #16a34a;
+  --soparis-primitive-todolist-700: #15803d;
+  --soparis-primitive-documents-50: #eff6ff;
+  --soparis-primitive-documents-100: #dbeafe;
+  --soparis-primitive-documents-500: #3b82f6;
+  --soparis-primitive-documents-600: #2563eb;
+  --soparis-primitive-documents-700: #1d4ed8;
+  --soparis-primitive-fichaje-50: #fef2f2;
+  --soparis-primitive-fichaje-100: #fecaca;
+  --soparis-primitive-fichaje-500: #ef4444;
+  --soparis-primitive-fichaje-600: #dc2626;
+  --soparis-primitive-fichaje-700: #b91c1c;
+  --soparis-primitive-tickets-50: #fefce8;
+  --soparis-primitive-tickets-100: #fef08a;
+  --soparis-primitive-tickets-500: #eab308;
+  --soparis-primitive-tickets-600: #ca8a04;
+  --soparis-primitive-tickets-700: #a16207;
+  --soparis-primitive-orange-50: #fff3e0;
+  --soparis-primitive-orange-100: #ffe0b2;
+  --soparis-primitive-orange-500: #ff9800;
+  --soparis-primitive-orange-600: #f57c00;
+  --soparis-primitive-orange-700: #e65100;
+  --soparis-primitive-teal-50: #e0f2f1;
+  --soparis-primitive-teal-100: #b2dfdb;
+  --soparis-primitive-teal-500: #009688;
+  --soparis-primitive-teal-600: #00897b;
+  --soparis-primitive-teal-700: #00695c;
+  --soparis-primitive-pink-50: #fce4ec;
+  --soparis-primitive-pink-100: #f8bbd0;
+  --soparis-primitive-pink-500: #e91e63;
+  --soparis-primitive-pink-600: #c2185b;
+  --soparis-primitive-pink-700: #880e4f;
+  --soparis-primitive-purple-50: #f3e5f5;
+  --soparis-primitive-purple-100: #e1bee7;
+  --soparis-primitive-purple-500: #9c27b0;
+  --soparis-primitive-purple-600: #7b1fa2;
+  --soparis-primitive-purple-700: #4a148c;
   --soparis-primitive-space-0: 0;
   --soparis-primitive-space-1: 0.25rem;
   --soparis-primitive-space-2: 0.5rem;
@@ -134,72 +182,266 @@
   --soparis-primitive-bp-xl: 90rem;
 }
 
+:root {
+  --soparis-theme-primary: #22c55e;
+  --soparis-theme-primary-on: #fff;
+  --soparis-theme-secondary: #09090b;
+  --soparis-theme-secondary-soft: #18181b;
+  --soparis-theme-secondary-on: #fff;
+  --soparis-theme-accent: #3b82f6;
+  --soparis-theme-accent-on: #fff;
+  --soparis-theme-success: var(--soparis-theme-primary);
+  --soparis-theme-warning: #eab308;
+  --soparis-theme-danger: #ef4444;
+  --soparis-theme-info: #03a9f4;
+  --soparis-theme-premium: #9c27b0;
+  --soparis-theme-space-unit: 0.25rem;
+  --soparis-theme-control-h-sm: 2rem;
+  --soparis-theme-control-h-md: 2.5rem;
+  --soparis-theme-control-h-lg: 3rem;
+  --soparis-theme-control-h-xl: 3.5rem;
+  --soparis-theme-control-px-sm: 0.625rem;
+  --soparis-theme-control-px-md: 0.875rem;
+  --soparis-theme-control-px-lg: 1.125rem;
+  --soparis-theme-control-px-xl: 1.375rem;
+  --soparis-theme-icon-sm: 0.875rem;
+  --soparis-theme-icon-md: 1.125rem;
+  --soparis-theme-icon-lg: 1.375rem;
+  --soparis-theme-icon-xl: 1.625rem;
+  --soparis-theme-radius-sm: 0.375rem;
+  --soparis-theme-radius-md: 0.625rem;
+  --soparis-theme-radius-lg: 0.875rem;
+  --soparis-theme-radius-xl: 1.25rem;
+  --soparis-theme-font-sm: 0.8125rem;
+  --soparis-theme-font-md: 0.9375rem;
+  --soparis-theme-font-lg: 1.0625rem;
+  --soparis-theme-font-xl: 1.25rem;
+  --soparis-primitive-gold-50: color-mix(in srgb, var(--soparis-theme-primary) 12%, #fff);
+  --soparis-primitive-gold-100: color-mix(in srgb, var(--soparis-theme-primary) 22%, #fff);
+  --soparis-primitive-gold-200: color-mix(in srgb, var(--soparis-theme-primary) 38%, #fff);
+  --soparis-primitive-gold-300: color-mix(in srgb, var(--soparis-theme-primary) 58%, #fff);
+  --soparis-primitive-gold-400: color-mix(in srgb, var(--soparis-theme-primary) 78%, #fff);
+  --soparis-primitive-gold-500: var(--soparis-theme-primary);
+  --soparis-primitive-gold-600: color-mix(in srgb, var(--soparis-theme-primary) 78%, #000);
+  --soparis-primitive-gold-700: color-mix(in srgb, var(--soparis-theme-primary) 62%, #000);
+  --soparis-primitive-gold-800: color-mix(in srgb, var(--soparis-theme-primary) 45%, #000);
+  --soparis-primitive-gold-900: color-mix(in srgb, var(--soparis-theme-primary) 30%, #000);
+  --soparis-primitive-gold-950: color-mix(in srgb, var(--soparis-theme-primary) 18%, #000);
+  --soparis-primitive-connect-50: color-mix(in srgb, var(--soparis-theme-accent) 12%, #fff);
+  --soparis-primitive-connect-100: color-mix(in srgb, var(--soparis-theme-accent) 22%, #fff);
+  --soparis-primitive-connect-200: color-mix(in srgb, var(--soparis-theme-accent) 38%, #fff);
+  --soparis-primitive-connect-300: color-mix(in srgb, var(--soparis-theme-accent) 58%, #fff);
+  --soparis-primitive-connect-400: color-mix(in srgb, var(--soparis-theme-accent) 78%, #fff);
+  --soparis-primitive-connect-500: var(--soparis-theme-accent);
+  --soparis-primitive-connect-600: color-mix(in srgb, var(--soparis-theme-accent) 78%, #000);
+  --soparis-primitive-connect-700: color-mix(in srgb, var(--soparis-theme-accent) 62%, #000);
+  --soparis-primitive-connect-800: color-mix(in srgb, var(--soparis-theme-accent) 45%, #000);
+  --soparis-primitive-connect-900: color-mix(in srgb, var(--soparis-theme-accent) 30%, #000);
+  --soparis-primitive-connect-950: color-mix(in srgb, var(--soparis-theme-accent) 18%, #000);
+  --soparis-primitive-success-50: color-mix(in srgb, var(--soparis-theme-success) 12%, #fff);
+  --soparis-primitive-success-100: color-mix(in srgb, var(--soparis-theme-success) 22%, #fff);
+  --soparis-primitive-success-200: color-mix(in srgb, var(--soparis-theme-success) 38%, #fff);
+  --soparis-primitive-success-300: color-mix(in srgb, var(--soparis-theme-success) 58%, #fff);
+  --soparis-primitive-success-400: color-mix(in srgb, var(--soparis-theme-success) 78%, #fff);
+  --soparis-primitive-success-500: var(--soparis-theme-success);
+  --soparis-primitive-success-600: color-mix(in srgb, var(--soparis-theme-success) 78%, #000);
+  --soparis-primitive-success-700: color-mix(in srgb, var(--soparis-theme-success) 62%, #000);
+  --soparis-primitive-success-800: color-mix(in srgb, var(--soparis-theme-success) 45%, #000);
+  --soparis-primitive-success-900: color-mix(in srgb, var(--soparis-theme-success) 30%, #000);
+  --soparis-primitive-success-950: color-mix(in srgb, var(--soparis-theme-success) 18%, #000);
+  --soparis-primitive-danger-50: color-mix(in srgb, var(--soparis-theme-danger) 12%, #fff);
+  --soparis-primitive-danger-100: color-mix(in srgb, var(--soparis-theme-danger) 22%, #fff);
+  --soparis-primitive-danger-200: color-mix(in srgb, var(--soparis-theme-danger) 38%, #fff);
+  --soparis-primitive-danger-300: color-mix(in srgb, var(--soparis-theme-danger) 58%, #fff);
+  --soparis-primitive-danger-400: color-mix(in srgb, var(--soparis-theme-danger) 78%, #fff);
+  --soparis-primitive-danger-500: var(--soparis-theme-danger);
+  --soparis-primitive-danger-600: color-mix(in srgb, var(--soparis-theme-danger) 78%, #000);
+  --soparis-primitive-danger-700: color-mix(in srgb, var(--soparis-theme-danger) 62%, #000);
+  --soparis-primitive-danger-800: color-mix(in srgb, var(--soparis-theme-danger) 45%, #000);
+  --soparis-primitive-danger-900: color-mix(in srgb, var(--soparis-theme-danger) 30%, #000);
+  --soparis-primitive-danger-950: color-mix(in srgb, var(--soparis-theme-danger) 18%, #000);
+  --soparis-primitive-warning-50: color-mix(in srgb, var(--soparis-theme-warning) 12%, #fff);
+  --soparis-primitive-warning-100: color-mix(in srgb, var(--soparis-theme-warning) 22%, #fff);
+  --soparis-primitive-warning-200: color-mix(in srgb, var(--soparis-theme-warning) 38%, #fff);
+  --soparis-primitive-warning-300: color-mix(in srgb, var(--soparis-theme-warning) 58%, #fff);
+  --soparis-primitive-warning-400: color-mix(in srgb, var(--soparis-theme-warning) 78%, #fff);
+  --soparis-primitive-warning-500: var(--soparis-theme-warning);
+  --soparis-primitive-warning-600: color-mix(in srgb, var(--soparis-theme-warning) 78%, #000);
+  --soparis-primitive-warning-700: color-mix(in srgb, var(--soparis-theme-warning) 62%, #000);
+  --soparis-primitive-warning-800: color-mix(in srgb, var(--soparis-theme-warning) 45%, #000);
+  --soparis-primitive-warning-900: color-mix(in srgb, var(--soparis-theme-warning) 30%, #000);
+  --soparis-primitive-warning-950: color-mix(in srgb, var(--soparis-theme-warning) 18%, #000);
+  --soparis-primitive-info-50: color-mix(in srgb, var(--soparis-theme-info) 12%, #fff);
+  --soparis-primitive-info-100: color-mix(in srgb, var(--soparis-theme-info) 22%, #fff);
+  --soparis-primitive-info-200: color-mix(in srgb, var(--soparis-theme-info) 38%, #fff);
+  --soparis-primitive-info-300: color-mix(in srgb, var(--soparis-theme-info) 58%, #fff);
+  --soparis-primitive-info-400: color-mix(in srgb, var(--soparis-theme-info) 78%, #fff);
+  --soparis-primitive-info-500: var(--soparis-theme-info);
+  --soparis-primitive-info-600: color-mix(in srgb, var(--soparis-theme-info) 78%, #000);
+  --soparis-primitive-info-700: color-mix(in srgb, var(--soparis-theme-info) 62%, #000);
+  --soparis-primitive-info-800: color-mix(in srgb, var(--soparis-theme-info) 45%, #000);
+  --soparis-primitive-info-900: color-mix(in srgb, var(--soparis-theme-info) 30%, #000);
+  --soparis-primitive-info-950: color-mix(in srgb, var(--soparis-theme-info) 18%, #000);
+  --soparis-primitive-ink-800: var(--soparis-theme-secondary-soft);
+  --soparis-primitive-ink-850: var(--soparis-theme-secondary-soft);
+  --soparis-primitive-ink-900: var(--soparis-theme-secondary);
+  --soparis-primitive-night-700: var(--soparis-theme-secondary);
+  --soparis-primitive-space-0: 0;
+  --soparis-primitive-space-1: var(--soparis-theme-space-unit);
+  --soparis-primitive-space-2: calc(var(--soparis-theme-space-unit) * 2);
+  --soparis-primitive-space-3: calc(var(--soparis-theme-space-unit) * 3);
+  --soparis-primitive-space-4: calc(var(--soparis-theme-space-unit) * 4);
+  --soparis-primitive-space-5: calc(var(--soparis-theme-space-unit) * 5);
+  --soparis-primitive-space-6: calc(var(--soparis-theme-space-unit) * 6);
+  --soparis-primitive-space-8: calc(var(--soparis-theme-space-unit) * 8);
+  --soparis-primitive-space-10: calc(var(--soparis-theme-space-unit) * 10);
+  --soparis-primitive-space-12: calc(var(--soparis-theme-space-unit) * 12);
+  --soparis-primitive-space-16: calc(var(--soparis-theme-space-unit) * 16);
+  --soparis-primitive-space-20: calc(var(--soparis-theme-space-unit) * 20);
+  --soparis-primitive-control-h-sm: var(--soparis-theme-control-h-sm);
+  --soparis-primitive-control-h-md: var(--soparis-theme-control-h-md);
+  --soparis-primitive-control-h-lg: var(--soparis-theme-control-h-lg);
+  --soparis-primitive-control-h-xl: var(--soparis-theme-control-h-xl);
+  --soparis-primitive-control-px-sm: var(--soparis-theme-control-px-sm);
+  --soparis-primitive-control-px-md: var(--soparis-theme-control-px-md);
+  --soparis-primitive-control-px-lg: var(--soparis-theme-control-px-lg);
+  --soparis-primitive-control-px-xl: var(--soparis-theme-control-px-xl);
+  --soparis-primitive-icon-sm: var(--soparis-theme-icon-sm);
+  --soparis-primitive-icon-md: var(--soparis-theme-icon-md);
+  --soparis-primitive-icon-lg: var(--soparis-theme-icon-lg);
+  --soparis-primitive-icon-xl: var(--soparis-theme-icon-xl);
+  --soparis-primitive-radius-sm: var(--soparis-theme-radius-sm);
+  --soparis-primitive-radius-md: var(--soparis-theme-radius-md);
+  --soparis-primitive-radius-lg: var(--soparis-theme-radius-lg);
+  --soparis-primitive-radius-xl: var(--soparis-theme-radius-xl);
+  --soparis-primitive-font-sm: var(--soparis-theme-font-sm);
+  --soparis-primitive-font-md: var(--soparis-theme-font-md);
+  --soparis-primitive-font-lg: var(--soparis-theme-font-lg);
+  --soparis-primitive-font-xl: var(--soparis-theme-font-xl);
+  --soparis-primitive-todolist-50: var(--soparis-primitive-gold-50);
+  --soparis-primitive-todolist-100: var(--soparis-primitive-gold-100);
+  --soparis-primitive-todolist-500: var(--soparis-theme-primary);
+  --soparis-primitive-todolist-600: var(--soparis-primitive-gold-600);
+  --soparis-primitive-todolist-700: var(--soparis-primitive-gold-700);
+  --soparis-primitive-documents-50: var(--soparis-primitive-connect-50);
+  --soparis-primitive-documents-100: var(--soparis-primitive-connect-100);
+  --soparis-primitive-documents-500: var(--soparis-theme-accent);
+  --soparis-primitive-documents-600: var(--soparis-primitive-connect-600);
+  --soparis-primitive-documents-700: var(--soparis-primitive-connect-700);
+  --soparis-primitive-fichaje-50: var(--soparis-primitive-danger-50);
+  --soparis-primitive-fichaje-100: var(--soparis-primitive-danger-100);
+  --soparis-primitive-fichaje-500: var(--soparis-theme-danger);
+  --soparis-primitive-fichaje-600: var(--soparis-primitive-danger-600);
+  --soparis-primitive-fichaje-700: var(--soparis-primitive-danger-700);
+  --soparis-primitive-tickets-50: var(--soparis-primitive-warning-50);
+  --soparis-primitive-tickets-100: var(--soparis-primitive-warning-100);
+  --soparis-primitive-tickets-500: var(--soparis-theme-warning);
+  --soparis-primitive-tickets-600: var(--soparis-primitive-warning-600);
+  --soparis-primitive-tickets-700: var(--soparis-primitive-warning-700);
+}
+
 /*! Soparis — generado desde soparis/scss. No editar a mano. */
 :root,
 [data-soparis-theme=light] {
   color-scheme: light;
-  --soparis-brand-ink: var(--soparis-primitive-ink-900);
-  --soparis-brand-ink-soft: var(--soparis-primitive-ink-800);
-  --soparis-brand-gold: var(--soparis-primitive-gold-500);
-  --soparis-brand-gold-bright: var(--soparis-primitive-gold-300);
-  --soparis-brand-gold-deep: var(--soparis-primitive-gold-700);
-  --soparis-brand-connect: var(--soparis-primitive-connect-500);
-  --soparis-brand-connect-deep: var(--soparis-primitive-connect-700);
+  --soparis-brand-ink: var(--soparis-theme-secondary);
+  --soparis-brand-ink-soft: var(--soparis-theme-secondary-soft);
+  --soparis-brand-gold: var(--soparis-theme-primary);
+  --soparis-brand-gold-bright: var(--soparis-primitive-gold-400);
+  --soparis-brand-gold-deep: var(--soparis-primitive-gold-600);
+  --soparis-brand-connect: var(--soparis-theme-accent);
+  --soparis-brand-connect-deep: var(--soparis-primitive-connect-600);
   --soparis-color-bg: var(--soparis-primitive-canvas-200);
   --soparis-color-bg-subtle: var(--soparis-primitive-canvas-300);
-  --soparis-color-bg-inverse: var(--soparis-primitive-ink-900);
+  --soparis-color-bg-inverse: var(--soparis-theme-secondary);
   --soparis-color-bg-surface: var(--soparis-primitive-canvas-50);
   --soparis-color-bg-surface-hover: var(--soparis-primitive-canvas-100);
   --soparis-color-bg-surface-active: var(--soparis-primitive-canvas-400);
   --soparis-color-bg-surface-selected: var(--soparis-primitive-gold-100);
-  --soparis-color-bg-surface-disabled: color-mix(in srgb, var(--soparis-primitive-ink-900) 5%, transparent);
+  --soparis-color-bg-surface-disabled: color-mix(in srgb, var(--soparis-theme-secondary) 5%, transparent);
   --soparis-color-bg-nav: var(--soparis-primitive-ink-850);
   --soparis-color-bg-nav-hover: color-mix(in srgb, var(--soparis-primitive-canvas-50) 6%, transparent);
-  --soparis-color-bg-nav-active: color-mix(in srgb, var(--soparis-primitive-gold-500) 16%, transparent);
-  --soparis-color-bg-overlay: color-mix(in srgb, var(--soparis-primitive-ink-900) 56%, transparent);
+  --soparis-color-bg-nav-active: color-mix(in srgb, var(--soparis-theme-primary) 16%, transparent);
+  --soparis-color-bg-overlay: color-mix(in srgb, var(--soparis-theme-secondary) 56%, transparent);
   --soparis-color-bg-input: var(--soparis-primitive-canvas-50);
-  --soparis-color-bg-premium: #bf5af1;
-  --soparis-color-text: var(--soparis-primitive-ink-700);
+  --soparis-color-bg-premium: var(--soparis-theme-premium);
+  --soparis-color-text: var(--soparis-theme-secondary);
   --soparis-color-text-secondary: var(--soparis-primitive-ink-500);
   --soparis-color-text-muted: var(--soparis-primitive-ink-400);
   --soparis-color-text-disabled: var(--soparis-primitive-ink-300);
   --soparis-color-text-inverse: var(--soparis-primitive-ink-50);
-  --soparis-color-text-on-brand: var(--soparis-primitive-canvas-50);
-  --soparis-color-text-on-gold: #fff;
-  --soparis-color-text-link: var(--soparis-primitive-connect-700);
-  --soparis-color-text-link-hover: var(--soparis-primitive-connect-800);
-  --soparis-color-border: var(--soparis-primitive-ink-100);
-  --soparis-color-border-strong: var(--soparis-primitive-ink-200);
-  --soparis-color-border-focus: var(--soparis-primitive-connect-500);
+  --soparis-color-text-on-brand: var(--soparis-theme-primary-on);
+  --soparis-color-text-on-gold: var(--soparis-theme-primary-on);
+  --soparis-color-text-link: var(--soparis-primitive-connect-600);
+  --soparis-color-text-link-hover: var(--soparis-primitive-connect-700);
+  --soparis-color-border: var(--soparis-primitive-ink-200);
+  --soparis-color-border-strong: var(--soparis-primitive-ink-300);
+  --soparis-color-border-focus: var(--soparis-theme-primary);
   --soparis-color-border-nav: color-mix(in srgb, var(--soparis-primitive-canvas-50) 8%, transparent);
-  --soparis-color-border-gold: color-mix(in srgb, var(--soparis-primitive-gold-500) 45%, transparent);
+  --soparis-color-border-gold: var(--soparis-color-primary-muted);
   --soparis-color-icon: var(--soparis-primitive-ink-600);
   --soparis-color-icon-muted: var(--soparis-primitive-ink-400);
   --soparis-color-icon-inverse: var(--soparis-primitive-ink-50);
-  --soparis-color-icon-on-gold: #fff;
-  --soparis-color-info: var(--soparis-primitive-info-500);
-  --soparis-color-info-bg: var(--soparis-primitive-info-50);
-  --soparis-color-info-text: var(--soparis-primitive-info-700);
-  --soparis-color-success: var(--soparis-primitive-connect-500);
-  --soparis-color-success-bg: var(--soparis-primitive-connect-50);
-  --soparis-color-success-text: var(--soparis-primitive-connect-700);
-  --soparis-color-warning: var(--soparis-primitive-warning-500);
-  --soparis-color-warning-bg: var(--soparis-primitive-warning-50);
-  --soparis-color-warning-text: var(--soparis-primitive-warning-700);
-  --soparis-color-danger: var(--soparis-primitive-danger-500);
-  --soparis-color-danger-bg: var(--soparis-primitive-danger-50);
-  --soparis-color-danger-text: var(--soparis-primitive-danger-700);
+  --soparis-color-icon-on-gold: var(--soparis-theme-primary-on);
+  --soparis-color-info: var(--soparis-theme-info);
+  --soparis-color-info-hover: var(--soparis-primitive-info-600);
+  --soparis-color-info-soft: var(--soparis-primitive-info-50);
+  --soparis-color-info-on: var(--soparis-primitive-info-700);
+  --soparis-color-info-bg: var(--soparis-color-info-soft);
+  --soparis-color-info-text: var(--soparis-color-info-on);
+  --soparis-color-success: var(--soparis-theme-success);
+  --soparis-color-success-hover: var(--soparis-primitive-success-600);
+  --soparis-color-success-soft: var(--soparis-primitive-success-50);
+  --soparis-color-success-on: var(--soparis-primitive-success-700);
+  --soparis-color-success-bg: var(--soparis-color-success-soft);
+  --soparis-color-success-text: var(--soparis-color-success-on);
+  --soparis-color-warning: var(--soparis-theme-warning);
+  --soparis-color-warning-hover: var(--soparis-primitive-warning-600);
+  --soparis-color-warning-soft: var(--soparis-primitive-warning-50);
+  --soparis-color-warning-on: var(--soparis-primitive-warning-700);
+  --soparis-color-warning-bg: var(--soparis-color-warning-soft);
+  --soparis-color-warning-text: var(--soparis-color-warning-on);
+  --soparis-color-error: var(--soparis-theme-danger);
+  --soparis-color-error-hover: var(--soparis-primitive-danger-600);
+  --soparis-color-error-soft: var(--soparis-primitive-danger-50);
+  --soparis-color-error-on: var(--soparis-primitive-danger-700);
+  --soparis-color-danger: var(--soparis-color-error);
+  --soparis-color-danger-hover: var(--soparis-color-error-hover);
+  --soparis-color-danger-bg: var(--soparis-color-error-soft);
+  --soparis-color-danger-text: var(--soparis-color-error-on);
   --soparis-color-premium-bg: var(--soparis-primitive-gold-50);
   --soparis-color-premium-text: var(--soparis-primitive-gold-800);
-  --soparis-color-primary: var(--soparis-brand-gold);
-  --soparis-color-primary-hover: var(--soparis-brand-gold-deep);
-  --soparis-color-primary-on: #fff;
-  --soparis-color-secondary: var(--soparis-brand-ink);
-  --soparis-color-secondary-hover: var(--soparis-brand-ink-soft);
-  --soparis-color-secondary-on: #fff;
-  --soparis-color-accent: var(--soparis-brand-connect);
-  --soparis-color-accent-hover: var(--soparis-brand-connect-deep);
-  --soparis-color-accent-on: #fff;
+  --soparis-color-premium-hover: color-mix(in srgb, var(--soparis-theme-premium) 88%, var(--soparis-color-black));
+  --soparis-color-white: #ffffff;
+  --soparis-color-black: #000000;
+  --soparis-color-nav-label: color-mix(in srgb, var(--soparis-color-text-inverse) 45%, transparent);
+  --soparis-color-nav-item: color-mix(in srgb, var(--soparis-color-text-inverse) 86%, transparent);
+  --soparis-color-nav-item-active: var(--soparis-color-primary-bright);
+  --soparis-color-nav-badge: var(--soparis-color-primary-soft);
+  --soparis-shadow-xs: 0 1px 2px color-mix(in srgb, var(--soparis-color-secondary) 4%, transparent);
+  --soparis-shadow-sm: 0 4px 14px color-mix(in srgb, var(--soparis-color-secondary) 8%, transparent);
+  --soparis-shadow-md: 0 10px 28px color-mix(in srgb, var(--soparis-color-secondary) 10%, transparent);
+  --soparis-color-product-todolist: var(--soparis-color-primary);
+  --soparis-color-product-todolist-hover: var(--soparis-color-primary-hover);
+  --soparis-color-product-documents: var(--soparis-color-accent);
+  --soparis-color-product-documents-hover: var(--soparis-color-accent-hover);
+  --soparis-color-product-fichaje: var(--soparis-color-error);
+  --soparis-color-product-fichaje-hover: var(--soparis-color-error-hover);
+  --soparis-color-product-tickets: var(--soparis-color-warning);
+  --soparis-color-product-tickets-hover: var(--soparis-color-warning-hover);
+  --soparis-color-primary: var(--soparis-theme-primary);
+  --soparis-color-primary-hover: var(--soparis-primitive-gold-600);
+  --soparis-color-primary-soft: color-mix(in srgb, var(--soparis-theme-primary) 14%, transparent);
+  --soparis-color-primary-muted: color-mix(in srgb, var(--soparis-theme-primary) 40%, transparent);
+  --soparis-color-primary-bright: var(--soparis-primitive-gold-400);
+  --soparis-color-primary-deep: var(--soparis-primitive-gold-700);
+  --soparis-color-primary-on: var(--soparis-theme-primary-on);
+  --soparis-color-secondary: var(--soparis-theme-secondary);
+  --soparis-color-secondary-hover: var(--soparis-theme-secondary-soft);
+  --soparis-color-secondary-on: var(--soparis-theme-secondary-on);
+  --soparis-color-accent: var(--soparis-theme-accent);
+  --soparis-color-accent-hover: var(--soparis-primitive-connect-600);
+  --soparis-color-accent-on: var(--soparis-theme-accent-on);
   --soparis-color-background: var(--soparis-color-bg);
   --soparis-color-card: var(--soparis-color-bg-surface);
   --soparis-color-card-hover: var(--soparis-color-bg-surface-hover);
@@ -308,8 +550,8 @@
   --soparis-color-icon-muted: var(--soparis-primitive-ink-400);
   --soparis-color-info-bg: var(--soparis-primitive-info-900);
   --soparis-color-info-text: var(--soparis-primitive-info-100);
-  --soparis-color-success-bg: var(--soparis-primitive-connect-900);
-  --soparis-color-success-text: var(--soparis-primitive-connect-100);
+  --soparis-color-success-bg: var(--soparis-primitive-success-950);
+  --soparis-color-success-text: var(--soparis-primitive-success-300);
   --soparis-color-warning-bg: var(--soparis-primitive-warning-900);
   --soparis-color-warning-text: var(--soparis-primitive-warning-100);
   --soparis-color-danger-bg: var(--soparis-primitive-danger-900);
@@ -433,8 +675,8 @@ body {
   z-index: calc(var(--soparis-z-toast) + 1);
   padding: var(--soparis-space-2) var(--soparis-space-4);
   border-radius: var(--soparis-radius-md);
-  background: var(--soparis-brand-gold);
-  color: var(--soparis-color-text-on-gold);
+  background: var(--soparis-color-primary);
+  color: var(--soparis-color-primary-on);
   font-weight: var(--soparis-weight-semibold);
   text-decoration: none;
 }
@@ -443,27 +685,63 @@ body {
 }
 
 .soparis-icon {
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.125rem;
+  line-height: 1;
   width: 1em;
   height: 1em;
   flex-shrink: 0;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   vertical-align: -0.15em;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 .soparis-icon--sm {
+  font-size: var(--soparis-icon-sm);
   width: var(--soparis-icon-sm);
   height: var(--soparis-icon-sm);
 }
 .soparis-icon--md {
+  font-size: var(--soparis-icon-md);
   width: var(--soparis-icon-md);
   height: var(--soparis-icon-md);
 }
 .soparis-icon--lg {
+  font-size: var(--soparis-icon-lg);
   width: var(--soparis-icon-lg);
   height: var(--soparis-icon-lg);
 }
 .soparis-icon--xl {
+  font-size: var(--soparis-icon-xl);
   width: var(--soparis-icon-xl);
   height: var(--soparis-icon-xl);
+}
+
+.material-symbols-outlined:not(.soparis-icon) {
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
 .soparis-disabled,
@@ -634,7 +912,7 @@ body {
 
 .soparis-quote {
   padding-left: var(--soparis-space-4);
-  border-left: 3px solid var(--soparis-brand-gold);
+  border-left: 3px solid var(--soparis-color-primary);
   color: var(--soparis-color-text-secondary);
   font-family: var(--soparis-font-display);
   font-size: var(--soparis-font-lg);
@@ -659,11 +937,11 @@ body {
   font-weight: var(--soparis-weight-semibold);
   letter-spacing: var(--soparis-tracking-wide);
   text-transform: uppercase;
-  color: var(--soparis-brand-gold-deep);
+  color: var(--soparis-color-primary-hover);
 }
 
 [data-soparis-theme=dark] .soparis-overline {
-  color: var(--soparis-brand-gold-bright);
+  color: var(--soparis-color-primary-bright);
 }
 
 .soparis-button {
@@ -688,9 +966,11 @@ body {
   transition: background var(--soparis-duration) var(--soparis-ease), color var(--soparis-duration) var(--soparis-ease), border-color var(--soparis-duration) var(--soparis-ease), transform var(--soparis-duration-fast) var(--soparis-ease);
 }
 .soparis-button .soparis-icon,
+.soparis-button .material-symbols-outlined,
 .soparis-button svg {
   width: var(--_icon);
   height: var(--_icon);
+  font-size: var(--_icon);
 }
 .soparis-button:active:not(:disabled) {
   transform: translateY(1px);
@@ -754,24 +1034,24 @@ body {
 }
 .soparis-button--premium {
   background: var(--soparis-color-bg-premium);
-  color: #fff;
+  color: var(--soparis-color-primary-on);
 }
 .soparis-button--premium:hover {
-  background: color-mix(in srgb, var(--soparis-color-bg-premium) 88%, #000);
+  background: var(--soparis-color-premium-hover);
 }
-.soparis-button--danger {
-  background: var(--soparis-color-danger);
-  color: #fff;
+.soparis-button--danger, .soparis-button--error {
+  background: var(--soparis-color-error);
+  color: var(--soparis-color-primary-on);
 }
-.soparis-button--danger:hover {
-  background: #a21f2b;
+.soparis-button--danger:hover, .soparis-button--error:hover {
+  background: var(--soparis-color-error-hover);
 }
 .soparis-button--connect {
-  background: var(--soparis-brand-connect);
-  color: #fff;
+  background: var(--soparis-color-accent);
+  color: var(--soparis-color-accent-on);
 }
 .soparis-button--connect:hover {
-  background: var(--soparis-brand-connect-deep);
+  background: var(--soparis-color-accent-hover);
 }
 .soparis-button--inverse {
   background: var(--soparis-color-bg-surface);
@@ -793,10 +1073,10 @@ body {
   color: inherit;
 }
 .soparis-button--primary.is-loading::after, .soparis-button--danger.is-loading::after, .soparis-button--connect.is-loading::after {
-  color: #fff;
+  color: var(--soparis-color-primary-on);
 }
 .soparis-button--premium.is-loading::after {
-  color: var(--soparis-color-text-on-gold);
+  color: var(--soparis-color-primary-on);
 }
 
 @keyframes soparis-spin {
@@ -842,9 +1122,12 @@ body {
   --_h: var(--soparis-control-h-xl);
   --_icon: var(--soparis-icon-xl);
 }
-.soparis-button-icon svg {
+.soparis-button-icon svg,
+.soparis-button-icon .soparis-icon,
+.soparis-button-icon .material-symbols-outlined {
   width: var(--_icon);
   height: var(--_icon);
+  font-size: var(--_icon);
 }
 
 @media (hover: none) and (pointer: coarse) {
@@ -874,11 +1157,20 @@ body {
   right: var(--soparis-space-5);
   bottom: var(--soparis-space-5);
   z-index: var(--soparis-z-sticky);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 3.5rem;
   height: 3.5rem;
   border-radius: var(--soparis-radius-full);
-  background: var(--soparis-brand-gold);
-  color: var(--soparis-color-text-on-gold);
+  background: var(--soparis-color-primary);
+  color: var(--soparis-color-primary-on);
+}
+.soparis-fab .soparis-icon,
+.soparis-fab .material-symbols-outlined {
+  font-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .soparis-app {
@@ -959,7 +1251,7 @@ body {
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 0.45rem;
-  background: var(--soparis-brand-gold);
+  background: var(--soparis-color-primary);
 }
 .soparis-aside__name {
   font-family: var(--soparis-font-display);
@@ -968,7 +1260,7 @@ body {
   letter-spacing: -0.03em;
 }
 .soparis-aside__name span {
-  color: var(--soparis-brand-gold-bright);
+  color: var(--soparis-color-primary-bright);
 }
 .soparis-aside__body {
   flex: 1;
@@ -997,7 +1289,7 @@ body {
   font-weight: var(--soparis-weight-semibold);
   letter-spacing: var(--soparis-tracking-wide);
   text-transform: uppercase;
-  color: rgba(247, 241, 231, 0.45);
+  color: var(--soparis-color-nav-label);
 }
 .soparis-menu__item {
   --_h: 2.35rem;
@@ -1007,7 +1299,7 @@ body {
   min-height: var(--_h);
   padding: 0 0.7rem;
   border-radius: var(--soparis-radius-md);
-  color: rgba(247, 241, 231, 0.86);
+  color: var(--soparis-color-nav-item);
   text-decoration: none;
   font-size: var(--soparis-font-sm);
   font-weight: var(--soparis-weight-medium);
@@ -1025,7 +1317,7 @@ body {
 }
 .soparis-menu__item--active, .soparis-menu__item[aria-current=page] {
   background: var(--soparis-color-bg-nav-active);
-  color: var(--soparis-brand-gold-bright);
+  color: var(--soparis-color-nav-item-active);
 }
 .soparis-menu__item--active svg, .soparis-menu__item[aria-current=page] svg {
   opacity: 1;
@@ -1050,8 +1342,8 @@ body {
   font-size: 0.68rem;
   padding: 0.1rem 0.4rem;
   border-radius: var(--soparis-radius-full);
-  background: rgba(198, 161, 91, 0.2);
-  color: var(--soparis-brand-gold-bright);
+  background: var(--soparis-color-nav-badge);
+  color: var(--soparis-color-nav-item-active);
 }
 
 .soparis-topbar {
@@ -1116,7 +1408,7 @@ body {
 }
 .soparis-tabs__tab[aria-selected=true] {
   color: var(--soparis-color-text);
-  border-bottom-color: var(--soparis-brand-gold);
+  border-bottom-color: var(--soparis-color-primary);
 }
 .soparis-tabs--sm .soparis-tabs__tab {
   padding: 0.45rem 0.65rem;
@@ -1153,9 +1445,9 @@ body {
   font-weight: var(--soparis-weight-medium);
 }
 .soparis-pagination__page[aria-current=page] {
-  background: var(--soparis-brand-ink);
-  color: var(--soparis-color-text-on-brand);
-  border-color: var(--soparis-brand-ink);
+  background: var(--soparis-color-secondary);
+  color: var(--soparis-color-secondary-on);
+  border-color: var(--soparis-color-secondary);
 }
 
 .soparis-field {
@@ -1170,10 +1462,21 @@ body {
 .soparis-field.is-error .soparis-input-text,
 .soparis-field.is-error .soparis-input-textarea,
 .soparis-field.is-error .soparis-input-select {
-  border-color: var(--soparis-color-danger);
+  border-color: var(--soparis-color-error);
+}
+.soparis-field.is-error .soparis-input-text:hover,
+.soparis-field.is-error .soparis-input-textarea:hover,
+.soparis-field.is-error .soparis-input-select:hover {
+  border-color: var(--soparis-color-error);
+}
+.soparis-field.is-error .soparis-input-text:focus,
+.soparis-field.is-error .soparis-input-textarea:focus,
+.soparis-field.is-error .soparis-input-select:focus {
+  outline-color: var(--soparis-color-error);
+  border-color: var(--soparis-color-error);
 }
 .soparis-field.is-error .soparis-input-description {
-  color: var(--soparis-color-danger);
+  color: var(--soparis-color-error);
 }
 
 .soparis-input-label {
@@ -1211,7 +1514,7 @@ body {
 .soparis-input-text:hover {
   border-color: var(--soparis-color-text-muted);
 }
-.soparis-input-text:focus {
+.soparis-input-text:focus, .soparis-input-text:focus-visible {
   outline: 2px solid var(--soparis-color-border-focus);
   outline-offset: 2px;
   border-color: var(--soparis-color-border-focus);
@@ -1252,7 +1555,14 @@ body {
   --_radius: var(--soparis-radius-lg);
 }
 .soparis-input-text--error {
-  border-color: var(--soparis-color-danger);
+  border-color: var(--soparis-color-error);
+}
+.soparis-input-text--error:hover {
+  border-color: var(--soparis-color-error);
+}
+.soparis-input-text--error:focus, .soparis-input-text--error:focus-visible {
+  outline-color: var(--soparis-color-error);
+  border-color: var(--soparis-color-error);
 }
 
 .soparis-input-textarea {
@@ -1274,7 +1584,7 @@ body {
 .soparis-input-textarea:hover {
   border-color: var(--soparis-color-text-muted);
 }
-.soparis-input-textarea:focus {
+.soparis-input-textarea:focus, .soparis-input-textarea:focus-visible {
   outline: 2px solid var(--soparis-color-border-focus);
   outline-offset: 2px;
   border-color: var(--soparis-color-border-focus);
@@ -1315,7 +1625,14 @@ body {
   --_radius: var(--soparis-radius-lg);
 }
 .soparis-input-textarea--error {
-  border-color: var(--soparis-color-danger);
+  border-color: var(--soparis-color-error);
+}
+.soparis-input-textarea--error:hover {
+  border-color: var(--soparis-color-error);
+}
+.soparis-input-textarea--error:focus, .soparis-input-textarea--error:focus-visible {
+  outline-color: var(--soparis-color-error);
+  border-color: var(--soparis-color-error);
 }
 .soparis-input-textarea {
   min-height: 7rem;
@@ -1324,7 +1641,7 @@ body {
   resize: vertical;
 }
 
-.soparis-input-select {
+select.soparis-input-select {
   --_h: var(--soparis-control-h-md);
   --_px: var(--soparis-control-px-md);
   --_fs: var(--soparis-font-md);
@@ -1340,63 +1657,468 @@ body {
   font-size: var(--_fs);
   transition: border-color var(--soparis-duration) var(--soparis-ease);
 }
-.soparis-input-select:hover {
+select.soparis-input-select:hover {
   border-color: var(--soparis-color-text-muted);
 }
-.soparis-input-select:focus {
+select.soparis-input-select:focus, select.soparis-input-select:focus-visible {
   outline: 2px solid var(--soparis-color-border-focus);
   outline-offset: 2px;
   border-color: var(--soparis-color-border-focus);
 }
-.soparis-input-select::placeholder {
+select.soparis-input-select::placeholder {
   color: var(--soparis-color-text-muted);
 }
-.soparis-input-select:disabled {
+select.soparis-input-select:disabled {
   background: var(--soparis-color-bg-surface-disabled);
   color: var(--soparis-color-text-disabled);
 }
-.soparis-input-select--sm {
+select.soparis-input-select--sm {
   --_h: var(--soparis-control-h-sm);
   --_px: var(--soparis-control-px-sm);
   --_fs: var(--soparis-font-sm);
   --_icon: var(--soparis-icon-sm);
   --_radius: var(--soparis-radius-sm);
 }
-.soparis-input-select--md {
+select.soparis-input-select--md {
   --_h: var(--soparis-control-h-md);
   --_px: var(--soparis-control-px-md);
   --_fs: var(--soparis-font-md);
   --_icon: var(--soparis-icon-md);
   --_radius: var(--soparis-radius-md);
 }
-.soparis-input-select--lg {
+select.soparis-input-select--lg {
   --_h: var(--soparis-control-h-lg);
   --_px: var(--soparis-control-px-lg);
   --_fs: var(--soparis-font-lg);
   --_icon: var(--soparis-icon-lg);
   --_radius: var(--soparis-radius-lg);
 }
-.soparis-input-select--xl {
+select.soparis-input-select--xl {
   --_h: var(--soparis-control-h-xl);
   --_px: var(--soparis-control-px-xl);
   --_fs: var(--soparis-font-xl);
   --_icon: var(--soparis-icon-xl);
   --_radius: var(--soparis-radius-lg);
 }
-.soparis-input-select--error {
-  border-color: var(--soparis-color-danger);
+select.soparis-input-select--error {
+  border-color: var(--soparis-color-error);
+}
+select.soparis-input-select--error:hover {
+  border-color: var(--soparis-color-error);
+}
+select.soparis-input-select--error:focus, select.soparis-input-select--error:focus-visible {
+  outline-color: var(--soparis-color-error);
+  border-color: var(--soparis-color-error);
+}
+select.soparis-input-select {
+  appearance: none;
+  background-image: none;
+  padding-right: 2.25rem;
+  background: no-repeat right 0.55rem center/1.25rem url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%2364748b'%3E%3Cpath d='M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z'/%3E%3C/svg%3E"), var(--soparis-color-bg-surface);
+}
+
+.soparis-input-select[data-soparis-select] {
+  --_h: var(--soparis-control-h-md);
+  --_px: var(--soparis-control-px-md);
+  --_fs: var(--soparis-font-md);
+  --_icon: var(--soparis-icon-md);
+  --_radius: var(--soparis-radius-md);
+  position: relative;
+  width: 100%;
+  font-size: var(--_fs);
+}
+.soparis-input-select[data-soparis-select].is-open {
+  z-index: var(--soparis-z-dropdown);
+}
+.soparis-input-select[data-soparis-select].is-open .soparis-input-select__panel {
+  display: flex;
+}
+.soparis-input-select[data-soparis-select].is-open .soparis-input-select__trigger {
+  border-color: var(--soparis-color-border-focus);
+  outline: 2px solid var(--soparis-color-border-focus);
+  outline-offset: 2px;
+}
+.soparis-input-select[data-soparis-select].is-open .soparis-input-select__trigger::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+.soparis-input-select--sm[data-soparis-select] {
+  --_h: var(--soparis-control-h-sm);
+  --_px: var(--soparis-control-px-sm);
+  --_fs: var(--soparis-font-sm);
+  --_icon: var(--soparis-icon-sm);
+  --_radius: var(--soparis-radius-sm);
+}
+.soparis-input-select--md[data-soparis-select] {
+  --_h: var(--soparis-control-h-md);
+  --_px: var(--soparis-control-px-md);
+  --_fs: var(--soparis-font-md);
+  --_icon: var(--soparis-icon-md);
+  --_radius: var(--soparis-radius-md);
+}
+.soparis-input-select--lg[data-soparis-select] {
+  --_h: var(--soparis-control-h-lg);
+  --_px: var(--soparis-control-px-lg);
+  --_fs: var(--soparis-font-lg);
+  --_icon: var(--soparis-icon-lg);
+  --_radius: var(--soparis-radius-lg);
+}
+.soparis-input-select--xl[data-soparis-select] {
+  --_h: var(--soparis-control-h-xl);
+  --_px: var(--soparis-control-px-xl);
+  --_fs: var(--soparis-font-xl);
+  --_icon: var(--soparis-icon-xl);
+  --_radius: var(--soparis-radius-lg);
+}
+.soparis-input-select--error[data-soparis-select] .soparis-input-select__trigger {
+  border-color: var(--soparis-color-error);
+}
+.soparis-input-select--error[data-soparis-select] .soparis-input-select__trigger:hover, .soparis-input-select--error[data-soparis-select] .soparis-input-select__trigger:focus-visible {
+  border-color: var(--soparis-color-error);
+  outline-color: var(--soparis-color-error);
+}
+.soparis-input-select__native {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.soparis-input-select__trigger {
+  --_h: var(--soparis-control-h-md);
+  --_px: var(--soparis-control-px-md);
+  --_fs: var(--soparis-font-md);
+  --_icon: var(--soparis-icon-md);
+  --_radius: var(--soparis-radius-md);
+  width: 100%;
+  min-height: var(--_h);
+  padding: 0 var(--_px);
+  border: 1px solid var(--soparis-color-border-strong);
+  border-radius: var(--_radius);
+  background: var(--soparis-color-bg-input);
+  color: var(--soparis-color-text);
+  font-size: var(--_fs);
+  transition: border-color var(--soparis-duration) var(--soparis-ease);
+}
+.soparis-input-select__trigger:hover {
+  border-color: var(--soparis-color-text-muted);
+}
+.soparis-input-select__trigger:focus, .soparis-input-select__trigger:focus-visible {
+  outline: 2px solid var(--soparis-color-border-focus);
+  outline-offset: 2px;
+  border-color: var(--soparis-color-border-focus);
+}
+.soparis-input-select__trigger::placeholder {
+  color: var(--soparis-color-text-muted);
+}
+.soparis-input-select__trigger:disabled {
+  background: var(--soparis-color-bg-surface-disabled);
+  color: var(--soparis-color-text-disabled);
+}
+.soparis-input-select__trigger--sm {
+  --_h: var(--soparis-control-h-sm);
+  --_px: var(--soparis-control-px-sm);
+  --_fs: var(--soparis-font-sm);
+  --_icon: var(--soparis-icon-sm);
+  --_radius: var(--soparis-radius-sm);
+}
+.soparis-input-select__trigger--md {
+  --_h: var(--soparis-control-h-md);
+  --_px: var(--soparis-control-px-md);
+  --_fs: var(--soparis-font-md);
+  --_icon: var(--soparis-icon-md);
+  --_radius: var(--soparis-radius-md);
+}
+.soparis-input-select__trigger--lg {
+  --_h: var(--soparis-control-h-lg);
+  --_px: var(--soparis-control-px-lg);
+  --_fs: var(--soparis-font-lg);
+  --_icon: var(--soparis-icon-lg);
+  --_radius: var(--soparis-radius-lg);
+}
+.soparis-input-select__trigger--xl {
+  --_h: var(--soparis-control-h-xl);
+  --_px: var(--soparis-control-px-xl);
+  --_fs: var(--soparis-font-xl);
+  --_icon: var(--soparis-icon-xl);
+  --_radius: var(--soparis-radius-lg);
+}
+.soparis-input-select__trigger--error {
+  border-color: var(--soparis-color-error);
+}
+.soparis-input-select__trigger--error:hover {
+  border-color: var(--soparis-color-error);
+}
+.soparis-input-select__trigger--error:focus, .soparis-input-select__trigger--error:focus-visible {
+  outline-color: var(--soparis-color-error);
+  border-color: var(--soparis-color-error);
+}
+.soparis-input-select__trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: auto;
+  min-height: var(--_h);
+  text-align: left;
+  cursor: pointer;
+  padding-right: 2.25rem;
+  position: relative;
+}
+.soparis-input-select__trigger::after {
+  content: "expand_more";
+  position: absolute;
+  right: 0.55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--soparis-color-icon-muted);
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  pointer-events: none;
+}
+.soparis-input-select__value {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.soparis-input-select__value:has(.soparis-input-select__chips) {
+  overflow: visible;
+  text-overflow: unset;
+  white-space: normal;
+}
+.soparis-input-select__placeholder {
+  color: var(--soparis-color-text-muted);
+}
+.soparis-input-select__chips {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  min-width: 0;
+  padding: 0.35rem 0;
+}
+.soparis-input-select__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  max-width: 100%;
+  min-height: 1.5rem;
+  padding: 0 0.35rem 0 0.5rem;
+  border-radius: var(--soparis-radius-full);
+  background: var(--soparis-color-primary-soft);
+  color: var(--soparis-color-primary-deep);
+  font-size: var(--soparis-font-xs);
+  font-weight: var(--soparis-weight-semibold);
+}
+.soparis-input-select__chip-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--soparis-radius-full);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
+}
+.soparis-input-select__chip-remove:hover {
+  background: color-mix(in srgb, var(--soparis-color-primary) 18%, transparent);
+}
+.soparis-input-select__panel {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  left: 0;
+  right: 0;
+  z-index: var(--soparis-z-dropdown);
+  display: none;
+  flex-direction: column;
+  max-height: 16rem;
+  overflow: hidden;
+  background: var(--soparis-color-bg-surface);
+  border: 1px solid var(--soparis-color-border);
+  border-radius: var(--soparis-radius-md);
+  box-shadow: var(--soparis-shadow-md);
+}
+.soparis-input-select__search {
+  --_h: var(--soparis-control-h-md);
+  --_px: var(--soparis-control-px-md);
+  --_fs: var(--soparis-font-md);
+  --_icon: var(--soparis-icon-md);
+  --_radius: var(--soparis-radius-md);
+  width: 100%;
+  min-height: var(--_h);
+  padding: 0 var(--_px);
+  border: 1px solid var(--soparis-color-border-strong);
+  border-radius: var(--_radius);
+  background: var(--soparis-color-bg-input);
+  color: var(--soparis-color-text);
+  font-size: var(--_fs);
+  transition: border-color var(--soparis-duration) var(--soparis-ease);
+}
+.soparis-input-select__search:hover {
+  border-color: var(--soparis-color-text-muted);
+}
+.soparis-input-select__search:focus, .soparis-input-select__search:focus-visible {
+  outline: 2px solid var(--soparis-color-border-focus);
+  outline-offset: 2px;
+  border-color: var(--soparis-color-border-focus);
+}
+.soparis-input-select__search::placeholder {
+  color: var(--soparis-color-text-muted);
+}
+.soparis-input-select__search:disabled {
+  background: var(--soparis-color-bg-surface-disabled);
+  color: var(--soparis-color-text-disabled);
+}
+.soparis-input-select__search--sm {
+  --_h: var(--soparis-control-h-sm);
+  --_px: var(--soparis-control-px-sm);
+  --_fs: var(--soparis-font-sm);
+  --_icon: var(--soparis-icon-sm);
+  --_radius: var(--soparis-radius-sm);
+}
+.soparis-input-select__search--md {
+  --_h: var(--soparis-control-h-md);
+  --_px: var(--soparis-control-px-md);
+  --_fs: var(--soparis-font-md);
+  --_icon: var(--soparis-icon-md);
+  --_radius: var(--soparis-radius-md);
+}
+.soparis-input-select__search--lg {
+  --_h: var(--soparis-control-h-lg);
+  --_px: var(--soparis-control-px-lg);
+  --_fs: var(--soparis-font-lg);
+  --_icon: var(--soparis-icon-lg);
+  --_radius: var(--soparis-radius-lg);
+}
+.soparis-input-select__search--xl {
+  --_h: var(--soparis-control-h-xl);
+  --_px: var(--soparis-control-px-xl);
+  --_fs: var(--soparis-font-xl);
+  --_icon: var(--soparis-icon-xl);
+  --_radius: var(--soparis-radius-lg);
+}
+.soparis-input-select__search--error {
+  border-color: var(--soparis-color-error);
+}
+.soparis-input-select__search--error:hover {
+  border-color: var(--soparis-color-error);
+}
+.soparis-input-select__search--error:focus, .soparis-input-select__search--error:focus-visible {
+  outline-color: var(--soparis-color-error);
+  border-color: var(--soparis-color-error);
+}
+.soparis-input-select__search {
+  border: 0;
+  border-bottom: 1px solid var(--soparis-color-border);
+  border-radius: 0;
+  min-height: 2.5rem;
+}
+.soparis-input-select__search:focus, .soparis-input-select__search:focus-visible {
+  outline: none;
+  border-color: var(--soparis-color-border);
+  box-shadow: inset 0 -2px 0 var(--soparis-color-primary);
+}
+.soparis-input-select__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: auto;
+  max-height: 12rem;
+}
+.soparis-input-select__option {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+  min-height: 2.15rem;
+  padding: 0 0.65rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--soparis-color-text);
+  font-size: var(--soparis-font-sm);
+  text-align: left;
+  cursor: pointer;
+}
+.soparis-input-select__option:hover, .soparis-input-select__option.is-active {
+  background: var(--soparis-color-bg-surface-hover);
+}
+.soparis-input-select__option.is-selected {
+  background: var(--soparis-color-bg-surface-selected);
+  color: var(--soparis-color-primary-deep);
+  font-weight: var(--soparis-weight-semibold);
+}
+.soparis-input-select__option.is-hidden {
+  display: none;
+}
+.soparis-input-select__option[disabled], .soparis-input-select__option.is-disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+.soparis-input-select__option.is-first-visible:not(.is-last-visible) {
+  border-radius: var(--soparis-radius-md) var(--soparis-radius-md) 0 0;
+}
+.soparis-input-select__option.is-last-visible:not(.is-first-visible) {
+  border-radius: 0 0 var(--soparis-radius-md) var(--soparis-radius-md);
+}
+.soparis-input-select__option.is-first-visible.is-last-visible {
+  border-radius: var(--soparis-radius-md);
+}
+.soparis-input-select__check {
+  width: 1rem;
+  height: 1rem;
+  border: 1.5px solid var(--soparis-color-border-strong);
+  border-radius: 0.25rem;
+  flex-shrink: 0;
+  display: inline-grid;
+  place-items: center;
+  color: transparent;
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1;
+  font-variation-settings: "FILL" 1, "wght" 500, "GRAD" 0, "opsz" 20;
+}
+.soparis-input-select__option.is-selected .soparis-input-select__check {
+  background: var(--soparis-color-primary);
+  border-color: var(--soparis-color-primary);
+  color: var(--soparis-color-primary-on);
+}
+.soparis-input-select__empty {
+  padding: 0.85rem 0.75rem;
+  color: var(--soparis-color-text-muted);
+  font-size: var(--soparis-font-sm);
+  text-align: center;
+}
+.soparis-input-select__empty[hidden] {
+  display: none;
 }
 
 .soparis-input-search {
   position: relative;
 }
-.soparis-input-search svg {
+.soparis-input-search svg,
+.soparis-input-search .soparis-icon,
+.soparis-input-search .material-symbols-outlined {
   position: absolute;
   left: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 1rem;
-  height: 1rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  font-size: 1.125rem;
   color: var(--soparis-color-icon-muted);
   pointer-events: none;
 }
@@ -1414,7 +2136,7 @@ body {
   width: 1.1rem;
   height: 1.1rem;
   margin-top: 0.15rem;
-  accent-color: var(--soparis-brand-connect);
+  accent-color: var(--soparis-color-accent);
 }
 
 .soparis-input-switch {
@@ -1429,7 +2151,7 @@ body {
   opacity: 0;
 }
 .soparis-input-switch input:checked + .soparis-input-switch__track {
-  background: var(--soparis-brand-connect);
+  background: var(--soparis-color-accent);
 }
 .soparis-input-switch input:checked + .soparis-input-switch__track::after {
   transform: translateX(1.1rem);
@@ -1454,7 +2176,7 @@ body {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50%;
-  background: #fff;
+  background: var(--soparis-color-white);
   transition: transform var(--soparis-duration) var(--soparis-ease);
 }
 
@@ -1471,13 +2193,13 @@ body {
   cursor: pointer;
 }
 .soparis-input-file:hover {
-  border-color: var(--soparis-brand-connect);
+  border-color: var(--soparis-color-accent);
   background: var(--soparis-color-bg-surface-hover);
 }
 
 .soparis-input-slider {
   width: 100%;
-  accent-color: var(--soparis-brand-gold);
+  accent-color: var(--soparis-color-primary);
 }
 
 .soparis-input-otp {
@@ -1493,16 +2215,20 @@ body {
 }
 
 .soparis-alert {
+  --_alert-accent: var(--soparis-color-info);
   display: flex;
   gap: 0.75rem;
   align-items: flex-start;
   padding: 0.85rem 1rem;
   border-radius: var(--soparis-radius-md);
-  border: 1px solid transparent;
+  background: var(--soparis-color-bg-surface);
+  color: var(--soparis-color-text);
+  border: 1px solid var(--soparis-color-border);
+  border-left: 3px solid var(--_alert-accent);
+  box-shadow: var(--soparis-shadow-xs);
 }
 .soparis-alert--sm {
   padding: 0.55rem 0.7rem;
-  font-size: var(--soparis-font-sm);
 }
 .soparis-alert--md {
   padding: 0.85rem 1rem;
@@ -1512,32 +2238,72 @@ body {
 }
 .soparis-alert--xl {
   padding: 1.35rem 1.5rem;
-  font-size: var(--soparis-font-lg);
 }
 .soparis-alert--info {
-  background: var(--soparis-color-info-bg);
-  color: var(--soparis-color-info-text);
-  border-color: color-mix(in srgb, var(--soparis-color-info) 25%, transparent);
+  --_alert-accent: var(--soparis-color-info);
 }
 .soparis-alert--success {
-  background: var(--soparis-color-success-bg);
-  color: var(--soparis-color-success-text);
-  border-color: color-mix(in srgb, var(--soparis-color-success) 25%, transparent);
+  --_alert-accent: var(--soparis-color-success);
 }
 .soparis-alert--warning {
-  background: var(--soparis-color-warning-bg);
-  color: var(--soparis-color-warning-text);
-  border-color: color-mix(in srgb, var(--soparis-color-warning) 25%, transparent);
+  --_alert-accent: var(--soparis-color-warning);
 }
-.soparis-alert--danger {
-  background: var(--soparis-color-danger-bg);
-  color: var(--soparis-color-danger-text);
-  border-color: color-mix(in srgb, var(--soparis-color-danger) 25%, transparent);
+.soparis-alert--danger, .soparis-alert--error {
+  --_alert-accent: var(--soparis-color-error);
 }
 .soparis-alert--premium {
-  background: var(--soparis-color-premium-bg);
-  color: var(--soparis-color-premium-text);
-  border-color: var(--soparis-color-border-gold);
+  --_alert-accent: var(--soparis-color-primary);
+}
+.soparis-alert__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-top: 0.05rem;
+  border-radius: var(--soparis-radius-sm);
+  background: color-mix(in srgb, var(--_alert-accent) 14%, transparent);
+  color: var(--_alert-accent);
+  flex-shrink: 0;
+}
+.soparis-alert__icon svg,
+.soparis-alert__icon .soparis-icon,
+.soparis-alert__icon .material-symbols-outlined {
+  width: 1.125rem;
+  height: 1.125rem;
+  font-size: 1.125rem;
+}
+.soparis-alert__body {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-top: 0.1rem;
+}
+.soparis-alert__title {
+  margin: 0;
+  font-size: var(--soparis-font-sm);
+  font-weight: var(--soparis-weight-semibold);
+  line-height: var(--soparis-leading-snug);
+  letter-spacing: var(--soparis-tracking-tight);
+  color: var(--soparis-color-text);
+}
+.soparis-alert__message {
+  margin: 0;
+  font-size: var(--soparis-font-sm);
+  font-weight: var(--soparis-weight-regular);
+  line-height: var(--soparis-leading-snug);
+  color: var(--soparis-color-text-secondary);
+}
+.soparis-alert__close {
+  margin: -0.2rem -0.35rem 0 0;
+  flex-shrink: 0;
+  color: var(--soparis-color-icon-muted);
+}
+.soparis-alert__close:hover {
+  color: var(--soparis-color-icon);
+  background: var(--soparis-color-bg-surface-hover);
 }
 
 .soparis-badge {
@@ -1570,17 +2336,25 @@ body {
   font-size: var(--soparis-font-md);
   padding: 0 0.75rem;
 }
-.soparis-badge--gold {
-  background: var(--soparis-color-premium-bg);
-  color: var(--soparis-color-premium-text);
+.soparis-badge--primary {
+  background: var(--soparis-color-primary-soft);
+  color: var(--soparis-color-primary-deep);
 }
-.soparis-badge--connect {
-  background: var(--soparis-color-success-bg);
-  color: var(--soparis-color-success-text);
+.soparis-badge--accent, .soparis-badge--connect {
+  background: var(--soparis-color-success-soft);
+  color: var(--soparis-color-success-on);
 }
-.soparis-badge--danger {
-  background: var(--soparis-color-danger-bg);
-  color: var(--soparis-color-danger-text);
+.soparis-badge--error, .soparis-badge--danger {
+  background: var(--soparis-color-error-soft);
+  color: var(--soparis-color-error-on);
+}
+.soparis-badge--warning {
+  background: var(--soparis-color-warning-soft);
+  color: var(--soparis-color-warning-on);
+}
+.soparis-badge--info {
+  background: var(--soparis-color-info-soft);
+  color: var(--soparis-color-info-on);
 }
 
 .soparis-chip {
@@ -1599,7 +2373,7 @@ body {
   width: 1.25rem;
   height: 1.25rem;
   border: 2px solid var(--soparis-color-border);
-  border-top-color: var(--soparis-brand-gold);
+  border-top-color: var(--soparis-color-primary);
   border-radius: 50%;
   animation: soparis-spin 0.7s linear infinite;
 }
@@ -1673,61 +2447,137 @@ body {
 }
 
 .soparis-toast-stack {
+  --soparis-toast-peek: 0.7rem;
+  --soparis-toast-scale-step: 0.045;
+  --soparis-toast-fade-step: 0.14;
   position: fixed;
   right: 1rem;
   z-index: var(--soparis-z-toast);
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+  display: grid;
+  justify-items: stretch;
   width: min(22rem, 100vw - 2rem);
   pointer-events: none;
 }
 .soparis-toast-stack--down {
   top: 1rem;
   bottom: auto;
+  padding-bottom: calc(var(--soparis-toast-peek) * 4);
 }
 .soparis-toast-stack--up {
   bottom: 1rem;
   top: auto;
+  padding-top: calc(var(--soparis-toast-peek) * 4);
 }
 
 .soparis-toast {
-  pointer-events: auto;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.7rem;
-  padding: 0.85rem 1rem;
+  --soparis-toast-i: 0;
+  grid-area: 1/1;
+  position: relative;
+  pointer-events: none;
+  overflow: hidden;
   border-radius: var(--soparis-radius-md);
-  background: var(--soparis-color-bg-surface);
-  border: 1px solid var(--soparis-color-border);
+  box-shadow: var(--soparis-shadow-xs), var(--soparis-shadow-md);
+  z-index: calc(10 - var(--soparis-toast-i));
+  opacity: calc(1 - var(--soparis-toast-i) * var(--soparis-toast-fade-step));
+  transition: transform var(--soparis-duration) var(--soparis-ease-out), opacity var(--soparis-duration) var(--soparis-ease-out);
+  will-change: transform, opacity;
+}
+.soparis-toast[data-stack-index="0"] {
+  pointer-events: auto;
+}
+.soparis-toast.is-leaving {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--soparis-duration) var(--soparis-ease), transform var(--soparis-duration) var(--soparis-ease);
+}
+.soparis-toast .soparis-alert {
+  position: relative;
+  width: 100%;
+  box-shadow: none;
+  overflow: hidden;
+}
+.soparis-toast__progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: color-mix(in srgb, var(--_alert-accent) 40%, transparent);
+  transform-origin: left center;
 }
 
 .soparis-toast-stack--down .soparis-toast {
+  transform-origin: top center;
+  transform: translateY(calc(var(--soparis-toast-i) * var(--soparis-toast-peek))) scale(calc(1 - var(--soparis-toast-i) * var(--soparis-toast-scale-step)));
   animation: soparis-toast-in-down var(--soparis-duration-slow) var(--soparis-ease-out);
+}
+.soparis-toast-stack--down .soparis-toast.is-leaving {
+  transform: translateY(-1.1rem) scale(0.96);
 }
 
 .soparis-toast-stack--up .soparis-toast {
+  transform-origin: bottom center;
+  transform: translateY(calc(var(--soparis-toast-i) * var(--soparis-toast-peek) * -1)) scale(calc(1 - var(--soparis-toast-i) * var(--soparis-toast-scale-step)));
   animation: soparis-toast-in-up var(--soparis-duration-slow) var(--soparis-ease-out);
+}
+.soparis-toast-stack--up .soparis-toast.is-leaving {
+  transform: translateY(1.1rem) scale(0.96);
+}
+
+.soparis-toast-stack .soparis-toast:not([data-stack-index="0"]) {
+  animation: none;
+}
+
+.soparis-toast-stack .soparis-toast:not([data-stack-index="0"]) .soparis-toast__progress {
+  animation: none;
+  transform: scaleX(1);
+}
+
+.soparis-toast-stack .soparis-toast[data-stack-index="0"] .soparis-toast__progress {
+  animation-name: soparis-toast-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes soparis-toast-in-down {
   from {
     opacity: 0;
-    transform: translateY(-0.6rem);
+    transform: translateY(-0.6rem) scale(1);
   }
   to {
     opacity: 1;
-    transform: none;
+    transform: translateY(0) scale(1);
   }
 }
 @keyframes soparis-toast-in-up {
   from {
     opacity: 0;
-    transform: translateY(0.6rem);
+    transform: translateY(0.6rem) scale(1);
   }
   to {
     opacity: 1;
-    transform: none;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes soparis-toast-progress {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+@media (max-width: 47.9975rem) {
+  .soparis-toast-stack {
+    right: 0.75rem;
+    left: 0.75rem;
+    width: auto;
+  }
+  .soparis-toast-stack--down {
+    top: 0.75rem;
+  }
+  .soparis-toast-stack--up {
+    bottom: 0.75rem;
   }
 }
 .soparis-bg--page {
@@ -1869,8 +2719,8 @@ body {
   display: inline-grid;
   place-items: center;
   overflow: hidden;
-  background: var(--soparis-brand-ink);
-  color: var(--soparis-brand-gold-bright);
+  background: var(--soparis-color-secondary);
+  color: var(--soparis-color-primary-bright);
   font-weight: var(--soparis-weight-semibold);
   font-size: var(--_fs);
 }
@@ -1986,8 +2836,8 @@ body {
   height: 7.5rem;
   display: grid;
   place-items: center;
-  background: #fff;
-  color: #111;
+  background: var(--soparis-color-white);
+  color: var(--soparis-color-secondary);
   border-radius: var(--soparis-radius-md);
   font-size: 0.7rem;
   font-weight: var(--soparis-weight-semibold);
@@ -2132,7 +2982,7 @@ body {
   transform: translateX(-50%);
   padding: 0.3rem 0.5rem;
   border-radius: 0.35rem;
-  background: var(--soparis-brand-ink);
+  background: var(--soparis-color-secondary);
   color: var(--soparis-color-text-inverse);
   font-size: var(--soparis-font-xs);
   white-space: nowrap;

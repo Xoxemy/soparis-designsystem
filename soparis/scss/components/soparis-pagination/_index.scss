@@ -19,9 +19,9 @@
     font-weight: var(--#{$prefix}-weight-medium);
 
     &[aria-current="page"] {
-      background: var(--#{$prefix}-brand-ink);
-      color: var(--#{$prefix}-color-text-on-brand);
-      border-color: var(--#{$prefix}-brand-ink);
+      background: var(--#{$prefix}-color-secondary);
+      color: var(--#{$prefix}-color-secondary-on);
+      border-color: var(--#{$prefix}-color-secondary);
     }
   }
 }

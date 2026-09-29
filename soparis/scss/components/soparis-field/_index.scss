@@ -13,7 +13,17 @@
   &.is-error {
     .#{$prefix}-input-text,
     .#{$prefix}-input-textarea,
-    .#{$prefix}-input-select { border-color: var(--#{$prefix}-color-danger); }
-    .#{$prefix}-input-description { color: var(--#{$prefix}-color-danger); }
+    .#{$prefix}-input-select {
+      border-color: var(--#{$prefix}-color-error);
+
+      &:hover { border-color: var(--#{$prefix}-color-error); }
+
+      &:focus {
+        outline-color: var(--#{$prefix}-color-error);
+        border-color: var(--#{$prefix}-color-error);
+      }
+    }
+
+    .#{$prefix}-input-description { color: var(--#{$prefix}-color-error); }
   }
 }

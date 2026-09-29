@@ -23,9 +23,12 @@
     }
   }
 
-  svg {
+  svg,
+  .#{$prefix}-icon,
+  .material-symbols-outlined {
     width: var(--_icon);
     height: var(--_icon);
+    font-size: var(--_icon);
   }
 }
 

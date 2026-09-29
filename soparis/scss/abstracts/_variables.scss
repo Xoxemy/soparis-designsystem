@@ -1,20 +1,34 @@
-// Tokens Sass configurables. En Angular:
-// @use "soparis/scss/abstracts/variables" with ($brand-gold: #2a3ad4);
-// Los primitivos (ink/gold/connect) se derivan de estas marcas.
+// Tokens Sass configurables (compile-time). En Angular:
+// @use "soparis/scss/abstracts/variables" with ($brand-gold: #ef4444);
+// En runtime (sin recompilar) usa CSS:
+// :root { --soparis-theme-primary: #ef4444; }
 
 $prefix: "soparis" !default;
 $sizes: sm, md, lg, xl !default;
 
-// Marca Synka (synka.in): --primary índigo, --accent coral, --foreground tinta.
-// En producto: primary = gold (índigo), secondary = ink, accent = connect (coral).
-$brand-ink: #0f1729 !default;
-$brand-ink-soft: #1e293b !default;
-$brand-gold: #3548f3 !default;
-$brand-gold-bright: #6573f6 !default;
-$brand-gold-deep: #2a3ad4 !default;
-$brand-connect: #e76e50 !default;
-$brand-connect-deep: #c24f35 !default;
-$brand-violet: #bf5af1 !default;
+// Seeds Sass → se vuelcan a --soparis-theme-* en _theme.scss
+$brand-ink: #09090b !default;
+$brand-ink-soft: #18181b !default;
+$brand-gold: #22c55e !default;
+$brand-gold-bright: #4ade80 !default;
+$brand-gold-deep: #16a34a !default;
+$brand-connect: #3b82f6 !default;
+$brand-connect-deep: #2563eb !default;
+$brand-violet: #9c27b0 !default;
+
+$brand-product-todolist: #22c55e !default;
+$brand-product-documents: #3b82f6 !default;
+$brand-product-fichaje: #ef4444 !default;
+$brand-product-tickets: #eab308 !default;
+
+$brand-orange: #ff9800 !default;
+$brand-teal: #009688 !default;
+$brand-pink: #e91e63 !default;
+$brand-light-blue: #03a9f4 !default;
+$brand-yellow: #eab308 !default;
+$brand-red: #ef4444 !default;
+$brand-gray: #666666 !default;
+$brand-light-gray: #f5f5f5 !default;
 
 $font-sans: "Plus Jakarta Sans", "Segoe UI", sans-serif !default;
 $font-display: "Fraunces", "Times New Roman", serif !default;

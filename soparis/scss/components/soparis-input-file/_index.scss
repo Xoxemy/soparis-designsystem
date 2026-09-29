@@ -13,7 +13,7 @@
   cursor: pointer;
 
   &:hover {
-    border-color: var(--#{$prefix}-brand-connect);
+    border-color: var(--#{$prefix}-color-accent);
     background: var(--#{$prefix}-color-bg-surface-hover);
   }
 }

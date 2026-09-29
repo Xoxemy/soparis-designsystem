@@ -7,75 +7,125 @@
 [data-#{$prefix}-theme="light"] {
   color-scheme: light;
 
-  --#{$prefix}-brand-ink: var(--#{$prefix}-primitive-ink-900);
-  --#{$prefix}-brand-ink-soft: var(--#{$prefix}-primitive-ink-800);
-  --#{$prefix}-brand-gold: var(--#{$prefix}-primitive-gold-500);
-  --#{$prefix}-brand-gold-bright: var(--#{$prefix}-primitive-gold-300);
-  --#{$prefix}-brand-gold-deep: var(--#{$prefix}-primitive-gold-700);
-  --#{$prefix}-brand-connect: var(--#{$prefix}-primitive-connect-500);
-  --#{$prefix}-brand-connect-deep: var(--#{$prefix}-primitive-connect-700);
+  // Marca ← seeds de tema (cambiar --soparis-theme-* actualiza todo)
+  --#{$prefix}-brand-ink: var(--#{$prefix}-theme-secondary);
+  --#{$prefix}-brand-ink-soft: var(--#{$prefix}-theme-secondary-soft);
+  --#{$prefix}-brand-gold: var(--#{$prefix}-theme-primary);
+  --#{$prefix}-brand-gold-bright: var(--#{$prefix}-primitive-gold-400);
+  --#{$prefix}-brand-gold-deep: var(--#{$prefix}-primitive-gold-600);
+  --#{$prefix}-brand-connect: var(--#{$prefix}-theme-accent);
+  --#{$prefix}-brand-connect-deep: var(--#{$prefix}-primitive-connect-600);
 
   --#{$prefix}-color-bg: var(--#{$prefix}-primitive-canvas-200);
   --#{$prefix}-color-bg-subtle: var(--#{$prefix}-primitive-canvas-300);
-  --#{$prefix}-color-bg-inverse: var(--#{$prefix}-primitive-ink-900);
+  --#{$prefix}-color-bg-inverse: var(--#{$prefix}-theme-secondary);
   --#{$prefix}-color-bg-surface: var(--#{$prefix}-primitive-canvas-50);
   --#{$prefix}-color-bg-surface-hover: var(--#{$prefix}-primitive-canvas-100);
   --#{$prefix}-color-bg-surface-active: var(--#{$prefix}-primitive-canvas-400);
   --#{$prefix}-color-bg-surface-selected: var(--#{$prefix}-primitive-gold-100);
-  --#{$prefix}-color-bg-surface-disabled: color-mix(in srgb, var(--#{$prefix}-primitive-ink-900) 5%, transparent);
+  --#{$prefix}-color-bg-surface-disabled: color-mix(in srgb, var(--#{$prefix}-theme-secondary) 5%, transparent);
   --#{$prefix}-color-bg-nav: var(--#{$prefix}-primitive-ink-850);
   --#{$prefix}-color-bg-nav-hover: color-mix(in srgb, var(--#{$prefix}-primitive-canvas-50) 6%, transparent);
-  --#{$prefix}-color-bg-nav-active: color-mix(in srgb, var(--#{$prefix}-primitive-gold-500) 16%, transparent);
-  --#{$prefix}-color-bg-overlay: color-mix(in srgb, var(--#{$prefix}-primitive-ink-900) 56%, transparent);
+  --#{$prefix}-color-bg-nav-active: color-mix(in srgb, var(--#{$prefix}-theme-primary) 16%, transparent);
+  --#{$prefix}-color-bg-overlay: color-mix(in srgb, var(--#{$prefix}-theme-secondary) 56%, transparent);
   --#{$prefix}-color-bg-input: var(--#{$prefix}-primitive-canvas-50);
-  --#{$prefix}-color-bg-premium: #{$brand-violet};
+  --#{$prefix}-color-bg-premium: var(--#{$prefix}-theme-premium);
 
-  --#{$prefix}-color-text: var(--#{$prefix}-primitive-ink-700);
+  --#{$prefix}-color-text: var(--#{$prefix}-theme-secondary);
   --#{$prefix}-color-text-secondary: var(--#{$prefix}-primitive-ink-500);
   --#{$prefix}-color-text-muted: var(--#{$prefix}-primitive-ink-400);
   --#{$prefix}-color-text-disabled: var(--#{$prefix}-primitive-ink-300);
   --#{$prefix}-color-text-inverse: var(--#{$prefix}-primitive-ink-50);
-  --#{$prefix}-color-text-on-brand: var(--#{$prefix}-primitive-canvas-50);
-  --#{$prefix}-color-text-on-gold: #fff;
-  --#{$prefix}-color-text-link: var(--#{$prefix}-primitive-connect-700);
-  --#{$prefix}-color-text-link-hover: var(--#{$prefix}-primitive-connect-800);
+  --#{$prefix}-color-text-on-brand: var(--#{$prefix}-theme-primary-on);
+  --#{$prefix}-color-text-on-gold: var(--#{$prefix}-theme-primary-on);
+  --#{$prefix}-color-text-link: var(--#{$prefix}-primitive-connect-600);
+  --#{$prefix}-color-text-link-hover: var(--#{$prefix}-primitive-connect-700);
 
-  --#{$prefix}-color-border: var(--#{$prefix}-primitive-ink-100);
-  --#{$prefix}-color-border-strong: var(--#{$prefix}-primitive-ink-200);
-  --#{$prefix}-color-border-focus: var(--#{$prefix}-primitive-connect-500);
+  --#{$prefix}-color-border: var(--#{$prefix}-primitive-ink-200);
+  --#{$prefix}-color-border-strong: var(--#{$prefix}-primitive-ink-300);
+  --#{$prefix}-color-border-focus: var(--#{$prefix}-theme-primary);
   --#{$prefix}-color-border-nav: color-mix(in srgb, var(--#{$prefix}-primitive-canvas-50) 8%, transparent);
-  --#{$prefix}-color-border-gold: color-mix(in srgb, var(--#{$prefix}-primitive-gold-500) 45%, transparent);
+  --#{$prefix}-color-border-gold: var(--#{$prefix}-color-primary-muted);
 
   --#{$prefix}-color-icon: var(--#{$prefix}-primitive-ink-600);
   --#{$prefix}-color-icon-muted: var(--#{$prefix}-primitive-ink-400);
   --#{$prefix}-color-icon-inverse: var(--#{$prefix}-primitive-ink-50);
-  --#{$prefix}-color-icon-on-gold: #fff;
+  --#{$prefix}-color-icon-on-gold: var(--#{$prefix}-theme-primary-on);
 
-  --#{$prefix}-color-info: var(--#{$prefix}-primitive-info-500);
-  --#{$prefix}-color-info-bg: var(--#{$prefix}-primitive-info-50);
-  --#{$prefix}-color-info-text: var(--#{$prefix}-primitive-info-700);
-  --#{$prefix}-color-success: var(--#{$prefix}-primitive-connect-500);
-  --#{$prefix}-color-success-bg: var(--#{$prefix}-primitive-connect-50);
-  --#{$prefix}-color-success-text: var(--#{$prefix}-primitive-connect-700);
-  --#{$prefix}-color-warning: var(--#{$prefix}-primitive-warning-500);
-  --#{$prefix}-color-warning-bg: var(--#{$prefix}-primitive-warning-50);
-  --#{$prefix}-color-warning-text: var(--#{$prefix}-primitive-warning-700);
-  --#{$prefix}-color-danger: var(--#{$prefix}-primitive-danger-500);
-  --#{$prefix}-color-danger-bg: var(--#{$prefix}-primitive-danger-50);
-  --#{$prefix}-color-danger-text: var(--#{$prefix}-primitive-danger-700);
+  --#{$prefix}-color-info: var(--#{$prefix}-theme-info);
+  --#{$prefix}-color-info-hover: var(--#{$prefix}-primitive-info-600);
+  --#{$prefix}-color-info-soft: var(--#{$prefix}-primitive-info-50);
+  --#{$prefix}-color-info-on: var(--#{$prefix}-primitive-info-700);
+  --#{$prefix}-color-info-bg: var(--#{$prefix}-color-info-soft);
+  --#{$prefix}-color-info-text: var(--#{$prefix}-color-info-on);
+
+  --#{$prefix}-color-success: var(--#{$prefix}-theme-success);
+  --#{$prefix}-color-success-hover: var(--#{$prefix}-primitive-success-600);
+  --#{$prefix}-color-success-soft: var(--#{$prefix}-primitive-success-50);
+  --#{$prefix}-color-success-on: var(--#{$prefix}-primitive-success-700);
+  --#{$prefix}-color-success-bg: var(--#{$prefix}-color-success-soft);
+  --#{$prefix}-color-success-text: var(--#{$prefix}-color-success-on);
+
+  --#{$prefix}-color-warning: var(--#{$prefix}-theme-warning);
+  --#{$prefix}-color-warning-hover: var(--#{$prefix}-primitive-warning-600);
+  --#{$prefix}-color-warning-soft: var(--#{$prefix}-primitive-warning-50);
+  --#{$prefix}-color-warning-on: var(--#{$prefix}-primitive-warning-700);
+  --#{$prefix}-color-warning-bg: var(--#{$prefix}-color-warning-soft);
+  --#{$prefix}-color-warning-text: var(--#{$prefix}-color-warning-on);
+
+  // error = nombre canónico; danger se mantiene como alias
+  --#{$prefix}-color-error: var(--#{$prefix}-theme-danger);
+  --#{$prefix}-color-error-hover: var(--#{$prefix}-primitive-danger-600);
+  --#{$prefix}-color-error-soft: var(--#{$prefix}-primitive-danger-50);
+  --#{$prefix}-color-error-on: var(--#{$prefix}-primitive-danger-700);
+  --#{$prefix}-color-danger: var(--#{$prefix}-color-error);
+  --#{$prefix}-color-danger-hover: var(--#{$prefix}-color-error-hover);
+  --#{$prefix}-color-danger-bg: var(--#{$prefix}-color-error-soft);
+  --#{$prefix}-color-danger-text: var(--#{$prefix}-color-error-on);
+
   --#{$prefix}-color-premium-bg: var(--#{$prefix}-primitive-gold-50);
   --#{$prefix}-color-premium-text: var(--#{$prefix}-primitive-gold-800);
+  --#{$prefix}-color-premium-hover: color-mix(in srgb, var(--#{$prefix}-theme-premium) 88%, var(--#{$prefix}-color-black));
 
-  // Roles de producto. Usa estos en UI; ink/gold/canvas son la marca detrás.
-  --#{$prefix}-color-primary: var(--#{$prefix}-brand-gold);
-  --#{$prefix}-color-primary-hover: var(--#{$prefix}-brand-gold-deep);
-  --#{$prefix}-color-primary-on: #fff;
-  --#{$prefix}-color-secondary: var(--#{$prefix}-brand-ink);
-  --#{$prefix}-color-secondary-hover: var(--#{$prefix}-brand-ink-soft);
-  --#{$prefix}-color-secondary-on: #fff;
-  --#{$prefix}-color-accent: var(--#{$prefix}-brand-connect);
-  --#{$prefix}-color-accent-hover: var(--#{$prefix}-brand-connect-deep);
-  --#{$prefix}-color-accent-on: #fff;
+  // Constantes globales
+  --#{$prefix}-color-white: #ffffff;
+  --#{$prefix}-color-black: #000000;
+
+  // Nav (aside)
+  --#{$prefix}-color-nav-label: color-mix(in srgb, var(--#{$prefix}-color-text-inverse) 45%, transparent);
+  --#{$prefix}-color-nav-item: color-mix(in srgb, var(--#{$prefix}-color-text-inverse) 86%, transparent);
+  --#{$prefix}-color-nav-item-active: var(--#{$prefix}-color-primary-bright);
+  --#{$prefix}-color-nav-badge: var(--#{$prefix}-color-primary-soft);
+
+  // Sombras globales
+  --#{$prefix}-shadow-xs: 0 1px 2px color-mix(in srgb, var(--#{$prefix}-color-secondary) 4%, transparent);
+  --#{$prefix}-shadow-sm: 0 4px 14px color-mix(in srgb, var(--#{$prefix}-color-secondary) 8%, transparent);
+  --#{$prefix}-shadow-md: 0 10px 28px color-mix(in srgb, var(--#{$prefix}-color-secondary) 10%, transparent);
+
+  // Producto Synka
+  --#{$prefix}-color-product-todolist: var(--#{$prefix}-color-primary);
+  --#{$prefix}-color-product-todolist-hover: var(--#{$prefix}-color-primary-hover);
+  --#{$prefix}-color-product-documents: var(--#{$prefix}-color-accent);
+  --#{$prefix}-color-product-documents-hover: var(--#{$prefix}-color-accent-hover);
+  --#{$prefix}-color-product-fichaje: var(--#{$prefix}-color-error);
+  --#{$prefix}-color-product-fichaje-hover: var(--#{$prefix}-color-error-hover);
+  --#{$prefix}-color-product-tickets: var(--#{$prefix}-color-warning);
+  --#{$prefix}-color-product-tickets-hover: var(--#{$prefix}-color-warning-hover);
+
+  // Roles básicos de producto (usar ESTOS en componentes)
+  --#{$prefix}-color-primary: var(--#{$prefix}-theme-primary);
+  --#{$prefix}-color-primary-hover: var(--#{$prefix}-primitive-gold-600);
+  --#{$prefix}-color-primary-soft: color-mix(in srgb, var(--#{$prefix}-theme-primary) 14%, transparent);
+  --#{$prefix}-color-primary-muted: color-mix(in srgb, var(--#{$prefix}-theme-primary) 40%, transparent);
+  --#{$prefix}-color-primary-bright: var(--#{$prefix}-primitive-gold-400);
+  --#{$prefix}-color-primary-deep: var(--#{$prefix}-primitive-gold-700);
+  --#{$prefix}-color-primary-on: var(--#{$prefix}-theme-primary-on);
+  --#{$prefix}-color-secondary: var(--#{$prefix}-theme-secondary);
+  --#{$prefix}-color-secondary-hover: var(--#{$prefix}-theme-secondary-soft);
+  --#{$prefix}-color-secondary-on: var(--#{$prefix}-theme-secondary-on);
+  --#{$prefix}-color-accent: var(--#{$prefix}-theme-accent);
+  --#{$prefix}-color-accent-hover: var(--#{$prefix}-primitive-connect-600);
+  --#{$prefix}-color-accent-on: var(--#{$prefix}-theme-accent-on);
   --#{$prefix}-color-background: var(--#{$prefix}-color-bg);
   --#{$prefix}-color-card: var(--#{$prefix}-color-bg-surface);
   --#{$prefix}-color-card-hover: var(--#{$prefix}-color-bg-surface-hover);
@@ -197,8 +247,8 @@
   --#{$prefix}-color-icon-muted: var(--#{$prefix}-primitive-ink-400);
   --#{$prefix}-color-info-bg: var(--#{$prefix}-primitive-info-900);
   --#{$prefix}-color-info-text: var(--#{$prefix}-primitive-info-100);
-  --#{$prefix}-color-success-bg: var(--#{$prefix}-primitive-connect-900);
-  --#{$prefix}-color-success-text: var(--#{$prefix}-primitive-connect-100);
+  --#{$prefix}-color-success-bg: var(--#{$prefix}-primitive-success-950);
+  --#{$prefix}-color-success-text: var(--#{$prefix}-primitive-success-300);
   --#{$prefix}-color-warning-bg: var(--#{$prefix}-primitive-warning-900);
   --#{$prefix}-color-warning-text: var(--#{$prefix}-primitive-warning-100);
   --#{$prefix}-color-danger-bg: var(--#{$prefix}-primitive-danger-900);

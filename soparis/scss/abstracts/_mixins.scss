@@ -60,3 +60,48 @@
   white-space: nowrap;
   border: 0;
 }
+
+@mixin input-surface {
+  @include control-size(md);
+  width: 100%;
+  min-height: var(--_h);
+  padding: 0 var(--_px);
+  border: 1px solid var(--#{$prefix}-color-border-strong);
+  border-radius: var(--_radius);
+  background: var(--#{$prefix}-color-bg-input);
+  color: var(--#{$prefix}-color-text);
+  font-size: var(--_fs);
+  transition: border-color var(--#{$prefix}-duration) var(--#{$prefix}-ease);
+
+  &:hover { border-color: var(--#{$prefix}-color-text-muted); }
+
+  &:focus,
+  &:focus-visible {
+    outline: 2px solid var(--#{$prefix}-color-border-focus);
+    outline-offset: 2px;
+    border-color: var(--#{$prefix}-color-border-focus);
+  }
+
+  &::placeholder { color: var(--#{$prefix}-color-text-muted); }
+
+  &:disabled {
+    background: var(--#{$prefix}-color-bg-surface-disabled);
+    color: var(--#{$prefix}-color-text-disabled);
+  }
+
+  @each $size in $sizes {
+    &--#{$size} { @include control-size($size); }
+  }
+
+  &--error {
+    border-color: var(--#{$prefix}-color-error);
+
+    &:hover { border-color: var(--#{$prefix}-color-error); }
+
+    &:focus,
+    &:focus-visible {
+      outline-color: var(--#{$prefix}-color-error);
+      border-color: var(--#{$prefix}-color-error);
+    }
+  }
+}

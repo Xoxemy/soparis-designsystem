@@ -15,7 +15,7 @@
     font-weight: var(--#{$prefix}-weight-semibold);
     letter-spacing: var(--#{$prefix}-tracking-wide);
     text-transform: uppercase;
-    color: rgba(247, 241, 231, 0.45);
+    color: var(--#{$prefix}-color-nav-label);
   }
 
   &__item {
@@ -26,7 +26,7 @@
     min-height: var(--_h);
     padding: 0 0.7rem;
     border-radius: var(--#{$prefix}-radius-md);
-    color: rgba(247, 241, 231, 0.86);
+    color: var(--#{$prefix}-color-nav-item);
     text-decoration: none;
     font-size: var(--#{$prefix}-font-sm);
     font-weight: var(--#{$prefix}-weight-medium);
@@ -44,7 +44,7 @@
     &--active,
     &[aria-current="page"] {
       background: var(--#{$prefix}-color-bg-nav-active);
-      color: var(--#{$prefix}-brand-gold-bright);
+      color: var(--#{$prefix}-color-nav-item-active);
 
       svg { opacity: 1; }
     }
@@ -60,7 +60,7 @@
     font-size: 0.68rem;
     padding: 0.1rem 0.4rem;
     border-radius: var(--#{$prefix}-radius-full);
-    background: rgba(198, 161, 91, 0.2);
-    color: var(--#{$prefix}-brand-gold-bright);
+    background: var(--#{$prefix}-color-nav-badge);
+    color: var(--#{$prefix}-color-nav-item-active);
   }
 }

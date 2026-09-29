@@ -89,35 +89,156 @@
     });
   }
 
+  const TOAST_MAX = 5;
+  const TOAST_MS = 4200;
+  const TOAST_LEAVE_MS = 220;
+  const TOAST_TONES = new Set(["info", "success", "warning", "danger"]);
+  const TOAST_TITLES = {
+    info: "Información",
+    success: "Listo",
+    warning: "Atención",
+    danger: "Error",
+  };
+  const TOAST_ICONS = {
+    info: '<span class="soparis-icon material-symbols-outlined" aria-hidden="true">info</span>',
+    success: '<span class="soparis-icon material-symbols-outlined" aria-hidden="true">check_circle</span>',
+    warning: '<span class="soparis-icon material-symbols-outlined" aria-hidden="true">warning</span>',
+    danger: '<span class="soparis-icon material-symbols-outlined" aria-hidden="true">error</span>',
+  };
+  const TOAST_CLOSE_ICON =
+    '<span class="soparis-icon material-symbols-outlined" aria-hidden="true">close</span>';
+
   function toastOptions(toneOrOptions, options) {
-    if (toneOrOptions && typeof toneOrOptions === "object") {
-      return {
-        tone: toneOrOptions.tone || "info",
-        stack: toneOrOptions.stack === "down" ? "down" : "up",
-      };
-    }
+    const fromObject =
+      toneOrOptions && typeof toneOrOptions === "object" ? toneOrOptions : null;
+    const toneRaw = fromObject
+      ? fromObject.tone || "info"
+      : toneOrOptions || "info";
+    const tone = TOAST_TONES.has(toneRaw) ? toneRaw : "info";
+    const opts = fromObject || options || {};
     return {
-      tone: toneOrOptions || "info",
-      stack: options?.stack === "down" ? "down" : "up",
+      tone,
+      title: opts.title || TOAST_TITLES[tone],
+      stack: opts.stack === "down" ? "down" : "up",
+      duration: Number.isFinite(opts.duration) ? opts.duration : TOAST_MS,
+      dismissible: opts.dismissible !== false,
     };
   }
 
+  function getFrontToast(stack, stackDir) {
+    const items = qsa(".soparis-toast", stack).filter(
+      (el) => !el.classList.contains("is-leaving")
+    );
+    if (!items.length) return null;
+    return stackDir === "down" ? items[0] : items[items.length - 1];
+  }
+
+  function refreshToastStack(stack, stackDir) {
+    const visible = qsa(".soparis-toast", stack).filter(
+      (el) => !el.classList.contains("is-leaving")
+    );
+    visible.forEach((el, i) => {
+      const index = stackDir === "down" ? i : visible.length - 1 - i;
+      el.dataset.stackIndex = String(index);
+      el.style.setProperty("--soparis-toast-i", String(index));
+    });
+    armFrontToast(stack, stackDir);
+  }
+
+  function armFrontToast(stack, stackDir) {
+    const front = getFrontToast(stack, stackDir);
+    if (!front || front.classList.contains("is-leaving") || front.dataset.toastArmed === "1") {
+      return;
+    }
+
+    front.dataset.toastArmed = "1";
+    const duration = Number(front.dataset.duration || TOAST_MS);
+    const progress = qs(".soparis-toast__progress", front);
+
+    if (progress && duration > 0) {
+      progress.style.animation = "none";
+      void progress.offsetWidth;
+      progress.style.animation = "";
+      progress.style.animationDuration = `${duration}ms`;
+      progress.style.animationPlayState = "running";
+    }
+
+    if (duration > 0) {
+      front._toastTimer = window.setTimeout(
+        () => dismissToast(front, stack, stackDir),
+        duration
+      );
+    }
+  }
+
+  function dismissToast(item, stack, stackDir) {
+    if (!item?.isConnected || item.classList.contains("is-leaving")) return;
+    if (item._toastTimer) {
+      window.clearTimeout(item._toastTimer);
+      item._toastTimer = null;
+    }
+    item.classList.add("is-leaving");
+    window.setTimeout(() => {
+      item.remove();
+      if (stack?.isConnected) refreshToastStack(stack, stackDir);
+    }, TOAST_LEAVE_MS);
+  }
+
   function toast(message, toneOrOptions = "info", options = {}) {
-    const { tone, stack: stackDir } = toastOptions(toneOrOptions, options);
+    const { tone, title, stack: stackDir, duration, dismissible } = toastOptions(
+      toneOrOptions,
+      options
+    );
     let stack = qs(`[data-soparis-toasts="${stackDir}"]`);
     if (!stack) {
       stack = document.createElement("div");
       stack.className = `soparis-toast-stack soparis-toast-stack--${stackDir}`;
       stack.dataset.soparisToasts = stackDir;
+      stack.setAttribute("aria-live", "polite");
+      stack.setAttribute("aria-relevant", "additions");
       document.body.appendChild(stack);
     }
+
+    // Máximo 5: las nuevas no se muestran si la cola está llena.
+    const active = qsa(".soparis-toast", stack).filter(
+      (el) => !el.classList.contains("is-leaving")
+    );
+    if (active.length >= TOAST_MAX) return null;
+
     const item = document.createElement("div");
     item.className = "soparis-toast";
-    item.setAttribute("role", "status");
-    item.innerHTML = `<strong>${tone === "success" ? "Listo" : "Soparis"}</strong><p class="soparis-p soparis-p--sm" style="margin:0">${message}</p>`;
-    if (stackDir === "down") stack.prepend(item);
-    else stack.appendChild(item);
-    setTimeout(() => item.remove(), 3600);
+    item.dataset.duration = String(duration);
+    item.setAttribute("role", tone === "danger" || tone === "warning" ? "alert" : "status");
+
+    const closeBtn = dismissible
+      ? `<button class="soparis-button-icon soparis-button-icon--sm soparis-alert__close" type="button" aria-label="Cerrar notificación">${TOAST_CLOSE_ICON}</button>`
+      : "";
+    const progress =
+      duration > 0 ? `<span class="soparis-toast__progress"></span>` : "";
+
+    item.innerHTML = `
+      <div class="soparis-alert soparis-alert--${tone} soparis-alert--md">
+        <span class="soparis-alert__icon">${TOAST_ICONS[tone]}</span>
+        <div class="soparis-alert__body">
+          <p class="soparis-alert__title">${title}</p>
+          <p class="soparis-alert__message">${message}</p>
+        </div>
+        ${closeBtn}
+        ${progress}
+      </div>
+    `;
+
+    // Cola FIFO: la de delante se va; las nuevas se almacenan detrás.
+    if (stackDir === "down") stack.appendChild(item);
+    else stack.prepend(item);
+
+    const close = qs(".soparis-alert__close", item);
+    close?.addEventListener("click", () => {
+      dismissToast(item, stack, stackDir);
+    });
+
+    refreshToastStack(stack, stackDir);
+    return item;
   }
 
   function initTheme() {
@@ -132,6 +253,289 @@
     });
   }
 
+  const THEME_MAP = {
+    primary: "--soparis-theme-primary",
+    primaryOn: "--soparis-theme-primary-on",
+    secondary: "--soparis-theme-secondary",
+    secondarySoft: "--soparis-theme-secondary-soft",
+    secondaryOn: "--soparis-theme-secondary-on",
+    accent: "--soparis-theme-accent",
+    accentOn: "--soparis-theme-accent-on",
+    success: "--soparis-theme-success",
+    warning: "--soparis-theme-warning",
+    danger: "--soparis-theme-danger",
+    info: "--soparis-theme-info",
+    premium: "--soparis-theme-premium",
+    spaceUnit: "--soparis-theme-space-unit",
+    controlHSm: "--soparis-theme-control-h-sm",
+    controlHMd: "--soparis-theme-control-h-md",
+    controlHLg: "--soparis-theme-control-h-lg",
+    controlHXl: "--soparis-theme-control-h-xl",
+    radiusMd: "--soparis-theme-radius-md",
+  };
+
+  function setThemeVars(vars = {}, root = document.documentElement) {
+    Object.entries(vars).forEach(([key, value]) => {
+      const cssVar = THEME_MAP[key] || (key.startsWith("--") ? key : `--soparis-theme-${key}`);
+      if (value == null || value === "") root.style.removeProperty(cssVar);
+      else root.style.setProperty(cssVar, String(value));
+    });
+    return vars;
+  }
+
+  function resetThemeVars(root = document.documentElement) {
+    Object.values(THEME_MAP).forEach((cssVar) => root.style.removeProperty(cssVar));
+  }
+
+  function initThemeStudio(root = document) {
+    qsa("[data-soparis-theme-var]", root).forEach((input) => {
+      const cssVar = input.dataset.soparisThemeVar;
+      if (!cssVar) return;
+      const apply = () => {
+        const value =
+          input.type === "range"
+            ? `${input.value}${input.dataset.unit || "rem"}`
+            : input.value;
+        document.documentElement.style.setProperty(cssVar, value);
+      };
+      input.addEventListener("input", apply);
+    });
+    qsa("[data-soparis-theme-reset]", root).forEach((btn) => {
+      btn.addEventListener("click", () => {
+        resetThemeVars();
+        qsa("[data-soparis-theme-var]", root).forEach((input) => {
+          if (input.dataset.default != null) input.value = input.dataset.default;
+        });
+      });
+    });
+  }
+
+  function initSelects(root = document) {
+    qsa("[data-soparis-select]", root).forEach((wrap) => {
+      if (wrap.dataset.soparisSelectReady === "1") return;
+      const native = qs("select", wrap);
+      if (!native) return;
+
+      const multiple =
+        wrap.hasAttribute("data-multiple") ||
+        native.multiple ||
+        wrap.classList.contains("soparis-input-select--multiple");
+      const searchable =
+        wrap.hasAttribute("data-searchable") ||
+        wrap.classList.contains("soparis-input-select--searchable");
+      const placeholder =
+        wrap.dataset.placeholder ||
+        native.getAttribute("data-placeholder") ||
+        (native.options[0] && native.options[0].value === ""
+          ? native.options[0].textContent
+          : "Seleccionar…");
+
+      native.multiple = multiple;
+      native.classList.add("soparis-input-select__native");
+      wrap.classList.add("soparis-input-select");
+      if (multiple) wrap.classList.add("soparis-input-select--multiple");
+      if (searchable) wrap.classList.add("soparis-input-select--searchable");
+
+      const trigger = document.createElement("button");
+      trigger.type = "button";
+      trigger.className = "soparis-input-select__trigger";
+      trigger.setAttribute("aria-haspopup", "listbox");
+      trigger.setAttribute("aria-expanded", "false");
+
+      const valueEl = document.createElement("span");
+      valueEl.className = "soparis-input-select__value";
+      trigger.appendChild(valueEl);
+
+      const panel = document.createElement("div");
+      panel.className = "soparis-input-select__panel";
+      panel.hidden = true;
+
+      let searchInput = null;
+      if (searchable) {
+        searchInput = document.createElement("input");
+        searchInput.type = "search";
+        searchInput.className = "soparis-input-select__search";
+        searchInput.placeholder = "Buscar…";
+        searchInput.setAttribute("aria-label", "Buscar opciones");
+        panel.appendChild(searchInput);
+      }
+
+      const list = document.createElement("ul");
+      list.className = "soparis-input-select__list";
+      list.setAttribute("role", "listbox");
+      if (multiple) list.setAttribute("aria-multiselectable", "true");
+      panel.appendChild(list);
+
+      const empty = document.createElement("div");
+      empty.className = "soparis-input-select__empty";
+      empty.textContent = "Sin resultados";
+      empty.hidden = true;
+      panel.appendChild(empty);
+
+      wrap.appendChild(trigger);
+      wrap.appendChild(panel);
+      wrap.dataset.soparisSelectReady = "1";
+
+      const optionButtons = [];
+
+      function selectedValues() {
+        return qsa("option", native)
+          .filter((opt) => opt.selected && opt.value !== "")
+          .map((opt) => opt.value);
+      }
+
+      function selectedLabels() {
+        return qsa("option", native)
+          .filter((opt) => opt.selected && opt.value !== "")
+          .map((opt) => opt.textContent.trim());
+      }
+
+      function syncTrigger() {
+        const labels = selectedLabels();
+        valueEl.innerHTML = "";
+        if (!labels.length) {
+          valueEl.innerHTML = `<span class="soparis-input-select__placeholder">${placeholder}</span>`;
+          return;
+        }
+        if (!multiple) {
+          valueEl.textContent = labels[0];
+          return;
+        }
+        const chips = document.createElement("div");
+        chips.className = "soparis-input-select__chips";
+        labels.forEach((label, index) => {
+          const value = selectedValues()[index];
+          const chip = document.createElement("span");
+          chip.className = "soparis-input-select__chip";
+          chip.innerHTML = `<span>${label}</span>`;
+          const remove = document.createElement("button");
+          remove.type = "button";
+          remove.className = "soparis-input-select__chip-remove material-symbols-outlined";
+          remove.setAttribute("aria-label", `Quitar ${label}`);
+          remove.textContent = "close";
+          remove.addEventListener("click", (event) => {
+            event.stopPropagation();
+            const opt = qsa("option", native).find((o) => o.value === value);
+            if (opt) opt.selected = false;
+            syncFromNative();
+            native.dispatchEvent(new Event("change", { bubbles: true }));
+          });
+          chip.appendChild(remove);
+          chips.appendChild(chip);
+        });
+        valueEl.appendChild(chips);
+      }
+
+      function syncOptions() {
+        optionButtons.forEach((btn) => {
+          const selected = selectedValues().includes(btn.dataset.value);
+          btn.classList.toggle("is-selected", selected);
+          btn.setAttribute("aria-selected", String(selected));
+        });
+      }
+
+      function syncFromNative() {
+        syncTrigger();
+        syncOptions();
+      }
+
+      function filterOptions(query) {
+        const q = query.trim().toLowerCase();
+        let visible = 0;
+        const visibleBtns = [];
+        optionButtons.forEach((btn) => {
+          const match = !q || btn.textContent.toLowerCase().includes(q);
+          btn.classList.toggle("is-hidden", !match);
+          btn.classList.remove("is-first-visible", "is-last-visible");
+          if (match) {
+            visible += 1;
+            visibleBtns.push(btn);
+          }
+        });
+        if (visibleBtns.length) {
+          visibleBtns[0].classList.add("is-first-visible");
+          visibleBtns[visibleBtns.length - 1].classList.add("is-last-visible");
+        }
+        empty.hidden = visible > 0;
+      }
+
+      function close() {
+        wrap.classList.remove("is-open");
+        panel.hidden = true;
+        trigger.setAttribute("aria-expanded", "false");
+        if (searchInput) {
+          searchInput.value = "";
+          filterOptions("");
+        }
+      }
+
+      function open() {
+        qsa("[data-soparis-select].is-open", root).forEach((other) => {
+          if (other !== wrap) other.classList.remove("is-open");
+        });
+        wrap.classList.add("is-open");
+        panel.hidden = false;
+        trigger.setAttribute("aria-expanded", "true");
+        if (searchInput) {
+          window.requestAnimationFrame(() => searchInput.focus());
+        }
+      }
+
+      qsa("option", native).forEach((opt) => {
+        if (opt.value === "" && !multiple) return;
+        const li = document.createElement("li");
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "soparis-input-select__option";
+        btn.dataset.value = opt.value;
+        btn.setAttribute("role", "option");
+        btn.disabled = opt.disabled;
+        if (multiple) {
+          btn.innerHTML = `<span class="soparis-input-select__check material-symbols-outlined" aria-hidden="true">check</span><span>${opt.textContent}</span>`;
+        } else {
+          btn.textContent = opt.textContent;
+        }
+        btn.addEventListener("click", (event) => {
+          event.stopPropagation();
+          if (multiple) {
+            opt.selected = !opt.selected;
+          } else {
+            qsa("option", native).forEach((o) => {
+              o.selected = o === opt;
+            });
+            close();
+          }
+          syncFromNative();
+          native.dispatchEvent(new Event("change", { bubbles: true }));
+        });
+        optionButtons.push(btn);
+        li.appendChild(btn);
+        list.appendChild(li);
+      });
+
+      trigger.addEventListener("click", (event) => {
+        event.stopPropagation();
+        if (wrap.classList.contains("is-open")) close();
+        else open();
+      });
+
+      searchInput?.addEventListener("input", () => filterOptions(searchInput.value));
+      searchInput?.addEventListener("click", (event) => event.stopPropagation());
+
+      document.addEventListener("click", (event) => {
+        if (!wrap.contains(event.target)) close();
+      });
+
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && wrap.classList.contains("is-open")) close();
+      });
+
+      native.addEventListener("change", syncFromNative);
+      syncFromNative();
+      filterOptions("");
+    });
+  }
+
   window.Soparis = {
     init(root = document) {
       qsa("[data-soparis-app]", root).forEach(initAppShell);
@@ -140,17 +544,23 @@
       initDrawer();
       initTabs(root);
       initTheme();
+      initThemeStudio(root);
+      initSelects(root);
       qsa("[data-soparis-toast]").forEach((btn) => {
         btn.addEventListener("click", () =>
           toast(btn.dataset.soparisToast || "Acción completada", {
             tone: btn.dataset.tone || "success",
+            title: btn.dataset.title || undefined,
             stack: btn.dataset.soparisToastStack === "down" ? "down" : "up",
           })
         );
       });
     },
     toast,
+    setThemeVars,
+    resetThemeVars,
     setNavOpen,
+    initSelects,
   };
 
   document.addEventListener("DOMContentLoaded", () => window.Soparis.init());
