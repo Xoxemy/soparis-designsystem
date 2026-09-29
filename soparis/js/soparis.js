@@ -267,11 +267,12 @@
     info: "--soparis-theme-info",
     premium: "--soparis-theme-premium",
     spaceUnit: "--soparis-theme-space-unit",
-    controlHSm: "--soparis-theme-control-h-sm",
     controlHMd: "--soparis-theme-control-h-md",
-    controlHLg: "--soparis-theme-control-h-lg",
-    controlHXl: "--soparis-theme-control-h-xl",
+    controlPxMd: "--soparis-theme-control-px-md",
+    iconMd: "--soparis-theme-icon-md",
     radiusMd: "--soparis-theme-radius-md",
+    fontMd: "--soparis-theme-font-md",
+    duration: "--soparis-theme-duration",
   };
 
   function setThemeVars(vars = {}, root = document.documentElement) {
