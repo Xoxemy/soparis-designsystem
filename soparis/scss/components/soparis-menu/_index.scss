@@ -33,9 +33,19 @@
 
     &[hidden] { display: none; }
 
-    svg {
+    &.#{$prefix}-a {
+      color: var(--#{$prefix}-color-nav-item);
+      text-decoration: none;
+      font-weight: var(--#{$prefix}-weight-medium);
+
+      &:hover { color: var(--#{$prefix}-color-nav-item); }
+    }
+
+    svg,
+    .#{$prefix}-icon {
       width: 1.1rem;
       height: 1.1rem;
+      font-size: 1.1rem;
       opacity: 0.8;
     }
 
@@ -46,7 +56,10 @@
       background: var(--#{$prefix}-color-bg-nav-active);
       color: var(--#{$prefix}-color-nav-item-active);
 
-      svg { opacity: 1; }
+      &.#{$prefix}-a { color: var(--#{$prefix}-color-nav-item-active); }
+
+      svg,
+      .#{$prefix}-icon { opacity: 1; }
     }
 
     &--sm { --_h: 1.85rem; font-size: var(--#{$prefix}-font-xs); }

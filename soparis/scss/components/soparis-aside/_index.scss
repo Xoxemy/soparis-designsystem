@@ -12,13 +12,14 @@
   border-right: 1px solid var(--#{$prefix}-color-border-nav);
   overflow: hidden;
 
-  &__brand {
+  &__head {
     display: flex;
     align-items: center;
     gap: var(--#{$prefix}-space-3);
     min-height: var(--#{$prefix}-topbar-height);
-    padding: 0 var(--#{$prefix}-space-5);
+    padding: 0 var(--#{$prefix}-space-4);
     border-bottom: 1px solid var(--#{$prefix}-color-border-nav);
+    flex-shrink: 0;
   }
 
   &__mark {
@@ -26,27 +27,82 @@
     height: 1.75rem;
     border-radius: 0.45rem;
     background: var(--#{$prefix}-color-primary);
+    flex-shrink: 0;
   }
 
   &__name {
+    flex: 1;
+    min-width: 0;
     font-family: var(--#{$prefix}-font-display);
     font-size: 1.2rem;
     font-weight: var(--#{$prefix}-weight-semibold);
     letter-spacing: -0.03em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     span { color: var(--#{$prefix}-color-primary-bright); }
+  }
+
+  &__action {
+    flex-shrink: 0;
+    color: var(--#{$prefix}-color-nav-item);
+
+    &:hover { color: var(--#{$prefix}-color-text-inverse); }
   }
 
   &__body {
     flex: 1;
     overflow: auto;
     padding: var(--#{$prefix}-space-4) var(--#{$prefix}-space-3);
+    min-height: 0;
   }
 
   &__foot {
+    display: flex;
+    align-items: center;
+    gap: var(--#{$prefix}-space-2);
     padding: var(--#{$prefix}-space-3);
     border-top: 1px solid var(--#{$prefix}-color-border-nav);
+    flex-shrink: 0;
 
-    .#{$prefix}-button { color: var(--#{$prefix}-color-text-inverse); }
+    .#{$prefix}-avatar {
+      flex-shrink: 0;
+      background: color-mix(in srgb, var(--#{$prefix}-color-primary) 28%, transparent);
+      color: var(--#{$prefix}-color-primary-bright);
+    }
+
+    .#{$prefix}-input-text {
+      flex: 1;
+      min-width: 0;
+      background: color-mix(in srgb, #fff 8%, transparent);
+      border-color: var(--#{$prefix}-color-border-nav);
+      color: var(--#{$prefix}-color-text-inverse);
+
+      &::placeholder {
+        color: color-mix(in srgb, var(--#{$prefix}-color-text-inverse) 45%, transparent);
+      }
+
+      &:hover {
+        border-color: color-mix(in srgb, #fff 28%, transparent);
+      }
+
+      &:focus,
+      &:focus-visible {
+        border-color: var(--#{$prefix}-color-primary);
+        outline-color: var(--#{$prefix}-color-primary);
+      }
+    }
+
+    .#{$prefix}-icon,
+    .#{$prefix}-button-icon {
+      flex-shrink: 0;
+      color: var(--#{$prefix}-color-nav-item);
+    }
+
+    .#{$prefix}-button-icon:hover {
+      color: var(--#{$prefix}-color-text-inverse);
+      background: var(--#{$prefix}-color-bg-nav-hover);
+    }
   }
 }
