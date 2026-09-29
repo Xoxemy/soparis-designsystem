@@ -2,13 +2,13 @@
 
 .#{$prefix}-input-otp {
   display: flex;
-  gap: 0.5rem;
+  gap: var(--#{$prefix}-space-2);
 
   input {
     width: 2.75rem;
     height: 2.75rem;
     text-align: center;
-    font-size: 1.15rem;
+    font-size: var(--#{$prefix}-font-lg);
     font-weight: var(--#{$prefix}-weight-semibold);
   }
 }

@@ -4,9 +4,9 @@
   --_alert-accent: var(--#{$prefix}-color-info);
 
   display: flex;
-  gap: 0.75rem;
+  gap: var(--#{$prefix}-space-3);
   align-items: flex-start;
-  padding: 0.85rem 1rem;
+  padding: var(--#{$prefix}-space-3) var(--#{$prefix}-space-4);
   border-radius: var(--#{$prefix}-radius-md);
   background: var(--#{$prefix}-color-bg-surface);
   color: var(--#{$prefix}-color-text);
@@ -14,10 +14,10 @@
   border-left: 3px solid var(--_alert-accent);
   box-shadow: var(--#{$prefix}-shadow-xs);
 
-  &--sm { padding: 0.55rem 0.7rem; }
-  &--md { padding: 0.85rem 1rem; }
-  &--lg { padding: 1.1rem 1.25rem; }
-  &--xl { padding: 1.35rem 1.5rem; }
+  &--sm { padding: var(--#{$prefix}-space-2) var(--#{$prefix}-space-3); }
+  &--md { padding: var(--#{$prefix}-space-3) var(--#{$prefix}-space-4); }
+  &--lg { padding: var(--#{$prefix}-space-5) var(--#{$prefix}-space-5); }
+  &--xl { padding: var(--#{$prefix}-space-6) var(--#{$prefix}-space-6); }
 
   &--info { --_alert-accent: var(--#{$prefix}-color-info); }
   &--success { --_alert-accent: var(--#{$prefix}-color-success); }
@@ -30,9 +30,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 1.75rem;
-    height: 1.75rem;
-    margin-top: 0.05rem;
+    width: var(--#{$prefix}-control-h-sm);
+    height: var(--#{$prefix}-control-h-sm);
+    margin-top: 0;
     border-radius: var(--#{$prefix}-radius-sm);
     background: color-mix(in srgb, var(--_alert-accent) 14%, transparent);
     color: var(--_alert-accent);
@@ -41,9 +41,9 @@
     svg,
     .#{$prefix}-icon,
     .material-symbols-outlined {
-      width: 1.125rem;
-      height: 1.125rem;
-      font-size: 1.125rem;
+      width: var(--#{$prefix}-icon-sm);
+      height: var(--#{$prefix}-icon-sm);
+      font-size: var(--#{$prefix}-icon-sm);
     }
   }
 
@@ -52,8 +52,8 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.15rem;
-    padding-top: 0.1rem;
+    gap: var(--#{$prefix}-space-1);
+    padding-top: 0;
   }
 
   &__title {
@@ -74,7 +74,7 @@
   }
 
   &__close {
-    margin: -0.2rem -0.35rem 0 0;
+    margin: calc(var(--#{$prefix}-space-1) * -1) calc(var(--#{$prefix}-space-1) * -1) 0 0;
     flex-shrink: 0;
     color: var(--#{$prefix}-color-icon-muted);
 

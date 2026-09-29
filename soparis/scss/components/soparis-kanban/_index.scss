@@ -135,7 +135,7 @@
   &__tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.3rem;
+    gap: var(--#{$prefix}-space-2);
   }
 
   &__card-foot {
@@ -143,13 +143,13 @@
     align-items: center;
     justify-content: space-between;
     gap: var(--#{$prefix}-space-2);
-    margin-top: 0.15rem;
+    margin-top: var(--#{$prefix}-space-1);
   }
 
   &__meta {
     display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: var(--#{$prefix}-space-1);
     color: var(--#{$prefix}-color-text-muted);
     font-size: var(--#{$prefix}-font-xs);
   }

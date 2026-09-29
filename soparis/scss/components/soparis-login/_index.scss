@@ -29,7 +29,7 @@
 
   &__brand {
     display: grid;
-    gap: 0.35rem;
+    gap: var(--#{$prefix}-space-2);
     text-align: center;
   }
 

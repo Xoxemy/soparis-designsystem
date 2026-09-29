@@ -14,7 +14,7 @@
 
   &__copy {
     display: grid;
-    gap: 0.2rem;
+    gap: var(--#{$prefix}-space-1);
     min-width: 0;
   }
 

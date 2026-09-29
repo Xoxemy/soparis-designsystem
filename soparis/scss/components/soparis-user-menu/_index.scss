@@ -7,9 +7,9 @@
   &__trigger {
     display: inline-flex;
     align-items: center;
-    gap: 0.55rem;
+    gap: var(--#{$prefix}-space-2);
     min-height: 2.35rem;
-    padding: 0.2rem 0.5rem 0.2rem 0.2rem;
+    padding: var(--#{$prefix}-space-1) var(--#{$prefix}-space-2) var(--#{$prefix}-space-1) var(--#{$prefix}-space-1);
     border: 1px solid transparent;
     border-radius: var(--#{$prefix}-radius-full);
     background: transparent;
@@ -37,7 +37,7 @@
 
   &__meta {
     display: grid;
-    gap: 0.05rem;
+    gap: var(--#{$prefix}-space-0);
     text-align: left;
     min-width: 0;
   }
@@ -45,18 +45,18 @@
   &__name {
     font-size: var(--#{$prefix}-font-sm);
     font-weight: var(--#{$prefix}-weight-semibold);
-    line-height: 1.2;
+    line-height: var(--#{$prefix}-leading-snug);
   }
 
   &__role {
     font-size: var(--#{$prefix}-font-xs);
     color: var(--#{$prefix}-color-text-muted);
-    line-height: 1.2;
+    line-height: var(--#{$prefix}-leading-snug);
   }
 
   &__chevron {
     color: var(--#{$prefix}-color-icon-muted);
-    font-size: 1.1rem;
+    font-size: var(--#{$prefix}-icon-sm);
   }
 }
 

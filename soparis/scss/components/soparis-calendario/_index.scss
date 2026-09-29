@@ -25,7 +25,7 @@
   &__nav {
     display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: var(--#{$prefix}-space-1);
   }
 
   &__grid {
@@ -38,9 +38,9 @@
   }
 
   &__dow {
-    padding: 0.55rem 0.35rem;
+    padding: var(--#{$prefix}-space-2) var(--#{$prefix}-space-1);
     text-align: center;
-    font-size: 0.68rem;
+    font-size: var(--#{$prefix}-font-xs);
     font-weight: var(--#{$prefix}-weight-semibold);
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -51,7 +51,7 @@
 
   &__day {
     min-height: 5.5rem;
-    padding: 0.4rem;
+    padding: var(--#{$prefix}-space-2);
     border-right: 1px solid var(--#{$prefix}-color-border);
     border-bottom: 1px solid var(--#{$prefix}-color-border);
     background: var(--#{$prefix}-color-bg-surface);
@@ -73,7 +73,7 @@
     place-items: center;
     width: 1.55rem;
     height: 1.55rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: var(--#{$prefix}-space-1);
     border-radius: var(--#{$prefix}-radius-full);
     font-size: var(--#{$prefix}-font-xs);
     font-weight: var(--#{$prefix}-weight-semibold);
@@ -87,15 +87,15 @@
 
   &__events {
     display: grid;
-    gap: 0.2rem;
+    gap: var(--#{$prefix}-space-1);
   }
 
   &__event {
-    padding: 0.15rem 0.35rem;
-    border-radius: 0.3rem;
+    padding: var(--#{$prefix}-space-1) var(--#{$prefix}-space-2);
+    border-radius: var(--#{$prefix}-radius-sm);
     background: color-mix(in srgb, var(--#{$prefix}-color-primary) 14%, transparent);
-    color: var(--#{$prefix}-color-nav-item-active, var(--#{$prefix}-color-text));
-    font-size: 0.65rem;
+    color: var(--#{$prefix}-color-primary-deep, var(--#{$prefix}-color-text));
+    font-size: var(--#{$prefix}-font-xs);
     font-weight: var(--#{$prefix}-weight-medium);
     white-space: nowrap;
     overflow: hidden;
@@ -163,7 +163,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 0.55rem;
+    gap: var(--#{$prefix}-space-2);
     border-top: 1px solid var(--#{$prefix}-color-border);
     background: var(--#{$prefix}-color-bg-subtle);
   }

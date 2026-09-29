@@ -18,7 +18,7 @@
 
   &__copy {
     display: grid;
-    gap: 0.35rem;
+    gap: var(--#{$prefix}-space-2);
     min-width: 0;
     flex: 1;
   }
@@ -35,13 +35,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.45rem;
+    gap: var(--#{$prefix}-space-2);
   }
 
   &__actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.45rem;
+    gap: var(--#{$prefix}-space-2);
   }
 
   &__body {
@@ -83,7 +83,7 @@
 
   &__prop {
     display: grid;
-    gap: 0.35rem;
+    gap: var(--#{$prefix}-space-2);
     min-width: 0;
   }
 
@@ -110,7 +110,7 @@
   }
 
   &__activity-time {
-    margin: 0.2rem 0 0;
+    margin: var(--#{$prefix}-space-1) 0 0;
     font-size: var(--#{$prefix}-font-xs);
     color: var(--#{$prefix}-color-text-muted);
   }

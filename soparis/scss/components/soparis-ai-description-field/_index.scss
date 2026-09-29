@@ -8,8 +8,8 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.45rem;
-    padding: 0.55rem 0.7rem;
+    gap: var(--#{$prefix}-space-2);
+    padding: var(--#{$prefix}-space-2) var(--#{$prefix}-space-3);
     border-radius: var(--#{$prefix}-radius-md);
     background: color-mix(in srgb, var(--#{$prefix}-color-accent) 8%, transparent);
     border: 1px solid color-mix(in srgb, var(--#{$prefix}-color-accent) 22%, transparent);

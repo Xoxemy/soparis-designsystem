@@ -10,9 +10,9 @@
     left: 0.75rem;
     top: 50%;
     transform: translateY(-50%);
-    width: 1.125rem;
-    height: 1.125rem;
-    font-size: 1.125rem;
+    width: var(--#{$prefix}-icon-sm);
+    height: var(--#{$prefix}-icon-sm);
+    font-size: var(--#{$prefix}-icon-sm);
     color: var(--#{$prefix}-color-icon-muted);
     pointer-events: none;
   }

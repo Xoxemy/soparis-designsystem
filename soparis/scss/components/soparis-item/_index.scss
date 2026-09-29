@@ -3,8 +3,8 @@
 .#{$prefix}-item {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  padding: 0.75rem 0;
+  gap: var(--#{$prefix}-space-3);
+  padding: var(--#{$prefix}-space-3) 0;
   color: var(--#{$prefix}-color-text);
   text-decoration: none;
   background: transparent;
@@ -21,14 +21,14 @@
     flex: 1;
     min-width: 0;
     display: grid;
-    gap: 0.1rem;
+    gap: var(--#{$prefix}-space-1);
   }
 
   &__title {
     margin: 0;
     font-size: var(--#{$prefix}-font-sm);
     font-weight: var(--#{$prefix}-weight-semibold);
-    line-height: 1.3;
+    line-height: var(--#{$prefix}-leading-snug);
   }
 
   &__meta {
@@ -43,14 +43,14 @@
   }
 
   &--interactive {
-    padding: 0.7rem 0.75rem;
+    padding: var(--#{$prefix}-space-3) var(--#{$prefix}-space-3);
     border-radius: var(--#{$prefix}-radius-md);
     margin: 0;
     border: 0;
 
     + .#{$prefix}-item--interactive {
       border-top: 0;
-      margin-top: 0.15rem;
+      margin-top: var(--#{$prefix}-space-1);
     }
 
     &:hover {

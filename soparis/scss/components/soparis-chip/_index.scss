@@ -3,9 +3,9 @@
 .#{$prefix}-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: var(--#{$prefix}-space-2);
   min-height: 1.85rem;
-  padding: 0 0.65rem;
+  padding: 0 var(--#{$prefix}-space-3);
   border-radius: var(--#{$prefix}-radius-full);
   border: 1px solid var(--#{$prefix}-color-border);
   background: var(--#{$prefix}-color-bg-surface);

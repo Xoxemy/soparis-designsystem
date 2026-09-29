@@ -8,7 +8,7 @@
 .#{$prefix}-input-textarea {
   @include input-surface;
   min-height: 7rem;
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
+  padding-top: var(--#{$prefix}-space-3);
+  padding-bottom: var(--#{$prefix}-space-3);
   resize: vertical;
 }

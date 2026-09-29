@@ -2,7 +2,7 @@
 
 .#{$prefix}-stat {
   display: grid;
-  gap: 0.2rem;
+  gap: var(--#{$prefix}-space-1);
 
   &__value {
     font-family: var(--#{$prefix}-font-display);

@@ -79,8 +79,8 @@
 
     .#{$prefix}-menu__item {
       justify-content: flex-start;
-      padding: 0 0.7rem;
-      gap: 0.55rem;
+      padding: 0 var(--#{$prefix}-space-3);
+      gap: var(--#{$prefix}-space-2);
 
       &::before { display: block; }
 
@@ -94,25 +94,25 @@
     .#{$prefix}-aside__head {
       flex-direction: row;
       justify-content: flex-start;
-      padding: 0 0.75rem 0 0.9rem;
+      padding: 0 var(--#{$prefix}-space-3) 0 var(--#{$prefix}-space-4);
       min-height: var(--#{$prefix}-topbar-height);
-      gap: 0.35rem;
+      gap: var(--#{$prefix}-space-1);
     }
 
     .#{$prefix}-aside__brand {
       justify-content: flex-start;
       flex: 1;
-      padding: 0.35rem 0.4rem;
-      margin-inline: -0.15rem;
+      padding: var(--#{$prefix}-space-1) var(--#{$prefix}-space-2);
+      margin-inline: calc(var(--#{$prefix}-space-1) * -1);
     }
 
     .#{$prefix}-aside__foot {
-      padding: 0.75rem;
+      padding: var(--#{$prefix}-space-3);
     }
 
     .#{$prefix}-aside__account {
       justify-content: flex-start;
-      padding: 0.3rem;
+      padding: var(--#{$prefix}-space-1);
       border: 1px solid var(--#{$prefix}-color-border-nav);
       background: var(--#{$prefix}-color-nav-user);
     }
@@ -125,7 +125,7 @@
     .#{$prefix}-aside__user-trigger {
       justify-content: flex-start;
       width: 100%;
-      padding: 0.25rem 0.4rem 0.25rem 0.25rem;
+      padding: var(--#{$prefix}-space-1) var(--#{$prefix}-space-2) var(--#{$prefix}-space-1) var(--#{$prefix}-space-1);
     }
   }
 

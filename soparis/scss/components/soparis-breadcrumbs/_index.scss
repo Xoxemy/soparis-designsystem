@@ -4,7 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.35rem;
+  gap: var(--#{$prefix}-space-2);
   font-size: var(--#{$prefix}-font-sm);
   color: var(--#{$prefix}-color-text-secondary);
 

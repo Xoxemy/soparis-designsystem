@@ -2,17 +2,17 @@
 
 .#{$prefix}-menu {
   display: grid;
-  gap: 1.35rem;
+  gap: var(--#{$prefix}-space-6);
 
   &__section {
     display: grid;
-    gap: 0.1rem;
+    gap: var(--#{$prefix}-space-1);
   }
 
   &__label {
-    margin: 0 0 0.4rem;
-    padding: 0 0.7rem;
-    font-size: 0.62rem;
+    margin: 0 0 var(--#{$prefix}-space-2);
+    padding: 0 var(--#{$prefix}-space-3);
+    font-size: var(--#{$prefix}-font-xs);
     font-weight: var(--#{$prefix}-weight-semibold);
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -20,17 +20,17 @@
   }
 
   &__item {
-    --_h: 2.15rem;
+    --_h: var(--#{$prefix}-control-h-md);
     position: relative;
     display: flex;
     align-items: center;
-    gap: 0.55rem;
+    gap: var(--#{$prefix}-space-2);
     min-height: var(--_h);
-    padding: 0 0.7rem;
-    border-radius: 0.55rem;
+    padding: 0 var(--#{$prefix}-space-3);
+    border-radius: var(--#{$prefix}-radius-md);
     color: var(--#{$prefix}-color-nav-item);
     text-decoration: none;
-    font-size: 0.8125rem;
+    font-size: var(--#{$prefix}-font-sm);
     font-weight: var(--#{$prefix}-weight-medium);
     letter-spacing: -0.01em;
     transition:
@@ -42,7 +42,7 @@
     &::before {
       content: "";
       position: absolute;
-      left: 0.2rem;
+      left: var(--#{$prefix}-space-1);
       top: 50%;
       width: 0.18rem;
       height: 0;
@@ -66,9 +66,9 @@
     svg,
     .#{$prefix}-icon,
     .material-symbols-outlined {
-      width: 1.1rem;
-      height: 1.1rem;
-      font-size: 1.1rem;
+      width: var(--#{$prefix}-icon-md);
+      height: var(--#{$prefix}-icon-md);
+      font-size: var(--#{$prefix}-icon-md);
       opacity: 0.78;
       flex-shrink: 0;
     }
@@ -91,7 +91,7 @@
       &.#{$prefix}-a { color: var(--#{$prefix}-color-nav-item-active); }
 
       &::before {
-        height: 1rem;
+        height: var(--#{$prefix}-space-4);
         opacity: 1;
       }
 
@@ -100,17 +100,17 @@
       .material-symbols-outlined { opacity: 1; }
     }
 
-    &--sm { --_h: 1.85rem; font-size: var(--#{$prefix}-font-xs); }
-    &--md { --_h: 2.15rem; }
-    &--lg { --_h: 2.55rem; font-size: var(--#{$prefix}-font-md); }
-    &--xl { --_h: 2.95rem; font-size: var(--#{$prefix}-font-lg); }
+    &--sm { --_h: var(--#{$prefix}-control-h-sm); font-size: var(--#{$prefix}-font-xs); }
+    &--md { --_h: var(--#{$prefix}-control-h-md); }
+    &--lg { --_h: var(--#{$prefix}-control-h-lg); font-size: var(--#{$prefix}-font-md); }
+    &--xl { --_h: var(--#{$prefix}-control-h-xl); font-size: var(--#{$prefix}-font-lg); }
   }
 
   &__abbrev {
     display: none;
     align-items: center;
     justify-content: center;
-    font-size: 0.72rem;
+    font-size: var(--#{$prefix}-font-xs);
     font-weight: var(--#{$prefix}-weight-semibold);
     letter-spacing: 0;
   }
@@ -124,8 +124,8 @@
 
   &__badge {
     margin-left: auto;
-    font-size: 0.62rem;
-    padding: 0.12rem 0.38rem;
+    font-size: var(--#{$prefix}-font-xs);
+    padding: var(--#{$prefix}-space-1) var(--#{$prefix}-space-2);
     border-radius: var(--#{$prefix}-radius-full);
     background: var(--#{$prefix}-color-nav-badge);
     color: var(--#{$prefix}-color-nav-item-active);

@@ -2,13 +2,13 @@
 
 .#{$prefix}-tabs {
   display: flex;
-  gap: 0.15rem;
+  gap: var(--#{$prefix}-space-1);
   overflow-x: auto;
   border-bottom: 1px solid var(--#{$prefix}-color-border);
 
   &__tab {
     flex: 0 0 auto;
-    padding: 0.7rem 0.9rem;
+    padding: var(--#{$prefix}-space-3) var(--#{$prefix}-space-4);
     border-bottom: 2px solid transparent;
     color: var(--#{$prefix}-color-text-secondary);
     font-size: var(--#{$prefix}-font-sm);
@@ -23,8 +23,8 @@
     }
   }
 
-  &--sm &__tab { padding: 0.45rem 0.65rem; font-size: var(--#{$prefix}-font-xs); }
-  &--md &__tab { padding: 0.7rem 0.9rem; }
-  &--lg &__tab { padding: 0.9rem 1.1rem; font-size: var(--#{$prefix}-font-md); }
-  &--xl &__tab { padding: 1.05rem 1.3rem; font-size: var(--#{$prefix}-font-lg); }
+  &--sm &__tab { padding: var(--#{$prefix}-space-2) var(--#{$prefix}-space-3); font-size: var(--#{$prefix}-font-xs); }
+  &--md &__tab { padding: var(--#{$prefix}-space-3) var(--#{$prefix}-space-4); }
+  &--lg &__tab { padding: var(--#{$prefix}-space-4) var(--#{$prefix}-space-5); font-size: var(--#{$prefix}-font-md); }
+  &--xl &__tab { padding: var(--#{$prefix}-space-5) var(--#{$prefix}-space-5); font-size: var(--#{$prefix}-font-lg); }
 }

@@ -10,7 +10,7 @@
     right: 0;
     z-index: var(--#{$prefix}-z-dropdown);
     min-width: 12rem;
-    padding: 0.35rem;
+    padding: var(--#{$prefix}-space-2);
     display: none;
     background: var(--#{$prefix}-color-bg-surface);
     border: 1px solid var(--#{$prefix}-color-border);
@@ -28,9 +28,9 @@
   &__item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--#{$prefix}-space-2);
     min-height: 2.15rem;
-    padding: 0 0.65rem;
+    padding: 0 var(--#{$prefix}-space-3);
     border-radius: var(--#{$prefix}-radius-sm);
     text-decoration: none;
     color: var(--#{$prefix}-color-text);

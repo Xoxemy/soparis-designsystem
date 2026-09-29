@@ -3,7 +3,7 @@
 .#{$prefix}-input-file {
   display: grid;
   place-items: center;
-  gap: 0.4rem;
+  gap: var(--#{$prefix}-space-2);
   padding: var(--#{$prefix}-space-6);
   border: 1px dashed var(--#{$prefix}-color-border-strong);
   border-radius: var(--#{$prefix}-radius-lg);

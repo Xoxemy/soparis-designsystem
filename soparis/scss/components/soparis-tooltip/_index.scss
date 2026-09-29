@@ -10,13 +10,13 @@
     bottom: calc(100% + 0.4rem);
     transform: translateX(-50%);
     z-index: var(--#{$prefix}-z-toast);
-    padding: 0.3rem 0.55rem;
+    padding: var(--#{$prefix}-space-2) var(--#{$prefix}-space-2);
     border-radius: 0.35rem;
     background: var(--#{$prefix}-color-secondary);
     color: var(--#{$prefix}-color-text-inverse);
     font-size: var(--#{$prefix}-font-xs);
     font-weight: var(--#{$prefix}-weight-medium);
-    line-height: 1.3;
+    line-height: var(--#{$prefix}-leading-snug);
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;

@@ -8,6 +8,6 @@
   background: var(--#{$prefix}-color-white);
   color: var(--#{$prefix}-color-secondary);
   border-radius: var(--#{$prefix}-radius-md);
-  font-size: 0.7rem;
+  font-size: var(--#{$prefix}-font-xs);
   font-weight: var(--#{$prefix}-weight-semibold);
 }

@@ -52,7 +52,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.65rem;
+  gap: var(--#{$prefix}-space-3);
 }
 
 .#{$prefix}-precios__grid {

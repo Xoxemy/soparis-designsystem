@@ -46,6 +46,14 @@ Abre [http://localhost:4173](http://localhost:4173).
 | `primitivos.html` | Espaciado, tipografía, radii… |
 | `componentes.html` | Clases y ejemplos de UI |
 
+## Fundamentos (norma de uso)
+
+Documento estable de **espacio, tipografía y colorimetría** (sí / no por token y clase):
+
+→ [`docs/fundamentos.md`](docs/fundamentos.md)
+
+Úsalo como referencia antes de añadir estilos o componentes nuevos.
+
 ## Scripts
 
 | Comando | Qué hace |

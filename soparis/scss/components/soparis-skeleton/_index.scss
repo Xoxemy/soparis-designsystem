@@ -14,7 +14,7 @@
   animation: #{$prefix}-skeleton-shimmer 1.4s ease-in-out infinite;
 
   &--text { height: 0.85rem; width: 100%; }
-  &--title { height: 1.25rem; width: 60%; }
+  &--title { height: var(--#{$prefix}-icon-md); width: 60%; }
   &--avatar {
     width: 2.5rem;
     height: 2.5rem;
