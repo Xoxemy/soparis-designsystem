@@ -35,7 +35,7 @@
   }
 
   &__lead {
-    margin: 0.35rem 0 0;
+    margin: var(--#{$prefix}-space-2) 0 0;
     color: var(--#{$prefix}-color-text-secondary);
     font-size: var(--#{$prefix}-font-sm);
     line-height: var(--#{$prefix}-leading-relaxed);
@@ -52,7 +52,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 0.55rem;
+    gap: var(--#{$prefix}-space-2);
     border-top: 1px solid var(--#{$prefix}-color-border);
     background: var(--#{$prefix}-color-bg-subtle);
   }
@@ -64,7 +64,7 @@
   &__step {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: var(--#{$prefix}-space-2);
     font-size: var(--#{$prefix}-font-xs);
     color: var(--#{$prefix}-color-text-muted);
   }

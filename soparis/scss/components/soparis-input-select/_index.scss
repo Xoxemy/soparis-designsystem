@@ -61,7 +61,7 @@ select.#{$prefix}-input-select {
     @include input-surface;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--#{$prefix}-space-2);
     height: auto;
     min-height: var(--_h);
     text-align: left;
@@ -76,7 +76,7 @@ select.#{$prefix}-input-select {
       top: 50%;
       transform: translateY(-50%);
       font-family: "Material Symbols Outlined", sans-serif;
-      font-size: 1.25rem;
+      font-size: var(--#{$prefix}-icon-md);
       line-height: 1;
       color: var(--#{$prefix}-color-icon-muted);
       font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
@@ -106,18 +106,18 @@ select.#{$prefix}-input-select {
     display: flex;
     flex: 1;
     flex-wrap: wrap;
-    gap: 0.35rem;
+    gap: var(--#{$prefix}-space-2);
     min-width: 0;
-    padding: 0.35rem 0;
+    padding: var(--#{$prefix}-space-2) 0;
   }
 
   &__chip {
     display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: var(--#{$prefix}-space-1);
     max-width: 100%;
-    min-height: 1.5rem;
-    padding: 0 0.35rem 0 0.5rem;
+    min-height: var(--#{$prefix}-icon-lg);
+    padding: 0 var(--#{$prefix}-space-2) 0 var(--#{$prefix}-space-2);
     border-radius: var(--#{$prefix}-radius-full);
     background: var(--#{$prefix}-color-primary-soft);
     color: var(--#{$prefix}-color-primary-deep);
@@ -138,7 +138,7 @@ select.#{$prefix}-input-select {
     color: inherit;
     cursor: pointer;
     font-family: "Material Symbols Outlined", sans-serif;
-    font-size: 0.9rem;
+    font-size: var(--#{$prefix}-font-sm);
     line-height: 1;
     font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
 
@@ -187,10 +187,10 @@ select.#{$prefix}-input-select {
   &__option {
     display: flex;
     align-items: center;
-    gap: 0.55rem;
+    gap: var(--#{$prefix}-space-2);
     width: 100%;
     min-height: 2.15rem;
-    padding: 0 0.65rem;
+    padding: 0 var(--#{$prefix}-space-3);
     border: 0;
     border-radius: 0;
     background: transparent;
@@ -242,7 +242,7 @@ select.#{$prefix}-input-select {
     place-items: center;
     color: transparent;
     font-family: "Material Symbols Outlined", sans-serif;
-    font-size: 0.85rem;
+    font-size: var(--#{$prefix}-font-sm);
     line-height: 1;
     font-variation-settings: "FILL" 1, "wght" 500, "GRAD" 0, "opsz" 20;
   }
@@ -254,7 +254,7 @@ select.#{$prefix}-input-select {
   }
 
   &__empty {
-    padding: 0.85rem 0.75rem;
+    padding: var(--#{$prefix}-space-3) var(--#{$prefix}-space-3);
     color: var(--#{$prefix}-color-text-muted);
     font-size: var(--#{$prefix}-font-sm);
     text-align: center;

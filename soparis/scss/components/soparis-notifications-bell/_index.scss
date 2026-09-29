@@ -6,17 +6,17 @@
 
   &__badge {
     position: absolute;
-    top: 0.2rem;
-    right: 0.2rem;
+    top: var(--#{$prefix}-space-1);
+    right: var(--#{$prefix}-space-1);
     display: inline-grid;
     place-items: center;
-    min-width: 0.95rem;
-    height: 0.95rem;
-    padding: 0 0.2rem;
+    min-width: var(--#{$prefix}-space-3);
+    height: var(--#{$prefix}-space-3);
+    padding: 0 var(--#{$prefix}-space-1);
     border-radius: var(--#{$prefix}-radius-full);
     background: var(--#{$prefix}-color-error);
-    color: var(--#{$prefix}-color-white);
-    font-size: 0.58rem;
+    color: var(--#{$prefix}-color-primary-on);
+    font-size: var(--#{$prefix}-font-xs);
     font-weight: var(--#{$prefix}-weight-bold);
     line-height: 1;
     pointer-events: none;

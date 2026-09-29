@@ -6,11 +6,11 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.35rem;
+  gap: var(--#{$prefix}-space-2);
 }
 
 .#{$prefix}-kanban-subnav {
-  padding: 0.35rem;
+  padding: var(--#{$prefix}-space-2);
   background: var(--#{$prefix}-color-bg-subtle);
   border: 1px solid var(--#{$prefix}-color-border);
   border-radius: var(--#{$prefix}-radius-lg);
@@ -89,7 +89,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 0.55rem;
+    gap: var(--#{$prefix}-space-2);
     border-top: 1px solid var(--#{$prefix}-color-border);
     background: var(--#{$prefix}-color-bg-subtle);
   }
@@ -126,7 +126,7 @@
   &__bars {
     display: flex;
     align-items: flex-end;
-    gap: 0.45rem;
+    gap: var(--#{$prefix}-space-2);
     height: 8rem;
   }
 

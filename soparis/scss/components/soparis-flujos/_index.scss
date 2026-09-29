@@ -22,7 +22,7 @@
 
 .#{$prefix}-flow-node {
   display: grid;
-  gap: 0.35rem;
+  gap: var(--#{$prefix}-space-2);
   width: min(14rem, 100%);
   padding: var(--#{$prefix}-space-3) var(--#{$prefix}-space-4);
   background: var(--#{$prefix}-color-bg-surface);
@@ -46,7 +46,7 @@
   &__ports {
     display: flex;
     justify-content: space-between;
-    margin-top: 0.35rem;
+    margin-top: var(--#{$prefix}-space-2);
   }
 
   &__port {

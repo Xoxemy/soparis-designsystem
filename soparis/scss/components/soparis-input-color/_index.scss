@@ -5,9 +5,9 @@
   @include control-size(md);
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: var(--#{$prefix}-space-2);
   min-height: var(--_h);
-  padding: 0.2rem 0.55rem 0.2rem 0.25rem;
+  padding: var(--#{$prefix}-space-1) var(--#{$prefix}-space-2) var(--#{$prefix}-space-1) var(--#{$prefix}-space-1);
   border: 1px solid var(--#{$prefix}-color-border-strong);
   border-radius: var(--_radius);
   background: var(--#{$prefix}-color-bg-input);

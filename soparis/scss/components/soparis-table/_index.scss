@@ -16,7 +16,7 @@
 
   th,
   td {
-    padding: 0.75rem 1rem;
+    padding: var(--#{$prefix}-space-3) var(--#{$prefix}-space-4);
     text-align: left;
     border-bottom: 1px solid var(--#{$prefix}-color-border);
     vertical-align: middle;
@@ -54,7 +54,7 @@
 
   &__meta {
     display: grid;
-    gap: 0.1rem;
+    gap: var(--#{$prefix}-space-1);
     min-width: 0;
 
     strong {
@@ -78,7 +78,7 @@
     min-width: 28rem;
 
     th,
-    td { padding: 0.4rem 0.7rem; }
+    td { padding: var(--#{$prefix}-space-2) var(--#{$prefix}-space-3); }
   }
 
   &--borderless {
@@ -87,16 +87,16 @@
   }
 
   &--sm th,
-  &--sm td { padding: 0.45rem 0.7rem; }
+  &--sm td { padding: var(--#{$prefix}-space-2) var(--#{$prefix}-space-3); }
 
   &--md th,
-  &--md td { padding: 0.75rem 1rem; }
+  &--md td { padding: var(--#{$prefix}-space-3) var(--#{$prefix}-space-4); }
 
   &--lg th,
-  &--lg td { padding: 1rem 1.15rem; font-size: var(--#{$prefix}-font-md); }
+  &--lg td { padding: var(--#{$prefix}-space-4) var(--#{$prefix}-space-5); font-size: var(--#{$prefix}-font-md); }
 
   &--xl th,
-  &--xl td { padding: 1.2rem 1.35rem; font-size: var(--#{$prefix}-font-lg); }
+  &--xl td { padding: var(--#{$prefix}-space-5) var(--#{$prefix}-space-6); font-size: var(--#{$prefix}-font-lg); }
 
   &--selectable tbody tr {
     cursor: pointer;

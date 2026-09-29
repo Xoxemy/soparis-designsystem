@@ -32,7 +32,7 @@
   }
 
   &__subtitle {
-    margin: 0.2rem 0 0;
+    margin: var(--#{$prefix}-space-1) 0 0;
     color: var(--#{$prefix}-color-text-secondary);
     font-size: var(--#{$prefix}-font-sm);
   }
@@ -54,7 +54,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 0.55rem;
+    gap: var(--#{$prefix}-space-2);
     border-top: 1px solid var(--#{$prefix}-color-border);
     background: var(--#{$prefix}-color-bg-subtle);
   }

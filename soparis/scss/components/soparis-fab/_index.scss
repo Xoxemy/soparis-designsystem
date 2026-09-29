@@ -16,8 +16,8 @@
 
   .#{$prefix}-icon,
   .material-symbols-outlined {
-    font-size: 1.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
+    font-size: var(--#{$prefix}-icon-lg);
+    width: var(--#{$prefix}-icon-lg);
+    height: var(--#{$prefix}-icon-lg);
   }
 }

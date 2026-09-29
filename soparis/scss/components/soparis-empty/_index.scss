@@ -20,7 +20,7 @@
 
     .#{$prefix}-icon,
     .material-symbols-outlined {
-      font-size: 1.5rem;
+      font-size: var(--#{$prefix}-icon-lg);
     }
   }
 
@@ -42,7 +42,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.55rem;
+    gap: var(--#{$prefix}-space-2);
     margin-top: var(--#{$prefix}-space-2);
   }
 }

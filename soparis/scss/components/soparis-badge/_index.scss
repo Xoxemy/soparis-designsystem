@@ -3,9 +3,9 @@
 .#{$prefix}-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.3em;
-  min-height: 1.35rem;
-  padding: 0 0.45rem;
+  gap: var(--#{$prefix}-space-1);
+  min-height: var(--#{$prefix}-space-5);
+  padding: 0 var(--#{$prefix}-space-2);
   border-radius: var(--#{$prefix}-radius-full);
   font-size: var(--#{$prefix}-font-xs);
   font-weight: var(--#{$prefix}-weight-semibold);
@@ -13,10 +13,10 @@
   background: var(--#{$prefix}-color-bg-subtle);
   color: var(--#{$prefix}-color-text-secondary);
 
-  &--sm { min-height: 1.15rem; font-size: 0.68rem; }
-  &--md { min-height: 1.35rem; }
-  &--lg { min-height: 1.6rem; font-size: var(--#{$prefix}-font-sm); padding: 0 0.6rem; }
-  &--xl { min-height: 1.9rem; font-size: var(--#{$prefix}-font-md); padding: 0 0.75rem; }
+  &--sm { min-height: var(--#{$prefix}-space-4); font-size: var(--#{$prefix}-font-xs); }
+  &--md { min-height: var(--#{$prefix}-space-5); }
+  &--lg { min-height: var(--#{$prefix}-space-6); font-size: var(--#{$prefix}-font-sm); padding: 0 var(--#{$prefix}-space-2); }
+  &--xl { min-height: var(--#{$prefix}-control-h-sm); font-size: var(--#{$prefix}-font-md); padding: 0 var(--#{$prefix}-space-3); }
 
   &--primary {
     background: var(--#{$prefix}-color-primary-soft);

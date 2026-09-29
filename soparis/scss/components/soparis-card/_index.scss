@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  background: var(--#{$prefix}-color-card);
+  background: var(--#{$prefix}-color-bg-surface);
   border: 1px solid var(--#{$prefix}-color-border);
   border-radius: var(--#{$prefix}-radius-lg);
   color: var(--#{$prefix}-color-text);
@@ -56,7 +56,7 @@
   }
 
   &__subtitle {
-    margin: 0.15rem 0 0;
+    margin: var(--#{$prefix}-space-1) 0 0;
     color: var(--#{$prefix}-color-text-muted);
     font-size: var(--#{$prefix}-font-sm);
   }
@@ -77,7 +77,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.6rem;
+    gap: var(--#{$prefix}-space-2);
     margin-top: var(--#{$prefix}-space-5);
   }
 

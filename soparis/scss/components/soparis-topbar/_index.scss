@@ -26,7 +26,7 @@
 
   &__info {
     display: grid;
-    gap: 0.1rem;
+    gap: 0;
     min-width: 0;
     flex: 1;
   }
@@ -39,12 +39,12 @@
 
   &__eyebrow {
     margin: 0;
-    font-size: 0.68rem;
+    font-size: var(--#{$prefix}-font-xs);
     font-weight: var(--#{$prefix}-weight-medium);
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--#{$prefix}-color-text-muted);
-    line-height: 1.2;
+    line-height: var(--#{$prefix}-leading-snug);
   }
 
   &__title {
@@ -56,14 +56,14 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 1.25;
+    line-height: var(--#{$prefix}-leading-snug);
   }
 
   &__meta {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.45rem;
+    gap: var(--#{$prefix}-space-2);
     flex-shrink: 0;
     margin-left: auto;
   }

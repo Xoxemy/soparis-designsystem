@@ -2,12 +2,12 @@
 
 .#{$prefix}-field {
   display: grid;
-  gap: 0.4rem;
+  gap: var(--#{$prefix}-space-2);
 
   &__meta {
     display: flex;
     justify-content: space-between;
-    gap: 0.75rem;
+    gap: var(--#{$prefix}-space-3);
   }
 
   &.is-error {

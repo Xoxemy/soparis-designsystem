@@ -3,7 +3,7 @@
 .#{$prefix}-bg {
   &--page { background: var(--#{$prefix}-color-background); }
   &--subtle { background: var(--#{$prefix}-color-bg-subtle); }
-  &--card { background: var(--#{$prefix}-color-card); }
+  &--card { background: var(--#{$prefix}-color-bg-surface); }
   &--primary {
     background: var(--#{$prefix}-color-primary);
     color: var(--#{$prefix}-color-primary-on);

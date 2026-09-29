@@ -3,13 +3,13 @@
 .#{$prefix}-input-choice {
   display: inline-flex;
   align-items: flex-start;
-  gap: 0.6rem;
+  gap: var(--#{$prefix}-space-2);
   font-size: var(--#{$prefix}-font-md);
 
   input {
     width: 1.1rem;
     height: 1.1rem;
-    margin-top: 0.15rem;
+    margin-top: var(--#{$prefix}-space-1);
     accent-color: var(--#{$prefix}-color-accent);
   }
 }

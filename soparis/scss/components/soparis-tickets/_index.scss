@@ -47,7 +47,7 @@
 
   &__main {
     display: grid;
-    gap: 0.2rem;
+    gap: var(--#{$prefix}-space-1);
     min-width: 0;
   }
 
@@ -71,7 +71,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
-    gap: 0.4rem;
+    gap: var(--#{$prefix}-space-2);
   }
 }
 
@@ -107,7 +107,7 @@
   }
 
   &__subtitle {
-    margin: 0.2rem 0 0;
+    margin: var(--#{$prefix}-space-1) 0 0;
     color: var(--#{$prefix}-color-text-secondary);
     font-size: var(--#{$prefix}-font-sm);
   }
@@ -123,7 +123,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 0.55rem;
+    gap: var(--#{$prefix}-space-2);
     border-top: 1px solid var(--#{$prefix}-color-border);
     background: var(--#{$prefix}-color-bg-subtle);
   }
@@ -146,8 +146,8 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.45rem;
-    margin-bottom: 0.35rem;
+    gap: var(--#{$prefix}-space-2);
+    margin-bottom: var(--#{$prefix}-space-2);
     font-size: var(--#{$prefix}-font-xs);
     color: var(--#{$prefix}-color-text-muted);
   }
