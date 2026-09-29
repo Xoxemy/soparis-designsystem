@@ -1,0 +1,13 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-qr {
+  width: 7.5rem;
+  height: 7.5rem;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  color: #111;
+  border-radius: var(--#{$prefix}-radius-md);
+  font-size: 0.7rem;
+  font-weight: var(--#{$prefix}-weight-semibold);
+}

@@ -1,0 +1,19 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-input-file {
+  display: grid;
+  place-items: center;
+  gap: 0.4rem;
+  padding: var(--#{$prefix}-space-6);
+  border: 1px dashed var(--#{$prefix}-color-border-strong);
+  border-radius: var(--#{$prefix}-radius-lg);
+  background: var(--#{$prefix}-color-bg-surface);
+  text-align: center;
+  color: var(--#{$prefix}-color-text-secondary);
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--#{$prefix}-brand-connect);
+    background: var(--#{$prefix}-color-bg-surface-hover);
+  }
+}

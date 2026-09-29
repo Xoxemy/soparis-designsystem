@@ -1,0 +1,27 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.#{$prefix}-grid {
+  display: grid;
+  gap: var(--#{$prefix}-space-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+
+  &--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  &--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  &--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@include breakpoint-down(md) {
+  .#{$prefix}-grid--2,
+  .#{$prefix}-grid--3,
+  .#{$prefix}-grid--4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 48rem) and (max-width: 64.9975rem) {
+  .#{$prefix}-grid--3,
+  .#{$prefix}-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

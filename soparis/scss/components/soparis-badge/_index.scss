@@ -1,0 +1,35 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  min-height: 1.35rem;
+  padding: 0 0.45rem;
+  border-radius: var(--#{$prefix}-radius-full);
+  font-size: var(--#{$prefix}-font-xs);
+  font-weight: var(--#{$prefix}-weight-semibold);
+  line-height: 1;
+  background: var(--#{$prefix}-color-bg-subtle);
+  color: var(--#{$prefix}-color-text-secondary);
+
+  &--sm { min-height: 1.15rem; font-size: 0.68rem; }
+  &--md { min-height: 1.35rem; }
+  &--lg { min-height: 1.6rem; font-size: var(--#{$prefix}-font-sm); padding: 0 0.6rem; }
+  &--xl { min-height: 1.9rem; font-size: var(--#{$prefix}-font-md); padding: 0 0.75rem; }
+
+  &--gold {
+    background: var(--#{$prefix}-color-premium-bg);
+    color: var(--#{$prefix}-color-premium-text);
+  }
+
+  &--connect {
+    background: var(--#{$prefix}-color-success-bg);
+    color: var(--#{$prefix}-color-success-text);
+  }
+
+  &--danger {
+    background: var(--#{$prefix}-color-danger-bg);
+    color: var(--#{$prefix}-color-danger-text);
+  }
+}

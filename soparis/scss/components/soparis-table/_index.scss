@@ -1,0 +1,42 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-table-wrap {
+  overflow: auto;
+  border: 1px solid var(--#{$prefix}-color-border);
+  border-radius: var(--#{$prefix}-radius-lg);
+  background: var(--#{$prefix}-color-bg-surface);
+}
+
+.#{$prefix}-table {
+  width: 100%;
+  min-width: 36rem;
+  font-size: var(--#{$prefix}-font-sm);
+
+  th,
+  td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--#{$prefix}-color-border);
+    vertical-align: middle;
+  }
+
+  th {
+    font-size: var(--#{$prefix}-font-xs);
+    letter-spacing: var(--#{$prefix}-tracking-wide);
+    text-transform: uppercase;
+    color: var(--#{$prefix}-color-text-secondary);
+    background: var(--#{$prefix}-color-bg-subtle);
+  }
+
+  &--sm th,
+  &--sm td { padding: 0.45rem 0.7rem; }
+
+  &--md th,
+  &--md td { padding: 0.75rem 1rem; }
+
+  &--lg th,
+  &--lg td { padding: 1rem 1.15rem; font-size: var(--#{$prefix}-font-md); }
+
+  &--xl th,
+  &--xl td { padding: 1.2rem 1.35rem; font-size: var(--#{$prefix}-font-lg); }
+}

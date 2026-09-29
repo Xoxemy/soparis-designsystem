@@ -1,0 +1,27 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+
+  &__page {
+    min-width: 2.25rem;
+    height: 2.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--#{$prefix}-radius-sm);
+    border: 1px solid var(--#{$prefix}-color-border);
+    background: var(--#{$prefix}-color-bg-surface);
+    font-size: var(--#{$prefix}-font-sm);
+    font-weight: var(--#{$prefix}-weight-medium);
+
+    &[aria-current="page"] {
+      background: var(--#{$prefix}-brand-ink);
+      color: var(--#{$prefix}-color-text-on-brand);
+      border-color: var(--#{$prefix}-brand-ink);
+    }
+  }
+}

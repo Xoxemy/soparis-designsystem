@@ -1,0 +1,13 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 1.85rem;
+  padding: 0 0.65rem;
+  border-radius: var(--#{$prefix}-radius-full);
+  border: 1px solid var(--#{$prefix}-color-border);
+  background: var(--#{$prefix}-color-bg-surface);
+  font-size: var(--#{$prefix}-font-sm);
+}

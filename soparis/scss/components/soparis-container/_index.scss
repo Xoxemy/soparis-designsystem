@@ -1,0 +1,10 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-container {
+  width: min(100%, var(--#{$prefix}-container-lg));
+  margin-inline: auto;
+
+  @each $size in $sizes {
+    &--#{$size} { width: min(100%, var(--#{$prefix}-container-#{$size})); }
+  }
+}

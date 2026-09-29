@@ -1,0 +1,1142 @@
+<!doctype html>
+<html lang="es" data-soparis-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Soparis</title>
+    <meta name="description" content="Soparis: colores, primitivos y clases en un solo sitio." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./soparis/soparis.css" />
+    <link rel="stylesheet" href="./docs/docs.css" />
+    <link rel="stylesheet" href="./docs/gallery.css" />
+  </head>
+  <body>
+    <a class="soparis-skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="soparis-app" data-soparis-app>
+      <div class="soparis-aside-backdrop" data-soparis-backdrop></div>
+
+      <aside class="soparis-aside" id="nav">
+        <div class="soparis-aside__brand">
+          <span class="soparis-aside__mark" aria-hidden="true"></span>
+          <strong class="soparis-aside__name">So<span>paris</span></strong>
+        </div>
+        <div class="soparis-aside__body">
+                    <nav class="soparis-menu" aria-label="Soparis">
+            <div class="soparis-menu__section">
+              <p class="soparis-menu__label">Colores</p>
+              <a class="soparis-menu__item soparis-menu__item--active" data-gallery-link href="#roles">Principal y fondo</a>
+              <a class="soparis-menu__item" data-gallery-link href="#texto">Texto</a>
+              <a class="soparis-menu__item" data-gallery-link href="#borde">Bordes</a>
+              <a class="soparis-menu__item" data-gallery-link href="#estado">Estados</a>
+              <a class="soparis-menu__item" data-gallery-link href="#cards">Cards</a>
+            </div>
+            <div class="soparis-menu__section">
+              <p class="soparis-menu__label">Primitivos</p>
+              <a class="soparis-menu__item" data-gallery-link href="#color">Color</a>
+              <a class="soparis-menu__item" data-gallery-link href="#espacio">Espacio</a>
+              <a class="soparis-menu__item" data-gallery-link href="#tipo">Tipografía</a>
+              <a class="soparis-menu__item" data-gallery-link href="#radio">Radio</a>
+              <a class="soparis-menu__item" data-gallery-link href="#movimiento">Movimiento</a>
+              <a class="soparis-menu__item" data-gallery-link href="#control">Control e icono</a>
+              <a class="soparis-menu__item" data-gallery-link href="#elevacion">Z-index</a>
+              <a class="soparis-menu__item" data-gallery-link href="#breakpoints">Breakpoints</a>
+            </div>
+            <div class="soparis-menu__section">
+              <p class="soparis-menu__label">Clases</p>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-alert">soparis-alert</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-aside">soparis-aside</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-avatar">soparis-avatar</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-badge">soparis-badge</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-breadcrumbs">soparis-breadcrumbs</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-button">soparis-button</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-button-group">soparis-button-group</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-button-icon">soparis-button-icon</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-card">soparis-card</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-chip">soparis-chip</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-drawer">soparis-drawer</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-dropdown">soparis-dropdown</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-empty">soparis-empty</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-fab">soparis-fab</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-h1">soparis-h1</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-input-choice">soparis-input-choice</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-input-description">soparis-input-description</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-input-file">soparis-input-file</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-input-label">soparis-input-label</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-input-otp">soparis-input-otp</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-input-search">soparis-input-search</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-input-select">soparis-input-select</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-input-slider">soparis-input-slider</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-input-switch">soparis-input-switch</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-input-text">soparis-input-text</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-input-textarea">soparis-input-textarea</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-menu">soparis-menu</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-modal">soparis-modal</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-p">soparis-p</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-pagination">soparis-pagination</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-profile">soparis-profile</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-progress">soparis-progress</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-spinner">soparis-spinner</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-table">soparis-table</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-tabs">soparis-tabs</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-toast">soparis-toast</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-tooltip">soparis-tooltip</a>
+              <a class="soparis-menu__item" data-gallery-link href="#soparis-topbar">soparis-topbar</a>
+            </div>
+          </nav>
+        </div>
+        <div class="soparis-aside__foot">
+          <p class="soparis-caption" style="color: rgba(247,241,231,.55); padding: 0 .4rem">Soparis · Synka</p>
+        </div>
+      </aside>
+
+      <header class="soparis-topbar">
+        <button class="soparis-button-icon soparis-burger" data-soparis-burger aria-controls="nav" aria-expanded="false" aria-label="Abrir menú">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <p class="soparis-topbar__title">Soparis</p>
+        <div class="soparis-topbar__grow"></div>
+        <button class="soparis-button soparis-button--sm soparis-button--ghost" data-soparis-theme-toggle type="button">Tema</button>
+      </header>
+
+      <main class="soparis-main" id="contenido">
+        <div class="soparis-page">
+          <p class="soparis-overline">Soparis</p>
+          <h1 class="soparis-h1">Colores, primitivos y clases</h1>
+          <p class="soparis-lead">Todo está en este aside: roles de color, escalas crudas y cada clase por su nombre.</p>
+
+          <div class="gallery-toolbar">
+            <label class="soparis-visually-hidden" for="gallery-search">Filtrar componentes</label>
+            <div class="soparis-input-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input id="gallery-search" class="soparis-input-text soparis-input-text--md" data-gallery-search placeholder="Filtrar: primary, ink, soparis-button…" />
+            </div>
+            <p class="gallery-count" data-gallery-count></p>
+          </div>
+
+          <p class="gallery-empty soparis-p" data-gallery-empty hidden>Nada coincide con esa búsqueda.</p>
+
+          <section class="gallery-section" id="roles" data-gallery-section="roles primary secondary accent background fondo card principal secundario">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Principal, secundario y fondo</h2>
+              <code class="soparis-code">--soparis-color-primary</code>
+            </div>
+            <div class="docs-grid">
+              <div class="docs-swatch">
+                <div class="docs-swatch__chip is-dark" style="background:var(--soparis-color-primary)"></div>
+                <div class="docs-swatch__meta">
+                  <strong>Principal</strong>
+                  <code class="soparis-code">--soparis-color-primary</code>
+                  <span class="soparis-caption">Índigo Synka. Botón primary, CTA, marca.</span>
+                </div>
+              </div>
+              <div class="docs-swatch">
+                <div class="docs-swatch__chip is-dark" style="background:var(--soparis-color-secondary)"></div>
+                <div class="docs-swatch__meta">
+                  <strong>Secundario</strong>
+                  <code class="soparis-code">--soparis-color-secondary</code>
+                  <span class="soparis-caption">Tinta. Texto, aside, botones estructurales.</span>
+                </div>
+              </div>
+              <div class="docs-swatch">
+                <div class="docs-swatch__chip is-dark" style="background:var(--soparis-color-accent)"></div>
+                <div class="docs-swatch__meta">
+                  <strong>Acento</strong>
+                  <code class="soparis-code">--soparis-color-accent</code>
+                  <span class="soparis-caption">Coral Synka. Guardar contacto, acento, plan Orange.</span>
+                </div>
+              </div>
+              <div class="docs-swatch">
+                <div class="docs-swatch__chip" style="background:var(--soparis-color-background)"></div>
+                <div class="docs-swatch__meta">
+                  <strong>Fondo</strong>
+                  <code class="soparis-code">--soparis-color-background</code>
+                  <span class="soparis-caption">Canvas de página. Cambia en oscuro.</span>
+                </div>
+              </div>
+              <div class="docs-swatch">
+                <div class="docs-swatch__chip" style="background:var(--soparis-color-card)"></div>
+                <div class="docs-swatch__meta">
+                  <strong>Card</strong>
+                  <code class="soparis-code">--soparis-color-card</code>
+                  <span class="soparis-caption">Superficie de cards, inputs y paneles.</span>
+                </div>
+              </div>
+              <div class="docs-swatch">
+                <div class="docs-swatch__chip" style="background:var(--soparis-color-bg-subtle)"></div>
+                <div class="docs-swatch__meta">
+                  <strong>Fondo sutil</strong>
+                  <code class="soparis-code">--soparis-color-bg-subtle</code>
+                  <span class="soparis-caption">Cabeceras de tabla, badges, wells.</span>
+                </div>
+              </div>
+              <div class="docs-swatch">
+                <div class="docs-swatch__chip is-dark" style="background:var(--soparis-color-bg-inverse)"></div>
+                <div class="docs-swatch__meta">
+                  <strong>Inverso</strong>
+                  <code class="soparis-code">--soparis-color-bg-inverse</code>
+                  <span class="soparis-caption">Fondos que invierten el texto.</span>
+                </div>
+              </div>
+              <div class="docs-swatch">
+                <div class="docs-swatch__chip" style="background:var(--soparis-color-bg-input)"></div>
+                <div class="docs-swatch__meta">
+                  <strong>Input</strong>
+                  <code class="soparis-code">--soparis-color-bg-input</code>
+                  <span class="soparis-caption">Campos de formulario.</span>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-block">
+              <p class="gallery-block__label">Utilidades</p>
+              <div class="soparis-cluster">
+                <span class="soparis-bg--primary" style="padding:.55rem .8rem;border-radius:var(--soparis-radius-md)">bg primary</span>
+                <span class="soparis-bg--secondary" style="padding:.55rem .8rem;border-radius:var(--soparis-radius-md)">bg secondary</span>
+                <span class="soparis-bg--accent" style="padding:.55rem .8rem;border-radius:var(--soparis-radius-md)">bg accent</span>
+                <span class="soparis-bg--inverse" style="padding:.55rem .8rem;border-radius:var(--soparis-radius-md)">bg inverse</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="texto" data-gallery-section="texto text on-primary">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Texto</h2>
+              <code class="soparis-code">--soparis-color-text</code>
+            </div>
+            <div class="gallery-preview soparis-stack">
+              <p class="soparis-p" style="color:var(--soparis-color-text)">Texto principal · --soparis-color-text</p>
+              <p class="soparis-p" style="color:var(--soparis-color-text-secondary)">Texto secundario · --soparis-color-text-secondary</p>
+              <p class="soparis-p" style="color:var(--soparis-color-text-muted)">Texto muted · --soparis-color-text-muted</p>
+              <p class="soparis-p"><a class="soparis-link" href="#texto">Enlace · --soparis-color-text-link</a></p>
+              <div class="soparis-cluster">
+                <span class="soparis-bg--primary" style="padding:.55rem .8rem;border-radius:var(--soparis-radius-md)">Sobre principal · --soparis-color-primary-on</span>
+                <span class="soparis-bg--secondary" style="padding:.55rem .8rem;border-radius:var(--soparis-radius-md)">Sobre secundario · --soparis-color-secondary-on</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="borde" data-gallery-section="borde border">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Bordes</h2>
+              <code class="soparis-code">--soparis-color-border</code>
+            </div>
+            <div class="soparis-grid soparis-grid--3">
+              <div class="soparis-card soparis-card--md" style="border-color:var(--soparis-color-border)">border</div>
+              <div class="soparis-card soparis-card--md" style="border-color:var(--soparis-color-border-strong);border-width:2px">border-strong</div>
+              <div class="soparis-card soparis-card--md" style="border-color:var(--soparis-color-border-gold);border-width:2px">border-gold</div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="estado" data-gallery-section="estado success danger warning info premium">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Estados</h2>
+              <code class="soparis-code">--soparis-color-success</code>
+            </div>
+            <div class="docs-grid">
+              <div class="docs-swatch">
+                <div class="docs-swatch__chip is-dark" style="background:var(--soparis-color-success)"></div>
+                <div class="docs-swatch__meta"><strong>Success</strong><code class="soparis-code">--soparis-color-success</code></div>
+              </div>
+              <div class="docs-swatch">
+                <div class="docs-swatch__chip is-dark" style="background:var(--soparis-color-warning)"></div>
+                <div class="docs-swatch__meta"><strong>Warning</strong><code class="soparis-code">--soparis-color-warning</code></div>
+              </div>
+              <div class="docs-swatch">
+                <div class="docs-swatch__chip is-dark" style="background:var(--soparis-color-danger)"></div>
+                <div class="docs-swatch__meta"><strong>Danger</strong><code class="soparis-code">--soparis-color-danger</code></div>
+              </div>
+              <div class="docs-swatch">
+                <div class="docs-swatch__chip is-dark" style="background:var(--soparis-color-info)"></div>
+                <div class="docs-swatch__meta"><strong>Info</strong><code class="soparis-code">--soparis-color-info</code></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="cards" data-gallery-section="cards card superficie">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Cards</h2>
+              <code class="soparis-code">soparis-card--primary</code>
+            </div>
+            <p class="soparis-p">Por defecto la card usa <code class="soparis-code">--soparis-color-card</code>. Las variantes pintan el rol.</p>
+            <div class="soparis-grid soparis-grid--3">
+              <article class="soparis-card soparis-card--md">
+                <p class="soparis-overline">Default</p>
+                <h3 class="soparis-h5">Superficie</h3>
+                <p class="soparis-caption">Dashboard, listas, formularios.</p>
+              </article>
+              <article class="soparis-card soparis-card--md soparis-card--subtle">
+                <p class="soparis-overline">Subtle</p>
+                <h3 class="soparis-h5">Fondo sutil</h3>
+                <p class="soparis-caption">Wells, grupos, recuentos.</p>
+              </article>
+              <article class="soparis-card soparis-card--md soparis-card--outline">
+                <p class="soparis-overline">Outline</p>
+                <h3 class="soparis-h5">Sin relleno</h3>
+                <p class="soparis-caption">Sobre un fondo ya pintado.</p>
+              </article>
+              <article class="soparis-card soparis-card--md soparis-card--elevated">
+                <p class="soparis-overline">Elevated</p>
+                <h3 class="soparis-h5">Borde fuerte</h3>
+                <p class="soparis-caption">Destacar una métrica.</p>
+              </article>
+              <article class="soparis-card soparis-card--md soparis-card--primary">
+                <p class="soparis-overline">Primary</p>
+                <h3 class="soparis-h5">Principal</h3>
+                <p class="soparis-caption">Hero de dashboard, CTA de bloque.</p>
+              </article>
+              <article class="soparis-card soparis-card--md soparis-card--secondary">
+                <p class="soparis-overline">Secondary</p>
+                <h3 class="soparis-h5">Tinta</h3>
+                <p class="soparis-caption">Aside, bloques estructurales.</p>
+              </article>
+              <article class="soparis-card soparis-card--md soparis-card--accent">
+                <p class="soparis-overline">Accent</p>
+                <h3 class="soparis-h5">Coral</h3>
+                <p class="soparis-caption">Acción de networking, plan Orange.</p>
+              </article>
+              <article class="soparis-card soparis-card--md soparis-card--inverse">
+                <p class="soparis-overline">Inverse</p>
+                <h3 class="soparis-h5">Inverso</h3>
+                <p class="soparis-caption">Bloques sobre canvas claro.</p>
+              </article>
+              <article class="soparis-card soparis-card--md soparis-card--premium soparis-card--interactive">
+                <p class="soparis-overline">Premium</p>
+                <h3 class="soparis-h5">Tarjeta Synka</h3>
+                <p class="soparis-caption">Perfil público, hover.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="color" data-gallery-section="color ink canvas gold connect danger warning info night">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Color</h2>
+              <code class="soparis-code">--soparis-primitive-ink-900</code>
+            </div>
+
+            <div class="gallery-block">
+              <p class="gallery-block__label">Ink</p>
+              <div class="primitive-ramp">
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-ink-50)"><strong>50</strong>ink</div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-ink-100)"><strong>100</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-ink-200)"><strong>200</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-ink-300)"><strong>300</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-ink-400)"><strong>400</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-ink-500)"><strong>500</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-ink-600)"><strong>600</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-ink-700)"><strong>700</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-ink-800)"><strong>800</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-ink-850)"><strong>850</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-ink-900)"><strong>900</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-ink-950)"><strong>950</strong></div>
+              </div>
+            </div>
+
+            <div class="gallery-block">
+              <p class="gallery-block__label">Canvas</p>
+              <div class="primitive-ramp">
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-canvas-50)"><strong>50</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-canvas-100)"><strong>100</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-canvas-200)"><strong>200</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-canvas-300)"><strong>300</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-canvas-400)"><strong>400</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-canvas-500)"><strong>500</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-canvas-600)"><strong>600</strong></div>
+              </div>
+            </div>
+
+            <div class="gallery-block">
+              <p class="gallery-block__label">Gold</p>
+              <div class="primitive-ramp">
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-gold-50)"><strong>50</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-gold-100)"><strong>100</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-gold-200)"><strong>200</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-gold-300)"><strong>300</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-gold-400)"><strong>400</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-gold-500)"><strong>500</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-gold-600)"><strong>600</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-gold-700)"><strong>700</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-gold-800)"><strong>800</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-gold-900)"><strong>900</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-gold-950)"><strong>950</strong></div>
+              </div>
+            </div>
+
+            <div class="gallery-block">
+              <p class="gallery-block__label">Connect</p>
+              <div class="primitive-ramp">
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-connect-50)"><strong>50</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-connect-100)"><strong>100</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-connect-200)"><strong>200</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-connect-300)"><strong>300</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-connect-500)"><strong>500</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-connect-600)"><strong>600</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-connect-700)"><strong>700</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-connect-800)"><strong>800</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-connect-900)"><strong>900</strong></div>
+              </div>
+            </div>
+
+            <div class="gallery-block">
+              <p class="gallery-block__label">Danger · Warning · Info</p>
+              <div class="primitive-ramp">
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-danger-50)"><strong>50</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-danger-100)"><strong>100</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-danger-500)"><strong>500</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-danger-700)"><strong>700</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-warning-50)"><strong>50</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-warning-500)"><strong>500</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-warning-700)"><strong>700</strong></div>
+                <div class="primitive-ramp__cell" style="background:var(--soparis-primitive-info-50)"><strong>50</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-info-500)"><strong>500</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-info-700)"><strong>700</strong></div>
+              </div>
+            </div>
+
+            <div class="gallery-block">
+              <p class="gallery-block__label">Night · cromo oscuro</p>
+              <div class="primitive-ramp">
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-night-50)"><strong>50</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-night-100)"><strong>100</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-night-200)"><strong>200</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-night-300)"><strong>300</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-night-400)"><strong>400</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-night-500)"><strong>500</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-night-600)"><strong>600</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-night-700)"><strong>700</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-night-800)"><strong>800</strong></div>
+                <div class="primitive-ramp__cell is-dark" style="background:var(--soparis-primitive-night-900)"><strong>900</strong></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="espacio" data-gallery-section="espacio space padding gap">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Espacio</h2>
+              <code class="soparis-code">--soparis-primitive-space-4</code>
+            </div>
+            <div class="gallery-preview primitive-row">
+              <div class="primitive-meter"><div class="primitive-meter__bar" style="width:var(--soparis-primitive-space-1)"></div><code class="soparis-code">1 · 4px</code></div>
+              <div class="primitive-meter"><div class="primitive-meter__bar" style="width:var(--soparis-primitive-space-2)"></div><code class="soparis-code">2 · 8px · sm</code></div>
+              <div class="primitive-meter"><div class="primitive-meter__bar" style="width:var(--soparis-primitive-space-3)"></div><code class="soparis-code">3 · 12px</code></div>
+              <div class="primitive-meter"><div class="primitive-meter__bar" style="width:var(--soparis-primitive-space-4)"></div><code class="soparis-code">4 · 16px · md</code></div>
+              <div class="primitive-meter"><div class="primitive-meter__bar" style="width:var(--soparis-primitive-space-5)"></div><code class="soparis-code">5 · 20px</code></div>
+              <div class="primitive-meter"><div class="primitive-meter__bar" style="width:var(--soparis-primitive-space-6)"></div><code class="soparis-code">6 · 24px · lg</code></div>
+              <div class="primitive-meter"><div class="primitive-meter__bar" style="width:var(--soparis-primitive-space-8)"></div><code class="soparis-code">8 · 32px · xl</code></div>
+              <div class="primitive-meter"><div class="primitive-meter__bar" style="width:var(--soparis-primitive-space-10)"></div><code class="soparis-code">10 · 40px</code></div>
+              <div class="primitive-meter"><div class="primitive-meter__bar" style="width:var(--soparis-primitive-space-12)"></div><code class="soparis-code">12 · 48px</code></div>
+              <div class="primitive-meter"><div class="primitive-meter__bar" style="width:var(--soparis-primitive-space-16)"></div><code class="soparis-code">16 · 64px</code></div>
+              <div class="primitive-meter"><div class="primitive-meter__bar" style="width:var(--soparis-primitive-space-20)"></div><code class="soparis-code">20 · 80px</code></div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="tipo" data-gallery-section="tipografía font weight leading tracking">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Tipografía</h2>
+              <code class="soparis-code">--soparis-primitive-font-md</code>
+            </div>
+            <div class="gallery-preview soparis-stack">
+              <p class="primitive-type" style="font-size:var(--soparis-primitive-font-xs)">xs · 12px · caption</p>
+              <p class="primitive-type" style="font-size:var(--soparis-primitive-font-sm)">sm · 13px · ayudas</p>
+              <p class="primitive-type" style="font-size:var(--soparis-primitive-font-md)">md · 15px · cuerpo</p>
+              <p class="primitive-type" style="font-size:var(--soparis-primitive-font-lg)">lg · 17px · lead</p>
+              <p class="primitive-type" style="font-size:var(--soparis-primitive-font-xl)">xl · 20px</p>
+              <p class="primitive-type" style="font-size:var(--soparis-primitive-font-2xl);font-weight:var(--soparis-primitive-weight-semibold)">2xl · 24px</p>
+              <p class="primitive-type" style="font-size:var(--soparis-primitive-font-3xl);font-family:var(--soparis-primitive-font-display);font-weight:var(--soparis-primitive-weight-semibold)">3xl · display</p>
+              <p class="primitive-type" style="font-size:var(--soparis-primitive-font-4xl);font-family:var(--soparis-primitive-font-display);font-weight:var(--soparis-primitive-weight-semibold);letter-spacing:var(--soparis-primitive-tracking-tight)">4xl · título</p>
+              <p class="soparis-cluster">
+                <span style="font-weight:var(--soparis-primitive-weight-regular)">Regular 400</span>
+                <span style="font-weight:var(--soparis-primitive-weight-medium)">Medium 500</span>
+                <span style="font-weight:var(--soparis-primitive-weight-semibold)">Semibold 600</span>
+                <span style="font-weight:var(--soparis-primitive-weight-bold)">Bold 700</span>
+              </p>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="radio" data-gallery-section="radio radius">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Radio</h2>
+              <code class="soparis-code">--soparis-primitive-radius-md</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-cluster">
+                <div class="primitive-radius-demo" style="width:4.5rem;height:4.5rem;border-radius:var(--soparis-primitive-radius-sm)"></div>
+                <div class="primitive-radius-demo" style="width:4.5rem;height:4.5rem;border-radius:var(--soparis-primitive-radius-md)"></div>
+                <div class="primitive-radius-demo" style="width:4.5rem;height:4.5rem;border-radius:var(--soparis-primitive-radius-lg)"></div>
+                <div class="primitive-radius-demo" style="width:4.5rem;height:4.5rem;border-radius:var(--soparis-primitive-radius-xl)"></div>
+                <div class="primitive-radius-demo" style="width:4.5rem;height:4.5rem;border-radius:var(--soparis-primitive-radius-full)"></div>
+              </div>
+              <p class="soparis-caption">sm · md · lg · xl · full</p>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="movimiento" data-gallery-section="movimiento duration ease motion">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Movimiento</h2>
+              <code class="soparis-code">--soparis-primitive-duration-default</code>
+            </div>
+            <div class="gallery-preview soparis-stack">
+              <p class="soparis-p soparis-p--sm">fast 120ms · default 200ms · slow 320ms</p>
+              <p class="soparis-p soparis-p--sm">ease <code class="soparis-code">cubic-bezier(0.25, 0.1, 0.25, 1)</code></p>
+              <button class="soparis-button soparis-button--premium soparis-button--md" type="button">Hover para sentir la transición</button>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="control" data-gallery-section="control icono alto padding">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Control e icono</h2>
+              <code class="soparis-code">--soparis-primitive-control-h-md</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-cluster">
+                <button class="soparis-button soparis-button--primary soparis-button--sm" type="button">32</button>
+                <button class="soparis-button soparis-button--primary soparis-button--md" type="button">40</button>
+                <button class="soparis-button soparis-button--primary soparis-button--lg" type="button">48</button>
+                <button class="soparis-button soparis-button--primary soparis-button--xl" type="button">56</button>
+              </div>
+              <div class="soparis-cluster">
+                <svg class="soparis-icon soparis-icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>
+                <svg class="soparis-icon soparis-icon--md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>
+                <svg class="soparis-icon soparis-icon--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>
+                <svg class="soparis-icon soparis-icon--xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>
+              </div>
+              <p class="soparis-caption">Altos de control: sm 32 · md 40 · lg 48 · xl 56. Iconos: 14 · 18 · 22 · 26.</p>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="elevacion" data-gallery-section="z-index capa overlay toast">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Z-index</h2>
+              <code class="soparis-code">--soparis-primitive-z-overlay</code>
+            </div>
+            <div class="gallery-preview">
+              <table class="docs-table">
+                <thead><tr><th>Token</th><th>Valor</th><th>Uso</th></tr></thead>
+                <tbody>
+                  <tr><td>base</td><td>1</td><td>Contenido</td></tr>
+                  <tr><td>sticky</td><td>100</td><td>Topbar, FAB</td></tr>
+                  <tr><td>aside</td><td>300</td><td>Drawer de navegación</td></tr>
+                  <tr><td>dropdown</td><td>400</td><td>Menús flotantes</td></tr>
+                  <tr><td>overlay</td><td>500</td><td>Modal y drawer de detalle</td></tr>
+                  <tr><td>toast</td><td>600</td><td>Confirmaciones</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="breakpoints" data-gallery-section="breakpoints media query">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Breakpoints</h2>
+              <code class="soparis-code">--soparis-primitive-bp-md</code>
+            </div>
+            <div class="gallery-preview">
+              <table class="docs-table">
+                <thead><tr><th>Token</th><th>Ancho</th><th>Comportamiento</th></tr></thead>
+                <tbody>
+                  <tr><td>sm</td><td>490px</td><td>Teléfono</td></tr>
+                  <tr><td>md</td><td>768px</td><td>Aside → drawer por debajo</td></tr>
+                  <tr><td>lg</td><td>1040px</td><td>App shell</td></tr>
+                  <tr><td>xl</td><td>1440px</td><td>Escritorio amplio</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-p" data-gallery-section="soparis-p párrafo">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-p</h2>
+              <code class="soparis-code">soparis-p--sm md lg xl</code>
+            </div>
+            <div class="gallery-preview soparis-stack">
+              <p class="soparis-p soparis-p--xl">Párrafo xl — lead de tarjeta</p>
+              <p class="soparis-p soparis-p--lg">Párrafo lg</p>
+              <p class="soparis-p">Párrafo md por defecto. Una conversación, un toque.</p>
+              <p class="soparis-p soparis-p--sm">Párrafo sm — metadatos y ayudas</p>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-h1" data-gallery-section="soparis-h1 soparis-h2 soparis-h3 heading">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-h1</h2>
+              <code class="soparis-code">soparis-h1 · soparis-h2 · soparis-h3</code>
+            </div>
+            <div class="gallery-preview soparis-stack">
+              <p class="soparis-display">Synka</p>
+              <h3 class="soparis-h1">Ana Moreira</h3>
+              <h4 class="soparis-h3">Head of Partnerships</h4>
+              <p class="soparis-lead">Identidad digital que se actualiza sola.</p>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-input-label" data-gallery-section="soparis-input-label">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-input-label</h2>
+              <code class="soparis-code">soparis-input-label</code>
+            </div>
+            <div class="gallery-preview">
+              <label class="soparis-input-label" for="demo-label">Nombre público</label>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-input-description" data-gallery-section="soparis-input-description">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-input-description</h2>
+              <code class="soparis-code">soparis-input-description</code>
+            </div>
+            <div class="gallery-preview">
+              <p class="soparis-input-description">Así aparece en la tarjeta digital.</p>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-button" data-gallery-section="soparis-button">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-button</h2>
+              <code class="soparis-code">soparis-button</code>
+            </div>
+            <div class="gallery-block">
+              <p class="gallery-block__label">Variantes md</p>
+              <div class="gallery-preview">
+                <div class="soparis-cluster">
+                  <button class="soparis-button soparis-button--primary soparis-button--md" type="button">Primary</button>
+                  <button class="soparis-button soparis-button--secondary soparis-button--md" type="button">Secondary</button>
+                  <button class="soparis-button soparis-button--ghost soparis-button--md" type="button">Ghost</button>
+                  <button class="soparis-button soparis-button--premium soparis-button--md" type="button">Premium</button>
+                  <button class="soparis-button soparis-button--connect soparis-button--md" type="button">Connect</button>
+                  <button class="soparis-button soparis-button--danger soparis-button--md" type="button">Danger</button>
+                  <button class="soparis-button soparis-button--primary soparis-button--md" type="button" disabled>Disabled</button>
+                  <button class="soparis-button soparis-button--primary soparis-button--md is-loading" type="button">Cargando</button>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-block">
+              <p class="gallery-block__label">Tamaños sm md lg xl</p>
+              <div class="gallery-preview">
+                <div class="soparis-cluster">
+                  <button class="soparis-button soparis-button--primary soparis-button--sm" type="button">sm · Filtro</button>
+                  <button class="soparis-button soparis-button--primary soparis-button--md" type="button">md · Guardar</button>
+                  <button class="soparis-button soparis-button--connect soparis-button--lg" type="button">lg · Guardar contacto</button>
+                  <button class="soparis-button soparis-button--premium soparis-button--xl" type="button">xl · Compartir</button>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-preview">
+              <button class="soparis-button soparis-button--connect soparis-button--lg soparis-button--block" type="button">Guardar contacto</button>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-button-group" data-gallery-section="soparis-button-group">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-button-group</h2>
+              <code class="soparis-code">soparis-button-group</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-button-group">
+                <button class="soparis-button soparis-button--secondary soparis-button--md" type="button">Semana</button>
+                <button class="soparis-button soparis-button--primary soparis-button--md" type="button">Mes</button>
+                <button class="soparis-button soparis-button--secondary soparis-button--md" type="button">Año</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-button-icon" data-gallery-section="soparis-button-icon">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-button-icon</h2>
+              <code class="soparis-code">soparis-button-icon</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-cluster">
+                <button class="soparis-button-icon soparis-button-icon--sm" type="button" aria-label="Más sm">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                </button>
+                <button class="soparis-button-icon soparis-button-icon--md" type="button" aria-label="Más md">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                </button>
+                <button class="soparis-button-icon soparis-button-icon--lg" type="button" aria-label="Más lg">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-fab" data-gallery-section="soparis-fab">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-fab</h2>
+              <code class="soparis-code">soparis-fab</code>
+            </div>
+            <div class="gallery-preview">
+              <button class="soparis-fab" type="button" aria-label="Nueva tarjeta">+</button>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-input-text" data-gallery-section="soparis-input-text">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-input-text</h2>
+              <code class="soparis-code">soparis-input-text</code>
+            </div>
+            <div class="gallery-preview soparis-stack" style="max-width:32rem">
+              <div class="soparis-field">
+                <label class="soparis-input-label" for="g-name">Nombre público</label>
+                <input class="soparis-input-text soparis-input-text--md" id="g-name" value="Ana Moreira" />
+                <p class="soparis-input-description">Así aparece en la tarjeta digital.</p>
+              </div>
+              <div class="soparis-field is-error">
+                <label class="soparis-input-label" for="g-error">Campo con error</label>
+                <input class="soparis-input-text soparis-input-text--md soparis-input-text--error" id="g-error" placeholder="WhatsApp" />
+                <p class="soparis-input-description">Indica un canal válido.</p>
+              </div>
+              <div class="soparis-cluster">
+                <input class="soparis-input-text soparis-input-text--sm" placeholder="sm" />
+                <input class="soparis-input-text soparis-input-text--md" placeholder="md" />
+                <input class="soparis-input-text soparis-input-text--lg" placeholder="lg" />
+                <input class="soparis-input-text soparis-input-text--xl" placeholder="xl" />
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-input-textarea" data-gallery-section="soparis-input-textarea">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-input-textarea</h2>
+              <code class="soparis-code">soparis-input-textarea</code>
+            </div>
+            <div class="gallery-preview" style="max-width:32rem">
+              <textarea class="soparis-input-textarea" id="g-bio" rows="3">Construyo redes que no se pierden en una servilleta.</textarea>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-input-select" data-gallery-section="soparis-input-select">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-input-select</h2>
+              <code class="soparis-code">soparis-input-select</code>
+            </div>
+            <div class="gallery-preview" style="max-width:32rem">
+              <select class="soparis-input-select soparis-input-select--md" id="g-channel">
+                <option>WhatsApp</option>
+                <option>Email</option>
+                <option>LinkedIn</option>
+              </select>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-input-search" data-gallery-section="soparis-input-search">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-input-search</h2>
+              <code class="soparis-code">soparis-input-search</code>
+            </div>
+            <div class="gallery-preview" style="max-width:32rem">
+              <div class="soparis-input-search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input class="soparis-input-text soparis-input-text--md" placeholder="Buscar contacto" />
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-input-choice" data-gallery-section="soparis-input-choice">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-input-choice</h2>
+              <code class="soparis-code">soparis-input-choice</code>
+            </div>
+            <div class="gallery-preview">
+              <label class="soparis-input-choice">
+                <input type="checkbox" checked />
+                <span>Capturar el contacto de quien vea mi tarjeta</span>
+              </label>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-input-switch" data-gallery-section="soparis-input-switch">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-input-switch</h2>
+              <code class="soparis-code">soparis-input-switch</code>
+            </div>
+            <div class="gallery-preview">
+              <label class="soparis-input-choice">
+                <span class="soparis-input-switch">
+                  <input type="checkbox" checked />
+                  <span class="soparis-input-switch__track"></span>
+                </span>
+                <span>Perfil público activo</span>
+              </label>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-input-file" data-gallery-section="soparis-input-file">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-input-file</h2>
+              <code class="soparis-code">soparis-input-file</code>
+            </div>
+            <div class="gallery-preview">
+              <label class="soparis-input-file">Arrastra un retrato o pulsa para subir<br /><span class="soparis-caption">JPG o PNG · 1:1 · mínimo 400px</span></label>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-input-slider" data-gallery-section="soparis-input-slider">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-input-slider</h2>
+              <code class="soparis-code">soparis-input-slider</code>
+            </div>
+            <div class="gallery-preview">
+              <input class="soparis-input-slider" id="g-slider" type="range" min="0" max="100" value="64" />
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-input-otp" data-gallery-section="soparis-input-otp">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-input-otp</h2>
+              <code class="soparis-code">soparis-input-otp</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-input-otp" aria-label="Código de verificación">
+                <input class="soparis-input-text" maxlength="1" value="4" />
+                <input class="soparis-input-text" maxlength="1" value="8" />
+                <input class="soparis-input-text" maxlength="1" value="2" />
+                <input class="soparis-input-text" maxlength="1" value="1" />
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-alert" data-gallery-section="soparis-alert">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-alert</h2>
+              <code class="soparis-code">soparis-alert</code>
+            </div>
+            <div class="gallery-preview soparis-stack">
+              <div class="soparis-alert soparis-alert--info soparis-alert--md">12 toques NFC en las últimas 24 horas.</div>
+              <div class="soparis-alert soparis-alert--success soparis-alert--md">Contacto guardado. Lo verás en tu CRM de Synka.</div>
+              <div class="soparis-alert soparis-alert--warning soparis-alert--md">La tarjeta NFC aún no está emparejada.</div>
+              <div class="soparis-alert soparis-alert--danger soparis-alert--md">No pudimos enviar el perfil. Reintenta.</div>
+              <div class="soparis-alert soparis-alert--premium soparis-alert--md">Plan Metal: analítica de toques y CRM ilimitado.</div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-badge" data-gallery-section="soparis-badge">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-badge</h2>
+              <code class="soparis-code">soparis-badge</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-cluster">
+                <span class="soparis-badge soparis-badge--sm">sm</span>
+                <span class="soparis-badge soparis-badge--md">Free</span>
+                <span class="soparis-badge soparis-badge--gold soparis-badge--md">Metal</span>
+                <span class="soparis-badge soparis-badge--connect soparis-badge--lg">Nuevo lead</span>
+                <span class="soparis-badge soparis-badge--danger soparis-badge--xl">Error</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-chip" data-gallery-section="soparis-chip">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-chip</h2>
+              <code class="soparis-code">soparis-chip</code>
+            </div>
+            <div class="gallery-preview">
+              <span class="soparis-chip">WhatsApp <button class="soparis-button-icon soparis-button-icon--sm" aria-label="Quitar" type="button">×</button></span>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-progress" data-gallery-section="soparis-progress">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-progress</h2>
+              <code class="soparis-code">soparis-progress</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-progress soparis-progress--md" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"><div class="soparis-progress__bar" style="width:64%"></div></div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-spinner" data-gallery-section="soparis-spinner">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-spinner</h2>
+              <code class="soparis-code">soparis-spinner</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-cluster">
+                <span class="soparis-spinner soparis-spinner--sm" aria-label="Cargando sm"></span>
+                <span class="soparis-spinner soparis-spinner--md" aria-label="Cargando md"></span>
+                <span class="soparis-spinner soparis-spinner--lg" aria-label="Cargando lg"></span>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-empty" data-gallery-section="soparis-empty">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-empty</h2>
+              <code class="soparis-code">soparis-empty</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-empty">
+                <p class="soparis-h5">Aún no hay leads</p>
+                <p class="soparis-p soparis-p--sm">Comparte tu tarjeta NFC o el QR de feria.</p>
+                <button class="soparis-button soparis-button--premium soparis-button--md" type="button">Compartir tarjeta</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-toast" data-gallery-section="soparis-toast">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-toast</h2>
+              <code class="soparis-code">soparis-toast</code>
+            </div>
+            <div class="gallery-preview soparis-stack">
+              <div class="soparis-cluster">
+                <button class="soparis-button soparis-button--secondary soparis-button--md" data-soparis-toast="Nuevo lead capturado" data-tone="success" data-soparis-toast-stack="down" type="button">Apilar hacia abajo</button>
+                <button class="soparis-button soparis-button--secondary soparis-button--md" data-soparis-toast="Tarjeta actualizada" data-tone="success" data-soparis-toast-stack="up" type="button">Apilar hacia arriba</button>
+              </div>
+              <p class="soparis-input-description">Pulsa varias veces. <code class="soparis-code">soparis-toast-stack--down</code>: el nuevo arriba, el resto debajo. <code class="soparis-code">soparis-toast-stack--up</code>: el nuevo abajo, el resto encima.</p>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-card" data-gallery-section="soparis-card">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-card</h2>
+              <code class="soparis-code">soparis-card</code>
+            </div>
+            <div class="gallery-preview soparis-stack">
+              <div class="soparis-grid soparis-grid--3">
+                <div class="soparis-card soparis-card--md soparis-card--primary soparis-stat"><span class="soparis-stat__value">128</span><span class="soparis-stat__label">Toques esta semana</span></div>
+                <div class="soparis-card soparis-card--md soparis-card--secondary soparis-stat"><span class="soparis-stat__value">36</span><span class="soparis-stat__label">Leads nuevos</span></div>
+                <div class="soparis-card soparis-card--md soparis-stat"><span class="soparis-stat__value">18%</span><span class="soparis-stat__label">Respuesta en 24h</span></div>
+              </div>
+              <div class="soparis-grid soparis-grid--3">
+                <article class="soparis-card soparis-card--sm soparis-card--subtle"><strong>Subtle</strong><p class="soparis-caption">Fondo sutil</p></article>
+                <article class="soparis-card soparis-card--sm soparis-card--outline"><strong>Outline</strong><p class="soparis-caption">Sin relleno</p></article>
+                <article class="soparis-card soparis-card--sm soparis-card--accent"><strong>Accent</strong><p class="soparis-caption">Connect</p></article>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-avatar" data-gallery-section="soparis-avatar">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-avatar</h2>
+              <code class="soparis-code">soparis-avatar</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-cluster">
+                <span class="soparis-avatar soparis-avatar--sm">AM</span>
+                <span class="soparis-avatar soparis-avatar--md">JR</span>
+                <span class="soparis-avatar soparis-avatar--lg">LS</span>
+                <span class="soparis-avatar soparis-avatar--xl">SK</span>
+                <div class="soparis-avatar-stack">
+                  <span class="soparis-avatar soparis-avatar--md">AM</span>
+                  <span class="soparis-avatar soparis-avatar--md">JR</span>
+                  <span class="soparis-avatar soparis-avatar--md">LS</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-table" data-gallery-section="soparis-table">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-table</h2>
+              <code class="soparis-code">soparis-table</code>
+            </div>
+            <div class="gallery-preview soparis-stack">
+              <div class="soparis-card soparis-card--md">
+                <div class="soparis-item">
+                  <span class="soparis-avatar soparis-avatar--md">AM</span>
+                  <div><strong>Ana Moreira</strong><p class="soparis-caption">Visto hace 12 min · WhatsApp</p></div>
+                  <span class="soparis-badge soparis-badge--connect" style="margin-left:auto">Lead</span>
+                </div>
+                <div class="soparis-item">
+                  <span class="soparis-avatar soparis-avatar--md">JR</span>
+                  <div><strong>Jorge Rivas</strong><p class="soparis-caption">QR en Web Summit</p></div>
+                  <span class="soparis-badge" style="margin-left:auto">Nuevo</span>
+                </div>
+              </div>
+              <div class="soparis-table-wrap">
+                <table class="soparis-table soparis-table--md">
+                  <thead><tr><th>Contacto</th><th>Origen</th><th>Estado</th></tr></thead>
+                  <tbody>
+                    <tr><td>Ana Moreira</td><td>NFC Metal</td><td>Seguimiento</td></tr>
+                    <tr><td>Jorge Rivas</td><td>QR</td><td>Nuevo</td></tr>
+                    <tr><td>Leila Shah</td><td>Link</td><td>Ganado</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-breadcrumbs" data-gallery-section="soparis-breadcrumbs">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-breadcrumbs</h2>
+              <code class="soparis-code">soparis-breadcrumbs</code>
+            </div>
+            <div class="gallery-preview soparis-stack">
+              <nav class="soparis-breadcrumbs" aria-label="Migas">
+                <a href="#soparis-p">Soparis</a>
+                <span class="soparis-breadcrumbs__sep">/</span>
+                <a href="#soparis-card">soparis-card</a>
+                <span class="soparis-breadcrumbs__sep">/</span>
+                <span>Contactos</span>
+              </nav>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-tabs" data-gallery-section="soparis-tabs">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-tabs</h2>
+              <code class="soparis-code">soparis-tabs</code>
+            </div>
+            <div class="gallery-preview soparis-stack">
+              <div data-soparis-tabs>
+                <div class="soparis-tabs" role="tablist">
+                  <button class="soparis-tabs__tab" role="tab" aria-selected="true" aria-controls="g-tab-a" id="g-t-a" type="button">Todos</button>
+                  <button class="soparis-tabs__tab" role="tab" aria-selected="false" aria-controls="g-tab-b" id="g-t-b" type="button">Leads</button>
+                  <button class="soparis-tabs__tab" role="tab" aria-selected="false" aria-controls="g-tab-c" id="g-t-c" type="button">Equipo</button>
+                </div>
+              </div>
+              <div id="g-tab-a" data-soparis-tabpanel><p class="soparis-p">128 contactos en el workspace.</p></div>
+              <div id="g-tab-b" data-soparis-tabpanel hidden><p class="soparis-p">36 leads capturados por NFC o QR.</p></div>
+              <div id="g-tab-c" data-soparis-tabpanel hidden><p class="soparis-p">4 miembros del equipo Synka.</p></div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-pagination" data-gallery-section="soparis-pagination">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-pagination</h2>
+              <code class="soparis-code">soparis-pagination</code>
+            </div>
+            <div class="gallery-preview">
+              <nav class="soparis-pagination" aria-label="Paginación">
+                <button class="soparis-pagination__page" type="button">Anterior</button>
+                <button class="soparis-pagination__page" type="button" aria-current="page">1</button>
+                <button class="soparis-pagination__page" type="button">2</button>
+                <button class="soparis-pagination__page" type="button">3</button>
+                <button class="soparis-pagination__page" type="button">Siguiente</button>
+              </nav>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-modal" data-gallery-section="soparis-modal">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-modal</h2>
+              <code class="soparis-code">soparis-modal</code>
+            </div>
+            <div class="gallery-preview">
+              <button class="soparis-button soparis-button--primary soparis-button--md" data-soparis-modal-open data-soparis-target="#gallery-modal" type="button">Abrir soparis-modal</button>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-drawer" data-gallery-section="soparis-drawer">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-drawer</h2>
+              <code class="soparis-code">soparis-drawer</code>
+            </div>
+            <div class="gallery-preview">
+              <button class="soparis-button soparis-button--secondary soparis-button--md" data-soparis-drawer-open data-soparis-target="#gallery-drawer" type="button">Abrir soparis-drawer</button>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-dropdown" data-gallery-section="soparis-dropdown">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-dropdown</h2>
+              <code class="soparis-code">soparis-dropdown</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-dropdown" data-soparis-dropdown>
+                <button class="soparis-button soparis-button--ghost soparis-button--md" data-soparis-dropdown-trigger aria-expanded="false" type="button">Cuenta</button>
+                <div class="soparis-dropdown__panel">
+                  <button class="soparis-dropdown__item" type="button">Perfil</button>
+                  <button class="soparis-dropdown__item" type="button">Facturación</button>
+                  <button class="soparis-dropdown__item" type="button">Cerrar sesión</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-tooltip" data-gallery-section="soparis-tooltip">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-tooltip</h2>
+              <code class="soparis-code">soparis-tooltip</code>
+            </div>
+            <div class="gallery-preview">
+              <button class="soparis-button soparis-button--ghost soparis-button--md soparis-tooltip" data-tip="Comparte el link público" type="button">Tooltip</button>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-aside" data-gallery-section="soparis-aside">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-aside</h2>
+              <code class="soparis-code">soparis-aside</code>
+            </div>
+            <div class="gallery-preview">
+              <p class="soparis-p">El aside de esta página es <code class="soparis-code">soparis-aside</code>. En escritorio es columna; bajo md es drawer.</p>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-menu" data-gallery-section="soparis-menu">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-menu</h2>
+              <code class="soparis-code">soparis-menu</code>
+            </div>
+            <div class="gallery-preview">
+              <p class="soparis-p">El menú de la izquierda es <code class="soparis-code">soparis-menu</code> con ítems <code class="soparis-code">soparis-menu__item</code>.</p>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-topbar" data-gallery-section="soparis-topbar">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-topbar</h2>
+              <code class="soparis-code">soparis-topbar</code>
+            </div>
+            <div class="gallery-preview">
+              <p class="soparis-p">La barra superior de esta página es <code class="soparis-code">soparis-topbar</code>.</p>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-profile" data-gallery-section="soparis-profile">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-profile</h2>
+              <code class="soparis-code">soparis-profile</code>
+            </div>
+            <section class="soparis-profile soparis-stack">
+              <p class="soparis-overline" style="color: var(--soparis-brand-gold-bright)">Synka</p>
+              <div class="soparis-cluster">
+                <span class="soparis-avatar soparis-avatar--xl">AM</span>
+                <div>
+                  <h3 class="soparis-h2 soparis-inverse">Ana Moreira</h3>
+                  <p class="soparis-p soparis-inverse">Head of Partnerships</p>
+                </div>
+              </div>
+              <p class="soparis-p soparis-inverse">Una conversación. Un toque. El follow-up ya está en el CRM.</p>
+              <div class="soparis-cluster">
+                <button class="soparis-button soparis-button--premium soparis-button--lg" type="button">Guardar contacto</button>
+                <button class="soparis-button soparis-button--inverse soparis-button--lg" type="button">WhatsApp</button>
+              </div>
+              <div class="soparis-qr" aria-hidden="true">QR · synka.in/ana</div>
+            </section>
+          </section>
+
+        </div>
+      </main>
+    </div>
+
+    <div class="soparis-overlay" id="gallery-modal" aria-hidden="true">
+      <div class="soparis-modal soparis-modal--md" role="dialog" aria-labelledby="gallery-modal-title">
+        <h2 class="soparis-h3" id="gallery-modal-title">¿Emparejar tarjeta NFC?</h2>
+        <p class="soparis-p">Acerca la tarjeta Metal al teléfono. El perfil público quedará vinculado a este dispositivo.</p>
+        <div class="soparis-modal__actions">
+          <button class="soparis-button soparis-button--secondary soparis-button--md" data-soparis-close type="button">Cancelar</button>
+          <button class="soparis-button soparis-button--premium soparis-button--md" data-soparis-close type="button">Emparejar</button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="soparis-drawer" id="gallery-drawer" aria-label="Detalle de lead">
+      <div class="soparis-drawer__head soparis-cluster">
+        <h2 class="soparis-h4">Jorge Rivas</h2>
+        <button class="soparis-button-icon" data-soparis-drawer-close aria-label="Cerrar" type="button">×</button>
+      </div>
+      <div class="soparis-drawer__body soparis-stack">
+        <p class="soparis-p">Origen: QR · Web Summit. Aún no hay follow-up.</p>
+        <button class="soparis-button soparis-button--connect soparis-button--md" type="button">Enviar WhatsApp</button>
+      </div>
+      <div class="soparis-drawer__foot">
+        <button class="soparis-button soparis-button--ghost soparis-button--md" data-soparis-drawer-close type="button">Cerrar</button>
+      </div>
+    </aside>
+
+    <script src="./soparis/js/soparis.js"></script>
+    <script src="./docs/gallery.js"></script>
+  </body>
+</html>

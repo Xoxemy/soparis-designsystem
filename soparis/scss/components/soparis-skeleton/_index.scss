@@ -1,0 +1,13 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-skeleton {
+  display: block;
+  height: 0.85rem;
+  border-radius: var(--#{$prefix}-radius-sm);
+  background: var(--#{$prefix}-color-bg-subtle);
+  animation: #{$prefix}-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes #{$prefix}-pulse {
+  50% { opacity: 0.45; }
+}

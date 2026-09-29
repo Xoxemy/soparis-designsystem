@@ -1,0 +1,45 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-alert {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.85rem 1rem;
+  border-radius: var(--#{$prefix}-radius-md);
+  border: 1px solid transparent;
+
+  &--sm { padding: 0.55rem 0.7rem; font-size: var(--#{$prefix}-font-sm); }
+  &--md { padding: 0.85rem 1rem; }
+  &--lg { padding: 1.1rem 1.25rem; }
+  &--xl { padding: 1.35rem 1.5rem; font-size: var(--#{$prefix}-font-lg); }
+
+  &--info {
+    background: var(--#{$prefix}-color-info-bg);
+    color: var(--#{$prefix}-color-info-text);
+    border-color: color-mix(in srgb, var(--#{$prefix}-color-info) 25%, transparent);
+  }
+
+  &--success {
+    background: var(--#{$prefix}-color-success-bg);
+    color: var(--#{$prefix}-color-success-text);
+    border-color: color-mix(in srgb, var(--#{$prefix}-color-success) 25%, transparent);
+  }
+
+  &--warning {
+    background: var(--#{$prefix}-color-warning-bg);
+    color: var(--#{$prefix}-color-warning-text);
+    border-color: color-mix(in srgb, var(--#{$prefix}-color-warning) 25%, transparent);
+  }
+
+  &--danger {
+    background: var(--#{$prefix}-color-danger-bg);
+    color: var(--#{$prefix}-color-danger-text);
+    border-color: color-mix(in srgb, var(--#{$prefix}-color-danger) 25%, transparent);
+  }
+
+  &--premium {
+    background: var(--#{$prefix}-color-premium-bg);
+    color: var(--#{$prefix}-color-premium-text);
+    border-color: var(--#{$prefix}-color-border-gold);
+  }
+}

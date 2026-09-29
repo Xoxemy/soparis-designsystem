@@ -1,0 +1,215 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+/*! Soparis — generado desde soparis/scss. No editar a mano. */
+
+:root,
+[data-#{$prefix}-theme="light"] {
+  color-scheme: light;
+
+  --#{$prefix}-brand-ink: var(--#{$prefix}-primitive-ink-900);
+  --#{$prefix}-brand-ink-soft: var(--#{$prefix}-primitive-ink-800);
+  --#{$prefix}-brand-gold: var(--#{$prefix}-primitive-gold-500);
+  --#{$prefix}-brand-gold-bright: var(--#{$prefix}-primitive-gold-300);
+  --#{$prefix}-brand-gold-deep: var(--#{$prefix}-primitive-gold-700);
+  --#{$prefix}-brand-connect: var(--#{$prefix}-primitive-connect-500);
+  --#{$prefix}-brand-connect-deep: var(--#{$prefix}-primitive-connect-700);
+
+  --#{$prefix}-color-bg: var(--#{$prefix}-primitive-canvas-200);
+  --#{$prefix}-color-bg-subtle: var(--#{$prefix}-primitive-canvas-300);
+  --#{$prefix}-color-bg-inverse: var(--#{$prefix}-primitive-ink-900);
+  --#{$prefix}-color-bg-surface: var(--#{$prefix}-primitive-canvas-50);
+  --#{$prefix}-color-bg-surface-hover: var(--#{$prefix}-primitive-canvas-100);
+  --#{$prefix}-color-bg-surface-active: var(--#{$prefix}-primitive-canvas-400);
+  --#{$prefix}-color-bg-surface-selected: var(--#{$prefix}-primitive-gold-100);
+  --#{$prefix}-color-bg-surface-disabled: color-mix(in srgb, var(--#{$prefix}-primitive-ink-900) 5%, transparent);
+  --#{$prefix}-color-bg-nav: var(--#{$prefix}-primitive-ink-850);
+  --#{$prefix}-color-bg-nav-hover: color-mix(in srgb, var(--#{$prefix}-primitive-canvas-50) 6%, transparent);
+  --#{$prefix}-color-bg-nav-active: color-mix(in srgb, var(--#{$prefix}-primitive-gold-500) 16%, transparent);
+  --#{$prefix}-color-bg-overlay: color-mix(in srgb, var(--#{$prefix}-primitive-ink-900) 56%, transparent);
+  --#{$prefix}-color-bg-input: var(--#{$prefix}-primitive-canvas-50);
+  --#{$prefix}-color-bg-premium: #{$brand-violet};
+
+  --#{$prefix}-color-text: var(--#{$prefix}-primitive-ink-700);
+  --#{$prefix}-color-text-secondary: var(--#{$prefix}-primitive-ink-500);
+  --#{$prefix}-color-text-muted: var(--#{$prefix}-primitive-ink-400);
+  --#{$prefix}-color-text-disabled: var(--#{$prefix}-primitive-ink-300);
+  --#{$prefix}-color-text-inverse: var(--#{$prefix}-primitive-ink-50);
+  --#{$prefix}-color-text-on-brand: var(--#{$prefix}-primitive-canvas-50);
+  --#{$prefix}-color-text-on-gold: #fff;
+  --#{$prefix}-color-text-link: var(--#{$prefix}-primitive-connect-700);
+  --#{$prefix}-color-text-link-hover: var(--#{$prefix}-primitive-connect-800);
+
+  --#{$prefix}-color-border: var(--#{$prefix}-primitive-ink-100);
+  --#{$prefix}-color-border-strong: var(--#{$prefix}-primitive-ink-200);
+  --#{$prefix}-color-border-focus: var(--#{$prefix}-primitive-connect-500);
+  --#{$prefix}-color-border-nav: color-mix(in srgb, var(--#{$prefix}-primitive-canvas-50) 8%, transparent);
+  --#{$prefix}-color-border-gold: color-mix(in srgb, var(--#{$prefix}-primitive-gold-500) 45%, transparent);
+
+  --#{$prefix}-color-icon: var(--#{$prefix}-primitive-ink-600);
+  --#{$prefix}-color-icon-muted: var(--#{$prefix}-primitive-ink-400);
+  --#{$prefix}-color-icon-inverse: var(--#{$prefix}-primitive-ink-50);
+  --#{$prefix}-color-icon-on-gold: #fff;
+
+  --#{$prefix}-color-info: var(--#{$prefix}-primitive-info-500);
+  --#{$prefix}-color-info-bg: var(--#{$prefix}-primitive-info-50);
+  --#{$prefix}-color-info-text: var(--#{$prefix}-primitive-info-700);
+  --#{$prefix}-color-success: var(--#{$prefix}-primitive-connect-500);
+  --#{$prefix}-color-success-bg: var(--#{$prefix}-primitive-connect-50);
+  --#{$prefix}-color-success-text: var(--#{$prefix}-primitive-connect-700);
+  --#{$prefix}-color-warning: var(--#{$prefix}-primitive-warning-500);
+  --#{$prefix}-color-warning-bg: var(--#{$prefix}-primitive-warning-50);
+  --#{$prefix}-color-warning-text: var(--#{$prefix}-primitive-warning-700);
+  --#{$prefix}-color-danger: var(--#{$prefix}-primitive-danger-500);
+  --#{$prefix}-color-danger-bg: var(--#{$prefix}-primitive-danger-50);
+  --#{$prefix}-color-danger-text: var(--#{$prefix}-primitive-danger-700);
+  --#{$prefix}-color-premium-bg: var(--#{$prefix}-primitive-gold-50);
+  --#{$prefix}-color-premium-text: var(--#{$prefix}-primitive-gold-800);
+
+  // Roles de producto. Usa estos en UI; ink/gold/canvas son la marca detrás.
+  --#{$prefix}-color-primary: var(--#{$prefix}-brand-gold);
+  --#{$prefix}-color-primary-hover: var(--#{$prefix}-brand-gold-deep);
+  --#{$prefix}-color-primary-on: #fff;
+  --#{$prefix}-color-secondary: var(--#{$prefix}-brand-ink);
+  --#{$prefix}-color-secondary-hover: var(--#{$prefix}-brand-ink-soft);
+  --#{$prefix}-color-secondary-on: #fff;
+  --#{$prefix}-color-accent: var(--#{$prefix}-brand-connect);
+  --#{$prefix}-color-accent-hover: var(--#{$prefix}-brand-connect-deep);
+  --#{$prefix}-color-accent-on: #fff;
+  --#{$prefix}-color-background: var(--#{$prefix}-color-bg);
+  --#{$prefix}-color-card: var(--#{$prefix}-color-bg-surface);
+  --#{$prefix}-color-card-hover: var(--#{$prefix}-color-bg-surface-hover);
+
+  --#{$prefix}-font-sans: var(--#{$prefix}-primitive-font-sans);
+  --#{$prefix}-font-display: var(--#{$prefix}-primitive-font-display);
+  --#{$prefix}-font-mono: var(--#{$prefix}-primitive-font-mono);
+
+  --#{$prefix}-font-xs: var(--#{$prefix}-primitive-font-xs);
+  --#{$prefix}-font-sm: var(--#{$prefix}-primitive-font-sm);
+  --#{$prefix}-font-md: var(--#{$prefix}-primitive-font-md);
+  --#{$prefix}-font-lg: var(--#{$prefix}-primitive-font-lg);
+  --#{$prefix}-font-xl: var(--#{$prefix}-primitive-font-xl);
+  --#{$prefix}-font-2xl: var(--#{$prefix}-primitive-font-2xl);
+  --#{$prefix}-font-3xl: var(--#{$prefix}-primitive-font-3xl);
+  --#{$prefix}-font-4xl: var(--#{$prefix}-primitive-font-4xl);
+  --#{$prefix}-font-5xl: var(--#{$prefix}-primitive-font-5xl);
+
+  --#{$prefix}-leading-tight: var(--#{$prefix}-primitive-leading-tight);
+  --#{$prefix}-leading-snug: var(--#{$prefix}-primitive-leading-snug);
+  --#{$prefix}-leading-normal: var(--#{$prefix}-primitive-leading-normal);
+  --#{$prefix}-leading-relaxed: var(--#{$prefix}-primitive-leading-relaxed);
+
+  --#{$prefix}-weight-regular: var(--#{$prefix}-primitive-weight-regular);
+  --#{$prefix}-weight-medium: var(--#{$prefix}-primitive-weight-medium);
+  --#{$prefix}-weight-semibold: var(--#{$prefix}-primitive-weight-semibold);
+  --#{$prefix}-weight-bold: var(--#{$prefix}-primitive-weight-bold);
+
+  --#{$prefix}-tracking-tight: var(--#{$prefix}-primitive-tracking-tight);
+  --#{$prefix}-tracking-normal: var(--#{$prefix}-primitive-tracking-normal);
+  --#{$prefix}-tracking-wide: var(--#{$prefix}-primitive-tracking-wide);
+
+  --#{$prefix}-space-0: var(--#{$prefix}-primitive-space-0);
+  --#{$prefix}-space-1: var(--#{$prefix}-primitive-space-1);
+  --#{$prefix}-space-2: var(--#{$prefix}-primitive-space-2);
+  --#{$prefix}-space-3: var(--#{$prefix}-primitive-space-3);
+  --#{$prefix}-space-4: var(--#{$prefix}-primitive-space-4);
+  --#{$prefix}-space-5: var(--#{$prefix}-primitive-space-5);
+  --#{$prefix}-space-6: var(--#{$prefix}-primitive-space-6);
+  --#{$prefix}-space-8: var(--#{$prefix}-primitive-space-8);
+  --#{$prefix}-space-10: var(--#{$prefix}-primitive-space-10);
+  --#{$prefix}-space-12: var(--#{$prefix}-primitive-space-12);
+  --#{$prefix}-space-16: var(--#{$prefix}-primitive-space-16);
+  --#{$prefix}-space-20: var(--#{$prefix}-primitive-space-20);
+
+  --#{$prefix}-space-sm: var(--#{$prefix}-space-2);
+  --#{$prefix}-space-md: var(--#{$prefix}-space-4);
+  --#{$prefix}-space-lg: var(--#{$prefix}-space-6);
+  --#{$prefix}-space-xl: var(--#{$prefix}-space-8);
+
+  --#{$prefix}-control-h-sm: var(--#{$prefix}-primitive-control-h-sm);
+  --#{$prefix}-control-h-md: var(--#{$prefix}-primitive-control-h-md);
+  --#{$prefix}-control-h-lg: var(--#{$prefix}-primitive-control-h-lg);
+  --#{$prefix}-control-h-xl: var(--#{$prefix}-primitive-control-h-xl);
+  --#{$prefix}-control-px-sm: var(--#{$prefix}-primitive-control-px-sm);
+  --#{$prefix}-control-px-md: var(--#{$prefix}-primitive-control-px-md);
+  --#{$prefix}-control-px-lg: var(--#{$prefix}-primitive-control-px-lg);
+  --#{$prefix}-control-px-xl: var(--#{$prefix}-primitive-control-px-xl);
+  --#{$prefix}-icon-sm: var(--#{$prefix}-primitive-icon-sm);
+  --#{$prefix}-icon-md: var(--#{$prefix}-primitive-icon-md);
+  --#{$prefix}-icon-lg: var(--#{$prefix}-primitive-icon-lg);
+  --#{$prefix}-icon-xl: var(--#{$prefix}-primitive-icon-xl);
+
+  --#{$prefix}-radius-sm: var(--#{$prefix}-primitive-radius-sm);
+  --#{$prefix}-radius-md: var(--#{$prefix}-primitive-radius-md);
+  --#{$prefix}-radius-lg: var(--#{$prefix}-primitive-radius-lg);
+  --#{$prefix}-radius-xl: var(--#{$prefix}-primitive-radius-xl);
+  --#{$prefix}-radius-full: var(--#{$prefix}-primitive-radius-full);
+
+  --#{$prefix}-ease: var(--#{$prefix}-primitive-ease);
+  --#{$prefix}-ease-out: var(--#{$prefix}-primitive-ease-out);
+  --#{$prefix}-duration-fast: var(--#{$prefix}-primitive-duration-fast);
+  --#{$prefix}-duration: var(--#{$prefix}-primitive-duration-default);
+  --#{$prefix}-duration-slow: var(--#{$prefix}-primitive-duration-slow);
+
+  --#{$prefix}-aside-width: 16.5rem;
+  --#{$prefix}-topbar-height: 3.5rem;
+  --#{$prefix}-container-sm: 40rem;
+  --#{$prefix}-container-md: 56rem;
+  --#{$prefix}-container-lg: 72rem;
+  --#{$prefix}-container-xl: 80rem;
+  --#{$prefix}-page-pad: clamp(1rem, 3vw, 2rem);
+
+  --#{$prefix}-bp-sm: var(--#{$prefix}-primitive-bp-sm);
+  --#{$prefix}-bp-md: var(--#{$prefix}-primitive-bp-md);
+  --#{$prefix}-bp-lg: var(--#{$prefix}-primitive-bp-lg);
+  --#{$prefix}-bp-xl: var(--#{$prefix}-primitive-bp-xl);
+
+  --#{$prefix}-z-base: var(--#{$prefix}-primitive-z-base);
+  --#{$prefix}-z-sticky: var(--#{$prefix}-primitive-z-sticky);
+  --#{$prefix}-z-aside: var(--#{$prefix}-primitive-z-aside);
+  --#{$prefix}-z-dropdown: var(--#{$prefix}-primitive-z-dropdown);
+  --#{$prefix}-z-overlay: var(--#{$prefix}-primitive-z-overlay);
+  --#{$prefix}-z-toast: var(--#{$prefix}-primitive-z-toast);
+}
+
+[data-#{$prefix}-theme="dark"] {
+  color-scheme: dark;
+  --#{$prefix}-color-bg: var(--#{$prefix}-primitive-ink-900);
+  --#{$prefix}-color-bg-subtle: var(--#{$prefix}-primitive-night-500);
+  --#{$prefix}-color-bg-inverse: var(--#{$prefix}-primitive-canvas-50);
+  --#{$prefix}-color-bg-surface: var(--#{$prefix}-primitive-night-400);
+  --#{$prefix}-color-bg-surface-hover: var(--#{$prefix}-primitive-night-300);
+  --#{$prefix}-color-bg-surface-active: var(--#{$prefix}-primitive-night-200);
+  --#{$prefix}-color-bg-surface-selected: var(--#{$prefix}-primitive-gold-950);
+  --#{$prefix}-color-bg-surface-disabled: color-mix(in srgb, var(--#{$prefix}-primitive-canvas-50) 6%, transparent);
+  --#{$prefix}-color-bg-nav: var(--#{$prefix}-primitive-night-800);
+  --#{$prefix}-color-bg-input: var(--#{$prefix}-primitive-night-500);
+  --#{$prefix}-color-text: #f8fafc;
+  --#{$prefix}-color-text-secondary: #cbd5e1;
+  --#{$prefix}-color-text-muted: var(--#{$prefix}-primitive-ink-400);
+  --#{$prefix}-color-text-disabled: var(--#{$prefix}-primitive-ink-500);
+  --#{$prefix}-color-text-inverse: var(--#{$prefix}-primitive-ink-700);
+  --#{$prefix}-color-text-link: var(--#{$prefix}-primitive-connect-200);
+  --#{$prefix}-color-text-link-hover: var(--#{$prefix}-primitive-connect-100);
+  --#{$prefix}-color-border: var(--#{$prefix}-primitive-night-100);
+  --#{$prefix}-color-border-strong: var(--#{$prefix}-primitive-night-50);
+  --#{$prefix}-color-icon: #e2e8f0;
+  --#{$prefix}-color-icon-muted: var(--#{$prefix}-primitive-ink-400);
+  --#{$prefix}-color-info-bg: var(--#{$prefix}-primitive-info-900);
+  --#{$prefix}-color-info-text: var(--#{$prefix}-primitive-info-100);
+  --#{$prefix}-color-success-bg: var(--#{$prefix}-primitive-connect-900);
+  --#{$prefix}-color-success-text: var(--#{$prefix}-primitive-connect-100);
+  --#{$prefix}-color-warning-bg: var(--#{$prefix}-primitive-warning-900);
+  --#{$prefix}-color-warning-text: var(--#{$prefix}-primitive-warning-100);
+  --#{$prefix}-color-danger-bg: var(--#{$prefix}-primitive-danger-900);
+  --#{$prefix}-color-danger-text: var(--#{$prefix}-primitive-danger-100);
+  --#{$prefix}-color-premium-bg: var(--#{$prefix}-primitive-gold-950);
+  --#{$prefix}-color-premium-text: var(--#{$prefix}-primitive-gold-300);
+}
+
+@include breakpoint-down(md) {
+  :root {
+    --#{$prefix}-page-pad: 1rem;
+    --#{$prefix}-topbar-height: 3.25rem;
+  }
+}

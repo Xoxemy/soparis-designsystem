@@ -1,0 +1,43 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.#{$prefix}-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: var(--#{$prefix}-z-overlay);
+  width: min(26rem, 100vw);
+  height: 100dvh;
+  background: var(--#{$prefix}-color-bg-surface);
+  border-left: 1px solid var(--#{$prefix}-color-border);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform var(--#{$prefix}-duration-slow) var(--#{$prefix}-ease-out), visibility var(--#{$prefix}-duration-slow) var(--#{$prefix}-ease-out);
+  display: flex;
+  flex-direction: column;
+
+  &.is-open {
+    transform: none;
+    visibility: visible;
+  }
+
+  &__head,
+  &__body,
+  &__foot {
+    padding: var(--#{$prefix}-space-5);
+  }
+
+  &__head,
+  &__foot {
+    border-color: var(--#{$prefix}-color-border);
+    border-style: solid;
+  }
+
+  &__head { border-bottom-width: 1px; }
+  &__foot { border-top-width: 1px; margin-top: auto; }
+  &__body { overflow: auto; flex: 1; align-content: start; }
+}
+
+@include breakpoint-down(md) {
+  .#{$prefix}-drawer { width: 100vw; }
+}

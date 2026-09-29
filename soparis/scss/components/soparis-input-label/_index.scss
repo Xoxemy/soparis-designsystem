@@ -1,0 +1,10 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-input-label {
+  display: inline-block;
+  max-width: 68ch;
+  font-size: var(--#{$prefix}-font-sm);
+  font-weight: var(--#{$prefix}-weight-semibold);
+  color: var(--#{$prefix}-color-text);
+  text-wrap: pretty;
+}

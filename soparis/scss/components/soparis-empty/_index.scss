@@ -1,0 +1,10 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-empty {
+  display: grid;
+  place-items: center;
+  gap: var(--#{$prefix}-space-3);
+  padding: var(--#{$prefix}-space-10) var(--#{$prefix}-space-6);
+  text-align: center;
+  color: var(--#{$prefix}-color-text-secondary);
+}

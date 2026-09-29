@@ -1,0 +1,143 @@
+.gallery-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+
+.gallery-toolbar .soparis-input-search {
+  flex: 1 1 16rem;
+}
+
+.gallery-count {
+  color: var(--soparis-color-text-muted);
+  font-size: var(--soparis-font-sm);
+}
+
+.gallery-section {
+  scroll-margin-top: calc(var(--soparis-topbar-height) + 1rem);
+  margin-bottom: 2.5rem;
+}
+
+.gallery-section[hidden] {
+  display: none;
+}
+
+.gallery-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.gallery-head code {
+  margin-left: auto;
+}
+
+.gallery-block + .gallery-block {
+  margin-top: 1rem;
+}
+
+.gallery-block__label {
+  margin-bottom: 0.55rem;
+  color: var(--soparis-color-text-muted);
+  font-size: var(--soparis-font-xs);
+  font-weight: var(--soparis-weight-semibold);
+  letter-spacing: var(--soparis-tracking-wide);
+  text-transform: uppercase;
+}
+
+.gallery-preview {
+  display: grid;
+  gap: 1rem;
+  padding: 1.15rem;
+  border: 1px solid var(--soparis-color-border);
+  border-radius: var(--soparis-radius-lg);
+  background: var(--soparis-color-bg);
+}
+
+.gallery-preview--ink {
+  background: var(--soparis-color-bg-nav);
+}
+
+.gallery-preview .soparis-fab {
+  position: relative;
+  right: auto;
+  bottom: auto;
+}
+
+.gallery-empty {
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+.soparis-menu__item[hidden],
+.soparis-menu__section[hidden] {
+  display: none;
+}
+
+.soparis-aside__foot .soparis-button {
+  color: var(--soparis-color-text-inverse);
+}
+
+.primitive-ramp {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5.4rem, 1fr));
+  overflow: hidden;
+  border: 1px solid var(--soparis-color-border);
+  border-radius: var(--soparis-radius-md);
+}
+
+.primitive-ramp__cell {
+  min-height: 4.75rem;
+  padding: 0.45rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.1rem;
+  font-size: 0.68rem;
+  line-height: 1.25;
+}
+
+.primitive-ramp__cell.is-dark {
+  color: #f7f1e7;
+}
+
+.primitive-ramp__cell strong {
+  font-weight: 600;
+}
+
+.primitive-row {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.primitive-meter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.primitive-meter__bar {
+  height: 0.55rem;
+  border-radius: 99px;
+  background: var(--soparis-brand-gold);
+}
+
+.primitive-type {
+  margin: 0;
+}
+
+.primitive-radius-demo {
+  background: var(--soparis-color-bg-surface);
+  border: 1px solid var(--soparis-color-border);
+}
+
+@media (max-width: 47.9975rem) {
+  .gallery-head code {
+    margin-left: 0;
+    width: 100%;
+  }
+}

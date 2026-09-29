@@ -1,0 +1,66 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-menu {
+  display: grid;
+  gap: var(--#{$prefix}-space-4);
+
+  &__section {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  &__label {
+    padding: 0.35rem 0.7rem;
+    font-size: var(--#{$prefix}-font-xs);
+    font-weight: var(--#{$prefix}-weight-semibold);
+    letter-spacing: var(--#{$prefix}-tracking-wide);
+    text-transform: uppercase;
+    color: rgba(247, 241, 231, 0.45);
+  }
+
+  &__item {
+    --_h: 2.35rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-height: var(--_h);
+    padding: 0 0.7rem;
+    border-radius: var(--#{$prefix}-radius-md);
+    color: rgba(247, 241, 231, 0.86);
+    text-decoration: none;
+    font-size: var(--#{$prefix}-font-sm);
+    font-weight: var(--#{$prefix}-weight-medium);
+
+    &[hidden] { display: none; }
+
+    svg {
+      width: 1.1rem;
+      height: 1.1rem;
+      opacity: 0.8;
+    }
+
+    &:hover { background: var(--#{$prefix}-color-bg-nav-hover); }
+
+    &--active,
+    &[aria-current="page"] {
+      background: var(--#{$prefix}-color-bg-nav-active);
+      color: var(--#{$prefix}-brand-gold-bright);
+
+      svg { opacity: 1; }
+    }
+
+    &--sm { --_h: 1.85rem; font-size: var(--#{$prefix}-font-xs); }
+    &--md { --_h: 2.35rem; }
+    &--lg { --_h: 2.75rem; font-size: var(--#{$prefix}-font-md); }
+    &--xl { --_h: 3.15rem; font-size: var(--#{$prefix}-font-lg); }
+  }
+
+  &__badge {
+    margin-left: auto;
+    font-size: 0.68rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: var(--#{$prefix}-radius-full);
+    background: rgba(198, 161, 91, 0.2);
+    color: var(--#{$prefix}-brand-gold-bright);
+  }
+}

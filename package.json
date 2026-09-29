@@ -1,0 +1,30 @@
+{
+  "name": "soparis",
+  "version": "1.1.0",
+  "description": "Soparis — design system de Synka en SCSS, para Angular y HTML nativo.",
+  "scripts": {
+    "build:css": "sass soparis/scss/soparis.scss soparis/soparis.css --style=expanded --no-source-map",
+    "watch:css": "sass --watch soparis/scss/soparis.scss soparis/soparis.css --style=expanded --no-source-map",
+    "start": "npx --yes serve . -p 4173",
+    "docs": "npx --yes serve . -p 4173"
+  },
+  "keywords": [
+    "soparis",
+    "synka",
+    "design-system",
+    "scss",
+    "angular"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./soparis/scss/_index.scss",
+    "./scss": "./soparis/scss/_index.scss",
+    "./css": "./soparis/soparis.css",
+    "./js": "./soparis/js/soparis.js"
+  },
+  "devDependencies": {
+    "@shopify/polaris-tokens": "^9.4.2",
+    "sass": "^1.105.0"
+  }
+}

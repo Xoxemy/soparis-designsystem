@@ -1,0 +1,6 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-page {
+  display: grid;
+  gap: var(--#{$prefix}-space-6);
+}

@@ -1,0 +1,109 @@
+.docs-page { display: none; }
+.docs-page.is-active { display: block; }
+
+.docs-kicker {
+  margin-bottom: 0.4rem;
+}
+
+.docs-hero {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.docs-panel {
+  padding: 1.15rem;
+  background: var(--soparis-color-bg-surface);
+  border: 1px solid var(--soparis-color-border);
+  border-radius: var(--soparis-radius-lg);
+}
+
+.docs-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+}
+
+.docs-swatch {
+  overflow: hidden;
+  border: 1px solid var(--soparis-color-border);
+  border-radius: var(--soparis-radius-md);
+  background: var(--soparis-color-bg-surface);
+}
+
+.docs-swatch__chip {
+  height: 4.5rem;
+}
+
+.docs-swatch__chip.is-dark {
+  color: #f7f1e7;
+}
+
+.docs-swatch__meta {
+  padding: 0.7rem 0.8rem;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.docs-table {
+  width: 100%;
+  font-size: var(--soparis-font-sm);
+}
+
+.docs-table th,
+.docs-table td {
+  padding: 0.7rem 0.4rem;
+  border-bottom: 1px solid var(--soparis-color-border);
+  vertical-align: top;
+  text-align: left;
+}
+
+.docs-table th {
+  color: var(--soparis-color-text-secondary);
+  font-size: var(--soparis-font-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.docs-code {
+  display: block;
+  overflow: auto;
+  padding: 0.9rem 1rem;
+  border-radius: var(--soparis-radius-md);
+  background: #11151c;
+  color: #f4efe6;
+  font-family: var(--soparis-font-mono);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.docs-do,
+.docs-dont {
+  padding: 0.9rem 1rem;
+  border-radius: var(--soparis-radius-md);
+  border: 1px solid var(--soparis-color-border);
+}
+
+.docs-do { border-left: 3px solid var(--soparis-brand-connect); }
+.docs-dont { border-left: 3px solid var(--soparis-color-danger); }
+
+.docs-preview {
+  display: grid;
+  gap: 1rem;
+  padding: 1.15rem;
+  border-radius: var(--soparis-radius-lg);
+  background: var(--soparis-color-bg);
+}
+
+.docs-size-row {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.docs-search {
+  width: min(18rem, 100%);
+}
+
+@media (max-width: 47.9975rem) {
+  .docs-search { width: 100%; }
+}

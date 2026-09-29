@@ -1,0 +1,23 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-topbar {
+  grid-area: topbar;
+  position: sticky;
+  top: 0;
+  z-index: var(--#{$prefix}-z-sticky);
+  display: flex;
+  align-items: center;
+  gap: var(--#{$prefix}-space-3);
+  min-height: var(--#{$prefix}-topbar-height);
+  padding: 0 var(--#{$prefix}-page-pad);
+  background: color-mix(in srgb, var(--#{$prefix}-color-bg) 86%, transparent);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--#{$prefix}-color-border);
+
+  &__title {
+    font-weight: var(--#{$prefix}-weight-semibold);
+    font-size: var(--#{$prefix}-font-md);
+  }
+
+  &__grow { flex: 1; }
+}

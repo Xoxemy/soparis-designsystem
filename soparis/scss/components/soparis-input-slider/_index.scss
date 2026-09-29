@@ -1,0 +1,6 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-input-slider {
+  width: 100%;
+  accent-color: var(--#{$prefix}-brand-gold);
+}

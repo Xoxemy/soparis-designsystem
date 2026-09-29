@@ -1,0 +1,172 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-display,
+.#{$prefix}-h1,
+.#{$prefix}-h2,
+.#{$prefix}-h3,
+.#{$prefix}-h4,
+.#{$prefix}-h5,
+.#{$prefix}-h6 {
+  color: var(--#{$prefix}-color-text);
+  letter-spacing: var(--#{$prefix}-tracking-tight);
+  text-wrap: balance;
+}
+
+.#{$prefix}-display {
+  font-family: var(--#{$prefix}-font-display);
+  font-size: clamp(2.25rem, 5vw, var(--#{$prefix}-font-5xl));
+  font-weight: var(--#{$prefix}-weight-semibold);
+  line-height: var(--#{$prefix}-leading-tight);
+}
+
+.#{$prefix}-h1 {
+  font-family: var(--#{$prefix}-font-display);
+  font-size: clamp(1.75rem, 3.4vw, var(--#{$prefix}-font-4xl));
+  font-weight: var(--#{$prefix}-weight-semibold);
+  line-height: var(--#{$prefix}-leading-tight);
+}
+
+.#{$prefix}-h2 {
+  font-family: var(--#{$prefix}-font-display);
+  font-size: clamp(1.4rem, 2.4vw, var(--#{$prefix}-font-3xl));
+  font-weight: var(--#{$prefix}-weight-semibold);
+  line-height: var(--#{$prefix}-leading-snug);
+}
+
+.#{$prefix}-h3 {
+  font-family: var(--#{$prefix}-font-sans);
+  font-size: var(--#{$prefix}-font-2xl);
+  font-weight: var(--#{$prefix}-weight-semibold);
+  line-height: var(--#{$prefix}-leading-snug);
+}
+
+.#{$prefix}-h4 {
+  font-family: var(--#{$prefix}-font-sans);
+  font-size: var(--#{$prefix}-font-xl);
+  font-weight: var(--#{$prefix}-weight-semibold);
+  line-height: var(--#{$prefix}-leading-snug);
+}
+
+.#{$prefix}-h5 {
+  font-family: var(--#{$prefix}-font-sans);
+  font-size: var(--#{$prefix}-font-lg);
+  font-weight: var(--#{$prefix}-weight-semibold);
+}
+
+.#{$prefix}-h6 {
+  font-family: var(--#{$prefix}-font-sans);
+  font-size: var(--#{$prefix}-font-md);
+  font-weight: var(--#{$prefix}-weight-semibold);
+  letter-spacing: var(--#{$prefix}-tracking-wide);
+  text-transform: uppercase;
+  color: var(--#{$prefix}-color-text-secondary);
+}
+
+.#{$prefix}-p,
+.#{$prefix}-lead,
+.#{$prefix}-small,
+.#{$prefix}-caption {
+  max-width: 68ch;
+  text-wrap: pretty;
+}
+
+.#{$prefix}-p {
+  font-size: var(--#{$prefix}-font-md);
+  line-height: var(--#{$prefix}-leading-relaxed);
+  color: var(--#{$prefix}-color-text);
+
+  & + & {
+    margin-top: var(--#{$prefix}-space-4);
+  }
+
+  &--sm { font-size: var(--#{$prefix}-font-sm); }
+  &--md { font-size: var(--#{$prefix}-font-md); }
+  &--lg { font-size: var(--#{$prefix}-font-lg); }
+  &--xl {
+    font-size: var(--#{$prefix}-font-xl);
+    line-height: var(--#{$prefix}-leading-normal);
+  }
+}
+
+.#{$prefix}-lead {
+  font-size: var(--#{$prefix}-font-lg);
+  line-height: var(--#{$prefix}-leading-relaxed);
+  color: var(--#{$prefix}-color-text-secondary);
+}
+
+.#{$prefix}-small,
+.#{$prefix}-caption {
+  font-size: var(--#{$prefix}-font-sm);
+  color: var(--#{$prefix}-color-text-secondary);
+}
+
+.#{$prefix}-caption {
+  font-size: var(--#{$prefix}-font-xs);
+  letter-spacing: 0.01em;
+}
+
+.#{$prefix}-muted { color: var(--#{$prefix}-color-text-secondary); }
+.#{$prefix}-inverse { color: var(--#{$prefix}-color-text-inverse); }
+
+.#{$prefix}-link {
+  color: var(--#{$prefix}-color-text-link);
+  font-weight: var(--#{$prefix}-weight-medium);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+  text-decoration-thickness: 1px;
+
+  &:hover { color: var(--#{$prefix}-color-text-link-hover); }
+}
+
+.#{$prefix}-code,
+.#{$prefix}-kbd {
+  font-family: var(--#{$prefix}-font-mono);
+  font-size: 0.86em;
+}
+
+.#{$prefix}-code {
+  padding: 0.1em 0.35em;
+  border-radius: var(--#{$prefix}-radius-sm);
+  background: var(--#{$prefix}-color-bg-subtle);
+  color: var(--#{$prefix}-color-text);
+}
+
+.#{$prefix}-kbd {
+  display: inline-block;
+  padding: 0.05em 0.4em;
+  border: 1px solid var(--#{$prefix}-color-border-strong);
+  border-bottom-width: 2px;
+  border-radius: 0.3rem;
+  background: var(--#{$prefix}-color-bg-surface);
+}
+
+.#{$prefix}-quote {
+  padding-left: var(--#{$prefix}-space-4);
+  border-left: 3px solid var(--#{$prefix}-brand-gold);
+  color: var(--#{$prefix}-color-text-secondary);
+  font-family: var(--#{$prefix}-font-display);
+  font-size: var(--#{$prefix}-font-lg);
+  font-style: italic;
+}
+
+.#{$prefix}-list {
+  padding-left: 1.15rem;
+  display: grid;
+  gap: var(--#{$prefix}-space-2);
+  max-width: 68ch;
+
+  &--ul { list-style: disc; }
+  &--ol { list-style: decimal; }
+}
+
+.#{$prefix}-overline {
+  font-size: var(--#{$prefix}-font-xs);
+  font-weight: var(--#{$prefix}-weight-semibold);
+  letter-spacing: var(--#{$prefix}-tracking-wide);
+  text-transform: uppercase;
+  color: var(--#{$prefix}-brand-gold-deep);
+}
+
+[data-#{$prefix}-theme="dark"] .#{$prefix}-overline {
+  color: var(--#{$prefix}-brand-gold-bright);
+}

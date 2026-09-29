@@ -1,0 +1,95 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-card {
+  background: var(--#{$prefix}-color-card);
+  border: 1px solid var(--#{$prefix}-color-border);
+  border-radius: var(--#{$prefix}-radius-lg);
+  color: var(--#{$prefix}-color-text);
+
+  &--sm { padding: var(--#{$prefix}-space-3); border-radius: var(--#{$prefix}-radius-md); }
+  &--md { padding: var(--#{$prefix}-space-5); }
+  &--lg { padding: var(--#{$prefix}-space-8); }
+  &--xl { padding: var(--#{$prefix}-space-10); border-radius: var(--#{$prefix}-radius-xl); }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: var(--#{$prefix}-space-4);
+  }
+
+  &__foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: var(--#{$prefix}-space-5);
+  }
+
+  &--subtle {
+    background: var(--#{$prefix}-color-bg-subtle);
+  }
+
+  &--outline {
+    background: transparent;
+    border-color: var(--#{$prefix}-color-border-strong);
+  }
+
+  &--elevated {
+    border-color: var(--#{$prefix}-color-border-strong);
+  }
+
+  &--primary {
+    background: var(--#{$prefix}-color-primary);
+    color: var(--#{$prefix}-color-primary-on);
+    border-color: transparent;
+  }
+
+  &--secondary {
+    background: var(--#{$prefix}-color-secondary);
+    color: var(--#{$prefix}-color-secondary-on);
+    border-color: transparent;
+  }
+
+  &--accent {
+    background: var(--#{$prefix}-color-accent);
+    color: var(--#{$prefix}-color-accent-on);
+    border-color: transparent;
+  }
+
+  &--inverse {
+    background: var(--#{$prefix}-color-bg-inverse);
+    color: var(--#{$prefix}-color-text-inverse);
+    border-color: transparent;
+  }
+
+  &--premium {
+    background: var(--#{$prefix}-color-bg-premium);
+    color: var(--#{$prefix}-color-text-inverse);
+    border-color: var(--#{$prefix}-color-border-gold);
+  }
+
+  &--primary,
+  &--secondary,
+  &--accent,
+  &--inverse,
+  &--premium {
+    .#{$prefix}-caption,
+    .#{$prefix}-muted,
+    .#{$prefix}-input-description,
+    .#{$prefix}-stat__label,
+    .#{$prefix}-lead,
+    .#{$prefix}-overline {
+      color: color-mix(in srgb, currentColor 72%, transparent);
+    }
+  }
+
+  &--interactive {
+    transition: transform var(--#{$prefix}-duration) var(--#{$prefix}-ease);
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}

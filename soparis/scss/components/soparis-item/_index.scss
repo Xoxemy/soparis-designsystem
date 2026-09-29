@@ -1,0 +1,10 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 0;
+
+  + .#{$prefix}-item { border-top: 1px solid var(--#{$prefix}-color-border); }
+}

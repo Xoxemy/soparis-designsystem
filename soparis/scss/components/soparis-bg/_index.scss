@@ -1,0 +1,23 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-bg {
+  &--page { background: var(--#{$prefix}-color-background); }
+  &--subtle { background: var(--#{$prefix}-color-bg-subtle); }
+  &--card { background: var(--#{$prefix}-color-card); }
+  &--primary {
+    background: var(--#{$prefix}-color-primary);
+    color: var(--#{$prefix}-color-primary-on);
+  }
+  &--secondary {
+    background: var(--#{$prefix}-color-secondary);
+    color: var(--#{$prefix}-color-secondary-on);
+  }
+  &--accent {
+    background: var(--#{$prefix}-color-accent);
+    color: var(--#{$prefix}-color-accent-on);
+  }
+  &--inverse {
+    background: var(--#{$prefix}-color-bg-inverse);
+    color: var(--#{$prefix}-color-text-inverse);
+  }
+}

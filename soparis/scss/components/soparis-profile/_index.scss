@@ -1,0 +1,11 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-profile {
+  position: relative;
+  overflow: hidden;
+  color: var(--#{$prefix}-color-text-inverse);
+  background: var(--#{$prefix}-color-bg-premium);
+  border: 1px solid var(--#{$prefix}-color-border-gold);
+  border-radius: var(--#{$prefix}-radius-xl);
+  padding: var(--#{$prefix}-space-8);
+}

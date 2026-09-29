@@ -1,0 +1,30 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-tabs {
+  display: flex;
+  gap: 0.15rem;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--#{$prefix}-color-border);
+
+  &__tab {
+    flex: 0 0 auto;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 2px solid transparent;
+    color: var(--#{$prefix}-color-text-secondary);
+    font-size: var(--#{$prefix}-font-sm);
+    font-weight: var(--#{$prefix}-weight-semibold);
+    white-space: nowrap;
+
+    &:hover { color: var(--#{$prefix}-color-text); }
+
+    &[aria-selected="true"] {
+      color: var(--#{$prefix}-color-text);
+      border-bottom-color: var(--#{$prefix}-brand-gold);
+    }
+  }
+
+  &--sm &__tab { padding: 0.45rem 0.65rem; font-size: var(--#{$prefix}-font-xs); }
+  &--md &__tab { padding: 0.7rem 0.9rem; }
+  &--lg &__tab { padding: 0.9rem 1.1rem; font-size: var(--#{$prefix}-font-md); }
+  &--xl &__tab { padding: 1.05rem 1.3rem; font-size: var(--#{$prefix}-font-lg); }
+}

@@ -1,0 +1,18 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-progress {
+  height: 0.45rem;
+  overflow: hidden;
+  border-radius: var(--#{$prefix}-radius-full);
+  background: var(--#{$prefix}-color-bg-subtle);
+
+  &__bar {
+    height: 100%;
+    background: var(--#{$prefix}-color-primary);
+  }
+
+  &--sm { height: 0.3rem; }
+  &--md { height: 0.45rem; }
+  &--lg { height: 0.7rem; }
+  &--xl { height: 1rem; }
+}

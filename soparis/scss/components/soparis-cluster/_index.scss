@@ -1,0 +1,12 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--#{$prefix}-space-3);
+
+  @each $size in $sizes {
+    &--#{$size} { gap: var(--#{$prefix}-space-#{$size}); }
+  }
+}

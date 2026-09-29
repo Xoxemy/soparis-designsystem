@@ -1,0 +1,13 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-fab {
+  position: fixed;
+  right: var(--#{$prefix}-space-5);
+  bottom: var(--#{$prefix}-space-5);
+  z-index: var(--#{$prefix}-z-sticky);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--#{$prefix}-radius-full);
+  background: var(--#{$prefix}-brand-gold);
+  color: var(--#{$prefix}-color-text-on-gold);
+}

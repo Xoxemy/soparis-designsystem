@@ -1,0 +1,52 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-aside {
+  grid-area: aside;
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--#{$prefix}-color-bg-nav);
+  color: var(--#{$prefix}-color-text-inverse);
+  border-right: 1px solid var(--#{$prefix}-color-border-nav);
+  overflow: hidden;
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--#{$prefix}-space-3);
+    min-height: var(--#{$prefix}-topbar-height);
+    padding: 0 var(--#{$prefix}-space-5);
+    border-bottom: 1px solid var(--#{$prefix}-color-border-nav);
+  }
+
+  &__mark {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.45rem;
+    background: var(--#{$prefix}-brand-gold);
+  }
+
+  &__name {
+    font-family: var(--#{$prefix}-font-display);
+    font-size: 1.2rem;
+    font-weight: var(--#{$prefix}-weight-semibold);
+    letter-spacing: -0.03em;
+
+    span { color: var(--#{$prefix}-brand-gold-bright); }
+  }
+
+  &__body {
+    flex: 1;
+    overflow: auto;
+    padding: var(--#{$prefix}-space-4) var(--#{$prefix}-space-3);
+  }
+
+  &__foot {
+    padding: var(--#{$prefix}-space-3);
+    border-top: 1px solid var(--#{$prefix}-color-border-nav);
+
+    .#{$prefix}-button { color: var(--#{$prefix}-color-text-inverse); }
+  }
+}

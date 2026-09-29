@@ -1,0 +1,62 @@
+@use "variables" as *;
+
+@function token($name) {
+  @return var(--#{$prefix}-#{$name});
+}
+
+@mixin breakpoint-down($name) {
+  @if $name == md {
+    @media (max-width: 47.9975rem) {
+      @content;
+    }
+  } @else if $name == lg {
+    @media (max-width: 64.9975rem) {
+      @content;
+    }
+  } @else {
+    @media (max-width: map-get($breakpoints, $name)) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-up($name) {
+  @media (min-width: map-get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+@mixin control-size($size) {
+  --_h: var(--#{$prefix}-control-h-#{$size});
+  --_px: var(--#{$prefix}-control-px-#{$size});
+  --_fs: var(--#{$prefix}-font-#{$size});
+  --_icon: var(--#{$prefix}-icon-#{$size});
+
+  @if $size == sm {
+    --_radius: var(--#{$prefix}-radius-sm);
+  } @else if $size == lg or $size == xl {
+    --_radius: var(--#{$prefix}-radius-lg);
+  } @else {
+    --_radius: var(--#{$prefix}-radius-md);
+  }
+}
+
+@mixin size-modifiers($property, $values) {
+  @each $size in $sizes {
+    &--#{$size} {
+      #{$property}: map-get($values, $size);
+    }
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,0 +1,66 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.#{$prefix}-app {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: var(--#{$prefix}-aside-width) 1fr;
+  grid-template-rows: var(--#{$prefix}-topbar-height) 1fr;
+  grid-template-areas:
+    "aside topbar"
+    "aside main";
+}
+
+.#{$prefix}-main {
+  grid-area: main;
+  min-width: 0;
+  padding: var(--#{$prefix}-page-pad);
+}
+
+.#{$prefix}-burger,
+.#{$prefix}-aside-backdrop {
+  display: none;
+}
+
+@include breakpoint-down(md) {
+  .#{$prefix}-app {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "topbar"
+      "main";
+  }
+
+  .#{$prefix}-aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: var(--#{$prefix}-z-aside);
+    width: min(19rem, 88vw);
+    transform: translateX(-105%);
+    transition: transform var(--#{$prefix}-duration-slow) var(--#{$prefix}-ease-out);
+  }
+
+  .#{$prefix}-app.is-nav-open {
+    .#{$prefix}-aside { transform: none; }
+
+    .#{$prefix}-aside-backdrop {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .#{$prefix}-aside-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: calc(var(--#{$prefix}-z-aside) - 1);
+    background: var(--#{$prefix}-color-bg-overlay);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--#{$prefix}-duration) var(--#{$prefix}-ease);
+  }
+
+  .#{$prefix}-burger {
+    display: inline-flex;
+  }
+}

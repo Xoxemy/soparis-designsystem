@@ -1,0 +1,68 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+html {
+  font-family: var(--#{$prefix}-font-sans);
+  font-size: 100%;
+  line-height: var(--#{$prefix}-leading-normal);
+  background: var(--#{$prefix}-color-bg);
+  color: var(--#{$prefix}-color-text);
+}
+
+body {
+  min-height: 100dvh;
+  font-weight: var(--#{$prefix}-weight-regular);
+}
+
+.#{$prefix}-visually-hidden {
+  @include visually-hidden;
+}
+
+.#{$prefix}-skip-link {
+  position: absolute;
+  left: var(--#{$prefix}-space-4);
+  top: -4rem;
+  z-index: calc(var(--#{$prefix}-z-toast) + 1);
+  padding: var(--#{$prefix}-space-2) var(--#{$prefix}-space-4);
+  border-radius: var(--#{$prefix}-radius-md);
+  background: var(--#{$prefix}-brand-gold);
+  color: var(--#{$prefix}-color-text-on-gold);
+  font-weight: var(--#{$prefix}-weight-semibold);
+  text-decoration: none;
+
+  &:focus {
+    top: var(--#{$prefix}-space-4);
+  }
+}
+
+.#{$prefix}-icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: -0.15em;
+
+  @each $size in $sizes {
+    &--#{$size} {
+      width: var(--#{$prefix}-icon-#{$size});
+      height: var(--#{$prefix}-icon-#{$size});
+    }
+  }
+}
+
+.#{$prefix}-disabled,
+[disabled],
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}

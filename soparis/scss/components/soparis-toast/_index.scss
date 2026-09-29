@@ -1,0 +1,51 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-toast-stack {
+  position: fixed;
+  right: 1rem;
+  z-index: var(--#{$prefix}-z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: min(22rem, calc(100vw - 2rem));
+  pointer-events: none;
+
+  &--down {
+    top: 1rem;
+    bottom: auto;
+  }
+
+  &--up {
+    bottom: 1rem;
+    top: auto;
+  }
+}
+
+.#{$prefix}-toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--#{$prefix}-radius-md);
+  background: var(--#{$prefix}-color-bg-surface);
+  border: 1px solid var(--#{$prefix}-color-border);
+}
+
+.#{$prefix}-toast-stack--down .#{$prefix}-toast {
+  animation: #{$prefix}-toast-in-down var(--#{$prefix}-duration-slow) var(--#{$prefix}-ease-out);
+}
+
+.#{$prefix}-toast-stack--up .#{$prefix}-toast {
+  animation: #{$prefix}-toast-in-up var(--#{$prefix}-duration-slow) var(--#{$prefix}-ease-out);
+}
+
+@keyframes #{$prefix}-toast-in-down {
+  from { opacity: 0; transform: translateY(-0.6rem); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes #{$prefix}-toast-in-up {
+  from { opacity: 0; transform: translateY(0.6rem); }
+  to { opacity: 1; transform: none; }
+}

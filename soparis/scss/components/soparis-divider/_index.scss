@@ -1,0 +1,8 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-divider {
+  height: 1px;
+  background: var(--#{$prefix}-color-border);
+  border: 0;
+  margin: var(--#{$prefix}-space-4) 0;
+}

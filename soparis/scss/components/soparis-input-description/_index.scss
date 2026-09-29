@@ -1,0 +1,8 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-input-description {
+  max-width: 68ch;
+  font-size: var(--#{$prefix}-font-sm);
+  color: var(--#{$prefix}-color-text-muted);
+  text-wrap: pretty;
+}

@@ -1,0 +1,10 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-stack {
+  display: grid;
+  gap: var(--#{$prefix}-space-md);
+
+  @each $size in $sizes {
+    &--#{$size} { gap: var(--#{$prefix}-space-#{$size}); }
+  }
+}

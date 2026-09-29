@@ -1,0 +1,17 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-stat {
+  display: grid;
+  gap: 0.2rem;
+
+  &__value {
+    font-family: var(--#{$prefix}-font-display);
+    font-size: var(--#{$prefix}-font-3xl);
+    letter-spacing: var(--#{$prefix}-tracking-tight);
+  }
+
+  &__label {
+    font-size: var(--#{$prefix}-font-sm);
+    color: var(--#{$prefix}-color-text-secondary);
+  }
+}

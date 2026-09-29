@@ -1,0 +1,21 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--#{$prefix}-font-sm);
+  color: var(--#{$prefix}-color-text-secondary);
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      color: var(--#{$prefix}-color-text);
+      text-decoration: underline;
+    }
+  }
+
+  &__sep { opacity: 0.45; }
+}

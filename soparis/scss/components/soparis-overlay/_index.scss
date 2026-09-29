@@ -1,0 +1,13 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--#{$prefix}-z-overlay);
+  display: none;
+  place-items: center;
+  padding: 1rem;
+  background: var(--#{$prefix}-color-bg-overlay);
+
+  &.is-open { display: grid; }
+}

@@ -1,0 +1,33 @@
+// Tokens Sass configurables. En Angular:
+// @use "soparis/scss/abstracts/variables" with ($brand-gold: #2a3ad4);
+// Los primitivos (ink/gold/connect) se derivan de estas marcas.
+
+$prefix: "soparis" !default;
+$sizes: sm, md, lg, xl !default;
+
+// Marca Synka (synka.in): --primary índigo, --accent coral, --foreground tinta.
+// En producto: primary = gold (índigo), secondary = ink, accent = connect (coral).
+$brand-ink: #0f1729 !default;
+$brand-ink-soft: #1e293b !default;
+$brand-gold: #3548f3 !default;
+$brand-gold-bright: #6573f6 !default;
+$brand-gold-deep: #2a3ad4 !default;
+$brand-connect: #e76e50 !default;
+$brand-connect-deep: #c24f35 !default;
+$brand-violet: #bf5af1 !default;
+
+$font-sans: "Plus Jakarta Sans", "Segoe UI", sans-serif !default;
+$font-display: "Fraunces", "Times New Roman", serif !default;
+$font-mono: ui-monospace, "SF Mono", Consolas, monospace !default;
+
+$bp-sm: 30.625rem !default;
+$bp-md: 48rem !default;
+$bp-lg: 65rem !default;
+$bp-xl: 90rem !default;
+
+$breakpoints: (
+  sm: $bp-sm,
+  md: $bp-md,
+  lg: $bp-lg,
+  xl: $bp-xl,
+) !default;
