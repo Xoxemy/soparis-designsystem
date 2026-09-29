@@ -9,6 +9,9 @@
   grid-template-areas:
     "aside topbar"
     "aside main";
+  background: var(--#{$prefix}-color-bg);
+  color: var(--#{$prefix}-color-text);
+  transition: grid-template-columns var(--#{$prefix}-duration-slow) var(--#{$prefix}-ease-out);
 }
 
 .#{$prefix}-main {
@@ -23,11 +26,19 @@
 }
 
 @include breakpoint-down(md) {
-  .#{$prefix}-app {
+  .#{$prefix}-app,
+  .#{$prefix}-shell,
+  .#{$prefix}-support-shell {
     grid-template-columns: 1fr;
     grid-template-areas:
       "topbar"
       "main";
+  }
+
+  .#{$prefix}-app.is-aside-collapsed,
+  .#{$prefix}-shell--collapsed,
+  .#{$prefix}-support-shell--collapsed {
+    grid-template-columns: 1fr;
   }
 
   .#{$prefix}-aside {
@@ -35,13 +46,94 @@
     left: 0;
     top: 0;
     z-index: var(--#{$prefix}-z-aside);
-    width: min(19rem, 88vw);
+    width: min(18.5rem, 88vw) !important;
     transform: translateX(-105%);
     transition: transform var(--#{$prefix}-duration-slow) var(--#{$prefix}-ease-out);
+    box-shadow: none;
+  }
+
+  .#{$prefix}-app.is-aside-collapsed .#{$prefix}-aside,
+  .#{$prefix}-shell--collapsed .#{$prefix}-aside,
+  .#{$prefix}-support-shell--collapsed .#{$prefix}-aside {
+    width: min(18.5rem, 88vw) !important;
+  }
+
+  .#{$prefix}-app.is-aside-collapsed {
+    .#{$prefix}-aside__name,
+    .#{$prefix}-aside__user-copy,
+    .#{$prefix}-aside__user-chevron,
+    .#{$prefix}-aside__sep,
+    .#{$prefix}-aside__notify,
+    .#{$prefix}-aside__logout,
+    .#{$prefix}-menu__label,
+    .#{$prefix}-menu__text,
+    .#{$prefix}-menu__badge {
+      display: revert;
+    }
+
+    .#{$prefix}-aside__user-copy {
+      display: grid;
+    }
+
+    .#{$prefix}-menu__abbrev { display: none; }
+
+    .#{$prefix}-menu__item {
+      justify-content: flex-start;
+      padding: 0 0.7rem;
+      gap: 0.55rem;
+
+      &::before { display: block; }
+
+      > .#{$prefix}-icon,
+      > .material-symbols-outlined,
+      > svg {
+        display: inline-flex;
+      }
+    }
+
+    .#{$prefix}-aside__head {
+      flex-direction: row;
+      justify-content: flex-start;
+      padding: 0 0.75rem 0 0.9rem;
+      min-height: var(--#{$prefix}-topbar-height);
+      gap: 0.35rem;
+    }
+
+    .#{$prefix}-aside__brand {
+      justify-content: flex-start;
+      flex: 1;
+      padding: 0.35rem 0.4rem;
+      margin-inline: -0.15rem;
+    }
+
+    .#{$prefix}-aside__foot {
+      padding: 0.75rem;
+    }
+
+    .#{$prefix}-aside__account {
+      justify-content: flex-start;
+      padding: 0.3rem;
+      border: 1px solid var(--#{$prefix}-color-border-nav);
+      background: var(--#{$prefix}-color-nav-user);
+    }
+
+    .#{$prefix}-aside__user {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .#{$prefix}-aside__user-trigger {
+      justify-content: flex-start;
+      width: 100%;
+      padding: 0.25rem 0.4rem 0.25rem 0.25rem;
+    }
   }
 
   .#{$prefix}-app.is-nav-open {
-    .#{$prefix}-aside { transform: none; }
+    .#{$prefix}-aside {
+      transform: none;
+      box-shadow: var(--#{$prefix}-shadow-md);
+    }
 
     .#{$prefix}-aside-backdrop {
       opacity: 1;
@@ -62,5 +154,9 @@
 
   .#{$prefix}-burger {
     display: inline-flex;
+  }
+
+  [data-soparis-aside-collapse] {
+    display: none;
   }
 }

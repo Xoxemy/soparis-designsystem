@@ -10,7 +10,9 @@
 .#{$prefix}-table {
   width: 100%;
   min-width: 36rem;
+  border-collapse: collapse;
   font-size: var(--#{$prefix}-font-sm);
+  color: var(--#{$prefix}-color-text);
 
   th,
   td {
@@ -21,11 +23,67 @@
   }
 
   th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
     font-size: var(--#{$prefix}-font-xs);
+    font-weight: var(--#{$prefix}-weight-semibold);
     letter-spacing: var(--#{$prefix}-tracking-wide);
     text-transform: uppercase;
     color: var(--#{$prefix}-color-text-secondary);
     background: var(--#{$prefix}-color-bg-subtle);
+    white-space: nowrap;
+  }
+
+  tbody tr {
+    transition: background var(--#{$prefix}-duration) var(--#{$prefix}-ease);
+
+    &:hover td {
+      background: color-mix(in srgb, var(--#{$prefix}-color-primary) 6%, transparent);
+    }
+
+    &:last-child td { border-bottom: 0; }
+  }
+
+  &__cell-main {
+    display: flex;
+    align-items: center;
+    gap: var(--#{$prefix}-space-3);
+    min-width: 0;
+  }
+
+  &__meta {
+    display: grid;
+    gap: 0.1rem;
+    min-width: 0;
+
+    strong {
+      font-weight: var(--#{$prefix}-weight-semibold);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  &__numeric {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &--striped tbody tr:nth-child(even) td {
+    background: color-mix(in srgb, var(--#{$prefix}-color-bg-subtle) 70%, transparent);
+  }
+
+  &--compact {
+    min-width: 28rem;
+
+    th,
+    td { padding: 0.4rem 0.7rem; }
+  }
+
+  &--borderless {
+    th,
+    td { border-bottom: 0; }
   }
 
   &--sm th,
@@ -39,4 +97,12 @@
 
   &--xl th,
   &--xl td { padding: 1.2rem 1.35rem; font-size: var(--#{$prefix}-font-lg); }
+
+  &--selectable tbody tr {
+    cursor: pointer;
+
+    &.is-selected td {
+      background: color-mix(in srgb, var(--#{$prefix}-color-primary) 12%, transparent);
+    }
+  }
 }

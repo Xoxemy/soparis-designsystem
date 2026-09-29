@@ -5,6 +5,66 @@
   align-items: center;
   gap: 0.85rem;
   padding: 0.75rem 0;
+  color: var(--#{$prefix}-color-text);
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
 
-  + .#{$prefix}-item { border-top: 1px solid var(--#{$prefix}-color-border); }
+  + .#{$prefix}-item {
+    border-top: 1px solid var(--#{$prefix}-color-border);
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+    display: grid;
+    gap: 0.1rem;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-sm);
+    font-weight: var(--#{$prefix}-weight-semibold);
+    line-height: 1.3;
+  }
+
+  &__meta {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-xs);
+    color: var(--#{$prefix}-color-text-muted);
+  }
+
+  &__action {
+    flex-shrink: 0;
+    color: var(--#{$prefix}-color-icon-muted);
+  }
+
+  &--interactive {
+    padding: 0.7rem 0.75rem;
+    border-radius: var(--#{$prefix}-radius-md);
+    margin: 0;
+    border: 0;
+
+    + .#{$prefix}-item--interactive {
+      border-top: 0;
+      margin-top: 0.15rem;
+    }
+
+    &:hover {
+      background: var(--#{$prefix}-color-bg-subtle);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--#{$prefix}-color-border-focus);
+      outline-offset: 2px;
+    }
+
+    &.is-active {
+      background: color-mix(in srgb, var(--#{$prefix}-color-primary) 12%, transparent);
+    }
+  }
 }
+

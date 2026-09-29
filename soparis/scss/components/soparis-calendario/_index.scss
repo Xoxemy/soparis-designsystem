@@ -1,0 +1,181 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.#{$prefix}-calendario,
+.#{$prefix}-calendar {
+  display: grid;
+  gap: var(--#{$prefix}-space-4);
+  min-width: 0;
+
+  &__toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--#{$prefix}-space-3);
+  }
+
+  &__title {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+    font-size: var(--#{$prefix}-font-lg);
+    font-weight: var(--#{$prefix}-weight-semibold);
+  }
+
+  &__nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    border: 1px solid var(--#{$prefix}-color-border);
+    border-radius: var(--#{$prefix}-radius-lg);
+    overflow: hidden;
+    background: var(--#{$prefix}-color-bg-surface);
+  }
+
+  &__dow {
+    padding: 0.55rem 0.35rem;
+    text-align: center;
+    font-size: 0.68rem;
+    font-weight: var(--#{$prefix}-weight-semibold);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--#{$prefix}-color-text-muted);
+    background: var(--#{$prefix}-color-bg-subtle);
+    border-bottom: 1px solid var(--#{$prefix}-color-border);
+  }
+
+  &__day {
+    min-height: 5.5rem;
+    padding: 0.4rem;
+    border-right: 1px solid var(--#{$prefix}-color-border);
+    border-bottom: 1px solid var(--#{$prefix}-color-border);
+    background: var(--#{$prefix}-color-bg-surface);
+
+    &:nth-child(7n) { border-right: 0; }
+
+    &--muted {
+      background: color-mix(in srgb, var(--#{$prefix}-color-bg-subtle) 55%, transparent);
+      color: var(--#{$prefix}-color-text-muted);
+    }
+
+    &--today {
+      box-shadow: inset 0 0 0 2px var(--#{$prefix}-color-primary);
+    }
+  }
+
+  &__day-num {
+    display: inline-grid;
+    place-items: center;
+    width: 1.55rem;
+    height: 1.55rem;
+    margin-bottom: 0.25rem;
+    border-radius: var(--#{$prefix}-radius-full);
+    font-size: var(--#{$prefix}-font-xs);
+    font-weight: var(--#{$prefix}-weight-semibold);
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__day--today &__day-num {
+    background: var(--#{$prefix}-color-primary);
+    color: var(--#{$prefix}-color-primary-on);
+  }
+
+  &__events {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  &__event {
+    padding: 0.15rem 0.35rem;
+    border-radius: 0.3rem;
+    background: color-mix(in srgb, var(--#{$prefix}-color-primary) 14%, transparent);
+    color: var(--#{$prefix}-color-nav-item-active, var(--#{$prefix}-color-text));
+    font-size: 0.65rem;
+    font-weight: var(--#{$prefix}-weight-medium);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    border: 0;
+    text-align: left;
+    width: 100%;
+
+    &--accent {
+      background: color-mix(in srgb, var(--#{$prefix}-color-accent) 16%, transparent);
+    }
+
+    &--warning {
+      background: var(--#{$prefix}-color-warning-soft);
+      color: var(--#{$prefix}-color-warning-on);
+    }
+  }
+}
+
+.#{$prefix}-event-form-dialog {
+  width: min(32rem, 100%);
+  max-height: min(86dvh, 44rem);
+  display: flex;
+  flex-direction: column;
+  background: var(--#{$prefix}-color-bg-surface);
+  border: 1px solid var(--#{$prefix}-color-border);
+  border-radius: var(--#{$prefix}-radius-xl);
+  overflow: hidden;
+
+  &__head,
+  &__body,
+  &__foot {
+    padding: var(--#{$prefix}-space-5) var(--#{$prefix}-space-6);
+  }
+
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--#{$prefix}-space-3);
+    border-bottom: 1px solid var(--#{$prefix}-color-border);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-lg);
+    font-weight: var(--#{$prefix}-weight-semibold);
+  }
+
+  &__body {
+    display: grid;
+    gap: var(--#{$prefix}-space-4);
+    overflow: auto;
+    flex: 1;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--#{$prefix}-space-4);
+  }
+
+  &__foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.55rem;
+    border-top: 1px solid var(--#{$prefix}-color-border);
+    background: var(--#{$prefix}-color-bg-subtle);
+  }
+}
+
+@include breakpoint-down(md) {
+  .#{$prefix}-calendario__day,
+  .#{$prefix}-calendar__day {
+    min-height: 3.5rem;
+  }
+
+  .#{$prefix}-event-form-dialog__grid {
+    grid-template-columns: 1fr;
+  }
+}

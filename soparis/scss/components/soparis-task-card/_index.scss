@@ -1,0 +1,97 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-task-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--#{$prefix}-space-2);
+  padding: var(--#{$prefix}-space-3);
+  background: var(--#{$prefix}-color-card);
+  border: 1px solid var(--#{$prefix}-color-border);
+  border-radius: var(--#{$prefix}-radius-md);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--#{$prefix}-color-secondary) 6%, transparent);
+  color: var(--#{$prefix}-color-text);
+  text-align: left;
+  transition:
+    border-color var(--#{$prefix}-duration) var(--#{$prefix}-ease),
+    box-shadow var(--#{$prefix}-duration) var(--#{$prefix}-ease),
+    transform var(--#{$prefix}-duration) var(--#{$prefix}-ease);
+
+  &:hover {
+    border-color: var(--#{$prefix}-color-border-strong);
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--#{$prefix}-color-secondary) 10%, transparent);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--#{$prefix}-color-border-focus);
+    outline-offset: 2px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--#{$prefix}-space-2);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-sm);
+    font-weight: var(--#{$prefix}-weight-semibold);
+    line-height: var(--#{$prefix}-leading-snug);
+    letter-spacing: -0.01em;
+  }
+
+  &__desc {
+    margin: 0;
+    color: var(--#{$prefix}-color-text-muted);
+    font-size: var(--#{$prefix}-font-xs);
+    line-height: var(--#{$prefix}-leading-snug);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  &__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--#{$prefix}-space-2);
+    margin-top: 0.15rem;
+  }
+
+  &__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--#{$prefix}-color-text-muted);
+    font-size: var(--#{$prefix}-font-xs);
+  }
+
+  &--priority {
+    border-left: 3px solid var(--#{$prefix}-color-warning);
+  }
+
+  &--interactive {
+    cursor: pointer;
+  }
+
+  &.is-dragging {
+    opacity: 0.55;
+    cursor: grabbing;
+    transform: scale(0.98);
+  }
+}
+
+.#{$prefix}-kanban__card.#{$prefix}-task-card,
+.#{$prefix}-kanban .#{$prefix}-task-card {
+  cursor: grab;
+  touch-action: none;
+}
+

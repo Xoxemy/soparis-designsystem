@@ -1,0 +1,111 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.#{$prefix}-fichaje {
+  display: grid;
+  gap: var(--#{$prefix}-space-6);
+  min-width: 0;
+}
+
+.#{$prefix}-fichaje-clock {
+  display: grid;
+  justify-items: center;
+  gap: var(--#{$prefix}-space-5);
+  padding: var(--#{$prefix}-space-8) var(--#{$prefix}-space-6);
+  background: var(--#{$prefix}-color-bg-surface);
+  border: 1px solid var(--#{$prefix}-color-border);
+  border-radius: var(--#{$prefix}-radius-xl);
+  text-align: center;
+
+  &__time {
+    margin: 0;
+    font-family: var(--#{$prefix}-font-display);
+    font-size: clamp(2.5rem, 8vw, 3.75rem);
+    font-weight: var(--#{$prefix}-weight-semibold);
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+
+  &__date {
+    margin: 0;
+    color: var(--#{$prefix}-color-text-secondary);
+    font-size: var(--#{$prefix}-font-sm);
+  }
+
+  &__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: var(--#{$prefix}-radius-full);
+    background: var(--#{$prefix}-color-success-soft);
+    color: var(--#{$prefix}-color-success-on);
+    font-size: var(--#{$prefix}-font-sm);
+    font-weight: var(--#{$prefix}-weight-medium);
+  }
+
+  &__status--out {
+    background: var(--#{$prefix}-color-bg-subtle);
+    color: var(--#{$prefix}-color-text-secondary);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.65rem;
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--#{$prefix}-space-3);
+    width: 100%;
+    max-width: 28rem;
+  }
+
+  &__stat {
+    display: grid;
+    gap: 0.15rem;
+    padding: var(--#{$prefix}-space-3);
+    border-radius: var(--#{$prefix}-radius-md);
+    background: var(--#{$prefix}-color-bg-subtle);
+  }
+
+  &__stat-value {
+    font-family: var(--#{$prefix}-font-mono);
+    font-size: var(--#{$prefix}-font-lg);
+    font-weight: var(--#{$prefix}-weight-semibold);
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__stat-label {
+    font-size: var(--#{$prefix}-font-xs);
+    color: var(--#{$prefix}-color-text-muted);
+  }
+}
+
+.#{$prefix}-fichaje-gestion,
+.#{$prefix}-fichaje-reportes {
+  display: grid;
+  gap: var(--#{$prefix}-space-5);
+  min-width: 0;
+
+  &__summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--#{$prefix}-space-3);
+  }
+}
+
+@include breakpoint-down(md) {
+  .#{$prefix}-fichaje-clock__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .#{$prefix}-fichaje-gestion__summary,
+  .#{$prefix}-fichaje-reportes__summary {
+    grid-template-columns: 1fr 1fr;
+  }
+}

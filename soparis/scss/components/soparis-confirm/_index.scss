@@ -1,0 +1,46 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-confirm {
+  width: min(24rem, 100%);
+  padding: var(--#{$prefix}-space-6);
+  background: var(--#{$prefix}-color-bg-surface);
+  border: 1px solid var(--#{$prefix}-color-border);
+  border-radius: var(--#{$prefix}-radius-xl);
+
+  &__icon {
+    display: inline-grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: var(--#{$prefix}-space-3);
+    border-radius: var(--#{$prefix}-radius-full);
+    background: var(--#{$prefix}-color-warning-soft);
+    color: var(--#{$prefix}-color-warning-on);
+  }
+
+  &__title {
+    margin: 0 0 var(--#{$prefix}-space-2);
+    font-size: var(--#{$prefix}-font-lg);
+    font-weight: var(--#{$prefix}-weight-semibold);
+  }
+
+  &__message {
+    margin: 0;
+    color: var(--#{$prefix}-color-text-secondary);
+    font-size: var(--#{$prefix}-font-sm);
+    line-height: var(--#{$prefix}-leading-relaxed);
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: var(--#{$prefix}-space-5);
+  }
+
+  &--danger &__icon {
+    background: var(--#{$prefix}-color-error-soft);
+    color: var(--#{$prefix}-color-error-on);
+  }
+}

@@ -1,22 +1,76 @@
 @use "../../abstracts/variables" as *;
 
 .#{$prefix}-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
   background: var(--#{$prefix}-color-card);
   border: 1px solid var(--#{$prefix}-color-border);
   border-radius: var(--#{$prefix}-radius-lg);
   color: var(--#{$prefix}-color-text);
+  min-width: 0;
 
   &--sm { padding: var(--#{$prefix}-space-3); border-radius: var(--#{$prefix}-radius-md); }
   &--md { padding: var(--#{$prefix}-space-5); }
   &--lg { padding: var(--#{$prefix}-space-8); }
   &--xl { padding: var(--#{$prefix}-space-10); border-radius: var(--#{$prefix}-radius-xl); }
 
+  &--flush { padding: 0; }
+
+  &__media {
+    overflow: hidden;
+    border-radius: inherit;
+    margin: calc(var(--#{$prefix}-space-5) * -1) calc(var(--#{$prefix}-space-5) * -1) var(--#{$prefix}-space-4);
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  &--sm &__media {
+    margin: calc(var(--#{$prefix}-space-3) * -1) calc(var(--#{$prefix}-space-3) * -1) var(--#{$prefix}-space-3);
+  }
+
+  &--flush &__media {
+    margin: 0;
+    border-radius: var(--#{$prefix}-radius-lg) var(--#{$prefix}-radius-lg) 0 0;
+  }
+
   &__header {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 1rem;
+    gap: var(--#{$prefix}-space-3);
     margin-bottom: var(--#{$prefix}-space-4);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-lg);
+    font-weight: var(--#{$prefix}-weight-semibold);
+    letter-spacing: -0.02em;
+    line-height: var(--#{$prefix}-leading-snug);
+  }
+
+  &__subtitle {
+    margin: 0.15rem 0 0;
+    color: var(--#{$prefix}-color-text-muted);
+    font-size: var(--#{$prefix}-font-sm);
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__actions {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: var(--#{$prefix}-space-1);
   }
 
   &__foot {
@@ -37,7 +91,8 @@
   }
 
   &--elevated {
-    border-color: var(--#{$prefix}-color-border-strong);
+    border-color: transparent;
+    box-shadow: var(--#{$prefix}-shadow-md);
   }
 
   &--primary {
@@ -80,16 +135,28 @@
     .#{$prefix}-input-description,
     .#{$prefix}-stat__label,
     .#{$prefix}-lead,
-    .#{$prefix}-overline {
+    .#{$prefix}-overline,
+    .#{$prefix}-card__subtitle {
       color: color-mix(in srgb, currentColor 72%, transparent);
     }
   }
 
   &--interactive {
-    transition: transform var(--#{$prefix}-duration) var(--#{$prefix}-ease);
+    cursor: pointer;
+    transition:
+      transform var(--#{$prefix}-duration) var(--#{$prefix}-ease),
+      box-shadow var(--#{$prefix}-duration) var(--#{$prefix}-ease),
+      border-color var(--#{$prefix}-duration) var(--#{$prefix}-ease);
 
     &:hover {
       transform: translateY(-2px);
+      border-color: var(--#{$prefix}-color-border-strong);
+      box-shadow: var(--#{$prefix}-shadow-md);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--#{$prefix}-color-border-focus);
+      outline-offset: 2px;
     }
   }
 }

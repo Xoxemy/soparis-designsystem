@@ -1,108 +1,376 @@
 @use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
 
 .#{$prefix}-aside {
+  --_pad: 0.75rem;
   grid-area: aside;
   position: sticky;
   top: 0;
+  z-index: var(--#{$prefix}-z-aside);
   height: 100dvh;
   display: flex;
   flex-direction: column;
+  width: var(--#{$prefix}-aside-width);
   background: var(--#{$prefix}-color-bg-nav);
-  color: var(--#{$prefix}-color-text-inverse);
+  color: var(--#{$prefix}-color-nav-fg);
   border-right: 1px solid var(--#{$prefix}-color-border-nav);
   overflow: hidden;
+  transition:
+    width var(--#{$prefix}-duration-slow) var(--#{$prefix}-ease-out),
+    background var(--#{$prefix}-duration) var(--#{$prefix}-ease),
+    border-color var(--#{$prefix}-duration) var(--#{$prefix}-ease);
 
+  // ——— Brand ———
   &__head {
     display: flex;
     align-items: center;
-    gap: var(--#{$prefix}-space-3);
+    gap: 0.35rem;
     min-height: var(--#{$prefix}-topbar-height);
-    padding: 0 var(--#{$prefix}-space-4);
-    border-bottom: 1px solid var(--#{$prefix}-color-border-nav);
+    padding: 0 var(--_pad) 0 calc(var(--_pad) + 0.15rem);
     flex-shrink: 0;
   }
 
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    min-width: 0;
+    flex: 1;
+    padding: 0.35rem 0.4rem;
+    margin-inline: -0.15rem;
+    border-radius: var(--#{$prefix}-radius-md);
+    color: inherit;
+    text-decoration: none;
+
+    &:hover { background: var(--#{$prefix}-color-bg-nav-hover); }
+
+    &:focus-visible {
+      outline: 2px solid var(--#{$prefix}-color-border-focus);
+      outline-offset: 1px;
+    }
+  }
+
   &__mark {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 1.7rem;
+    height: 1.7rem;
     border-radius: 0.45rem;
     background: var(--#{$prefix}-color-primary);
     flex-shrink: 0;
   }
 
   &__name {
-    flex: 1;
     min-width: 0;
     font-family: var(--#{$prefix}-font-display);
     font-size: 1.2rem;
     font-weight: var(--#{$prefix}-weight-semibold);
-    letter-spacing: -0.03em;
+    letter-spacing: -0.035em;
+    line-height: 1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 
-    span { color: var(--#{$prefix}-color-primary-bright); }
+    span { color: var(--#{$prefix}-color-primary); }
   }
 
-  &__action {
+  &__action,
+  &__close {
     flex-shrink: 0;
-    color: var(--#{$prefix}-color-nav-item);
+    width: 2rem;
+    height: 2rem;
+    color: var(--#{$prefix}-color-nav-label);
 
-    &:hover { color: var(--#{$prefix}-color-text-inverse); }
-  }
-
-  &__body {
-    flex: 1;
-    overflow: auto;
-    padding: var(--#{$prefix}-space-4) var(--#{$prefix}-space-3);
-    min-height: 0;
-  }
-
-  &__foot {
-    display: flex;
-    align-items: center;
-    gap: var(--#{$prefix}-space-2);
-    padding: var(--#{$prefix}-space-3);
-    border-top: 1px solid var(--#{$prefix}-color-border-nav);
-    flex-shrink: 0;
-
-    .#{$prefix}-avatar {
-      flex-shrink: 0;
-      background: color-mix(in srgb, var(--#{$prefix}-color-primary) 28%, transparent);
-      color: var(--#{$prefix}-color-primary-bright);
-    }
-
-    .#{$prefix}-input-text {
-      flex: 1;
-      min-width: 0;
-      background: color-mix(in srgb, #fff 8%, transparent);
-      border-color: var(--#{$prefix}-color-border-nav);
-      color: var(--#{$prefix}-color-text-inverse);
-
-      &::placeholder {
-        color: color-mix(in srgb, var(--#{$prefix}-color-text-inverse) 45%, transparent);
-      }
-
-      &:hover {
-        border-color: color-mix(in srgb, #fff 28%, transparent);
-      }
-
-      &:focus,
-      &:focus-visible {
-        border-color: var(--#{$prefix}-color-primary);
-        outline-color: var(--#{$prefix}-color-primary);
-      }
-    }
-
-    .#{$prefix}-icon,
-    .#{$prefix}-button-icon {
-      flex-shrink: 0;
-      color: var(--#{$prefix}-color-nav-item);
-    }
-
-    .#{$prefix}-button-icon:hover {
-      color: var(--#{$prefix}-color-text-inverse);
+    &:hover {
+      color: var(--#{$prefix}-color-nav-fg);
       background: var(--#{$prefix}-color-bg-nav-hover);
     }
+  }
+
+  &__close { display: none; }
+
+  // ——— Nav ———
+  &__body {
+    position: relative;
+    flex: 1;
+    overflow: auto;
+    padding: 0.35rem var(--_pad) var(--#{$prefix}-space-4);
+    min-height: 0;
+    mask-image: linear-gradient(#000, #000);
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--#{$prefix}-color-nav-fg) 14%, transparent) transparent;
+
+    &::-webkit-scrollbar { width: 0.3rem; }
+    &::-webkit-scrollbar-thumb {
+      background: color-mix(in srgb, var(--#{$prefix}-color-nav-fg) 14%, transparent);
+      border-radius: var(--#{$prefix}-radius-full);
+    }
+  }
+
+  // ——— Account actions ———
+  &__foot {
+    flex-shrink: 0;
+    padding: var(--_pad);
+    padding-top: 0.5rem;
+  }
+
+  &__account {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    width: 100%;
+    min-width: 0;
+    padding: 0.3rem;
+    border: 1px solid var(--#{$prefix}-color-border-nav);
+    border-radius: 0.85rem;
+    background: var(--#{$prefix}-color-nav-user);
+  }
+
+  &__user {
+    flex: 1;
+    min-width: 0;
+
+    .#{$prefix}-dropdown__panel {
+      left: 0;
+      right: auto;
+      top: auto;
+      bottom: calc(100% + 0.5rem);
+      min-width: 13rem;
+      padding: 0.4rem;
+      background: var(--#{$prefix}-color-bg-surface);
+      color: var(--#{$prefix}-color-text);
+      border: 1px solid var(--#{$prefix}-color-border);
+      border-radius: var(--#{$prefix}-radius-lg);
+      box-shadow: var(--#{$prefix}-shadow-md);
+    }
+  }
+
+  &__user-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    min-width: 0;
+    padding: 0.25rem 0.4rem 0.25rem 0.25rem;
+    border: 0;
+    border-radius: 0.65rem;
+    background: transparent;
+    color: var(--#{$prefix}-color-nav-fg);
+    cursor: pointer;
+    text-align: left;
+
+    &:hover,
+    &[aria-expanded="true"] {
+      background: var(--#{$prefix}-color-nav-user-hover);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--#{$prefix}-color-border-focus);
+      outline-offset: 1px;
+    }
+  }
+
+  &__avatar {
+    --_s: 1.85rem;
+    flex-shrink: 0;
+    background: #ec4899;
+    color: #fff;
+
+    .#{$prefix}-icon,
+    .material-symbols-outlined {
+      font-size: 1.05rem;
+      width: 1.05rem;
+      height: 1.05rem;
+      font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+  }
+
+  &__user-copy {
+    min-width: 0;
+    display: grid;
+    gap: 0.05rem;
+  }
+
+  &__user-name {
+    font-size: var(--#{$prefix}-font-sm);
+    font-weight: var(--#{$prefix}-weight-semibold);
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__user-role {
+    font-size: 0.65rem;
+    color: var(--#{$prefix}-color-nav-label);
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__user-chevron {
+    margin-left: auto;
+    color: var(--#{$prefix}-color-nav-label);
+    font-size: 1.05rem !important;
+    width: 1.05rem !important;
+    height: 1.05rem !important;
+    flex-shrink: 0;
+  }
+
+  &__sep {
+    width: 1px;
+    height: 1.35rem;
+    margin-inline: 0.15rem;
+    background: var(--#{$prefix}-color-border-nav);
+    flex-shrink: 0;
+  }
+
+  &__notify,
+  &__logout {
+    position: relative;
+    flex-shrink: 0;
+    width: 2.1rem;
+    height: 2.1rem;
+    color: var(--#{$prefix}-color-nav-item);
+
+    &:hover {
+      color: var(--#{$prefix}-color-nav-fg);
+      background: var(--#{$prefix}-color-nav-user-hover);
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    display: inline-grid;
+    place-items: center;
+    min-width: 0.85rem;
+    height: 0.85rem;
+    padding: 0 0.15rem;
+    border-radius: var(--#{$prefix}-radius-full);
+    background: #fce7f3;
+    color: #9d174d;
+    font-size: 0.52rem;
+    font-weight: var(--#{$prefix}-weight-bold);
+    line-height: 1;
+    pointer-events: none;
+  }
+}
+
+// ——— Collapsed ———
+.#{$prefix}-app.is-aside-collapsed,
+.#{$prefix}-shell--collapsed,
+.#{$prefix}-support-shell--collapsed {
+  grid-template-columns: var(--#{$prefix}-aside-width-collapsed) 1fr;
+
+  .#{$prefix}-aside {
+    width: var(--#{$prefix}-aside-width-collapsed);
+  }
+
+  .#{$prefix}-aside__head {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.75rem 0.4rem 0.5rem;
+    min-height: auto;
+  }
+
+  .#{$prefix}-aside__brand {
+    justify-content: center;
+    flex: 0;
+    padding: 0.35rem;
+    margin: 0;
+  }
+
+  .#{$prefix}-aside__name,
+  .#{$prefix}-aside__user-copy,
+  .#{$prefix}-aside__user-chevron,
+  .#{$prefix}-aside__sep,
+  .#{$prefix}-aside__notify,
+  .#{$prefix}-aside__logout,
+  .#{$prefix}-menu__label,
+  .#{$prefix}-menu__text,
+  .#{$prefix}-menu__badge {
+    display: none;
+  }
+
+  .#{$prefix}-aside__action {
+    margin: 0;
+  }
+
+  .#{$prefix}-aside__body {
+    padding: 0.25rem 0.4rem 1rem;
+  }
+
+  .#{$prefix}-aside__foot {
+    padding: 0.5rem 0.4rem 0.75rem;
+  }
+
+  .#{$prefix}-aside__account {
+    justify-content: center;
+    padding: 0.25rem;
+    border: 0;
+    background: transparent;
+  }
+
+  .#{$prefix}-aside__user {
+    flex: 0;
+  }
+
+  .#{$prefix}-aside__user-trigger {
+    justify-content: center;
+    width: auto;
+    padding: 0.2rem;
+  }
+
+  .#{$prefix}-menu__item {
+    justify-content: center;
+    padding: 0;
+    gap: 0;
+
+    &::before { display: none; }
+
+    > .#{$prefix}-icon,
+    > .material-symbols-outlined,
+    > svg {
+      display: none;
+    }
+  }
+
+  .#{$prefix}-menu__abbrev {
+    display: inline-flex;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 0.65rem;
+    background: transparent;
+    color: var(--#{$prefix}-color-nav-item);
+  }
+
+  .#{$prefix}-menu__item:hover .#{$prefix}-menu__abbrev {
+    background: var(--#{$prefix}-color-bg-nav-hover);
+    color: var(--#{$prefix}-color-nav-fg);
+  }
+
+  .#{$prefix}-menu__item--active .#{$prefix}-menu__abbrev,
+  .#{$prefix}-menu__item[aria-current="page"] .#{$prefix}-menu__abbrev {
+    background: var(--#{$prefix}-color-bg-nav-active);
+    color: var(--#{$prefix}-color-nav-item-active);
+  }
+
+  .#{$prefix}-aside__user .#{$prefix}-dropdown__panel {
+    left: calc(100% + 0.55rem);
+    bottom: 0;
+    min-width: 12.5rem;
+  }
+}
+
+@include breakpoint-down(md) {
+  .#{$prefix}-aside__close {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .#{$prefix}-aside__action[data-soparis-aside-collapse] {
+    display: none;
   }
 }

@@ -94,15 +94,17 @@
   color: var(--#{$prefix}-color-text-secondary);
 }
 
-.#{$prefix}-small,
-.#{$prefix}-caption {
+.#{$prefix}-small {
   font-size: var(--#{$prefix}-font-sm);
+  line-height: var(--#{$prefix}-leading-normal);
   color: var(--#{$prefix}-color-text-secondary);
 }
 
 .#{$prefix}-caption {
   font-size: var(--#{$prefix}-font-xs);
+  line-height: var(--#{$prefix}-leading-normal);
   letter-spacing: 0.01em;
+  color: var(--#{$prefix}-color-text-secondary);
 }
 
 .#{$prefix}-muted { color: var(--#{$prefix}-color-text-secondary); }

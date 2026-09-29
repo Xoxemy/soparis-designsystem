@@ -1,0 +1,172 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.#{$prefix}-tickets {
+  display: grid;
+  gap: var(--#{$prefix}-space-5);
+  min-width: 0;
+
+  &__list {
+    display: grid;
+    gap: var(--#{$prefix}-space-2);
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--#{$prefix}-space-3);
+    padding: var(--#{$prefix}-space-3) var(--#{$prefix}-space-4);
+    background: var(--#{$prefix}-color-bg-surface);
+    border: 1px solid var(--#{$prefix}-color-border);
+    border-radius: var(--#{$prefix}-radius-lg);
+    text-align: left;
+    color: inherit;
+    cursor: pointer;
+    transition:
+      border-color var(--#{$prefix}-duration) var(--#{$prefix}-ease),
+      box-shadow var(--#{$prefix}-duration) var(--#{$prefix}-ease);
+
+    &:hover {
+      border-color: var(--#{$prefix}-color-border-strong);
+      box-shadow: 0 4px 14px color-mix(in srgb, var(--#{$prefix}-color-secondary) 8%, transparent);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--#{$prefix}-color-border-focus);
+      outline-offset: 2px;
+    }
+  }
+
+  &__id {
+    font-family: var(--#{$prefix}-font-mono);
+    font-size: var(--#{$prefix}-font-xs);
+    color: var(--#{$prefix}-color-text-muted);
+    white-space: nowrap;
+  }
+
+  &__main {
+    display: grid;
+    gap: 0.2rem;
+    min-width: 0;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-sm);
+    font-weight: var(--#{$prefix}-weight-semibold);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__meta {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-xs);
+    color: var(--#{$prefix}-color-text-muted);
+  }
+
+  &__side {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.4rem;
+  }
+}
+
+.#{$prefix}-ticket-create-dialog,
+.#{$prefix}-ticket-detail-dialog {
+  width: min(34rem, 100%);
+  max-height: min(86dvh, 46rem);
+  display: flex;
+  flex-direction: column;
+  background: var(--#{$prefix}-color-bg-surface);
+  border: 1px solid var(--#{$prefix}-color-border);
+  border-radius: var(--#{$prefix}-radius-xl);
+  overflow: hidden;
+
+  &__head,
+  &__body,
+  &__foot {
+    padding: var(--#{$prefix}-space-5) var(--#{$prefix}-space-6);
+  }
+
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--#{$prefix}-space-3);
+    border-bottom: 1px solid var(--#{$prefix}-color-border);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-lg);
+    font-weight: var(--#{$prefix}-weight-semibold);
+  }
+
+  &__subtitle {
+    margin: 0.2rem 0 0;
+    color: var(--#{$prefix}-color-text-secondary);
+    font-size: var(--#{$prefix}-font-sm);
+  }
+
+  &__body {
+    display: grid;
+    gap: var(--#{$prefix}-space-4);
+    overflow: auto;
+    flex: 1;
+  }
+
+  &__foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.55rem;
+    border-top: 1px solid var(--#{$prefix}-color-border);
+    background: var(--#{$prefix}-color-bg-subtle);
+  }
+}
+
+.#{$prefix}-ticket-detail-dialog {
+  &__thread {
+    display: grid;
+    gap: var(--#{$prefix}-space-3);
+  }
+
+  &__msg {
+    padding: var(--#{$prefix}-space-3);
+    border-radius: var(--#{$prefix}-radius-md);
+    background: var(--#{$prefix}-color-bg-subtle);
+    border: 1px solid var(--#{$prefix}-color-border);
+  }
+
+  &__msg-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.35rem;
+    font-size: var(--#{$prefix}-font-xs);
+    color: var(--#{$prefix}-color-text-muted);
+  }
+
+  &__msg-text {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-sm);
+    line-height: var(--#{$prefix}-leading-relaxed);
+  }
+}
+
+@include breakpoint-down(md) {
+  .#{$prefix}-tickets__row {
+    grid-template-columns: 1fr;
+  }
+
+  .#{$prefix}-ticket-create-dialog,
+  .#{$prefix}-ticket-detail-dialog {
+    width: 100%;
+    max-height: 90dvh;
+  }
+}

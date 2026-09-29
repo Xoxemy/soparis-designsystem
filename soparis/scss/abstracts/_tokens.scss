@@ -24,9 +24,9 @@
   --#{$prefix}-color-bg-surface-active: var(--#{$prefix}-primitive-canvas-400);
   --#{$prefix}-color-bg-surface-selected: var(--#{$prefix}-primitive-gold-100);
   --#{$prefix}-color-bg-surface-disabled: color-mix(in srgb, var(--#{$prefix}-theme-secondary) 5%, transparent);
-  --#{$prefix}-color-bg-nav: var(--#{$prefix}-primitive-ink-850);
-  --#{$prefix}-color-bg-nav-hover: color-mix(in srgb, var(--#{$prefix}-primitive-canvas-50) 6%, transparent);
-  --#{$prefix}-color-bg-nav-active: color-mix(in srgb, var(--#{$prefix}-theme-primary) 16%, transparent);
+  --#{$prefix}-color-bg-nav: var(--#{$prefix}-color-white);
+  --#{$prefix}-color-bg-nav-hover: color-mix(in srgb, var(--#{$prefix}-theme-secondary) 5%, transparent);
+  --#{$prefix}-color-bg-nav-active: color-mix(in srgb, var(--#{$prefix}-theme-primary) 10%, transparent);
   --#{$prefix}-color-bg-overlay: color-mix(in srgb, var(--#{$prefix}-theme-secondary) 56%, transparent);
   --#{$prefix}-color-bg-input: var(--#{$prefix}-primitive-canvas-50);
   --#{$prefix}-color-bg-premium: var(--#{$prefix}-theme-premium);
@@ -44,7 +44,7 @@
   --#{$prefix}-color-border: var(--#{$prefix}-primitive-ink-200);
   --#{$prefix}-color-border-strong: var(--#{$prefix}-primitive-ink-300);
   --#{$prefix}-color-border-focus: var(--#{$prefix}-theme-primary);
-  --#{$prefix}-color-border-nav: color-mix(in srgb, var(--#{$prefix}-primitive-canvas-50) 8%, transparent);
+  --#{$prefix}-color-border-nav: var(--#{$prefix}-primitive-ink-200);
   --#{$prefix}-color-border-gold: var(--#{$prefix}-color-primary-muted);
 
   --#{$prefix}-color-icon: var(--#{$prefix}-primitive-ink-600);
@@ -91,11 +91,14 @@
   --#{$prefix}-color-white: #ffffff;
   --#{$prefix}-color-black: #000000;
 
-  // Nav (aside)
-  --#{$prefix}-color-nav-label: color-mix(in srgb, var(--#{$prefix}-color-text-inverse) 45%, transparent);
-  --#{$prefix}-color-nav-item: color-mix(in srgb, var(--#{$prefix}-color-text-inverse) 86%, transparent);
-  --#{$prefix}-color-nav-item-active: var(--#{$prefix}-color-primary-bright);
+  // Nav (aside) — light = blanco
+  --#{$prefix}-color-nav-fg: var(--#{$prefix}-theme-secondary);
+  --#{$prefix}-color-nav-label: var(--#{$prefix}-primitive-ink-400);
+  --#{$prefix}-color-nav-item: var(--#{$prefix}-primitive-ink-500);
+  --#{$prefix}-color-nav-item-active: var(--#{$prefix}-primitive-gold-700);
   --#{$prefix}-color-nav-badge: var(--#{$prefix}-color-primary-soft);
+  --#{$prefix}-color-nav-user: color-mix(in srgb, var(--#{$prefix}-theme-secondary) 3.5%, transparent);
+  --#{$prefix}-color-nav-user-hover: color-mix(in srgb, var(--#{$prefix}-theme-secondary) 7%, transparent);
 
   // Sombras globales
   --#{$prefix}-shadow-xs: 0 1px 2px color-mix(in srgb, var(--#{$prefix}-color-secondary) 4%, transparent);
@@ -201,7 +204,8 @@
   --#{$prefix}-duration: var(--#{$prefix}-primitive-duration-default);
   --#{$prefix}-duration-slow: var(--#{$prefix}-primitive-duration-slow);
 
-  --#{$prefix}-aside-width: 16.5rem;
+  --#{$prefix}-aside-width: 16.75rem;
+  --#{$prefix}-aside-width-collapsed: 4.25rem;
   --#{$prefix}-topbar-height: 3.5rem;
   --#{$prefix}-container-sm: 40rem;
   --#{$prefix}-container-md: 56rem;
@@ -232,7 +236,9 @@
   --#{$prefix}-color-bg-surface-active: var(--#{$prefix}-primitive-night-200);
   --#{$prefix}-color-bg-surface-selected: var(--#{$prefix}-primitive-gold-950);
   --#{$prefix}-color-bg-surface-disabled: color-mix(in srgb, var(--#{$prefix}-primitive-canvas-50) 6%, transparent);
-  --#{$prefix}-color-bg-nav: var(--#{$prefix}-primitive-night-800);
+  --#{$prefix}-color-bg-nav: var(--#{$prefix}-color-black);
+  --#{$prefix}-color-bg-nav-hover: color-mix(in srgb, var(--#{$prefix}-color-white) 6%, transparent);
+  --#{$prefix}-color-bg-nav-active: color-mix(in srgb, var(--#{$prefix}-theme-primary) 18%, transparent);
   --#{$prefix}-color-bg-input: var(--#{$prefix}-primitive-night-500);
   --#{$prefix}-color-text: #f8fafc;
   --#{$prefix}-color-text-secondary: #cbd5e1;
@@ -243,6 +249,7 @@
   --#{$prefix}-color-text-link-hover: var(--#{$prefix}-primitive-connect-100);
   --#{$prefix}-color-border: var(--#{$prefix}-primitive-night-100);
   --#{$prefix}-color-border-strong: var(--#{$prefix}-primitive-night-50);
+  --#{$prefix}-color-border-nav: color-mix(in srgb, var(--#{$prefix}-color-white) 10%, transparent);
   --#{$prefix}-color-icon: #e2e8f0;
   --#{$prefix}-color-icon-muted: var(--#{$prefix}-primitive-ink-400);
   --#{$prefix}-color-info-bg: var(--#{$prefix}-primitive-info-900);
@@ -255,6 +262,15 @@
   --#{$prefix}-color-danger-text: var(--#{$prefix}-primitive-danger-100);
   --#{$prefix}-color-premium-bg: var(--#{$prefix}-primitive-gold-950);
   --#{$prefix}-color-premium-text: var(--#{$prefix}-primitive-gold-300);
+
+  // Nav (aside) — dark = negro
+  --#{$prefix}-color-nav-fg: #f4f4f5;
+  --#{$prefix}-color-nav-label: color-mix(in srgb, #f4f4f5 42%, transparent);
+  --#{$prefix}-color-nav-item: color-mix(in srgb, #f4f4f5 78%, transparent);
+  --#{$prefix}-color-nav-item-active: var(--#{$prefix}-color-primary-bright);
+  --#{$prefix}-color-nav-badge: color-mix(in srgb, var(--#{$prefix}-theme-primary) 22%, transparent);
+  --#{$prefix}-color-nav-user: color-mix(in srgb, var(--#{$prefix}-color-white) 6%, transparent);
+  --#{$prefix}-color-nav-user-hover: color-mix(in srgb, var(--#{$prefix}-color-white) 10%, transparent);
 }
 
 @include breakpoint-down(md) {

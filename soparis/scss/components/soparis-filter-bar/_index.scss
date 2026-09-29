@@ -1,0 +1,33 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.#{$prefix}-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--#{$prefix}-space-3);
+  padding: var(--#{$prefix}-space-3);
+  background: var(--#{$prefix}-color-bg-surface);
+  border: 1px solid var(--#{$prefix}-color-border);
+  border-radius: var(--#{$prefix}-radius-lg);
+
+  &__grow {
+    flex: 1;
+    min-width: min(100%, 14rem);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    margin-left: auto;
+  }
+}
+
+@include breakpoint-down(md) {
+  .#{$prefix}-filter-bar__actions {
+    width: 100%;
+    margin-left: 0;
+  }
+}

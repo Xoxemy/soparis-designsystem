@@ -1,0 +1,37 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-content-card {
+  display: grid;
+  gap: var(--#{$prefix}-space-4);
+  padding: var(--#{$prefix}-space-5);
+  background: var(--#{$prefix}-color-card);
+  border: 1px solid var(--#{$prefix}-color-border);
+  border-radius: var(--#{$prefix}-radius-lg);
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--#{$prefix}-space-3);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-lg);
+    font-weight: var(--#{$prefix}-weight-semibold);
+  }
+
+  &__body {
+    min-width: 0;
+    color: var(--#{$prefix}-color-text);
+  }
+
+  &__foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem;
+    padding-top: var(--#{$prefix}-space-2);
+    border-top: 1px solid var(--#{$prefix}-color-border);
+  }
+}

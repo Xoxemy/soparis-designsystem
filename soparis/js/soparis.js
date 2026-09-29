@@ -10,6 +10,46 @@
     document.body.style.overflow = open && window.matchMedia("(max-width: 47.9975rem)").matches ? "hidden" : "";
   }
 
+  function setAsideCollapsed(app, collapsed) {
+    if (!app) return;
+    app.classList.toggle("is-aside-collapsed", collapsed);
+    localStorage.setItem("soparis-aside-collapsed", collapsed ? "1" : "0");
+    qsa("[data-soparis-aside-collapse]", app).forEach((btn) => {
+      btn.setAttribute("aria-expanded", String(!collapsed));
+      btn.setAttribute("aria-label", collapsed ? "Expandir menú" : "Colapsar menú");
+      const icon = qs(".material-symbols-outlined, .soparis-icon", btn);
+      if (icon) icon.textContent = collapsed ? "left_panel_open" : "left_panel_close";
+    });
+  }
+
+  function prepareMenuItems(root = document) {
+    qsa(".soparis-menu__item", root).forEach((item) => {
+      if (item.querySelector(".soparis-menu__text")) return;
+      const icon = qs(":scope > .soparis-icon, :scope > .material-symbols-outlined, :scope > svg", item);
+      const badge = qs(":scope > .soparis-menu__badge", item);
+      const label = Array.from(item.childNodes)
+        .filter((node) => node.nodeType === Node.TEXT_NODE)
+        .map((node) => node.textContent || "")
+        .join(" ")
+        .trim() || (item.textContent || "").trim();
+      if (!label) return;
+      item.title = item.title || label;
+      [...item.childNodes].forEach((node) => {
+        if (node !== icon && node !== badge) node.remove();
+      });
+      const abbrev = document.createElement("span");
+      abbrev.className = "soparis-menu__abbrev";
+      abbrev.setAttribute("aria-hidden", "true");
+      abbrev.textContent = label.charAt(0).toUpperCase();
+      const text = document.createElement("span");
+      text.className = "soparis-menu__text";
+      text.textContent = label;
+      if (icon) item.prepend(icon);
+      item.append(abbrev, text);
+      if (badge) item.append(badge);
+    });
+  }
+
   function initAppShell(app) {
     const burger = qs("[data-soparis-burger]", app);
     const backdrop = qs("[data-soparis-backdrop]", app);
@@ -20,6 +60,15 @@
     });
     window.addEventListener("keydown", (event) => {
       if (event.key === "Escape") setNavOpen(app, false);
+    });
+
+    prepareMenuItems(app);
+    const stored = localStorage.getItem("soparis-aside-collapsed") === "1";
+    setAsideCollapsed(app, stored);
+    qsa("[data-soparis-aside-collapse]", app).forEach((btn) => {
+      btn.addEventListener("click", () => {
+        setAsideCollapsed(app, !app.classList.contains("is-aside-collapsed"));
+      });
     });
   }
 
@@ -537,6 +586,129 @@
     });
   }
 
+  function initKanban(root = document) {
+    qsa("[data-soparis-kanban]", root).forEach((board) => {
+      if (board.dataset.soparisKanbanReady === "1") return;
+      board.dataset.soparisKanbanReady = "1";
+
+      const updateCounts = () => {
+        qsa(".soparis-kanban__column", board).forEach((column) => {
+          const body = qs(".soparis-kanban__column-body", column);
+          const count = qs("[data-soparis-kanban-count]", column);
+          if (!body || !count) return;
+          const n = qsa(".soparis-kanban__card", body).length;
+          count.textContent = String(n);
+        });
+      };
+
+      let dragCard = null;
+
+      qsa(".soparis-kanban__card", board).forEach((card) => {
+        card.setAttribute("draggable", "true");
+        card.tabIndex = 0;
+
+        card.addEventListener("dragstart", (event) => {
+          dragCard = card;
+          card.classList.add("is-dragging");
+          event.dataTransfer.effectAllowed = "move";
+          event.dataTransfer.setData("text/plain", card.id || "card");
+        });
+
+        card.addEventListener("dragend", () => {
+          card.classList.remove("is-dragging");
+          qsa(".soparis-kanban__column", board).forEach((col) =>
+            col.classList.remove("is-drop-target")
+          );
+          dragCard = null;
+          updateCounts();
+        });
+      });
+
+      qsa(".soparis-kanban__column-body", board).forEach((body) => {
+        const column = body.closest(".soparis-kanban__column");
+
+        body.addEventListener("dragover", (event) => {
+          event.preventDefault();
+          event.dataTransfer.dropEffect = "move";
+          column?.classList.add("is-drop-target");
+
+          if (!dragCard) return;
+          const after = getDragAfterElement(body, event.clientY);
+          if (!after) body.appendChild(dragCard);
+          else body.insertBefore(dragCard, after);
+        });
+
+        body.addEventListener("dragleave", (event) => {
+          if (!body.contains(event.relatedTarget)) {
+            column?.classList.remove("is-drop-target");
+          }
+        });
+
+        body.addEventListener("drop", (event) => {
+          event.preventDefault();
+          column?.classList.remove("is-drop-target");
+          updateCounts();
+          board.dispatchEvent(
+            new CustomEvent("soparis:kanban-change", {
+              bubbles: true,
+              detail: { board, column, card: dragCard },
+            })
+          );
+        });
+      });
+
+      updateCounts();
+    });
+  }
+
+  function getDragAfterElement(container, y) {
+    const cards = [
+      ...container.querySelectorAll(".soparis-kanban__card:not(.is-dragging)"),
+    ];
+    return cards.reduce(
+      (closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        if (offset < 0 && offset > closest.offset) {
+          return { offset, element: child };
+        }
+        return closest;
+      },
+      { offset: Number.NEGATIVE_INFINITY, element: null }
+    ).element;
+  }
+
+  function initPasswords(root = document) {
+    qsa("[data-soparis-password]", root).forEach((wrap) => {
+      const input = qs("input", wrap);
+      const toggle = qs("[data-soparis-password-toggle]", wrap);
+      if (!input || !toggle) return;
+      toggle.addEventListener("click", () => {
+        const show = input.type === "password";
+        input.type = show ? "text" : "password";
+        toggle.setAttribute("aria-label", show ? "Ocultar contraseña" : "Mostrar contraseña");
+        const icon = qs(".material-symbols-outlined, .soparis-icon", toggle);
+        if (icon) icon.textContent = show ? "visibility_off" : "visibility";
+      });
+    });
+  }
+
+  function initClocks(root = document) {
+    qsa("[data-soparis-clock]", root).forEach((el) => {
+      const tick = () => {
+        const now = new Date();
+        el.textContent = now.toLocaleTimeString("es-ES", {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false,
+        });
+      };
+      tick();
+      window.setInterval(tick, 1000);
+    });
+  }
+
   window.Soparis = {
     init(root = document) {
       qsa("[data-soparis-app]", root).forEach(initAppShell);
@@ -547,6 +719,9 @@
       initTheme();
       initThemeStudio(root);
       initSelects(root);
+      initKanban(root);
+      initPasswords(root);
+      initClocks(root);
       qsa("[data-soparis-toast]").forEach((btn) => {
         btn.addEventListener("click", () =>
           toast(btn.dataset.soparisToast || "Acción completada", {
@@ -561,7 +736,11 @@
     setThemeVars,
     resetThemeVars,
     setNavOpen,
+    setAsideCollapsed,
     initSelects,
+    initKanban,
+    initPasswords,
+    initClocks,
   };
 
   document.addEventListener("DOMContentLoaded", () => window.Soparis.init());

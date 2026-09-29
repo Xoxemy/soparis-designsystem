@@ -1,0 +1,72 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+%#{$prefix}-shell-layout {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: var(--#{$prefix}-aside-width) 1fr;
+  grid-template-rows: var(--#{$prefix}-topbar-height) 1fr;
+  grid-template-areas:
+    "aside topbar"
+    "aside main";
+  background: var(--#{$prefix}-color-bg);
+  color: var(--#{$prefix}-color-text);
+}
+
+.#{$prefix}-shell,
+.#{$prefix}-support-shell {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: var(--#{$prefix}-aside-width) 1fr;
+  grid-template-rows: var(--#{$prefix}-topbar-height) 1fr;
+  grid-template-areas:
+    "aside topbar"
+    "aside main";
+  background: var(--#{$prefix}-color-bg);
+  color: var(--#{$prefix}-color-text);
+  transition: grid-template-columns var(--#{$prefix}-duration-slow) var(--#{$prefix}-ease-out);
+
+  &__main {
+    grid-area: main;
+    min-width: 0;
+    padding: var(--#{$prefix}-page-pad);
+  }
+
+  &--collapsed {
+    grid-template-columns: var(--#{$prefix}-aside-width-collapsed) 1fr;
+  }
+}
+
+.#{$prefix}-public-shell {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: var(--#{$prefix}-color-bg);
+  color: var(--#{$prefix}-color-text);
+
+  &__header,
+  &__footer {
+    padding: var(--#{$prefix}-space-4) var(--#{$prefix}-page-pad);
+    border-bottom: 1px solid var(--#{$prefix}-color-border);
+  }
+
+  &__footer {
+    border-bottom: 0;
+    border-top: 1px solid var(--#{$prefix}-color-border);
+  }
+
+  &__main {
+    min-width: 0;
+    padding: var(--#{$prefix}-space-8) var(--#{$prefix}-page-pad);
+  }
+}
+
+@include breakpoint-down(md) {
+  .#{$prefix}-shell,
+  .#{$prefix}-support-shell {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "topbar"
+      "main";
+  }
+}

@@ -13,7 +13,10 @@
   &.is-error {
     .#{$prefix}-input-text,
     .#{$prefix}-input-textarea,
-    .#{$prefix}-input-select {
+    .#{$prefix}-input-select,
+    .#{$prefix}-input-date,
+    .#{$prefix}-input-datetime,
+    .#{$prefix}-input-color {
       border-color: var(--#{$prefix}-color-error);
 
       &:hover { border-color: var(--#{$prefix}-color-error); }

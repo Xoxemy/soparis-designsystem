@@ -1,0 +1,13 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.#{$prefix}-input-date,
+.#{$prefix}-input-datetime {
+  @include input-surface;
+  font-variant-numeric: tabular-nums;
+
+  &::-webkit-calendar-picker-indicator {
+    opacity: 0.65;
+    cursor: pointer;
+  }
+}

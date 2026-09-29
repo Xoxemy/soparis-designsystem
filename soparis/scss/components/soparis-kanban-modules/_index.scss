@@ -1,0 +1,140 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.#{$prefix}-kanban-tabs,
+.#{$prefix}-kanban-subnav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.#{$prefix}-kanban-subnav {
+  padding: 0.35rem;
+  background: var(--#{$prefix}-color-bg-subtle);
+  border: 1px solid var(--#{$prefix}-color-border);
+  border-radius: var(--#{$prefix}-radius-lg);
+}
+
+.#{$prefix}-kanban-horas,
+.#{$prefix}-kanban-logs,
+.#{$prefix}-kanban-informes,
+.#{$prefix}-kanban-ia {
+  display: grid;
+  gap: var(--#{$prefix}-space-4);
+  min-width: 0;
+}
+
+.#{$prefix}-kanban-logs__feed {
+  display: grid;
+  gap: 0;
+}
+
+.#{$prefix}-kanban-logs__row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--#{$prefix}-space-3);
+  align-items: start;
+  padding: var(--#{$prefix}-space-3) 0;
+
+  + .#{$prefix}-kanban-logs__row {
+    border-top: 1px solid var(--#{$prefix}-color-border);
+  }
+}
+
+.#{$prefix}-kanban-ia__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: var(--#{$prefix}-space-3);
+}
+
+.#{$prefix}-kanban-insight-dialog {
+  width: min(34rem, 100%);
+  max-height: min(86dvh, 44rem);
+  display: flex;
+  flex-direction: column;
+  background: var(--#{$prefix}-color-bg-surface);
+  border: 1px solid var(--#{$prefix}-color-border);
+  border-radius: var(--#{$prefix}-radius-xl);
+  overflow: hidden;
+
+  &__head,
+  &__body,
+  &__foot {
+    padding: var(--#{$prefix}-space-5) var(--#{$prefix}-space-6);
+  }
+
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--#{$prefix}-space-3);
+    border-bottom: 1px solid var(--#{$prefix}-color-border);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-lg);
+    font-weight: var(--#{$prefix}-weight-semibold);
+  }
+
+  &__body {
+    display: grid;
+    gap: var(--#{$prefix}-space-4);
+    overflow: auto;
+    flex: 1;
+  }
+
+  &__foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.55rem;
+    border-top: 1px solid var(--#{$prefix}-color-border);
+    background: var(--#{$prefix}-color-bg-subtle);
+  }
+}
+
+.#{$prefix}-chart {
+  display: grid;
+  gap: var(--#{$prefix}-space-3);
+  min-width: 0;
+  padding: var(--#{$prefix}-space-4);
+  background: var(--#{$prefix}-color-bg-surface);
+  border: 1px solid var(--#{$prefix}-color-border);
+  border-radius: var(--#{$prefix}-radius-lg);
+
+  &__title {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-sm);
+    font-weight: var(--#{$prefix}-weight-semibold);
+  }
+
+  &__canvas {
+    position: relative;
+    width: 100%;
+    min-height: 12rem;
+    border-radius: var(--#{$prefix}-radius-md);
+    background:
+      linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--#{$prefix}-color-primary) 8%, transparent) 100%),
+      var(--#{$prefix}-color-bg-subtle);
+    display: grid;
+    place-items: end stretch;
+    padding: var(--#{$prefix}-space-4) var(--#{$prefix}-space-3) var(--#{$prefix}-space-3);
+  }
+
+  &__bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.45rem;
+    height: 8rem;
+  }
+
+  &__bar {
+    flex: 1;
+    border-radius: 0.3rem 0.3rem 0 0;
+    background: var(--#{$prefix}-color-primary);
+    min-height: 0.5rem;
+    opacity: 0.85;
+  }
+}

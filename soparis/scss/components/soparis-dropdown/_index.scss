@@ -19,6 +19,12 @@
 
   &.is-open &__panel { display: grid; }
 
+  &--up &__panel,
+  .#{$prefix}-aside &__panel {
+    top: auto;
+    bottom: calc(100% + 0.35rem);
+  }
+
   &__item {
     display: flex;
     align-items: center;
