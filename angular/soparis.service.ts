@@ -23,11 +23,12 @@ type SoparisThemeVars = {
   info?: string;
   premium?: string;
   spaceUnit?: string;
-  controlHSm?: string;
   controlHMd?: string;
-  controlHLg?: string;
-  controlHXl?: string;
+  controlPxMd?: string;
+  iconMd?: string;
   radiusMd?: string;
+  fontMd?: string;
+  duration?: string;
   [key: string]: string | undefined;
 };
 

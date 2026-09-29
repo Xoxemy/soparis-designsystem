@@ -145,9 +145,37 @@ Los componentes **no llevan hex**: solo consumen estas variables. Cámbialas y s
 
 Para retheming rápido sigue usando `--soparis-theme-primary` (seed); las globales de arriba se derivan de ahí.
 
+## Variables globales (tamaños / espacio)
+
+Los componentes **no llevan rem fijos**: solo consumen estas variables. Cámbialas (o sus seeds) y se actualiza todo.
+
+| Variable | Uso |
+| --- | --- |
+| `--soparis-space-1…20` | Espaciado (padding, gap, margin) |
+| `--soparis-space-sm/md/lg/xl` | Alias semánticos (2 / 4 / 6 / 8) |
+| `--soparis-control-h-sm…xl` | Alto de botones, inputs, selects |
+| `--soparis-control-px-sm…xl` | Padding horizontal de controles |
+| `--soparis-radius-sm…xl` / `full` | Bordes redondeados |
+| `--soparis-font-xs…5xl` | Tamaños de tipografía |
+| `--soparis-icon-sm…xl` | Tamaño de iconos |
+| `--soparis-duration` / `-fast` / `-slow` | Transiciones |
+| `--soparis-weight-*` / `--soparis-leading-*` | Peso y interlineado |
+
+Seeds de tamaño (una capa, como los colores):
+
+| Seed CSS | Qué deriva |
+| --- | --- |
+| `--soparis-theme-space-unit` | Toda la escala `space-1…20` |
+| `--soparis-theme-control-h-md` | Altos sm/md/lg/xl |
+| `--soparis-theme-control-px-md` | Paddings de control |
+| `--soparis-theme-radius-md` | Radios sm/md/lg/xl |
+| `--soparis-theme-font-md` | Escala tipográfica xs…5xl |
+| `--soparis-theme-icon-md` | Iconos sm…xl |
+| `--soparis-theme-duration` | fast / default / slow |
+
 ## Tema (colores y tamaños)
 
-Hay una sola capa de seeds. Si cambias el primary, se actualizan botones, focus, nav activo, bordes de marca, producto todolist y la escala completa.
+Hay una sola capa de seeds. Si cambias el primary, se actualizan botones, focus, nav activo, bordes de marca, producto todolist y la escala completa. Si cambias `control-h-md` o `space-unit`, se actualizan controles y espaciados.
 
 | Seed CSS | Qué controla |
 | --- | --- |
@@ -155,9 +183,11 @@ Hay una sola capa de seeds. Si cambias el primary, se actualizan botones, focus,
 | `--soparis-theme-secondary` | Tinta / texto / fondo inverso |
 | `--soparis-theme-accent` | Acento (+ escala `connect`) |
 | `--soparis-theme-success` / `warning` / `danger` / `info` | Estados |
-| `--soparis-theme-control-h-md` | Alto de controles `md` |
-| `--soparis-theme-radius-md` | Radio medio |
 | `--soparis-theme-space-unit` | Unidad de spacing (multiplica space-1…20) |
+| `--soparis-theme-control-h-md` | Alto de controles (+ sm/lg/xl) |
+| `--soparis-theme-radius-md` | Radio medio (+ sm/lg/xl) |
+| `--soparis-theme-font-md` | Tipografía base (+ escala) |
+| `--soparis-theme-icon-md` | Iconos (+ escala) |
 
 En CSS del producto (sin recompilar):
 
@@ -166,13 +196,19 @@ En CSS del producto (sin recompilar):
   --soparis-theme-primary: #ef4444;
   --soparis-theme-accent: #2563eb;
   --soparis-theme-control-h-md: 2.75rem;
+  --soparis-theme-space-unit: 0.3rem;
 }
 ```
 
 En JS:
 
 ```js
-Soparis.setThemeVars({ primary: "#ef4444", controlHMd: "2.75rem" });
+Soparis.setThemeVars({
+  primary: "#ef4444",
+  controlHMd: "2.75rem",
+  spaceUnit: "0.3rem",
+  fontMd: "1rem",
+});
 Soparis.resetThemeVars();
 ```
 
@@ -215,14 +251,16 @@ Módulos de producto:
 ```
 
 Escalas primitivas (50–950): `ink`, `canvas`, `gold` (verde), `connect` (azul), `danger`, `warning`, `info`, `night`, más `todolist`, `documents`, `fichaje`, `tickets`, `orange`, `teal`, `pink`, `purple`.
-## Tamaños
+## Tamaños de control (guía de uso)
 
-| Tamaño | Alto | Usar | No usar |
+Derivados de `--soparis-theme-control-h-md` (por defecto 2.5rem / 40px):
+
+| Tamaño | Token | Usar | No usar |
 | --- | --- | --- | --- |
-| `sm` | 32px | Tablas, chips, filtros | CTA principal |
-| `md` | 40px | Por defecto del producto | Hero o tarjeta pública |
-| `lg` | 48px | CTA de página, captura móvil | Listas largas |
-| `xl` | 56px | Perfil público, share, landing | Ajustes o navegación |
+| `sm` | `--soparis-control-h-sm` | Tablas, chips, filtros | CTA principal |
+| `md` | `--soparis-control-h-md` | Por defecto del producto | Hero o tarjeta pública |
+| `lg` | `--soparis-control-h-lg` | CTA de página, captura móvil | Listas largas |
+| `xl` | `--soparis-control-h-xl` | Perfil público, share, landing | Ajustes o navegación |
 
 ## Estructura
 

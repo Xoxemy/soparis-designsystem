@@ -1,0 +1,36 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-a,
+.#{$prefix}-link {
+  color: var(--#{$prefix}-color-text-link);
+  font-weight: var(--#{$prefix}-weight-medium);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+  text-decoration-thickness: 1px;
+
+  &:hover { color: var(--#{$prefix}-color-text-link-hover); }
+
+  &:focus-visible {
+    outline: 2px solid var(--#{$prefix}-color-border-focus);
+    outline-offset: 2px;
+    border-radius: var(--#{$prefix}-radius-sm);
+  }
+}
+
+.#{$prefix}-a--muted {
+  color: var(--#{$prefix}-color-text-muted);
+  font-weight: var(--#{$prefix}-weight-regular);
+
+  &:hover { color: var(--#{$prefix}-color-text); }
+}
+
+.#{$prefix}-a--plain {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--#{$prefix}-color-text);
+    text-decoration: underline;
+  }
+}

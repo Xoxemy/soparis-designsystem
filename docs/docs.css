@@ -45,6 +45,28 @@
   gap: 0.15rem;
 }
 
+.docs-token-chip {
+  display: grid;
+  place-items: center;
+  min-height: 4.5rem;
+  background:
+    linear-gradient(45deg, color-mix(in srgb, var(--soparis-color-border) 55%, transparent) 25%, transparent 25%) 0 0 / 0.75rem 0.75rem,
+    linear-gradient(-45deg, color-mix(in srgb, var(--soparis-color-border) 55%, transparent) 25%, transparent 25%) 0 0 / 0.75rem 0.75rem,
+    var(--soparis-color-bg-subtle);
+}
+
+.docs-token-chip > span:not(.soparis-icon):not(.docs-token-chip__type) {
+  display: block;
+  background: var(--soparis-color-primary);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--soparis-color-secondary) 12%, transparent);
+}
+
+.docs-token-chip__type {
+  font-weight: var(--soparis-weight-semibold);
+  color: var(--soparis-color-text);
+  line-height: 1;
+}
+
 .docs-table {
   width: 100%;
   font-size: var(--soparis-font-sm);

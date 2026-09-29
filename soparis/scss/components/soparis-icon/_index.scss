@@ -1,0 +1,59 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-icon {
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: var(--#{$prefix}-icon-md);
+  line-height: 1;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: -0.15em;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  color: currentColor;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  user-select: none;
+
+  @each $size in $sizes {
+    &--#{$size} {
+      font-size: var(--#{$prefix}-icon-#{$size});
+      width: var(--#{$prefix}-icon-#{$size});
+      height: var(--#{$prefix}-icon-#{$size});
+    }
+  }
+
+  &--fill {
+    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+  }
+
+  &--muted {
+    color: var(--#{$prefix}-color-icon-muted);
+  }
+}
+
+.material-symbols-outlined:not(.#{$prefix}-icon) {
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}

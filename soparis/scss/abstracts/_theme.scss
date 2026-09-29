@@ -35,28 +35,14 @@
   --#{$prefix}-theme-info: #{$brand-light-blue};
   --#{$prefix}-theme-premium: #{$brand-violet};
 
-  // —— Seeds de tamaño ——
+  // —— Seeds de tamaño (cámbialos y se propaga toda la escala) ——
   --#{$prefix}-theme-space-unit: 0.25rem;
-  --#{$prefix}-theme-control-h-sm: 2rem;
   --#{$prefix}-theme-control-h-md: 2.5rem;
-  --#{$prefix}-theme-control-h-lg: 3rem;
-  --#{$prefix}-theme-control-h-xl: 3.5rem;
-  --#{$prefix}-theme-control-px-sm: 0.625rem;
   --#{$prefix}-theme-control-px-md: 0.875rem;
-  --#{$prefix}-theme-control-px-lg: 1.125rem;
-  --#{$prefix}-theme-control-px-xl: 1.375rem;
-  --#{$prefix}-theme-icon-sm: 0.875rem;
   --#{$prefix}-theme-icon-md: 1.125rem;
-  --#{$prefix}-theme-icon-lg: 1.375rem;
-  --#{$prefix}-theme-icon-xl: 1.625rem;
-  --#{$prefix}-theme-radius-sm: 0.375rem;
   --#{$prefix}-theme-radius-md: 0.625rem;
-  --#{$prefix}-theme-radius-lg: 0.875rem;
-  --#{$prefix}-theme-radius-xl: 1.25rem;
-  --#{$prefix}-theme-font-sm: 0.8125rem;
   --#{$prefix}-theme-font-md: 0.9375rem;
-  --#{$prefix}-theme-font-lg: 1.0625rem;
-  --#{$prefix}-theme-font-xl: 1.25rem;
+  --#{$prefix}-theme-duration: 200ms;
 
   // —— Escalas derivadas (si cambias el seed, cambia toda la gama) ——
   @include theme-scale("gold", var(--#{$prefix}-theme-primary));
@@ -86,27 +72,44 @@
   --#{$prefix}-primitive-space-16: calc(var(--#{$prefix}-theme-space-unit) * 16);
   --#{$prefix}-primitive-space-20: calc(var(--#{$prefix}-theme-space-unit) * 20);
 
-  // Controles / iconos / radios / tipografía base
-  --#{$prefix}-primitive-control-h-sm: var(--#{$prefix}-theme-control-h-sm);
+  // Controles desde md
+  --#{$prefix}-primitive-control-h-sm: calc(var(--#{$prefix}-theme-control-h-md) - 0.5rem);
   --#{$prefix}-primitive-control-h-md: var(--#{$prefix}-theme-control-h-md);
-  --#{$prefix}-primitive-control-h-lg: var(--#{$prefix}-theme-control-h-lg);
-  --#{$prefix}-primitive-control-h-xl: var(--#{$prefix}-theme-control-h-xl);
-  --#{$prefix}-primitive-control-px-sm: var(--#{$prefix}-theme-control-px-sm);
+  --#{$prefix}-primitive-control-h-lg: calc(var(--#{$prefix}-theme-control-h-md) + 0.5rem);
+  --#{$prefix}-primitive-control-h-xl: calc(var(--#{$prefix}-theme-control-h-md) + 1rem);
+  --#{$prefix}-primitive-control-px-sm: calc(var(--#{$prefix}-theme-control-px-md) - 0.25rem);
   --#{$prefix}-primitive-control-px-md: var(--#{$prefix}-theme-control-px-md);
-  --#{$prefix}-primitive-control-px-lg: var(--#{$prefix}-theme-control-px-lg);
-  --#{$prefix}-primitive-control-px-xl: var(--#{$prefix}-theme-control-px-xl);
-  --#{$prefix}-primitive-icon-sm: var(--#{$prefix}-theme-icon-sm);
+  --#{$prefix}-primitive-control-px-lg: calc(var(--#{$prefix}-theme-control-px-md) + 0.25rem);
+  --#{$prefix}-primitive-control-px-xl: calc(var(--#{$prefix}-theme-control-px-md) + 0.5rem);
+
+  // Iconos desde md
+  --#{$prefix}-primitive-icon-sm: calc(var(--#{$prefix}-theme-icon-md) - 0.25rem);
   --#{$prefix}-primitive-icon-md: var(--#{$prefix}-theme-icon-md);
-  --#{$prefix}-primitive-icon-lg: var(--#{$prefix}-theme-icon-lg);
-  --#{$prefix}-primitive-icon-xl: var(--#{$prefix}-theme-icon-xl);
-  --#{$prefix}-primitive-radius-sm: var(--#{$prefix}-theme-radius-sm);
+  --#{$prefix}-primitive-icon-lg: calc(var(--#{$prefix}-theme-icon-md) + 0.25rem);
+  --#{$prefix}-primitive-icon-xl: calc(var(--#{$prefix}-theme-icon-md) + 0.5rem);
+
+  // Radios desde md
+  --#{$prefix}-primitive-radius-sm: calc(var(--#{$prefix}-theme-radius-md) * 0.6);
   --#{$prefix}-primitive-radius-md: var(--#{$prefix}-theme-radius-md);
-  --#{$prefix}-primitive-radius-lg: var(--#{$prefix}-theme-radius-lg);
-  --#{$prefix}-primitive-radius-xl: var(--#{$prefix}-theme-radius-xl);
-  --#{$prefix}-primitive-font-sm: var(--#{$prefix}-theme-font-sm);
+  --#{$prefix}-primitive-radius-lg: calc(var(--#{$prefix}-theme-radius-md) * 1.4);
+  --#{$prefix}-primitive-radius-xl: calc(var(--#{$prefix}-theme-radius-md) * 2);
+  --#{$prefix}-primitive-radius-full: 999px;
+
+  // Tipografía desde md
+  --#{$prefix}-primitive-font-xs: calc(var(--#{$prefix}-theme-font-md) * 0.8);
+  --#{$prefix}-primitive-font-sm: calc(var(--#{$prefix}-theme-font-md) * 0.867);
   --#{$prefix}-primitive-font-md: var(--#{$prefix}-theme-font-md);
-  --#{$prefix}-primitive-font-lg: var(--#{$prefix}-theme-font-lg);
-  --#{$prefix}-primitive-font-xl: var(--#{$prefix}-theme-font-xl);
+  --#{$prefix}-primitive-font-lg: calc(var(--#{$prefix}-theme-font-md) * 1.133);
+  --#{$prefix}-primitive-font-xl: calc(var(--#{$prefix}-theme-font-md) * 1.333);
+  --#{$prefix}-primitive-font-2xl: calc(var(--#{$prefix}-theme-font-md) * 1.6);
+  --#{$prefix}-primitive-font-3xl: calc(var(--#{$prefix}-theme-font-md) * 2);
+  --#{$prefix}-primitive-font-4xl: calc(var(--#{$prefix}-theme-font-md) * 2.533);
+  --#{$prefix}-primitive-font-5xl: calc(var(--#{$prefix}-theme-font-md) * 3.2);
+
+  // Movimiento desde duration
+  --#{$prefix}-primitive-duration-fast: calc(var(--#{$prefix}-theme-duration) * 0.6);
+  --#{$prefix}-primitive-duration-default: var(--#{$prefix}-theme-duration);
+  --#{$prefix}-primitive-duration-slow: calc(var(--#{$prefix}-theme-duration) * 1.6);
 
   // Producto Synka (todolist sigue al primary)
   --#{$prefix}-primitive-todolist-50: var(--#{$prefix}-primitive-gold-50);
