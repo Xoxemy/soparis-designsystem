@@ -1,0 +1,113 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.#{$prefix}-create-dept-dialog,
+.#{$prefix}-import-start-dialog,
+.#{$prefix}-org-onboarding-dialog,
+.#{$prefix}-product-tour {
+  width: min(32rem, 100%);
+  max-height: min(86dvh, 44rem);
+  display: flex;
+  flex-direction: column;
+  background: var(--#{$prefix}-color-bg-surface);
+  border: 1px solid var(--#{$prefix}-color-border);
+  border-radius: var(--#{$prefix}-radius-xl);
+  overflow: hidden;
+
+  &__head,
+  &__body,
+  &__foot {
+    padding: var(--#{$prefix}-space-5) var(--#{$prefix}-space-6);
+  }
+
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--#{$prefix}-space-3);
+    border-bottom: 1px solid var(--#{$prefix}-color-border);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-lg);
+    font-weight: var(--#{$prefix}-weight-semibold);
+  }
+
+  &__lead {
+    margin: 0.35rem 0 0;
+    color: var(--#{$prefix}-color-text-secondary);
+    font-size: var(--#{$prefix}-font-sm);
+    line-height: var(--#{$prefix}-leading-relaxed);
+  }
+
+  &__body {
+    display: grid;
+    gap: var(--#{$prefix}-space-4);
+    overflow: auto;
+    flex: 1;
+  }
+
+  &__foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.55rem;
+    border-top: 1px solid var(--#{$prefix}-color-border);
+    background: var(--#{$prefix}-color-bg-subtle);
+  }
+}
+
+.#{$prefix}-product-tour {
+  width: min(28rem, 100%);
+
+  &__step {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: var(--#{$prefix}-font-xs);
+    color: var(--#{$prefix}-color-text-muted);
+  }
+
+  &__media {
+    aspect-ratio: 16 / 9;
+    border-radius: var(--#{$prefix}-radius-md);
+    background: var(--#{$prefix}-color-bg-subtle);
+    border: 1px dashed var(--#{$prefix}-color-border);
+    display: grid;
+    place-items: center;
+    color: var(--#{$prefix}-color-text-muted);
+    font-size: var(--#{$prefix}-font-sm);
+  }
+}
+
+.#{$prefix}-soporte-dashboard,
+.#{$prefix}-soporte-organizacion,
+.#{$prefix}-soporte-cupones,
+.#{$prefix}-soporte-cache,
+.#{$prefix}-soporte-docs,
+.#{$prefix}-soporte-reportes {
+  display: grid;
+  gap: var(--#{$prefix}-space-5);
+  min-width: 0;
+}
+
+.#{$prefix}-soporte-dashboard__kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--#{$prefix}-space-3);
+}
+
+@include breakpoint-down(md) {
+  .#{$prefix}-soporte-dashboard__kpis {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .#{$prefix}-create-dept-dialog,
+  .#{$prefix}-import-start-dialog,
+  .#{$prefix}-org-onboarding-dialog,
+  .#{$prefix}-product-tour {
+    width: 100%;
+    max-height: 90dvh;
+  }
+}

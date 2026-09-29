@@ -1,5 +1,8 @@
 @use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
 
+// Topbar = información de página (no acciones de cuenta).
+// Cuenta / notificaciones / logout viven en soparis-aside__foot.
 .#{$prefix}-topbar {
   grid-area: topbar;
   position: sticky;
@@ -10,14 +13,80 @@
   gap: var(--#{$prefix}-space-3);
   min-height: var(--#{$prefix}-topbar-height);
   padding: 0 var(--#{$prefix}-page-pad);
-  background: color-mix(in srgb, var(--#{$prefix}-color-bg) 86%, transparent);
-  backdrop-filter: blur(16px);
+  background: color-mix(in srgb, var(--#{$prefix}-color-bg) 88%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--#{$prefix}-color-border);
 
-  &__title {
-    font-weight: var(--#{$prefix}-weight-semibold);
-    font-size: var(--#{$prefix}-font-md);
+  &--solid {
+    background: var(--#{$prefix}-color-bg-surface);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
-  &__grow { flex: 1; }
+  &__info {
+    display: grid;
+    gap: 0.1rem;
+    min-width: 0;
+    flex: 1;
+  }
+
+  &__crumbs {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+  }
+
+  &__eyebrow {
+    margin: 0;
+    font-size: 0.68rem;
+    font-weight: var(--#{$prefix}-weight-medium);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--#{$prefix}-color-text-muted);
+    line-height: 1.2;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: var(--#{$prefix}-weight-semibold);
+    font-size: var(--#{$prefix}-font-md);
+    color: var(--#{$prefix}-color-text);
+    letter-spacing: -0.015em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.25;
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  &__status {
+    font-size: var(--#{$prefix}-font-xs);
+    color: var(--#{$prefix}-color-text-secondary);
+    white-space: nowrap;
+  }
+
+  &__grow {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+@include breakpoint-down(md) {
+  .#{$prefix}-topbar {
+    gap: var(--#{$prefix}-space-2);
+    padding-inline: var(--#{$prefix}-space-3);
+  }
+
+  .#{$prefix}-topbar__eyebrow {
+    display: none;
+  }
 }

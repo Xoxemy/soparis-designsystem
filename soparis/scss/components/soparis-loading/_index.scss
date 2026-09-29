@@ -1,0 +1,26 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-loading {
+  display: grid;
+  place-items: center;
+  gap: var(--#{$prefix}-space-3);
+  padding: var(--#{$prefix}-space-10) var(--#{$prefix}-space-6);
+  text-align: center;
+  color: var(--#{$prefix}-color-text-secondary);
+
+  &--block {
+    min-height: 12rem;
+    border: 1px dashed var(--#{$prefix}-color-border);
+    border-radius: var(--#{$prefix}-radius-lg);
+    background: var(--#{$prefix}-color-bg-subtle);
+  }
+
+  &--page {
+    min-height: 50dvh;
+  }
+
+  &__label {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-sm);
+  }
+}

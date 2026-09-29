@@ -1,0 +1,23 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-ai-description-field {
+  display: grid;
+  gap: var(--#{$prefix}-space-2);
+
+  &__suggest {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 0.7rem;
+    border-radius: var(--#{$prefix}-radius-md);
+    background: color-mix(in srgb, var(--#{$prefix}-color-accent) 8%, transparent);
+    border: 1px solid color-mix(in srgb, var(--#{$prefix}-color-accent) 22%, transparent);
+    color: var(--#{$prefix}-color-text);
+    font-size: var(--#{$prefix}-font-sm);
+  }
+
+  &__icon {
+    color: var(--#{$prefix}-color-accent);
+  }
+}

@@ -4,10 +4,50 @@
   display: block;
   height: 0.85rem;
   border-radius: var(--#{$prefix}-radius-sm);
-  background: var(--#{$prefix}-color-bg-subtle);
-  animation: #{$prefix}-pulse 1.2s ease-in-out infinite;
+  background: linear-gradient(
+    90deg,
+    var(--#{$prefix}-color-bg-subtle) 25%,
+    color-mix(in srgb, var(--#{$prefix}-color-bg-subtle) 55%, var(--#{$prefix}-color-bg-surface)) 50%,
+    var(--#{$prefix}-color-bg-subtle) 75%
+  );
+  background-size: 200% 100%;
+  animation: #{$prefix}-skeleton-shimmer 1.4s ease-in-out infinite;
+
+  &--text { height: 0.85rem; width: 100%; }
+  &--title { height: 1.25rem; width: 60%; }
+  &--avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--#{$prefix}-radius-full);
+  }
+  &--btn {
+    width: 6.5rem;
+    height: 2.25rem;
+    border-radius: var(--#{$prefix}-radius-md);
+  }
+  &--card {
+    width: 100%;
+    height: 7.5rem;
+    border-radius: var(--#{$prefix}-radius-lg);
+  }
+  &--sm { height: 0.65rem; }
+  &--lg { height: 1.1rem; }
 }
 
-@keyframes #{$prefix}-pulse {
-  50% { opacity: 0.45; }
+.#{$prefix}-skeleton-group {
+  display: grid;
+  gap: var(--#{$prefix}-space-3);
 }
+
+@keyframes #{$prefix}-skeleton-shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .#{$prefix}-skeleton {
+    animation: none;
+    background: var(--#{$prefix}-color-bg-subtle);
+  }
+}
+

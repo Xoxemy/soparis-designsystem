@@ -1,0 +1,38 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.#{$prefix}-page-layout {
+  display: grid;
+  gap: var(--#{$prefix}-space-6);
+  width: 100%;
+  min-width: 0;
+}
+
+.#{$prefix}-page-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--#{$prefix}-space-4);
+
+  &__copy {
+    display: grid;
+    gap: 0.25rem;
+    min-width: 0;
+    flex: 1;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem;
+  }
+}
+
+@include breakpoint-down(md) {
+  .#{$prefix}-page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

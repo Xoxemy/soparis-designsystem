@@ -20,12 +20,30 @@
 
       <aside class="soparis-aside" id="nav">
         <div class="soparis-aside__head">
-          <span class="soparis-aside__mark" aria-hidden="true"></span>
-          <strong class="soparis-aside__name">So<span>paris</span></strong>
-          <button class="soparis-button-icon soparis-button-icon--sm soparis-aside__action" type="button" aria-label="Ajustes">
-            <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">settings</span>
+          <a class="soparis-aside__brand" href="#contenido">
+            <span class="soparis-aside__mark" aria-hidden="true"></span>
+            <strong class="soparis-aside__name">So<span>paris</span></strong>
+          </a>
+          <button
+            class="soparis-button-icon soparis-button-icon--sm soparis-aside__action"
+            type="button"
+            data-soparis-aside-collapse
+            aria-expanded="true"
+            aria-controls="nav"
+            aria-label="Colapsar menú"
+          >
+            <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">left_panel_close</span>
+          </button>
+          <button
+            class="soparis-button-icon soparis-button-icon--sm soparis-aside__close"
+            type="button"
+            data-soparis-nav-close
+            aria-label="Cerrar menú"
+          >
+            <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">close</span>
           </button>
         </div>
+
         <div class="soparis-aside__body">
           <nav class="soparis-menu" aria-label="Soparis">
             <div class="soparis-menu__section">
@@ -56,6 +74,7 @@
               <p class="soparis-menu__label">Clases</p>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-alert">soparis-alert</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-a">soparis-a</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-ai-description-field">soparis-ai-description-field</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-aside">soparis-aside</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-avatar">soparis-avatar</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-badge">soparis-badge</a>
@@ -69,9 +88,11 @@
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-dropdown">soparis-dropdown</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-empty">soparis-empty</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-fab">soparis-fab</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-fichaje">soparis-fichaje</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-h1">soparis-h1</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-icon">soparis-icon</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-input-choice">soparis-input-choice</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-input-date">soparis-input-date</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-input-description">soparis-input-description</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-input-file">soparis-input-file</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-input-label">soparis-input-label</a>
@@ -82,26 +103,96 @@
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-input-switch">soparis-input-switch</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-input-text">soparis-input-text</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-input-textarea">soparis-input-textarea</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-item">soparis-item</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-kanban">soparis-kanban</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-loading">soparis-loading</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-login">soparis-login</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-menu">soparis-menu</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-modal">soparis-modal</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-p">soparis-p</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-page-header">soparis-page-header</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-pagination">soparis-pagination</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-password">soparis-password</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-profile">soparis-profile</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-progress">soparis-progress</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-skeleton">soparis-skeleton</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-spinner">soparis-spinner</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-table">soparis-table</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-tabs">soparis-tabs</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-task-card">soparis-task-card</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-task-detail">soparis-task-detail</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-task-form-dialog">soparis-task-form-dialog</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-tickets">soparis-tickets</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-toast">soparis-toast</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-tooltip">soparis-tooltip</a>
               <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-topbar">soparis-topbar</a>
             </div>
+            <div class="soparis-menu__section">
+              <p class="soparis-menu__label">Producto</p>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-resumen">soparis-resumen</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-calendario">soparis-calendario</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-flujos">soparis-flujos</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-document">soparis-document</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-ajustes">soparis-ajustes</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-kanban-ia">soparis-kanban-ia</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-landing">soparis-landing</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-precios">soparis-precios</a>
+              <a class="soparis-a soparis-menu__item" data-gallery-link href="#soparis-org-onboarding-dialog">onboarding</a>
+            </div>
           </nav>
         </div>
+
         <div class="soparis-aside__foot">
-          <span class="soparis-avatar soparis-avatar--sm" aria-hidden="true">JC</span>
-          <label class="soparis-visually-hidden" for="aside-user-name">Nombre de usuario</label>
-          <input id="aside-user-name" class="soparis-input-text soparis-input-text--sm" type="text" value="Juan C." placeholder="Usuario" />
-          <span class="soparis-icon soparis-icon--md material-symbols-outlined" aria-hidden="true">more_vert</span>
+          <div class="soparis-aside__account">
+            <div class="soparis-dropdown soparis-aside__user" data-soparis-dropdown>
+              <button
+                class="soparis-aside__user-trigger"
+                type="button"
+                data-soparis-dropdown-trigger
+                aria-expanded="false"
+                aria-haspopup="menu"
+              >
+                <span class="soparis-avatar soparis-avatar--sm soparis-aside__avatar" aria-hidden="true">
+                  <span class="soparis-icon material-symbols-outlined">person</span>
+                </span>
+                <span class="soparis-aside__user-copy">
+                  <span class="soparis-aside__user-name">Lospikin</span>
+                  <span class="soparis-aside__user-role">Admin</span>
+                </span>
+                <span class="soparis-icon soparis-aside__user-chevron material-symbols-outlined" aria-hidden="true">expand_more</span>
+              </button>
+              <div class="soparis-dropdown__panel" role="menu">
+                <button class="soparis-dropdown__item" type="button" role="menuitem">
+                  <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">person</span>
+                  Perfil
+                </button>
+                <button class="soparis-dropdown__item" type="button" role="menuitem">
+                  <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">settings</span>
+                  Ajustes
+                </button>
+                <button class="soparis-dropdown__item" type="button" role="menuitem" data-soparis-theme-toggle>
+                  <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">contrast</span>
+                  Cambiar tema
+                </button>
+                <button class="soparis-dropdown__item" type="button" role="menuitem">
+                  <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">notifications</span>
+                  Notificaciones
+                </button>
+                <button class="soparis-dropdown__item" type="button" role="menuitem">
+                  <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">logout</span>
+                  Cerrar sesión
+                </button>
+              </div>
+            </div>
+            <span class="soparis-aside__sep" aria-hidden="true"></span>
+            <button class="soparis-button-icon soparis-button-icon--sm soparis-aside__notify" type="button" aria-label="Notificaciones">
+              <span class="soparis-icon material-symbols-outlined" aria-hidden="true">notifications</span>
+              <span class="soparis-aside__badge">1</span>
+            </button>
+            <button class="soparis-button-icon soparis-button-icon--sm soparis-aside__logout" type="button" aria-label="Cerrar sesión">
+              <span class="soparis-icon material-symbols-outlined" aria-hidden="true">logout</span>
+            </button>
+          </div>
         </div>
       </aside>
 
@@ -109,12 +200,15 @@
         <button class="soparis-button-icon soparis-burger" data-soparis-burger aria-controls="nav" aria-expanded="false" aria-label="Abrir menú">
           <span class="soparis-icon material-symbols-outlined" aria-hidden="true">menu</span>
         </button>
-        <p class="soparis-topbar__title">Soparis</p>
-        <div class="soparis-topbar__grow"></div>
-        <button class="soparis-button soparis-button--sm soparis-button--ghost" data-soparis-theme-toggle type="button">Tema</button>
-      </header>
-
-      <main class="soparis-main" id="contenido">
+        <div class="soparis-topbar__info">
+          <p class="soparis-topbar__eyebrow">Design system</p>
+          <h1 class="soparis-topbar__title">Soparis</h1>
+        </div>
+        <div class="soparis-topbar__meta">
+          <span class="soparis-topbar__status" data-gallery-count></span>
+          <span class="soparis-badge soparis-badge--info">v1.1</span>
+        </div>
+      </header>      <main class="soparis-main" id="contenido">
         <div class="soparis-page">
           <p class="soparis-overline">Soparis</p>
           <h1 class="soparis-h1">Colores, primitivos y clases</h1>
@@ -733,16 +827,30 @@
             </div>
           </section>
 
-          <section class="gallery-section" id="soparis-h1" data-gallery-section="soparis-h1 soparis-h2 soparis-h3 heading">
+          <section class="gallery-section" id="soparis-h1" data-gallery-section="soparis-h1 soparis-h2 soparis-h3 soparis-h4 soparis-h5 soparis-h6 soparis-display soparis-lead soparis-small soparis-caption tipografía">
             <div class="gallery-head">
-              <h2 class="soparis-h3">soparis-h1</h2>
-              <code class="soparis-code">soparis-h1 · soparis-h2 · soparis-h3</code>
+              <h2 class="soparis-h3">Tipografía</h2>
+              <code class="soparis-code">display · h1–h6 · lead · small · caption</code>
             </div>
             <div class="gallery-preview soparis-stack">
-              <p class="soparis-display">Synka</p>
-              <h3 class="soparis-h1">Ana Moreira</h3>
-              <h4 class="soparis-h3">Head of Partnerships</h4>
-              <p class="soparis-lead">Identidad digital que se actualiza sola.</p>
+              <p class="soparis-overline">Overline</p>
+              <p class="soparis-display">Display hero</p>
+              <h1 class="soparis-h1">Título h1</h1>
+              <h2 class="soparis-h2">Título h2</h2>
+              <h3 class="soparis-h3">Título h3</h3>
+              <h4 class="soparis-h4">Título h4</h4>
+              <h5 class="soparis-h5">Título h5</h5>
+              <h6 class="soparis-h6">Título h6</h6>
+              <p class="soparis-lead">Lead introductorio bajo un título.</p>
+              <p class="soparis-p">Párrafo normal. <a class="soparis-a" href="#soparis-a">Enlace tipográfico</a> y <a class="soparis-link" href="#soparis-a">enlace de acción</a>.</p>
+              <p class="soparis-small">Small — texto secundario</p>
+              <p class="soparis-caption">Caption — pie mínimo</p>
+              <blockquote class="soparis-quote">Una cita con estilo display.</blockquote>
+              <ul class="soparis-list soparis-list--ul">
+                <li>Lista con viñetas</li>
+                <li>Segundo ítem</li>
+              </ul>
+              <p class="soparis-p">Atajo <kbd class="soparis-kbd">Ctrl</kbd> + <kbd class="soparis-kbd">K</kbd> · código <code class="soparis-code">soparis-p</code></p>
             </div>
           </section>
 
@@ -869,6 +977,125 @@
                 <input class="soparis-input-text soparis-input-text--md" placeholder="md" />
                 <input class="soparis-input-text soparis-input-text--lg" placeholder="lg" />
                 <input class="soparis-input-text soparis-input-text--xl" placeholder="xl" />
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-password" data-gallery-section="soparis-password contraseña">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-password</h2>
+              <code class="soparis-code">data-soparis-password</code>
+            </div>
+            <div class="gallery-preview" style="max-width:24rem">
+              <div class="soparis-field">
+                <label class="soparis-input-label" for="g-pass">Contraseña</label>
+                <div class="soparis-password" data-soparis-password>
+                  <input id="g-pass" class="soparis-input-text soparis-input-text--md" type="password" value="secreto123" autocomplete="current-password" />
+                  <button class="soparis-button-icon soparis-button-icon--sm soparis-password__toggle" type="button" data-soparis-password-toggle aria-label="Mostrar contraseña">
+                    <span class="soparis-icon material-symbols-outlined" aria-hidden="true">visibility</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-input-date" data-gallery-section="soparis-input-date datetime color">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Fecha / color</h2>
+              <code class="soparis-code">input-date · input-datetime · input-color</code>
+            </div>
+            <div class="gallery-preview soparis-stack" style="max-width:28rem">
+              <input class="soparis-input-date soparis-input-date--md" type="date" value="2026-09-29" />
+              <input class="soparis-input-datetime soparis-input-datetime--md" type="datetime-local" value="2026-09-29T18:00" />
+              <label class="soparis-input-color soparis-input-color--md">
+                <input type="color" value="#22c55e" />
+                <span class="soparis-input-color__value">#22c55e</span>
+              </label>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-page-header" data-gallery-section="soparis-page-header page-layout filter-bar content-card">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Page header / filter / content</h2>
+              <code class="soparis-code">page-layout · page-header · filter-bar · content-card</code>
+            </div>
+            <div class="gallery-preview soparis-page-layout">
+              <header class="soparis-page-header">
+                <div class="soparis-page-header__copy">
+                  <p class="soparis-overline">Proyecto</p>
+                  <h2 class="soparis-h2">Kanban Synka</h2>
+                  <p class="soparis-small">12 tareas abiertas · 3 en revisión</p>
+                </div>
+                <div class="soparis-page-header__actions">
+                  <button class="soparis-button soparis-button--secondary soparis-button--sm" type="button">Exportar</button>
+                  <button class="soparis-button soparis-button--primary soparis-button--sm" type="button">Nueva tarea</button>
+                </div>
+              </header>
+              <div class="soparis-filter-bar">
+                <div class="soparis-filter-bar__grow">
+                  <div class="soparis-input-search">
+                    <span class="soparis-icon material-symbols-outlined" aria-hidden="true">search</span>
+                    <input class="soparis-input-text soparis-input-text--sm" placeholder="Filtrar tareas…" />
+                  </div>
+                </div>
+                <div class="soparis-filter-bar__actions">
+                  <button class="soparis-button soparis-button--ghost soparis-button--sm" type="button">Estado</button>
+                  <button class="soparis-button soparis-button--ghost soparis-button--sm" type="button">Asignado</button>
+                </div>
+              </div>
+              <article class="soparis-content-card">
+                <div class="soparis-content-card__header">
+                  <h3 class="soparis-content-card__title">Actividad reciente</h3>
+                  <span class="soparis-badge soparis-badge--info">Live</span>
+                </div>
+                <div class="soparis-content-card__body">
+                  <p class="soparis-p soparis-p--sm">3 leads movidos a Seguimiento en la última hora.</p>
+                </div>
+                <div class="soparis-content-card__foot">
+                  <button class="soparis-button soparis-button--ghost soparis-button--sm" type="button">Ver todo</button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-loading" data-gallery-section="soparis-loading confirm">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Loading / confirm</h2>
+              <code class="soparis-code">soparis-loading · soparis-confirm</code>
+            </div>
+            <div class="gallery-preview soparis-grid soparis-grid--2">
+              <div class="soparis-loading soparis-loading--block">
+                <span class="soparis-spinner soparis-spinner--lg" aria-hidden="true"></span>
+                <p class="soparis-loading__label">Cargando tablero…</p>
+              </div>
+              <div class="soparis-confirm soparis-confirm--danger">
+                <span class="soparis-confirm__icon" aria-hidden="true">
+                  <span class="soparis-icon material-symbols-outlined">warning</span>
+                </span>
+                <h3 class="soparis-confirm__title">¿Eliminar tarea?</h3>
+                <p class="soparis-confirm__message">Esta acción no se puede deshacer.</p>
+                <div class="soparis-confirm__actions">
+                  <button class="soparis-button soparis-button--secondary soparis-button--sm" type="button">Cancelar</button>
+                  <button class="soparis-button soparis-button--danger soparis-button--sm" type="button">Eliminar</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-ai-description-field" data-gallery-section="soparis-ai-description-field ia">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-ai-description-field</h2>
+              <code class="soparis-code">soparis-ai-description-field</code>
+            </div>
+            <div class="gallery-preview" style="max-width:32rem">
+              <div class="soparis-ai-description-field">
+                <label class="soparis-input-label" for="g-ai">Descripción</label>
+                <textarea class="soparis-input-textarea" id="g-ai" rows="3" placeholder="Describe la tarea…"></textarea>
+                <div class="soparis-ai-description-field__suggest">
+                  <span class="soparis-icon soparis-ai-description-field__icon material-symbols-outlined" aria-hidden="true">auto_awesome</span>
+                  Sugerencia IA: “Preparar demo NFC para el cliente Studio Norte”
+                  <button class="soparis-button soparis-button--ghost soparis-button--sm" type="button">Usar</button>
+                </div>
               </div>
             </div>
           </section>
@@ -1140,10 +1367,32 @@
             </div>
             <div class="gallery-preview">
               <div class="soparis-empty">
-                <p class="soparis-h5">Aún no hay leads</p>
-                <p class="soparis-p soparis-p--sm">Comparte tu tarjeta NFC o el QR de feria.</p>
-                <button class="soparis-button soparis-button--premium soparis-button--md" type="button">Compartir tarjeta</button>
+                <span class="soparis-empty__icon" aria-hidden="true">
+                  <span class="soparis-icon material-symbols-outlined">inbox</span>
+                </span>
+                <p class="soparis-empty__title">Aún no hay leads</p>
+                <p class="soparis-empty__text">Comparte tu tarjeta NFC o el QR de feria.</p>
+                <div class="soparis-empty__actions">
+                  <button class="soparis-button soparis-button--premium soparis-button--md" type="button">Compartir tarjeta</button>
+                </div>
               </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-skeleton" data-gallery-section="soparis-skeleton placeholder">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-skeleton</h2>
+              <code class="soparis-code">soparis-skeleton</code>
+            </div>
+            <div class="gallery-preview soparis-grid soparis-grid--2">
+              <div class="soparis-skeleton-group">
+                <span class="soparis-skeleton soparis-skeleton--avatar"></span>
+                <span class="soparis-skeleton soparis-skeleton--title"></span>
+                <span class="soparis-skeleton soparis-skeleton--text"></span>
+                <span class="soparis-skeleton soparis-skeleton--text" style="width:80%"></span>
+                <span class="soparis-skeleton soparis-skeleton--btn"></span>
+              </div>
+              <span class="soparis-skeleton soparis-skeleton--card"></span>
             </div>
           </section>
 
@@ -1178,10 +1427,40 @@
                 <div class="soparis-card soparis-card--md soparis-card--secondary soparis-stat"><span class="soparis-stat__value">36</span><span class="soparis-stat__label">Leads nuevos</span></div>
                 <div class="soparis-card soparis-card--md soparis-stat"><span class="soparis-stat__value">18%</span><span class="soparis-stat__label">Respuesta en 24h</span></div>
               </div>
-              <div class="soparis-grid soparis-grid--3">
-                <article class="soparis-card soparis-card--sm soparis-card--subtle"><strong>Subtle</strong><p class="soparis-caption">Fondo sutil</p></article>
-                <article class="soparis-card soparis-card--sm soparis-card--outline"><strong>Outline</strong><p class="soparis-caption">Sin relleno</p></article>
-                <article class="soparis-card soparis-card--sm soparis-card--accent"><strong>Accent</strong><p class="soparis-caption">Connect</p></article>
+              <div class="soparis-grid soparis-grid--2">
+                <article class="soparis-card soparis-card--md soparis-card--elevated">
+                  <div class="soparis-card__header">
+                    <div>
+                      <h3 class="soparis-card__title">Perfil NFC</h3>
+                      <p class="soparis-card__subtitle">Plan Metal · activo</p>
+                    </div>
+                    <div class="soparis-card__actions">
+                      <button class="soparis-button-icon soparis-button-icon--sm" type="button" aria-label="Más">
+                        <span class="soparis-icon material-symbols-outlined" aria-hidden="true">more_horiz</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="soparis-card__body">
+                    <p class="soparis-p soparis-p--sm">Comparte tu tarjeta y captura leads al instante.</p>
+                  </div>
+                  <div class="soparis-card__foot">
+                    <button class="soparis-button soparis-button--primary soparis-button--sm" type="button">Compartir</button>
+                    <button class="soparis-button soparis-button--ghost soparis-button--sm" type="button">Editar</button>
+                  </div>
+                </article>
+                <article class="soparis-card soparis-card--md soparis-card--interactive" tabindex="0">
+                  <div class="soparis-card__header">
+                    <div>
+                      <h3 class="soparis-card__title">Subtle / outline</h3>
+                      <p class="soparis-card__subtitle">Variantes de superficie</p>
+                    </div>
+                  </div>
+                  <div class="soparis-cluster">
+                    <span class="soparis-badge soparis-badge--primary">subtle</span>
+                    <span class="soparis-badge">outline</span>
+                    <span class="soparis-badge soparis-badge--info">interactive</span>
+                  </div>
+                </article>
               </div>
             </div>
           </section>
@@ -1212,28 +1491,227 @@
               <code class="soparis-code">soparis-table</code>
             </div>
             <div class="gallery-preview soparis-stack">
-              <div class="soparis-card soparis-card--md">
-                <div class="soparis-item">
-                  <span class="soparis-avatar soparis-avatar--md">AM</span>
-                  <div><strong>Ana Moreira</strong><p class="soparis-caption">Visto hace 12 min · WhatsApp</p></div>
-                  <span class="soparis-badge soparis-badge--connect" style="margin-left:auto">Lead</span>
-                </div>
-                <div class="soparis-item">
-                  <span class="soparis-avatar soparis-avatar--md">JR</span>
-                  <div><strong>Jorge Rivas</strong><p class="soparis-caption">QR en Web Summit</p></div>
-                  <span class="soparis-badge" style="margin-left:auto">Nuevo</span>
-                </div>
-              </div>
               <div class="soparis-table-wrap">
-                <table class="soparis-table soparis-table--md">
-                  <thead><tr><th>Contacto</th><th>Origen</th><th>Estado</th></tr></thead>
+                <table class="soparis-table soparis-table--md soparis-table--striped soparis-table--selectable">
+                  <thead>
+                    <tr>
+                      <th>Contacto</th>
+                      <th>Origen</th>
+                      <th>Estado</th>
+                      <th class="soparis-table__numeric">Toques</th>
+                    </tr>
+                  </thead>
                   <tbody>
-                    <tr><td>Ana Moreira</td><td>NFC Metal</td><td>Seguimiento</td></tr>
-                    <tr><td>Jorge Rivas</td><td>QR</td><td>Nuevo</td></tr>
-                    <tr><td>Leila Shah</td><td>Link</td><td>Ganado</td></tr>
+                    <tr>
+                      <td>
+                        <div class="soparis-table__cell-main">
+                          <span class="soparis-avatar soparis-avatar--sm">AM</span>
+                          <div class="soparis-table__meta">
+                            <strong>Ana Moreira</strong>
+                            <span class="soparis-caption">ana@synka.es</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>NFC Metal</td>
+                      <td><span class="soparis-badge soparis-badge--info">Seguimiento</span></td>
+                      <td class="soparis-table__numeric">24</td>
+                    </tr>
+                    <tr class="is-selected">
+                      <td>
+                        <div class="soparis-table__cell-main">
+                          <span class="soparis-avatar soparis-avatar--sm">JR</span>
+                          <div class="soparis-table__meta">
+                            <strong>Jorge Rivas</strong>
+                            <span class="soparis-caption">jorge@empresa.com</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>QR</td>
+                      <td><span class="soparis-badge soparis-badge--primary">Nuevo</span></td>
+                      <td class="soparis-table__numeric">8</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="soparis-table__cell-main">
+                          <span class="soparis-avatar soparis-avatar--sm">LS</span>
+                          <div class="soparis-table__meta">
+                            <strong>Leila Shah</strong>
+                            <span class="soparis-caption">leila@studio.io</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Link</td>
+                      <td><span class="soparis-badge" style="background:var(--soparis-color-success-soft);color:var(--soparis-color-success-on)">Ganado</span></td>
+                      <td class="soparis-table__numeric">41</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
+              <p class="soparis-caption">Modificadores: <code class="soparis-code">--striped</code> · <code class="soparis-code">--compact</code> · <code class="soparis-code">--selectable</code> · <code class="soparis-code">--borderless</code></p>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-kanban" data-gallery-section="soparis-kanban board pipeline crm">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-kanban</h2>
+              <code class="soparis-code">soparis-kanban</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-kanban" data-soparis-kanban>
+                <div class="soparis-kanban__toolbar">
+                  <p class="soparis-p soparis-p--sm" style="margin:0">Pipeline de leads · arrastra las tarjetas entre columnas</p>
+                  <button class="soparis-button soparis-button--secondary soparis-button--sm" type="button">Filtros</button>
+                </div>
+                <div class="soparis-kanban__board">
+                  <section class="soparis-kanban__column" data-column="nuevo">
+                    <header class="soparis-kanban__column-head">
+                      <h3 class="soparis-kanban__column-title">Nuevo</h3>
+                      <span class="soparis-badge soparis-kanban__count" data-soparis-kanban-count>0</span>
+                      <button class="soparis-button-icon soparis-button-icon--sm" type="button" aria-label="Opciones columna">
+                        <span class="soparis-icon material-symbols-outlined" aria-hidden="true">more_horiz</span>
+                      </button>
+                    </header>
+                    <div class="soparis-kanban__column-body">
+                      <article class="soparis-task-card soparis-kanban__card" id="k-card-1">
+                        <div class="soparis-task-card__top">
+                          <h4 class="soparis-task-card__title">Ana Moreira</h4>
+                          <span class="soparis-badge soparis-badge--primary">Hot</span>
+                        </div>
+                        <p class="soparis-task-card__desc">Toque NFC Metal en Web Summit. Pidió demo del CRM.</p>
+                        <div class="soparis-task-card__tags">
+                          <span class="soparis-chip">NFC</span>
+                          <span class="soparis-chip">Demo</span>
+                        </div>
+                        <div class="soparis-task-card__foot">
+                          <span class="soparis-avatar soparis-avatar--sm">AM</span>
+                          <span class="soparis-task-card__meta">
+                            <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">schedule</span>
+                            Hoy
+                          </span>
+                        </div>
+                      </article>
+                      <article class="soparis-task-card soparis-kanban__card" id="k-card-2">
+                        <div class="soparis-task-card__top">
+                          <h4 class="soparis-task-card__title">Jorge Rivas</h4>
+                        </div>
+                        <p class="soparis-task-card__desc">Escaneó QR del stand. Interés en plan Connect.</p>
+                        <div class="soparis-task-card__foot">
+                          <span class="soparis-avatar soparis-avatar--sm">JR</span>
+                          <span class="soparis-task-card__meta">
+                            <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">qr_code</span>
+                            QR
+                          </span>
+                        </div>
+                      </article>
+                    </div>
+                    <footer class="soparis-kanban__column-foot">
+                      <button class="soparis-button soparis-button--ghost soparis-button--sm soparis-kanban__add" type="button">
+                        <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">add</span>
+                        Añadir
+                      </button>
+                    </footer>
+                  </section>
+
+                  <section class="soparis-kanban__column" data-column="seguimiento">
+                    <header class="soparis-kanban__column-head">
+                      <h3 class="soparis-kanban__column-title">Seguimiento</h3>
+                      <span class="soparis-badge soparis-kanban__count" data-soparis-kanban-count>0</span>
+                      <button class="soparis-button-icon soparis-button-icon--sm" type="button" aria-label="Opciones columna">
+                        <span class="soparis-icon material-symbols-outlined" aria-hidden="true">more_horiz</span>
+                      </button>
+                    </header>
+                    <div class="soparis-kanban__column-body">
+                      <article class="soparis-task-card soparis-task-card--priority soparis-kanban__card is-priority" id="k-card-3">
+                        <div class="soparis-task-card__top">
+                          <h4 class="soparis-task-card__title">Leila Shah</h4>
+                          <span class="soparis-badge soparis-badge--warning">Prioridad</span>
+                        </div>
+                        <p class="soparis-task-card__desc">Llamada agendada. Quiere onboarding del equipo.</p>
+                        <div class="soparis-task-card__tags">
+                          <span class="soparis-chip">Call</span>
+                        </div>
+                        <div class="soparis-task-card__foot">
+                          <span class="soparis-avatar soparis-avatar--sm">LS</span>
+                          <span class="soparis-task-card__meta">
+                            <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">call</span>
+                            Mañana
+                          </span>
+                        </div>
+                      </article>
+                    </div>
+                    <footer class="soparis-kanban__column-foot">
+                      <button class="soparis-button soparis-button--ghost soparis-button--sm soparis-kanban__add" type="button">
+                        <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">add</span>
+                        Añadir
+                      </button>
+                    </footer>
+                  </section>
+
+                  <section class="soparis-kanban__column" data-column="propuesta">
+                    <header class="soparis-kanban__column-head">
+                      <h3 class="soparis-kanban__column-title">Propuesta</h3>
+                      <span class="soparis-badge soparis-kanban__count" data-soparis-kanban-count>0</span>
+                      <button class="soparis-button-icon soparis-button-icon--sm" type="button" aria-label="Opciones columna">
+                        <span class="soparis-icon material-symbols-outlined" aria-hidden="true">more_horiz</span>
+                      </button>
+                    </header>
+                    <div class="soparis-kanban__column-body">
+                      <article class="soparis-task-card soparis-kanban__card" id="k-card-4">
+                        <div class="soparis-task-card__top">
+                          <h4 class="soparis-task-card__title">Studio Norte</h4>
+                        </div>
+                        <p class="soparis-task-card__desc">Presupuesto enviado: 12 tarjetas Metal + CRM.</p>
+                        <div class="soparis-task-card__foot">
+                          <div class="soparis-avatar-stack">
+                            <span class="soparis-avatar soparis-avatar--sm">SN</span>
+                            <span class="soparis-avatar soparis-avatar--sm">MK</span>
+                          </div>
+                          <span class="soparis-task-card__meta">2.4k €</span>
+                        </div>
+                      </article>
+                    </div>
+                    <footer class="soparis-kanban__column-foot">
+                      <button class="soparis-button soparis-button--ghost soparis-button--sm soparis-kanban__add" type="button">
+                        <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">add</span>
+                        Añadir
+                      </button>
+                    </footer>
+                  </section>
+
+                  <section class="soparis-kanban__column" data-column="ganado">
+                    <header class="soparis-kanban__column-head">
+                      <h3 class="soparis-kanban__column-title">Ganado</h3>
+                      <span class="soparis-badge soparis-badge--primary soparis-kanban__count" data-soparis-kanban-count>0</span>
+                      <button class="soparis-button-icon soparis-button-icon--sm" type="button" aria-label="Opciones columna">
+                        <span class="soparis-icon material-symbols-outlined" aria-hidden="true">more_horiz</span>
+                      </button>
+                    </header>
+                    <div class="soparis-kanban__column-body">
+                      <article class="soparis-task-card soparis-kanban__card" id="k-card-5">
+                        <div class="soparis-task-card__top">
+                          <h4 class="soparis-task-card__title">Café Atlas</h4>
+                          <span class="soparis-badge" style="background:var(--soparis-color-success-soft);color:var(--soparis-color-success-on)">OK</span>
+                        </div>
+                        <p class="soparis-task-card__desc">Alta completada. Onboarding el viernes.</p>
+                        <div class="soparis-task-card__foot">
+                          <span class="soparis-avatar soparis-avatar--sm">CA</span>
+                          <span class="soparis-task-card__meta">
+                            <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">check_circle</span>
+                            Cerrado
+                          </span>
+                        </div>
+                      </article>
+                    </div>
+                    <footer class="soparis-kanban__column-foot">
+                      <button class="soparis-button soparis-button--ghost soparis-button--sm soparis-kanban__add" type="button">
+                        <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">add</span>
+                        Añadir
+                      </button>
+                    </footer>
+                  </section>
+                </div>
+              </div>
+              <p class="soparis-caption" style="margin-top:0.75rem">Activa con <code class="soparis-code">data-soparis-kanban</code>. Evento: <code class="soparis-code">soparis:kanban-change</code>.</p>
             </div>
           </section>
 
@@ -1253,10 +1731,10 @@
             </div>
           </section>
 
-          <section class="gallery-section" id="soparis-tabs" data-gallery-section="soparis-tabs">
+          <section class="gallery-section" id="soparis-tabs" data-gallery-section="soparis-tabs tab-panel">
             <div class="gallery-head">
               <h2 class="soparis-h3">soparis-tabs</h2>
-              <code class="soparis-code">soparis-tabs</code>
+              <code class="soparis-code">soparis-tabs · soparis-tab-panel</code>
             </div>
             <div class="gallery-preview soparis-stack">
               <div data-soparis-tabs>
@@ -1265,10 +1743,16 @@
                   <button class="soparis-tabs__tab" role="tab" aria-selected="false" aria-controls="g-tab-b" id="g-t-b" type="button">Leads</button>
                   <button class="soparis-tabs__tab" role="tab" aria-selected="false" aria-controls="g-tab-c" id="g-t-c" type="button">Equipo</button>
                 </div>
+                <div class="soparis-tab-panel" id="g-tab-a" role="tabpanel" aria-labelledby="g-t-a" data-soparis-tabpanel>
+                  <p class="soparis-p">128 contactos en el workspace.</p>
+                </div>
+                <div class="soparis-tab-panel" id="g-tab-b" role="tabpanel" aria-labelledby="g-t-b" data-soparis-tabpanel hidden>
+                  <p class="soparis-p">36 leads capturados por NFC o QR.</p>
+                </div>
+                <div class="soparis-tab-panel" id="g-tab-c" role="tabpanel" aria-labelledby="g-t-c" data-soparis-tabpanel hidden>
+                  <p class="soparis-p">4 miembros del equipo Synka.</p>
+                </div>
               </div>
-              <div id="g-tab-a" data-soparis-tabpanel><p class="soparis-p">128 contactos en el workspace.</p></div>
-              <div id="g-tab-b" data-soparis-tabpanel hidden><p class="soparis-p">36 leads capturados por NFC o QR.</p></div>
-              <div id="g-tab-c" data-soparis-tabpanel hidden><p class="soparis-p">4 miembros del equipo Synka.</p></div>
             </div>
           </section>
 
@@ -1330,18 +1814,83 @@
               <h2 class="soparis-h3">soparis-tooltip</h2>
               <code class="soparis-code">soparis-tooltip</code>
             </div>
-            <div class="gallery-preview">
-              <button class="soparis-button soparis-button--ghost soparis-button--md soparis-tooltip" data-tip="Comparte el link público" type="button">Tooltip</button>
+            <div class="gallery-preview soparis-cluster">
+              <button class="soparis-button soparis-button--ghost soparis-button--md soparis-tooltip" data-tip="Arriba" type="button">Top</button>
+              <button class="soparis-button soparis-button--ghost soparis-button--md soparis-tooltip soparis-tooltip--bottom" data-tip="Abajo" type="button">Bottom</button>
+              <button class="soparis-button soparis-button--ghost soparis-button--md soparis-tooltip soparis-tooltip--left" data-tip="Izquierda" type="button">Left</button>
+              <button class="soparis-button soparis-button--ghost soparis-button--md soparis-tooltip soparis-tooltip--right" data-tip="Derecha" type="button">Right</button>
             </div>
           </section>
 
-          <section class="gallery-section" id="soparis-aside" data-gallery-section="soparis-aside">
+          <section class="gallery-section" id="soparis-item" data-gallery-section="soparis-item">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-item</h2>
+              <code class="soparis-code">soparis-item</code>
+            </div>
+            <div class="gallery-preview" style="max-width:24rem">
+              <button class="soparis-item soparis-item--interactive is-active" type="button">
+                <span class="soparis-avatar soparis-avatar--sm">AM</span>
+                <span class="soparis-item__body">
+                  <span class="soparis-item__title">Ana Moreira</span>
+                  <span class="soparis-item__meta">Lead · Hot</span>
+                </span>
+                <span class="soparis-item__action">
+                  <span class="soparis-icon material-symbols-outlined" aria-hidden="true">chevron_right</span>
+                </span>
+              </button>
+              <button class="soparis-item soparis-item--interactive" type="button">
+                <span class="soparis-avatar soparis-avatar--sm">JR</span>
+                <span class="soparis-item__body">
+                  <span class="soparis-item__title">Jorge Rivas</span>
+                  <span class="soparis-item__meta">Lead · Nuevo</span>
+                </span>
+                <span class="soparis-item__action">
+                  <span class="soparis-icon material-symbols-outlined" aria-hidden="true">chevron_right</span>
+                </span>
+              </button>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-task-card" data-gallery-section="soparis-task-card tarea">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-task-card</h2>
+              <code class="soparis-code">soparis-task-card</code>
+            </div>
+            <div class="gallery-preview" style="max-width:18rem">
+              <article class="soparis-task-card soparis-task-card--priority soparis-task-card--interactive">
+                <div class="soparis-task-card__top">
+                  <h4 class="soparis-task-card__title">Preparar demo NFC</h4>
+                  <span class="soparis-badge soparis-badge--warning">Alta</span>
+                </div>
+                <p class="soparis-task-card__desc">Material Metal + script de 5 minutos para Studio Norte.</p>
+                <div class="soparis-task-card__tags">
+                  <span class="soparis-chip">Demo</span>
+                  <span class="soparis-chip">NFC</span>
+                </div>
+                <div class="soparis-task-card__foot">
+                  <span class="soparis-avatar soparis-avatar--sm">JC</span>
+                  <span class="soparis-task-card__meta">
+                    <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">schedule</span>
+                    Hoy
+                  </span>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-aside" data-gallery-section="soparis-aside shell navegación">
             <div class="gallery-head">
               <h2 class="soparis-h3">soparis-aside</h2>
-              <code class="soparis-code">soparis-aside</code>
+              <code class="soparis-code">head · body · foot (acciones)</code>
             </div>
-            <div class="gallery-preview">
-              <p class="soparis-p">Estructura: <code class="soparis-code">__head</code> (2–3 elementos) · <code class="soparis-code">__body</code> (menú) · <code class="soparis-code">__foot</code> (avatar + input + icon).</p>
+            <div class="gallery-preview soparis-stack">
+              <p class="soparis-p soparis-p--sm">Navegación + menú de cuenta en el foot. <strong>No</strong> duplica el topbar.</p>
+              <ul class="soparis-list soparis-list--ul">
+                <li><code class="soparis-code">__head</code> — marca + colapsar</li>
+                <li><code class="soparis-code">__body</code> — <code class="soparis-code">soparis-menu</code></li>
+                <li><code class="soparis-code">__foot</code> — avatar/nombre · notificaciones · logout</li>
+              </ul>
+              <button class="soparis-button soparis-button--secondary soparis-button--sm" type="button" data-soparis-aside-collapse aria-controls="nav">Colapsar / expandir</button>
             </div>
           </section>
 
@@ -1366,20 +1915,606 @@
           <section class="gallery-section" id="soparis-menu" data-gallery-section="soparis-menu">
             <div class="gallery-head">
               <h2 class="soparis-h3">soparis-menu</h2>
-              <code class="soparis-code">soparis-menu</code>
+              <code class="soparis-code">soparis-menu · item · label · badge</code>
             </div>
-            <div class="gallery-preview">
-              <p class="soparis-p">El menú de la izquierda es <code class="soparis-code">soparis-menu</code> con ítems <code class="soparis-code">soparis-menu__item</code>.</p>
+            <div class="gallery-preview" style="max-width:16rem; padding: var(--soparis-space-4); background: var(--soparis-color-bg-nav); border: 1px solid var(--soparis-color-border-nav); border-radius: var(--soparis-radius-lg)">
+              <nav class="soparis-menu" aria-label="Demo menú">
+                <div class="soparis-menu__section">
+                  <p class="soparis-menu__label">Proyecto</p>
+                  <a class="soparis-a soparis-menu__item soparis-menu__item--active" href="#soparis-menu">
+                    <span class="soparis-icon material-symbols-outlined" aria-hidden="true">dashboard</span>
+                    Resumen
+                  </a>
+                  <a class="soparis-a soparis-menu__item" href="#soparis-kanban">
+                    <span class="soparis-icon material-symbols-outlined" aria-hidden="true">view_kanban</span>
+                    Kanban
+                    <span class="soparis-menu__badge">12</span>
+                  </a>
+                  <a class="soparis-a soparis-menu__item" href="#soparis-fichaje">
+                    <span class="soparis-icon material-symbols-outlined" aria-hidden="true">schedule</span>
+                    Fichaje
+                  </a>
+                </div>
+              </nav>
             </div>
           </section>
 
-          <section class="gallery-section" id="soparis-topbar" data-gallery-section="soparis-topbar">
+          <section class="gallery-section" id="soparis-topbar" data-gallery-section="soparis-topbar header cabecera">
             <div class="gallery-head">
               <h2 class="soparis-h3">soparis-topbar</h2>
-              <code class="soparis-code">soparis-topbar</code>
+              <code class="soparis-code">info · meta — solo información</code>
+            </div>
+            <div class="gallery-preview soparis-stack">
+              <p class="soparis-p soparis-p--sm">Cabecera de contexto de página. Sin usuario, sin campana, sin logout (eso va en el aside).</p>
+              <div style="border: 1px solid var(--soparis-color-border); border-radius: var(--soparis-radius-lg); overflow: hidden">
+                <header class="soparis-topbar soparis-topbar--solid" style="position: relative; grid-area: auto">
+                  <div class="soparis-topbar__info">
+                    <p class="soparis-topbar__eyebrow">Proyecto · Kanban</p>
+                    <p class="soparis-topbar__title">Tablero Synka HQ</p>
+                  </div>
+                  <div class="soparis-topbar__meta">
+                    <span class="soparis-topbar__status">12 tareas abiertas</span>
+                    <span class="soparis-badge soparis-badge--warning">En curso</span>
+                  </div>
+                </header>
+              </div>
+            </div>
+          </section>
+          <section class="gallery-section" id="soparis-login" data-gallery-section="soparis-login register forgot auth">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Auth · login</h2>
+              <code class="soparis-code">login · register · forgot-password…</code>
+            </div>
+            <div class="gallery-preview" style="padding:0; overflow:hidden; border-radius: var(--soparis-radius-lg)">
+              <div class="soparis-login" style="min-height:28rem; padding: var(--soparis-space-6)">
+                <div class="soparis-login__card">
+                  <div class="soparis-login__brand">
+                    <p class="soparis-login__logo">Synka</p>
+                    <h2 class="soparis-login__title">Iniciar sesión</h2>
+                    <p class="soparis-login__lead">Accede a tu workspace de proyecto.</p>
+                  </div>
+                  <form class="soparis-login__form" action="#" onsubmit="return false">
+                    <div class="soparis-field">
+                      <label class="soparis-input-label" for="g-login-email">Email</label>
+                      <input class="soparis-input-text soparis-input-text--md" id="g-login-email" type="email" autocomplete="username" placeholder="tu@empresa.com" />
+                    </div>
+                    <div class="soparis-field">
+                      <label class="soparis-input-label" for="g-login-pass">Contraseña</label>
+                      <div class="soparis-password" data-soparis-password>
+                        <input id="g-login-pass" class="soparis-input-text soparis-input-text--md" type="password" value="demo1234" autocomplete="current-password" />
+                        <button class="soparis-button-icon soparis-button-icon--sm soparis-password__toggle" type="button" data-soparis-password-toggle aria-label="Mostrar contraseña">
+                          <span class="soparis-icon material-symbols-outlined" aria-hidden="true">visibility</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="soparis-login__actions">
+                      <button class="soparis-button soparis-button--primary soparis-button--md" type="submit">Entrar</button>
+                      <a class="soparis-a soparis-a--muted" href="#soparis-login">¿Olvidaste la contraseña?</a>
+                    </div>
+                  </form>
+                  <p class="soparis-login__foot">¿No tienes cuenta? <a class="soparis-link" href="#soparis-login">Regístrate</a></p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-task-form-dialog" data-gallery-section="soparis-task-form-dialog crear editar tarea">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-task-form-dialog</h2>
+              <code class="soparis-code">soparis-task-form-dialog</code>
             </div>
             <div class="gallery-preview">
-              <p class="soparis-p">La barra superior de esta página es <code class="soparis-code">soparis-topbar</code>.</p>
+              <button class="soparis-button soparis-button--primary soparis-button--md" data-soparis-modal-open data-soparis-target="#gallery-task-form" type="button">Abrir crear tarea</button>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-task-detail" data-gallery-section="soparis-task-detail detalle tarea">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-task-detail</h2>
+              <code class="soparis-code">soparis-task-detail</code>
+            </div>
+            <div class="gallery-preview">
+              <article class="soparis-task-detail">
+                <header class="soparis-task-detail__header">
+                  <div class="soparis-task-detail__copy">
+                    <p class="soparis-overline">KAN-128</p>
+                    <h2 class="soparis-task-detail__title">Preparar demo NFC para Studio Norte</h2>
+                    <div class="soparis-task-detail__meta">
+                      <span class="soparis-badge soparis-badge--warning">Alta</span>
+                      <span class="soparis-badge soparis-badge--info">En curso</span>
+                      <span class="soparis-chip">Demo</span>
+                      <span class="soparis-chip">NFC</span>
+                    </div>
+                  </div>
+                  <div class="soparis-task-detail__actions">
+                    <button class="soparis-button soparis-button--secondary soparis-button--sm" type="button">Editar</button>
+                    <button class="soparis-button soparis-button--primary soparis-button--sm" type="button">Completar</button>
+                  </div>
+                </header>
+                <div class="soparis-task-detail__body">
+                  <div class="soparis-task-detail__section">
+                    <p class="soparis-task-detail__label">Descripción</p>
+                    <p class="soparis-task-detail__desc">Material Metal + script de 5 minutos. Incluir onboarding CRM y captura de leads por QR.</p>
+                  </div>
+                  <div class="soparis-task-detail__props">
+                    <div class="soparis-task-detail__prop">
+                      <p class="soparis-task-detail__label">Asignado</p>
+                      <div class="soparis-cluster">
+                        <span class="soparis-avatar soparis-avatar--sm">JC</span>
+                        <span class="soparis-p soparis-p--sm">Juan C.</span>
+                      </div>
+                    </div>
+                    <div class="soparis-task-detail__prop">
+                      <p class="soparis-task-detail__label">Vencimiento</p>
+                      <p class="soparis-p soparis-p--sm">Hoy · 18:00</p>
+                    </div>
+                    <div class="soparis-task-detail__prop">
+                      <p class="soparis-task-detail__label">Columna</p>
+                      <p class="soparis-p soparis-p--sm">Seguimiento</p>
+                    </div>
+                    <div class="soparis-task-detail__prop">
+                      <p class="soparis-task-detail__label">Estimación</p>
+                      <p class="soparis-p soparis-p--sm">2 h</p>
+                    </div>
+                  </div>
+                  <div class="soparis-task-detail__section">
+                    <p class="soparis-task-detail__label">Actividad</p>
+                    <div class="soparis-task-detail__activity">
+                      <div class="soparis-task-detail__activity-item">
+                        <span class="soparis-avatar soparis-avatar--sm">AM</span>
+                        <div>
+                          <p class="soparis-task-detail__activity-text">Ana movió la tarea a Seguimiento</p>
+                          <p class="soparis-task-detail__activity-time">Hace 2 h</p>
+                        </div>
+                      </div>
+                      <div class="soparis-task-detail__activity-item">
+                        <span class="soparis-avatar soparis-avatar--sm">JC</span>
+                        <div>
+                          <p class="soparis-task-detail__activity-text">Juan añadió la etiqueta NFC</p>
+                          <p class="soparis-task-detail__activity-time">Ayer</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-tickets" data-gallery-section="soparis-tickets ticket soporte">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-tickets</h2>
+              <code class="soparis-code">tickets · create · detail</code>
+            </div>
+            <div class="gallery-preview soparis-stack">
+              <div class="soparis-page-header">
+                <div class="soparis-page-header__copy">
+                  <h2 class="soparis-h3">Tickets</h2>
+                  <p class="soparis-small">3 abiertos · 1 urgente</p>
+                </div>
+                <div class="soparis-page-header__actions">
+                  <button class="soparis-button soparis-button--primary soparis-button--sm" data-soparis-modal-open data-soparis-target="#gallery-ticket-create" type="button">Nuevo ticket</button>
+                </div>
+              </div>
+              <div class="soparis-tickets">
+                <div class="soparis-tickets__list">
+                  <button class="soparis-tickets__row" data-soparis-modal-open data-soparis-target="#gallery-ticket-detail" type="button">
+                    <span class="soparis-tickets__id">#1042</span>
+                    <span class="soparis-tickets__main">
+                      <span class="soparis-tickets__title">No sincroniza Slack en el proyecto Demo</span>
+                      <span class="soparis-tickets__meta">Studio Norte · hace 1 h</span>
+                    </span>
+                    <span class="soparis-tickets__side">
+                      <span class="soparis-badge soparis-badge--danger">Urgente</span>
+                      <span class="soparis-badge soparis-badge--info">Abierto</span>
+                    </span>
+                  </button>
+                  <button class="soparis-tickets__row" type="button">
+                    <span class="soparis-tickets__id">#1038</span>
+                    <span class="soparis-tickets__main">
+                      <span class="soparis-tickets__title">Export CSV incompleto en informes</span>
+                      <span class="soparis-tickets__meta">Synka HQ · ayer</span>
+                    </span>
+                    <span class="soparis-tickets__side">
+                      <span class="soparis-badge soparis-badge--warning">Media</span>
+                      <span class="soparis-badge">En revisión</span>
+                    </span>
+                  </button>
+                  <button class="soparis-tickets__row" type="button">
+                    <span class="soparis-tickets__id">#1021</span>
+                    <span class="soparis-tickets__main">
+                      <span class="soparis-tickets__title">Invitación no llega al correo</span>
+                      <span class="soparis-tickets__meta">Ana M. · hace 3 d</span>
+                    </span>
+                    <span class="soparis-tickets__side">
+                      <span class="soparis-badge soparis-badge--primary">Baja</span>
+                      <span class="soparis-badge">Abierto</span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-fichaje" data-gallery-section="soparis-fichaje clock gestión horas">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-fichaje</h2>
+              <code class="soparis-code">fichaje · clock · gestión</code>
+            </div>
+            <div class="gallery-preview soparis-fichaje">
+              <div class="soparis-fichaje-clock">
+                <p class="soparis-fichaje-clock__date">Martes 29 sep 2026</p>
+                <p class="soparis-fichaje-clock__time" data-soparis-clock>18:22:00</p>
+                <span class="soparis-fichaje-clock__status">
+                  <span class="soparis-icon soparis-icon--sm material-symbols-outlined" aria-hidden="true">schedule</span>
+                  En jornada · desde 09:02
+                </span>
+                <div class="soparis-fichaje-clock__actions">
+                  <button class="soparis-button soparis-button--danger soparis-button--lg" type="button">Salida</button>
+                  <button class="soparis-button soparis-button--secondary soparis-button--lg" type="button">Pausa</button>
+                </div>
+                <div class="soparis-fichaje-clock__stats">
+                  <div class="soparis-fichaje-clock__stat">
+                    <span class="soparis-fichaje-clock__stat-value">07:18</span>
+                    <span class="soparis-fichaje-clock__stat-label">Hoy</span>
+                  </div>
+                  <div class="soparis-fichaje-clock__stat">
+                    <span class="soparis-fichaje-clock__stat-value">36:40</span>
+                    <span class="soparis-fichaje-clock__stat-label">Semana</span>
+                  </div>
+                  <div class="soparis-fichaje-clock__stat">
+                    <span class="soparis-fichaje-clock__stat-value">0</span>
+                    <span class="soparis-fichaje-clock__stat-label">Incidencias</span>
+                  </div>
+                </div>
+              </div>
+              <div class="soparis-fichaje-gestion">
+                <div class="soparis-fichaje-gestion__summary">
+                  <div class="soparis-card soparis-card--sm soparis-stat"><span class="soparis-stat__value">12</span><span class="soparis-stat__label">Fichando</span></div>
+                  <div class="soparis-card soparis-card--sm soparis-stat"><span class="soparis-stat__value">3</span><span class="soparis-stat__label">En pausa</span></div>
+                  <div class="soparis-card soparis-card--sm soparis-stat"><span class="soparis-stat__value">2</span><span class="soparis-stat__label">Sin entrada</span></div>
+                  <div class="soparis-card soparis-card--sm soparis-stat"><span class="soparis-stat__value">1</span><span class="soparis-stat__label">Incidencia</span></div>
+                </div>
+                <div class="soparis-table-wrap">
+                  <table class="soparis-table">
+                    <thead>
+                      <tr>
+                        <th>Persona</th>
+                        <th>Entrada</th>
+                        <th>Estado</th>
+                        <th>Horas</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><div class="soparis-cluster"><span class="soparis-avatar soparis-avatar--sm">AM</span> Ana Moreira</div></td>
+                        <td>09:02</td>
+                        <td><span class="soparis-badge soparis-badge--primary">En jornada</span></td>
+                        <td>07:18</td>
+                      </tr>
+                      <tr>
+                        <td><div class="soparis-cluster"><span class="soparis-avatar soparis-avatar--sm">JR</span> Jorge Rivas</div></td>
+                        <td>08:55</td>
+                        <td><span class="soparis-badge soparis-badge--warning">Pausa</span></td>
+                        <td>06:40</td>
+                      </tr>
+                      <tr>
+                        <td><div class="soparis-cluster"><span class="soparis-avatar soparis-avatar--sm">LS</span> Leila Shah</div></td>
+                        <td>—</td>
+                        <td><span class="soparis-badge soparis-badge--danger">Sin entrada</span></td>
+                        <td>0:00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-resumen" data-gallery-section="soparis-resumen dashboard kpi">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-resumen</h2>
+              <code class="soparis-code">dashboard · kpis</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-resumen">
+                <div class="soparis-resumen__kpis">
+                  <div class="soparis-card soparis-card--sm soparis-stat"><span class="soparis-stat__value">128</span><span class="soparis-stat__label">Toques</span></div>
+                  <div class="soparis-card soparis-card--sm soparis-stat"><span class="soparis-stat__value">36</span><span class="soparis-stat__label">Leads</span></div>
+                  <div class="soparis-card soparis-card--sm soparis-stat"><span class="soparis-stat__value">18%</span><span class="soparis-stat__label">Respuesta</span></div>
+                  <div class="soparis-card soparis-card--sm soparis-stat"><span class="soparis-stat__value">7.2h</span><span class="soparis-stat__label">Fichaje hoy</span></div>
+                </div>
+                <div class="soparis-resumen__panels">
+                  <article class="soparis-content-card">
+                    <div class="soparis-content-card__header">
+                      <h3 class="soparis-content-card__title">Actividad</h3>
+                      <span class="soparis-badge soparis-badge--info">Live</span>
+                    </div>
+                    <div class="soparis-content-card__body">
+                      <div class="soparis-resumen__list">
+                        <button class="soparis-item soparis-item--interactive" type="button">
+                          <span class="soparis-avatar soparis-avatar--sm">AM</span>
+                          <span class="soparis-item__body">
+                            <span class="soparis-item__title">Ana movió lead a Seguimiento</span>
+                            <span class="soparis-item__meta">Hace 12 min</span>
+                          </span>
+                        </button>
+                        <button class="soparis-item soparis-item--interactive" type="button">
+                          <span class="soparis-avatar soparis-avatar--sm">JR</span>
+                          <span class="soparis-item__body">
+                            <span class="soparis-item__title">Jorge registró 2h en Demo NFC</span>
+                            <span class="soparis-item__meta">Hace 1 h</span>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+                  <div class="soparis-chart">
+                    <h3 class="soparis-chart__title">Leads · 7 días</h3>
+                    <div class="soparis-chart__canvas" aria-hidden="true">
+                      <div class="soparis-chart__bars">
+                        <span class="soparis-chart__bar" style="height:40%"></span>
+                        <span class="soparis-chart__bar" style="height:55%"></span>
+                        <span class="soparis-chart__bar" style="height:35%"></span>
+                        <span class="soparis-chart__bar" style="height:70%"></span>
+                        <span class="soparis-chart__bar" style="height:48%"></span>
+                        <span class="soparis-chart__bar" style="height:82%"></span>
+                        <span class="soparis-chart__bar" style="height:64%"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-calendario" data-gallery-section="soparis-calendario calendar evento">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-calendario</h2>
+              <code class="soparis-code">calendario · event-form-dialog</code>
+            </div>
+            <div class="gallery-preview soparis-stack">
+              <div class="soparis-calendario">
+                <div class="soparis-calendario__toolbar">
+                  <h3 class="soparis-calendario__title">Septiembre 2026</h3>
+                  <div class="soparis-calendario__nav">
+                    <button class="soparis-button-icon soparis-button-icon--sm" type="button" aria-label="Mes anterior"><span class="soparis-icon material-symbols-outlined" aria-hidden="true">chevron_left</span></button>
+                    <button class="soparis-button soparis-button--ghost soparis-button--sm" type="button">Hoy</button>
+                    <button class="soparis-button-icon soparis-button-icon--sm" type="button" aria-label="Mes siguiente"><span class="soparis-icon material-symbols-outlined" aria-hidden="true">chevron_right</span></button>
+                  </div>
+                  <button class="soparis-button soparis-button--primary soparis-button--sm" data-soparis-modal-open data-soparis-target="#gallery-event-form" type="button">Nuevo evento</button>
+                </div>
+                <div class="soparis-calendario__grid">
+                  <div class="soparis-calendario__dow">L</div><div class="soparis-calendario__dow">M</div><div class="soparis-calendario__dow">X</div><div class="soparis-calendario__dow">J</div><div class="soparis-calendario__dow">V</div><div class="soparis-calendario__dow">S</div><div class="soparis-calendario__dow">D</div>
+                  <div class="soparis-calendario__day soparis-calendario__day--muted"><span class="soparis-calendario__day-num">28</span></div>
+                  <div class="soparis-calendario__day soparis-calendario__day--muted"><span class="soparis-calendario__day-num">29</span></div>
+                  <div class="soparis-calendario__day soparis-calendario__day--muted"><span class="soparis-calendario__day-num">30</span></div>
+                  <div class="soparis-calendario__day soparis-calendario__day--muted"><span class="soparis-calendario__day-num">31</span></div>
+                  <div class="soparis-calendario__day"><span class="soparis-calendario__day-num">1</span></div>
+                  <div class="soparis-calendario__day"><span class="soparis-calendario__day-num">2</span></div>
+                  <div class="soparis-calendario__day"><span class="soparis-calendario__day-num">3</span></div>
+                  <div class="soparis-calendario__day"><span class="soparis-calendario__day-num">4</span></div>
+                  <div class="soparis-calendario__day"><span class="soparis-calendario__day-num">5</span></div>
+                  <div class="soparis-calendario__day"><span class="soparis-calendario__day-num">6</span></div>
+                  <div class="soparis-calendario__day"><span class="soparis-calendario__day-num">7</span>
+                    <div class="soparis-calendario__events"><button class="soparis-calendario__event" type="button">Kickoff</button></div>
+                  </div>
+                  <div class="soparis-calendario__day"><span class="soparis-calendario__day-num">8</span></div>
+                  <div class="soparis-calendario__day"><span class="soparis-calendario__day-num">9</span></div>
+                  <div class="soparis-calendario__day"><span class="soparis-calendario__day-num">10</span></div>
+                  <div class="soparis-calendario__day soparis-calendario__day--today"><span class="soparis-calendario__day-num">29</span>
+                    <div class="soparis-calendario__events">
+                      <button class="soparis-calendario__event" type="button">Demo NFC</button>
+                      <button class="soparis-calendario__event soparis-calendario__event--accent" type="button">Call</button>
+                    </div>
+                  </div>
+                  <div class="soparis-calendario__day"><span class="soparis-calendario__day-num">30</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-flujos" data-gallery-section="soparis-flujos flow canvas node">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-flujos</h2>
+              <code class="soparis-code">flow-canvas · flow-node</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-flujos">
+                <div class="soparis-flow-canvas">
+                  <div class="soparis-flow-canvas__row">
+                    <article class="soparis-flow-node soparis-flow-node--start" tabindex="0">
+                      <h4 class="soparis-flow-node__title">Nuevo</h4>
+                      <p class="soparis-flow-node__meta">Entrada · 8 leads</p>
+                      <div class="soparis-flow-node__ports"><span class="soparis-flow-node__port"></span><span class="soparis-flow-node__port"></span></div>
+                    </article>
+                    <span class="soparis-icon soparis-flow-canvas__arrow material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+                    <article class="soparis-flow-node" tabindex="0">
+                      <h4 class="soparis-flow-node__title">Seguimiento</h4>
+                      <p class="soparis-flow-node__meta">3 leads · SLA 48h</p>
+                      <div class="soparis-flow-node__ports"><span class="soparis-flow-node__port"></span><span class="soparis-flow-node__port"></span></div>
+                    </article>
+                    <span class="soparis-icon soparis-flow-canvas__arrow material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+                    <article class="soparis-flow-node soparis-flow-node--done" tabindex="0">
+                      <h4 class="soparis-flow-node__title">Cerrado</h4>
+                      <p class="soparis-flow-node__meta">Ganado / Perdido</p>
+                      <div class="soparis-flow-node__ports"><span class="soparis-flow-node__port"></span><span class="soparis-flow-node__port"></span></div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-document" data-gallery-section="soparis-document archivos explorador">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-document</h2>
+              <code class="soparis-code">explorador de documentos</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-document">
+                <div class="soparis-document__toolbar">
+                  <div class="soparis-input-search" style="flex:1; max-width:18rem">
+                    <span class="soparis-icon material-symbols-outlined" aria-hidden="true">search</span>
+                    <input class="soparis-input-text soparis-input-text--sm" placeholder="Buscar archivo…" />
+                  </div>
+                  <button class="soparis-button soparis-button--primary soparis-button--sm" type="button">Subir</button>
+                </div>
+                <div class="soparis-document__grid">
+                  <button class="soparis-document__item" type="button">
+                    <span class="soparis-document__icon"><span class="soparis-icon material-symbols-outlined" aria-hidden="true">folder</span></span>
+                    <p class="soparis-document__name">Contratos</p>
+                    <p class="soparis-document__meta">12 archivos</p>
+                  </button>
+                  <button class="soparis-document__item" type="button">
+                    <span class="soparis-document__icon"><span class="soparis-icon material-symbols-outlined" aria-hidden="true">picture_as_pdf</span></span>
+                    <p class="soparis-document__name">Propuesta-SN.pdf</p>
+                    <p class="soparis-document__meta">240 KB · ayer</p>
+                  </button>
+                  <button class="soparis-document__item" type="button">
+                    <span class="soparis-document__icon"><span class="soparis-icon material-symbols-outlined" aria-hidden="true">image</span></span>
+                    <p class="soparis-document__name">Stand-WS.jpg</p>
+                    <p class="soparis-document__meta">1.2 MB · 3 d</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-ajustes" data-gallery-section="soparis-ajustes opciones organizacion">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-ajustes</h2>
+              <code class="soparis-code">ajustes · opciones · org</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-ajustes">
+                <div class="soparis-ajustes__grid">
+                  <div class="soparis-field">
+                    <label class="soparis-input-label" for="g-adj-name">Nombre</label>
+                    <input class="soparis-input-text soparis-input-text--md" id="g-adj-name" value="Juan C." />
+                  </div>
+                  <div class="soparis-field">
+                    <label class="soparis-input-label" for="g-adj-lang">Idioma</label>
+                    <select class="soparis-input-select soparis-input-select--md" id="g-adj-lang"><option>Español</option><option>English</option></select>
+                  </div>
+                  <label class="soparis-input-choice">
+                    <span class="soparis-input-switch">
+                      <input type="checkbox" checked />
+                      <span class="soparis-input-switch__track"></span>
+                    </span>
+                    <span>Tema oscuro automático</span>
+                  </label>
+                  <label class="soparis-input-choice">
+                    <span class="soparis-input-switch">
+                      <input type="checkbox" checked />
+                      <span class="soparis-input-switch__track"></span>
+                    </span>
+                    <span>Emails de actividad</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-kanban-ia" data-gallery-section="soparis-kanban-ia insights logs horas">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Kanban modules</h2>
+              <code class="soparis-code">ia · logs · chart · insight-dialog</code>
+            </div>
+            <div class="gallery-preview soparis-stack">
+              <div class="soparis-kanban-subnav" role="tablist">
+                <button class="soparis-button soparis-button--ghost soparis-button--sm" type="button">Tablero</button>
+                <button class="soparis-button soparis-button--secondary soparis-button--sm" type="button">IA</button>
+                <button class="soparis-button soparis-button--ghost soparis-button--sm" type="button">Horas</button>
+                <button class="soparis-button soparis-button--ghost soparis-button--sm" type="button">Logs</button>
+              </div>
+              <div class="soparis-kanban-ia">
+                <div class="soparis-kanban-ia__grid">
+                  <article class="soparis-content-card">
+                    <div class="soparis-content-card__header">
+                      <h3 class="soparis-content-card__title">Prioriza Studio Norte</h3>
+                      <span class="soparis-badge soparis-badge--warning">Alta</span>
+                    </div>
+                    <div class="soparis-content-card__body">
+                      <p class="soparis-p soparis-p--sm">3 señales de compra en 48h. Sugiere mover a Propuesta.</p>
+                    </div>
+                    <div class="soparis-content-card__foot">
+                      <button class="soparis-button soparis-button--primary soparis-button--sm" data-soparis-modal-open data-soparis-target="#gallery-insight" type="button">Ver detalle</button>
+                    </div>
+                  </article>
+                  <article class="soparis-content-card">
+                    <div class="soparis-content-card__header">
+                      <h3 class="soparis-content-card__title">Riesgo de stale</h3>
+                      <span class="soparis-badge soparis-badge--info">Media</span>
+                    </div>
+                    <div class="soparis-content-card__body">
+                      <p class="soparis-p soparis-p--sm">5 tareas sin update en 7 días en Seguimiento.</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-landing" data-gallery-section="soparis-landing marketing hero">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-landing</h2>
+              <code class="soparis-code">landing · hero</code>
+            </div>
+            <div class="gallery-preview" style="padding:0; overflow:hidden; border-radius: var(--soparis-radius-lg)">
+              <div class="soparis-landing">
+                <div class="soparis-landing__hero">
+                  <p class="soparis-landing__brand">Syn<span>ka</span></p>
+                  <p class="soparis-landing__lead">Una conversación. Un toque. El follow-up ya está en el CRM.</p>
+                  <div class="soparis-landing__cta">
+                    <button class="soparis-button soparis-button--premium soparis-button--lg" type="button">Empezar</button>
+                    <button class="soparis-button soparis-button--secondary soparis-button--lg" type="button">Ver demo</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-precios" data-gallery-section="soparis-precios pricing planes">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">soparis-precios</h2>
+              <code class="soparis-code">planes</code>
+            </div>
+            <div class="gallery-preview">
+              <div class="soparis-precios">
+                <div class="soparis-precios__grid">
+                  <article class="soparis-precios__plan">
+                    <h3 class="soparis-h4">Start</h3>
+                    <p class="soparis-precios__price">19€</p>
+                    <p class="soparis-small">Por usuario / mes</p>
+                    <button class="soparis-button soparis-button--secondary soparis-button--md" type="button">Elegir</button>
+                  </article>
+                  <article class="soparis-precios__plan soparis-precios__plan--featured">
+                    <h3 class="soparis-h4">Connect</h3>
+                    <p class="soparis-precios__price">39€</p>
+                    <p class="soparis-small">Por usuario / mes</p>
+                    <button class="soparis-button soparis-button--primary soparis-button--md" type="button">Elegir</button>
+                  </article>
+                  <article class="soparis-precios__plan">
+                    <h3 class="soparis-h4">Scale</h3>
+                    <p class="soparis-precios__price">79€</p>
+                    <p class="soparis-small">Por usuario / mes</p>
+                    <button class="soparis-button soparis-button--secondary soparis-button--md" type="button">Elegir</button>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="gallery-section" id="soparis-org-onboarding-dialog" data-gallery-section="soparis-org-onboarding-dialog create-dept import tour">
+            <div class="gallery-head">
+              <h2 class="soparis-h3">Dialogs de producto</h2>
+              <code class="soparis-code">onboarding · create-dept · tour</code>
+            </div>
+            <div class="gallery-preview soparis-cluster">
+              <button class="soparis-button soparis-button--primary soparis-button--md" data-soparis-modal-open data-soparis-target="#gallery-onboarding" type="button">Onboarding org</button>
+              <button class="soparis-button soparis-button--secondary soparis-button--md" data-soparis-modal-open data-soparis-target="#gallery-create-dept" type="button">Crear proyecto</button>
+              <button class="soparis-button soparis-button--secondary soparis-button--md" data-soparis-modal-open data-soparis-target="#gallery-tour" type="button">Product tour</button>
             </div>
           </section>
 
@@ -1418,6 +2553,273 @@
           <button class="soparis-button soparis-button--secondary soparis-button--md" data-soparis-close type="button">Cancelar</button>
           <button class="soparis-button soparis-button--premium soparis-button--md" data-soparis-close type="button">Emparejar</button>
         </div>
+      </div>
+    </div>
+
+    <div class="soparis-overlay" id="gallery-task-form" aria-hidden="true">
+      <div class="soparis-task-form-dialog" role="dialog" aria-labelledby="gallery-task-form-title">
+        <header class="soparis-task-form-dialog__head">
+          <div>
+            <h2 class="soparis-task-form-dialog__title" id="gallery-task-form-title">Nueva tarea</h2>
+            <p class="soparis-task-form-dialog__subtitle">Se creará en la columna Seguimiento</p>
+          </div>
+          <button class="soparis-button-icon soparis-button-icon--sm" data-soparis-close type="button" aria-label="Cerrar">
+            <span class="soparis-icon material-symbols-outlined" aria-hidden="true">close</span>
+          </button>
+        </header>
+        <div class="soparis-task-form-dialog__body">
+          <div class="soparis-field">
+            <label class="soparis-input-label" for="g-task-title">Título</label>
+            <input class="soparis-input-text soparis-input-text--md" id="g-task-title" value="Preparar demo NFC" />
+          </div>
+          <div class="soparis-ai-description-field">
+            <label class="soparis-input-label" for="g-task-desc">Descripción</label>
+            <textarea class="soparis-input-textarea" id="g-task-desc" rows="3" placeholder="Describe la tarea…"></textarea>
+            <div class="soparis-ai-description-field__suggest">
+              <span class="soparis-icon soparis-ai-description-field__icon material-symbols-outlined" aria-hidden="true">auto_awesome</span>
+              Sugerencia IA: “Material Metal + script de 5 minutos para Studio Norte”
+              <button class="soparis-button soparis-button--ghost soparis-button--sm" type="button">Usar</button>
+            </div>
+          </div>
+          <div class="soparis-task-form-dialog__grid">
+            <div class="soparis-field">
+              <label class="soparis-input-label" for="g-task-prio">Prioridad</label>
+              <select class="soparis-input-select soparis-input-select--md" id="g-task-prio">
+                <option>Media</option>
+                <option selected>Alta</option>
+                <option>Urgente</option>
+              </select>
+            </div>
+            <div class="soparis-field">
+              <label class="soparis-input-label" for="g-task-due">Vencimiento</label>
+              <input class="soparis-input-date soparis-input-date--md" id="g-task-due" type="date" value="2026-09-29" />
+            </div>
+          </div>
+        </div>
+        <footer class="soparis-task-form-dialog__foot">
+          <button class="soparis-button soparis-button--secondary soparis-button--md" data-soparis-close type="button">Cancelar</button>
+          <button class="soparis-button soparis-button--primary soparis-button--md" data-soparis-close type="button">Crear tarea</button>
+        </footer>
+      </div>
+    </div>
+
+    <div class="soparis-overlay" id="gallery-ticket-create" aria-hidden="true">
+      <div class="soparis-ticket-create-dialog" role="dialog" aria-labelledby="gallery-ticket-create-title">
+        <header class="soparis-ticket-create-dialog__head">
+          <div>
+            <h2 class="soparis-ticket-create-dialog__title" id="gallery-ticket-create-title">Nuevo ticket</h2>
+            <p class="soparis-ticket-create-dialog__subtitle">Se enviará al equipo de soporte Synka</p>
+          </div>
+          <button class="soparis-button-icon soparis-button-icon--sm" data-soparis-close type="button" aria-label="Cerrar">
+            <span class="soparis-icon material-symbols-outlined" aria-hidden="true">close</span>
+          </button>
+        </header>
+        <div class="soparis-ticket-create-dialog__body">
+          <div class="soparis-field">
+            <label class="soparis-input-label" for="g-ticket-subject">Asunto</label>
+            <input class="soparis-input-text soparis-input-text--md" id="g-ticket-subject" placeholder="Describe el problema en una línea" />
+          </div>
+          <div class="soparis-field">
+            <label class="soparis-input-label" for="g-ticket-prio">Prioridad</label>
+            <select class="soparis-input-select soparis-input-select--md" id="g-ticket-prio">
+              <option>Baja</option>
+              <option selected>Media</option>
+              <option>Urgente</option>
+            </select>
+          </div>
+          <div class="soparis-field">
+            <label class="soparis-input-label" for="g-ticket-body">Detalle</label>
+            <textarea class="soparis-input-textarea" id="g-ticket-body" rows="4" placeholder="Pasos, captura, contexto…"></textarea>
+          </div>
+        </div>
+        <footer class="soparis-ticket-create-dialog__foot">
+          <button class="soparis-button soparis-button--secondary soparis-button--md" data-soparis-close type="button">Cancelar</button>
+          <button class="soparis-button soparis-button--primary soparis-button--md" data-soparis-close type="button">Enviar</button>
+        </footer>
+      </div>
+    </div>
+
+    <div class="soparis-overlay" id="gallery-ticket-detail" aria-hidden="true">
+      <div class="soparis-ticket-detail-dialog" role="dialog" aria-labelledby="gallery-ticket-detail-title">
+        <header class="soparis-ticket-detail-dialog__head">
+          <div>
+            <h2 class="soparis-ticket-detail-dialog__title" id="gallery-ticket-detail-title">#1042 · Slack no sincroniza</h2>
+            <p class="soparis-ticket-detail-dialog__subtitle">Studio Norte · Urgente · Abierto</p>
+          </div>
+          <button class="soparis-button-icon soparis-button-icon--sm" data-soparis-close type="button" aria-label="Cerrar">
+            <span class="soparis-icon material-symbols-outlined" aria-hidden="true">close</span>
+          </button>
+        </header>
+        <div class="soparis-ticket-detail-dialog__body">
+          <div class="soparis-cluster">
+            <span class="soparis-badge soparis-badge--danger">Urgente</span>
+            <span class="soparis-badge soparis-badge--info">Abierto</span>
+          </div>
+          <div class="soparis-ticket-detail-dialog__thread">
+            <div class="soparis-ticket-detail-dialog__msg">
+              <div class="soparis-ticket-detail-dialog__msg-meta">
+                <span class="soparis-avatar soparis-avatar--sm">AM</span>
+                <strong>Ana Moreira</strong>
+                <span>· hace 1 h</span>
+              </div>
+              <p class="soparis-ticket-detail-dialog__msg-text">Los eventos del canal #leads no llegan al kanban desde esta mañana.</p>
+            </div>
+            <div class="soparis-ticket-detail-dialog__msg">
+              <div class="soparis-ticket-detail-dialog__msg-meta">
+                <span class="soparis-avatar soparis-avatar--sm">SY</span>
+                <strong>Soporte Synka</strong>
+                <span>· hace 20 min</span>
+              </div>
+              <p class="soparis-ticket-detail-dialog__msg-text">Revisando el webhook. ¿Podéis confirmar si el token de Slack sigue activo?</p>
+            </div>
+          </div>
+          <div class="soparis-field">
+            <label class="soparis-input-label" for="g-ticket-reply">Respuesta</label>
+            <textarea class="soparis-input-textarea" id="g-ticket-reply" rows="2" placeholder="Escribe una respuesta…"></textarea>
+          </div>
+        </div>
+        <footer class="soparis-ticket-detail-dialog__foot">
+          <button class="soparis-button soparis-button--secondary soparis-button--md" data-soparis-close type="button">Cerrar</button>
+          <button class="soparis-button soparis-button--primary soparis-button--md" type="button">Enviar respuesta</button>
+        </footer>
+      </div>
+    </div>
+
+    <div class="soparis-overlay" id="gallery-event-form" aria-hidden="true">
+      <div class="soparis-event-form-dialog" role="dialog" aria-labelledby="gallery-event-title">
+        <header class="soparis-event-form-dialog__head">
+          <h2 class="soparis-event-form-dialog__title" id="gallery-event-title">Nuevo evento</h2>
+          <button class="soparis-button-icon soparis-button-icon--sm" data-soparis-close type="button" aria-label="Cerrar">
+            <span class="soparis-icon material-symbols-outlined" aria-hidden="true">close</span>
+          </button>
+        </header>
+        <div class="soparis-event-form-dialog__body">
+          <div class="soparis-field">
+            <label class="soparis-input-label" for="g-ev-title">Título</label>
+            <input class="soparis-input-text soparis-input-text--md" id="g-ev-title" value="Demo NFC Studio Norte" />
+          </div>
+          <div class="soparis-event-form-dialog__grid">
+            <div class="soparis-field">
+              <label class="soparis-input-label" for="g-ev-start">Inicio</label>
+              <input class="soparis-input-datetime soparis-input-datetime--md" id="g-ev-start" type="datetime-local" value="2026-09-29T18:00" />
+            </div>
+            <div class="soparis-field">
+              <label class="soparis-input-label" for="g-ev-end">Fin</label>
+              <input class="soparis-input-datetime soparis-input-datetime--md" id="g-ev-end" type="datetime-local" value="2026-09-29T19:00" />
+            </div>
+          </div>
+        </div>
+        <footer class="soparis-event-form-dialog__foot">
+          <button class="soparis-button soparis-button--secondary soparis-button--md" data-soparis-close type="button">Cancelar</button>
+          <button class="soparis-button soparis-button--primary soparis-button--md" data-soparis-close type="button">Guardar</button>
+        </footer>
+      </div>
+    </div>
+
+    <div class="soparis-overlay" id="gallery-insight" aria-hidden="true">
+      <div class="soparis-kanban-insight-dialog" role="dialog" aria-labelledby="gallery-insight-title">
+        <header class="soparis-kanban-insight-dialog__head">
+          <h2 class="soparis-kanban-insight-dialog__title" id="gallery-insight-title">Prioriza Studio Norte</h2>
+          <button class="soparis-button-icon soparis-button-icon--sm" data-soparis-close type="button" aria-label="Cerrar">
+            <span class="soparis-icon material-symbols-outlined" aria-hidden="true">close</span>
+          </button>
+        </header>
+        <div class="soparis-kanban-insight-dialog__body">
+          <p class="soparis-p">La IA detectó 3 señales de compra: apertura de propuesta, visita a precios y mención de “equipo” en WhatsApp.</p>
+          <ul class="soparis-list soparis-list--ul">
+            <li>Mover tarjeta a Propuesta</li>
+            <li>Asignar a Juan C.</li>
+            <li>Programar call mañana 10:00</li>
+          </ul>
+        </div>
+        <footer class="soparis-kanban-insight-dialog__foot">
+          <button class="soparis-button soparis-button--secondary soparis-button--md" data-soparis-close type="button">Descartar</button>
+          <button class="soparis-button soparis-button--primary soparis-button--md" data-soparis-close type="button">Aplicar</button>
+        </footer>
+      </div>
+    </div>
+
+    <div class="soparis-overlay" id="gallery-onboarding" aria-hidden="true">
+      <div class="soparis-org-onboarding-dialog" role="dialog" aria-labelledby="gallery-onboarding-title">
+        <header class="soparis-org-onboarding-dialog__head">
+          <div>
+            <h2 class="soparis-org-onboarding-dialog__title" id="gallery-onboarding-title">Tu organización está vacía</h2>
+            <p class="soparis-org-onboarding-dialog__lead">Crea el primer proyecto o importa uno existente.</p>
+          </div>
+          <button class="soparis-button-icon soparis-button-icon--sm" data-soparis-close type="button" aria-label="Cerrar">
+            <span class="soparis-icon material-symbols-outlined" aria-hidden="true">close</span>
+          </button>
+        </header>
+        <div class="soparis-org-onboarding-dialog__body">
+          <button class="soparis-item soparis-item--interactive" type="button">
+            <span class="soparis-icon material-symbols-outlined" aria-hidden="true">add</span>
+            <span class="soparis-item__body">
+              <span class="soparis-item__title">Crear proyecto</span>
+              <span class="soparis-item__meta">Kanban, calendario y fichaje listos</span>
+            </span>
+          </button>
+          <button class="soparis-item soparis-item--interactive" type="button">
+            <span class="soparis-icon material-symbols-outlined" aria-hidden="true">upload</span>
+            <span class="soparis-item__body">
+              <span class="soparis-item__title">Importar CSV / JSON</span>
+              <span class="soparis-item__meta">Trae columnas y tareas existentes</span>
+            </span>
+          </button>
+        </div>
+        <footer class="soparis-org-onboarding-dialog__foot">
+          <button class="soparis-button soparis-button--ghost soparis-button--md" data-soparis-close type="button">Más tarde</button>
+        </footer>
+      </div>
+    </div>
+
+    <div class="soparis-overlay" id="gallery-create-dept" aria-hidden="true">
+      <div class="soparis-create-dept-dialog" role="dialog" aria-labelledby="gallery-create-dept-title">
+        <header class="soparis-create-dept-dialog__head">
+          <h2 class="soparis-create-dept-dialog__title" id="gallery-create-dept-title">Crear proyecto</h2>
+          <button class="soparis-button-icon soparis-button-icon--sm" data-soparis-close type="button" aria-label="Cerrar">
+            <span class="soparis-icon material-symbols-outlined" aria-hidden="true">close</span>
+          </button>
+        </header>
+        <div class="soparis-create-dept-dialog__body">
+          <div class="soparis-field">
+            <label class="soparis-input-label" for="g-dept-name">Nombre</label>
+            <input class="soparis-input-text soparis-input-text--md" id="g-dept-name" placeholder="Ej. Synka HQ" />
+          </div>
+          <div class="soparis-field">
+            <label class="soparis-input-label" for="g-dept-tpl">Plantilla</label>
+            <select class="soparis-input-select soparis-input-select--md" id="g-dept-tpl">
+              <option>CRM / Leads</option>
+              <option>Producto</option>
+              <option>Vacío</option>
+            </select>
+          </div>
+        </div>
+        <footer class="soparis-create-dept-dialog__foot">
+          <button class="soparis-button soparis-button--secondary soparis-button--md" data-soparis-close type="button">Cancelar</button>
+          <button class="soparis-button soparis-button--primary soparis-button--md" data-soparis-close type="button">Crear</button>
+        </footer>
+      </div>
+    </div>
+
+    <div class="soparis-overlay" id="gallery-tour" aria-hidden="true">
+      <div class="soparis-product-tour" role="dialog" aria-labelledby="gallery-tour-title">
+        <header class="soparis-product-tour__head">
+          <div>
+            <p class="soparis-product-tour__step">Paso 1 de 4</p>
+            <h2 class="soparis-product-tour__title" id="gallery-tour-title">Tu primer tablero</h2>
+          </div>
+          <button class="soparis-button-icon soparis-button-icon--sm" data-soparis-close type="button" aria-label="Cerrar">
+            <span class="soparis-icon material-symbols-outlined" aria-hidden="true">close</span>
+          </button>
+        </header>
+        <div class="soparis-product-tour__body">
+          <div class="soparis-product-tour__media">Vista previa kanban</div>
+          <p class="soparis-p soparis-p--sm">Arrastra tarjetas entre columnas para mover el estado del lead.</p>
+        </div>
+        <footer class="soparis-product-tour__foot">
+          <button class="soparis-button soparis-button--ghost soparis-button--md" data-soparis-close type="button">Saltar</button>
+          <button class="soparis-button soparis-button--primary soparis-button--md" type="button">Siguiente</button>
+        </footer>
       </div>
     </div>
 

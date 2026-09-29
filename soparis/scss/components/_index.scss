@@ -8,17 +8,22 @@
 @use "soparis-fab";
 
 @use "soparis-app";
+@use "soparis-shell";
 @use "soparis-aside";
 @use "soparis-menu";
 @use "soparis-topbar";
 @use "soparis-breadcrumbs";
 @use "soparis-tabs";
+@use "soparis-tab-panel";
 @use "soparis-pagination";
+@use "soparis-user-menu";
+@use "soparis-notifications-bell";
 
 @use "soparis-field";
 @use "soparis-input-label";
 @use "soparis-input-description";
 @use "soparis-input-text";
+@use "soparis-password";
 @use "soparis-input-select";
 @use "soparis-input-search";
 @use "soparis-input-choice";
@@ -26,24 +31,43 @@
 @use "soparis-input-file";
 @use "soparis-input-slider";
 @use "soparis-input-otp";
+@use "soparis-input-date";
+@use "soparis-input-color";
+@use "soparis-ai-description-field";
 
 @use "soparis-alert";
 @use "soparis-badge";
 @use "soparis-chip";
 @use "soparis-spinner";
+@use "soparis-loading";
 @use "soparis-progress";
 @use "soparis-skeleton";
 @use "soparis-empty";
 @use "soparis-toast";
+@use "soparis-confirm";
 
 @use "soparis-bg";
 @use "soparis-card";
+@use "soparis-content-card";
 @use "soparis-avatar";
 @use "soparis-stat";
 @use "soparis-table";
+@use "soparis-kanban";
+@use "soparis-task-card";
+@use "soparis-task-form-dialog";
+@use "soparis-task-detail";
+@use "soparis-tickets";
+@use "soparis-fichaje";
+@use "soparis-calendario";
+@use "soparis-flujos";
+@use "soparis-resumen";
+@use "soparis-kanban-modules";
+@use "soparis-dialogs";
+@use "soparis-landing";
 @use "soparis-item";
 @use "soparis-profile";
 @use "soparis-qr";
+@use "soparis-filter-bar";
 
 @use "soparis-overlay";
 @use "soparis-modal";
@@ -52,9 +76,11 @@
 @use "soparis-tooltip";
 
 @use "soparis-page";
+@use "soparis-page-layout";
 @use "soparis-container";
 @use "soparis-stack";
 @use "soparis-cluster";
 @use "soparis-grid";
 @use "soparis-divider";
 @use "soparis-section";
+@use "soparis-login";

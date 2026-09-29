@@ -1,0 +1,70 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.#{$prefix}-task-form-dialog {
+  width: min(36rem, 100%);
+  max-height: min(86dvh, 48rem);
+  display: flex;
+  flex-direction: column;
+  background: var(--#{$prefix}-color-bg-surface);
+  border: 1px solid var(--#{$prefix}-color-border);
+  border-radius: var(--#{$prefix}-radius-xl);
+  overflow: hidden;
+
+  &__head,
+  &__body,
+  &__foot {
+    padding: var(--#{$prefix}-space-5) var(--#{$prefix}-space-6);
+  }
+
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--#{$prefix}-space-3);
+    border-bottom: 1px solid var(--#{$prefix}-color-border);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-lg);
+    font-weight: var(--#{$prefix}-weight-semibold);
+  }
+
+  &__subtitle {
+    margin: 0.2rem 0 0;
+    color: var(--#{$prefix}-color-text-secondary);
+    font-size: var(--#{$prefix}-font-sm);
+  }
+
+  &__body {
+    display: grid;
+    gap: var(--#{$prefix}-space-4);
+    overflow: auto;
+    flex: 1;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--#{$prefix}-space-4);
+  }
+
+  &__foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.55rem;
+    border-top: 1px solid var(--#{$prefix}-color-border);
+    background: var(--#{$prefix}-color-bg-subtle);
+  }
+}
+
+@include breakpoint-down(md) {
+  .#{$prefix}-task-form-dialog {
+    width: 100%;
+    max-height: 90dvh;
+
+    &__grid { grid-template-columns: 1fr; }
+  }
+}

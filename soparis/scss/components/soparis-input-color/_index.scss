@@ -1,0 +1,33 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.#{$prefix}-input-color {
+  @include control-size(md);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: var(--_h);
+  padding: 0.2rem 0.55rem 0.2rem 0.25rem;
+  border: 1px solid var(--#{$prefix}-color-border-strong);
+  border-radius: var(--_radius);
+  background: var(--#{$prefix}-color-bg-input);
+  color: var(--#{$prefix}-color-text);
+
+  input[type="color"] {
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &__value {
+    font-family: var(--#{$prefix}-font-mono);
+    font-size: var(--#{$prefix}-font-sm);
+  }
+
+  @each $size in $sizes {
+    &--#{$size} { @include control-size($size); }
+  }
+}

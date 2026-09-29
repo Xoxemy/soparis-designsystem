@@ -78,10 +78,6 @@
   display: none;
 }
 
-.soparis-aside__foot .soparis-button {
-  color: var(--soparis-color-text-inverse);
-}
-
 .primitive-ramp {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(5.4rem, 1fr));

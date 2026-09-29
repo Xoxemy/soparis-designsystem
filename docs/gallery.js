@@ -1,12 +1,12 @@
 (() => {
-  const search = document.querySelector("[data-gallery-search]");
+  const searches = [...document.querySelectorAll("[data-gallery-search]")];
   const sections = [...document.querySelectorAll("[data-gallery-section]")];
   const links = [...document.querySelectorAll("[data-gallery-link]")];
-  const count = document.querySelector("[data-gallery-count]");
+  const counts = [...document.querySelectorAll("[data-gallery-count]")];
   const empty = document.querySelector("[data-gallery-empty]");
 
-  function filter() {
-    const query = (search?.value || "").toLowerCase().trim();
+  function filter(queryRaw) {
+    const query = (queryRaw || "").toLowerCase().trim();
     let visible = 0;
     sections.forEach((section) => {
       const haystack = `${section.dataset.gallerySection} ${section.textContent}`.toLowerCase();
@@ -19,7 +19,9 @@
       const section = sections.find((item) => item.id === id);
       link.hidden = Boolean(section?.hidden);
     });
-    if (count) count.textContent = `${visible} de ${sections.length}`;
+    counts.forEach((count) => {
+      count.textContent = `${visible} de ${sections.length}`;
+    });
     if (empty) empty.hidden = visible !== 0;
     document.querySelectorAll(".soparis-menu__section").forEach((group) => {
       const items = [...group.querySelectorAll("[data-gallery-link]")];
@@ -36,8 +38,16 @@
     });
   }
 
-  search?.addEventListener("input", filter);
-  filter();
+  searches.forEach((input) => {
+    input.addEventListener("input", () => {
+      const value = input.value;
+      searches.forEach((other) => {
+        if (other !== input) other.value = value;
+      });
+      filter(value);
+    });
+  });
+  filter(searches[0]?.value || "");
 
   const observer = new IntersectionObserver(
     (entries) => {

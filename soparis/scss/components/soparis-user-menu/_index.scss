@@ -1,0 +1,67 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-user-menu {
+  display: inline-flex;
+  align-items: center;
+
+  &__trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 2.35rem;
+    padding: 0.2rem 0.5rem 0.2rem 0.2rem;
+    border: 1px solid transparent;
+    border-radius: var(--#{$prefix}-radius-full);
+    background: transparent;
+    color: var(--#{$prefix}-color-text);
+    cursor: pointer;
+    transition:
+      background var(--#{$prefix}-duration) var(--#{$prefix}-ease),
+      border-color var(--#{$prefix}-duration) var(--#{$prefix}-ease);
+
+    &:hover {
+      background: var(--#{$prefix}-color-bg-subtle);
+      border-color: var(--#{$prefix}-color-border);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--#{$prefix}-color-border-focus);
+      outline-offset: 2px;
+    }
+
+    &[aria-expanded="true"] {
+      background: var(--#{$prefix}-color-bg-subtle);
+      border-color: var(--#{$prefix}-color-border);
+    }
+  }
+
+  &__meta {
+    display: grid;
+    gap: 0.05rem;
+    text-align: left;
+    min-width: 0;
+  }
+
+  &__name {
+    font-size: var(--#{$prefix}-font-sm);
+    font-weight: var(--#{$prefix}-weight-semibold);
+    line-height: 1.2;
+  }
+
+  &__role {
+    font-size: var(--#{$prefix}-font-xs);
+    color: var(--#{$prefix}-color-text-muted);
+    line-height: 1.2;
+  }
+
+  &__chevron {
+    color: var(--#{$prefix}-color-icon-muted);
+    font-size: 1.1rem;
+  }
+}
+
+.#{$prefix}-dropdown.#{$prefix}-user-menu .#{$prefix}-dropdown__panel {
+  right: 0;
+  left: auto;
+  min-width: 13rem;
+}

@@ -1,0 +1,21 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.#{$prefix}-password {
+  position: relative;
+  display: block;
+
+  .#{$prefix}-input-text {
+    padding-right: 2.75rem;
+  }
+
+  &__toggle {
+    position: absolute;
+    right: 0.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--#{$prefix}-color-icon-muted);
+
+    &:hover { color: var(--#{$prefix}-color-icon); }
+  }
+}

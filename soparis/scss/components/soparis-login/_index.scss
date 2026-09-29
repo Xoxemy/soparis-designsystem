@@ -1,0 +1,103 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.#{$prefix}-login,
+.#{$prefix}-register,
+.#{$prefix}-forgot-password,
+.#{$prefix}-reset-password,
+.#{$prefix}-verify-email,
+.#{$prefix}-join {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: var(--#{$prefix}-space-6);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, color-mix(in srgb, var(--#{$prefix}-color-primary) 18%, transparent), transparent),
+    var(--#{$prefix}-color-bg);
+  color: var(--#{$prefix}-color-text);
+
+  &__card {
+    width: min(24rem, 100%);
+    display: grid;
+    gap: var(--#{$prefix}-space-5);
+    padding: var(--#{$prefix}-space-8) var(--#{$prefix}-space-6);
+    background: var(--#{$prefix}-color-bg-surface);
+    border: 1px solid var(--#{$prefix}-color-border);
+    border-radius: var(--#{$prefix}-radius-xl);
+    box-shadow: 0 18px 40px color-mix(in srgb, var(--#{$prefix}-color-secondary) 8%, transparent);
+  }
+
+  &__brand {
+    display: grid;
+    gap: 0.35rem;
+    text-align: center;
+  }
+
+  &__logo {
+    margin: 0 auto var(--#{$prefix}-space-2);
+    font-family: var(--#{$prefix}-font-display);
+    font-size: var(--#{$prefix}-font-2xl);
+    font-weight: var(--#{$prefix}-weight-semibold);
+    letter-spacing: -0.03em;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-xl);
+    font-weight: var(--#{$prefix}-weight-semibold);
+  }
+
+  &__lead {
+    margin: 0;
+    color: var(--#{$prefix}-color-text-secondary);
+    font-size: var(--#{$prefix}-font-sm);
+    line-height: var(--#{$prefix}-leading-relaxed);
+  }
+
+  &__form {
+    display: grid;
+    gap: var(--#{$prefix}-space-4);
+  }
+
+  &__actions {
+    display: grid;
+    gap: var(--#{$prefix}-space-3);
+    margin-top: var(--#{$prefix}-space-1);
+  }
+
+  &__foot {
+    text-align: center;
+    font-size: var(--#{$prefix}-font-sm);
+    color: var(--#{$prefix}-color-text-secondary);
+  }
+
+  &__divider {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: var(--#{$prefix}-space-3);
+    color: var(--#{$prefix}-color-text-muted);
+    font-size: var(--#{$prefix}-font-xs);
+
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      background: var(--#{$prefix}-color-border);
+    }
+  }
+}
+
+@include breakpoint-down(md) {
+  .#{$prefix}-login__card,
+  .#{$prefix}-register__card,
+  .#{$prefix}-forgot-password__card,
+  .#{$prefix}-reset-password__card,
+  .#{$prefix}-verify-email__card,
+  .#{$prefix}-join__card {
+    padding: var(--#{$prefix}-space-6) var(--#{$prefix}-space-4);
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+}

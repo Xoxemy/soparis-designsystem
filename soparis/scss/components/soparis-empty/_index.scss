@@ -7,4 +7,43 @@
   padding: var(--#{$prefix}-space-10) var(--#{$prefix}-space-6);
   text-align: center;
   color: var(--#{$prefix}-color-text-secondary);
+
+  &__icon {
+    display: inline-grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--#{$prefix}-radius-full);
+    background: var(--#{$prefix}-color-bg-subtle);
+    color: var(--#{$prefix}-color-icon-muted);
+    margin-bottom: var(--#{$prefix}-space-1);
+
+    .#{$prefix}-icon,
+    .material-symbols-outlined {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--#{$prefix}-color-text);
+    font-size: var(--#{$prefix}-font-lg);
+    font-weight: var(--#{$prefix}-weight-semibold);
+  }
+
+  &__text {
+    margin: 0;
+    max-width: 28ch;
+    font-size: var(--#{$prefix}-font-sm);
+    line-height: var(--#{$prefix}-leading-relaxed);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.55rem;
+    margin-top: var(--#{$prefix}-space-2);
+  }
 }
+

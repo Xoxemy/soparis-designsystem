@@ -1,0 +1,8 @@
+@use "../../abstracts/variables" as *;
+
+.#{$prefix}-tab-panel {
+  padding-top: var(--#{$prefix}-space-5);
+  min-width: 0;
+
+  &[hidden] { display: none; }
+}
