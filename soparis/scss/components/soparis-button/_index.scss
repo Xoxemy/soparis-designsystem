@@ -23,9 +23,11 @@
     transform var(--#{$prefix}-duration-fast) var(--#{$prefix}-ease);
 
   .#{$prefix}-icon,
+  .material-symbols-outlined,
   svg {
     width: var(--_icon);
     height: var(--_icon);
+    font-size: var(--_icon);
   }
 
   &:active:not(:disabled) {
@@ -67,20 +69,21 @@
 
   &--premium {
     background: var(--#{$prefix}-color-bg-premium);
-    color: #fff;
-    &:hover { background: color-mix(in srgb, var(--#{$prefix}-color-bg-premium) 88%, #000); }
+    color: var(--#{$prefix}-color-primary-on);
+    &:hover { background: var(--#{$prefix}-color-premium-hover); }
   }
 
-  &--danger {
-    background: var(--#{$prefix}-color-danger);
-    color: #fff;
-    &:hover { background: #a21f2b; }
+  &--danger,
+  &--error {
+    background: var(--#{$prefix}-color-error);
+    color: var(--#{$prefix}-color-primary-on);
+    &:hover { background: var(--#{$prefix}-color-error-hover); }
   }
 
   &--connect {
-    background: var(--#{$prefix}-brand-connect);
-    color: #fff;
-    &:hover { background: var(--#{$prefix}-brand-connect-deep); }
+    background: var(--#{$prefix}-color-accent);
+    color: var(--#{$prefix}-color-accent-on);
+    &:hover { background: var(--#{$prefix}-color-accent-hover); }
   }
 
   &--inverse {
@@ -108,11 +111,11 @@
   &--primary.is-loading::after,
   &--danger.is-loading::after,
   &--connect.is-loading::after {
-    color: #fff;
+    color: var(--#{$prefix}-color-primary-on);
   }
 
   &--premium.is-loading::after {
-    color: var(--#{$prefix}-color-text-on-gold);
+    color: var(--#{$prefix}-color-primary-on);
   }
 }
 

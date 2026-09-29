@@ -9,8 +9,8 @@
   display: inline-grid;
   place-items: center;
   overflow: hidden;
-  background: var(--#{$prefix}-brand-ink);
-  color: var(--#{$prefix}-brand-gold-bright);
+  background: var(--#{$prefix}-color-secondary);
+  color: var(--#{$prefix}-color-primary-bright);
   font-weight: var(--#{$prefix}-weight-semibold);
   font-size: var(--_fs);
 

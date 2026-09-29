@@ -19,7 +19,7 @@
 
     &[aria-selected="true"] {
       color: var(--#{$prefix}-color-text);
-      border-bottom-color: var(--#{$prefix}-brand-gold);
+      border-bottom-color: var(--#{$prefix}-color-primary);
     }
   }
 

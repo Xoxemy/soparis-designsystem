@@ -12,7 +12,7 @@
     opacity: 0;
 
     &:checked + .#{$prefix}-input-switch__track {
-      background: var(--#{$prefix}-brand-connect);
+      background: var(--#{$prefix}-color-accent);
 
       &::after { transform: translateX(1.1rem); }
     }
@@ -39,7 +39,7 @@
       width: 1.2rem;
       height: 1.2rem;
       border-radius: 50%;
-      background: #fff;
+      background: var(--#{$prefix}-color-white);
       transition: transform var(--#{$prefix}-duration) var(--#{$prefix}-ease);
     }
   }

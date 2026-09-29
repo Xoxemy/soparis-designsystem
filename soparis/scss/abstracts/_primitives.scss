@@ -2,94 +2,171 @@
 
 // Escalas crudas. No las uses en UI de producto: apunta a tokens semánticos.
 // --soparis-primitive-* no cambian con el tema.
+// Paleta alineada con synka.es (zinc + verde accent + colores de producto).
 
 $primitive-ink: (
-  50: #f8fafc,
-  100: #e2e8f0,
-  200: #cbd5e1,
-  300: #94a3b8,
-  400: #64748b,
-  500: #475569,
-  600: #334155,
-  700: $brand-ink,
+  50: #fafafa,
+  100: #f4f4f5,
+  200: #e4e4e7,
+  300: #d4d4d8,
+  400: #a1a1aa,
+  500: #71717a,
+  600: #52525b,
+  700: #3f3f46,
   800: $brand-ink-soft,
-  850: #111827,
+  850: #18181b,
   900: $brand-ink,
-  950: #020617,
+  950: #000000,
 ) !default;
 
 $primitive-canvas: (
   50: #ffffff,
-  100: #f8fafc,
-  200: #fcfcfc,
-  300: #f1f5f9,
-  400: #e2e8f0,
-  500: #cbd5e1,
-  600: #94a3b8,
+  100: #fafafa,
+  200: #fafafa,
+  300: #f4f4f5,
+  400: #e4e4e7,
+  500: #d4d4d8,
+  600: #a1a1aa,
 ) !default;
 
+// Escala "gold" = marca principal Synka (verde #22c55e).
 $primitive-gold: (
-  50: #eef0fe,
-  100: #dce0fd,
-  200: #c4cafc,
-  300: $brand-gold-bright,
-  400: #4d5cf4,
+  50: #f0fdf4,
+  100: #dcfce7,
+  200: #bbf7d0,
+  300: #86efac,
+  400: $brand-gold-bright,
   500: $brand-gold,
-  600: #2f40e0,
-  700: $brand-gold-deep,
-  800: #1c278f,
-  900: #161c4d,
-  950: #0c1033,
+  600: $brand-gold-deep,
+  700: #15803d,
+  800: #166534,
+  900: #14532d,
+  950: #052e16,
 ) !default;
 
+// Escala "connect" = acento secundario Synka (azul documentos #3b82f6).
 $primitive-connect: (
-  50: #fdf1ee,
-  100: #f8d2c8,
-  200: #f0a892,
-  300: #ea866c,
+  50: #eff6ff,
+  100: #dbeafe,
+  200: #bfdbfe,
+  300: #93c5fd,
+  400: #60a5fa,
   500: $brand-connect,
-  600: #d45a3d,
-  700: $brand-connect-deep,
-  800: #8f3a27,
-  900: #4a2218,
+  600: $brand-connect-deep,
+  700: #1d4ed8,
+  800: #1e40af,
+  900: #1e3a8a,
 ) !default;
 
 $primitive-danger: (
-  50: #fbe8ea,
-  100: #f3a3aa,
-  500: #c2303a,
-  600: #a21f2b,
-  700: #7a1520,
-  900: #3a171b,
+  50: #fef2f2,
+  100: #fecaca,
+  200: #fca5a5,
+  300: #f87171,
+  500: $brand-red,
+  600: #dc2626,
+  700: #b91c1c,
+  900: #7f1d1d,
 ) !default;
 
 $primitive-warning: (
-  50: #fbf0d9,
-  100: #f3d08a,
-  500: #c4841d,
-  700: #6d4708,
-  900: #3a2c12,
+  50: #fefce8,
+  100: #fef08a,
+  200: #fde047,
+  300: #fbbf24,
+  500: $brand-yellow,
+  600: #ca8a04,
+  700: #a16207,
+  900: #713f12,
 ) !default;
 
 $primitive-info: (
-  50: #e8f2fb,
-  100: #9fd0ff,
-  500: #1d6fbf,
-  700: #0c3d6e,
-  900: #132536,
+  50: #e0f7fa,
+  100: #b2ebf2,
+  200: #80deea,
+  500: $brand-light-blue,
+  600: #0288d1,
+  700: #01579b,
+  900: #0d3b4c,
 ) !default;
 
 $primitive-night: (
-  50: #3c4556,
-  100: #2a3140,
-  200: #262e3b,
-  300: #1e2530,
-  400: #171c24,
-  500: #12171f,
-  600: #11151c,
+  50: #3f3f46,
+  100: #27272a,
+  200: #1c1c1f,
+  300: #18181b,
+  400: #18181b,
+  500: #121214,
+  600: #0c0c0e,
   700: $brand-ink,
-  800: #0a0d12,
-  900: #05070a,
+  800: #050506,
+  900: #000000,
+) !default;
+
+// Colores de producto Synka (módulos).
+$primitive-todolist: (
+  50: #f0fdf4,
+  100: #dcfce7,
+  500: $brand-product-todolist,
+  600: #16a34a,
+  700: #15803d,
+) !default;
+
+$primitive-documents: (
+  50: #eff6ff,
+  100: #dbeafe,
+  500: $brand-product-documents,
+  600: #2563eb,
+  700: #1d4ed8,
+) !default;
+
+$primitive-fichaje: (
+  50: #fef2f2,
+  100: #fecaca,
+  500: $brand-product-fichaje,
+  600: #dc2626,
+  700: #b91c1c,
+) !default;
+
+$primitive-tickets: (
+  50: #fefce8,
+  100: #fef08a,
+  500: $brand-product-tickets,
+  600: #ca8a04,
+  700: #a16207,
+) !default;
+
+// Paleta nombrada de synka.es.
+$primitive-orange: (
+  50: #fff3e0,
+  100: #ffe0b2,
+  500: $brand-orange,
+  600: #f57c00,
+  700: #e65100,
+) !default;
+
+$primitive-teal: (
+  50: #e0f2f1,
+  100: #b2dfdb,
+  500: $brand-teal,
+  600: #00897b,
+  700: #00695c,
+) !default;
+
+$primitive-pink: (
+  50: #fce4ec,
+  100: #f8bbd0,
+  500: $brand-pink,
+  600: #c2185b,
+  700: #880e4f,
+) !default;
+
+$primitive-purple: (
+  50: #f3e5f5,
+  100: #e1bee7,
+  500: $brand-violet,
+  600: #7b1fa2,
+  700: #4a148c,
 ) !default;
 
 $primitive-space: (
@@ -198,6 +275,14 @@ $primitive-z: (
   @include emit-primitive-map("warning", $primitive-warning);
   @include emit-primitive-map("info", $primitive-info);
   @include emit-primitive-map("night", $primitive-night);
+  @include emit-primitive-map("todolist", $primitive-todolist);
+  @include emit-primitive-map("documents", $primitive-documents);
+  @include emit-primitive-map("fichaje", $primitive-fichaje);
+  @include emit-primitive-map("tickets", $primitive-tickets);
+  @include emit-primitive-map("orange", $primitive-orange);
+  @include emit-primitive-map("teal", $primitive-teal);
+  @include emit-primitive-map("pink", $primitive-pink);
+  @include emit-primitive-map("purple", $primitive-purple);
   @include emit-primitive-map("space", $primitive-space);
   @include emit-primitive-map("font", $primitive-font);
   @include emit-primitive-map("leading", $primitive-leading);

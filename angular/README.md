@@ -25,16 +25,25 @@ Para cambiar la marca Synka sin tocar CSS:
 
 ```scss
 @use "soparis/scss/abstracts/variables" with (
-  $brand-gold: #d4af37,
-  $brand-connect: #128c7e
+  $brand-gold: #16a34a,
+  $brand-connect: #2563eb
 );
 @use "soparis/scss";
 ```
 
-Añade las fuentes en `index.html`:
+Añade las fuentes en `index.html` (tipografía + **Material Symbols** de Google para iconos):
 
 ```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" />
+```
+
+Uso de iconos:
+
+```html
+<span class="soparis-icon material-symbols-outlined" aria-hidden="true">search</span>
 ```
 
 Y el JS nativo (aside, modal, toast) en `angular.json` → `scripts`:

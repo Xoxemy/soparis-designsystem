@@ -5,8 +5,8 @@
   height: 7.5rem;
   display: grid;
   place-items: center;
-  background: #fff;
-  color: #111;
+  background: var(--#{$prefix}-color-white);
+  color: var(--#{$prefix}-color-secondary);
   border-radius: var(--#{$prefix}-radius-md);
   font-size: 0.7rem;
   font-weight: var(--#{$prefix}-weight-semibold);

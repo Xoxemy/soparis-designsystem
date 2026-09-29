@@ -1,51 +1,141 @@
 @use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+// Toast = cola/posicionamiento. El contenido visual es soparis-alert.
 
 .#{$prefix}-toast-stack {
+  --#{$prefix}-toast-peek: 0.7rem;
+  --#{$prefix}-toast-scale-step: 0.045;
+  --#{$prefix}-toast-fade-step: 0.14;
+
   position: fixed;
   right: 1rem;
   z-index: var(--#{$prefix}-z-toast);
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+  display: grid;
+  justify-items: stretch;
   width: min(22rem, calc(100vw - 2rem));
   pointer-events: none;
 
   &--down {
     top: 1rem;
     bottom: auto;
+    padding-bottom: calc(var(--#{$prefix}-toast-peek) * 4);
   }
 
   &--up {
     bottom: 1rem;
     top: auto;
+    padding-top: calc(var(--#{$prefix}-toast-peek) * 4);
   }
 }
 
 .#{$prefix}-toast {
-  pointer-events: auto;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.7rem;
-  padding: 0.85rem 1rem;
+  --#{$prefix}-toast-i: 0;
+
+  grid-area: 1 / 1;
+  position: relative;
+  pointer-events: none;
+  overflow: hidden;
   border-radius: var(--#{$prefix}-radius-md);
-  background: var(--#{$prefix}-color-bg-surface);
-  border: 1px solid var(--#{$prefix}-color-border);
+  box-shadow: var(--#{$prefix}-shadow-xs), var(--#{$prefix}-shadow-md);
+  z-index: calc(10 - var(--#{$prefix}-toast-i));
+  opacity: calc(1 - var(--#{$prefix}-toast-i) * var(--#{$prefix}-toast-fade-step));
+  transition:
+    transform var(--#{$prefix}-duration) var(--#{$prefix}-ease-out),
+    opacity var(--#{$prefix}-duration) var(--#{$prefix}-ease-out);
+  will-change: transform, opacity;
+
+  &[data-stack-index="0"] {
+    pointer-events: auto;
+  }
+
+  &.is-leaving {
+    pointer-events: none;
+    opacity: 0;
+    transition:
+      opacity var(--#{$prefix}-duration) var(--#{$prefix}-ease),
+      transform var(--#{$prefix}-duration) var(--#{$prefix}-ease);
+  }
+
+  .#{$prefix}-alert {
+    position: relative;
+    width: 100%;
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  &__progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: color-mix(in srgb, var(--_alert-accent) 40%, transparent);
+    transform-origin: left center;
+  }
 }
 
 .#{$prefix}-toast-stack--down .#{$prefix}-toast {
+  transform-origin: top center;
+  transform:
+    translateY(calc(var(--#{$prefix}-toast-i) * var(--#{$prefix}-toast-peek)))
+    scale(calc(1 - var(--#{$prefix}-toast-i) * var(--#{$prefix}-toast-scale-step)));
   animation: #{$prefix}-toast-in-down var(--#{$prefix}-duration-slow) var(--#{$prefix}-ease-out);
+
+  &.is-leaving {
+    transform: translateY(-1.1rem) scale(0.96);
+  }
 }
 
 .#{$prefix}-toast-stack--up .#{$prefix}-toast {
+  transform-origin: bottom center;
+  transform:
+    translateY(calc(var(--#{$prefix}-toast-i) * var(--#{$prefix}-toast-peek) * -1))
+    scale(calc(1 - var(--#{$prefix}-toast-i) * var(--#{$prefix}-toast-scale-step)));
   animation: #{$prefix}-toast-in-up var(--#{$prefix}-duration-slow) var(--#{$prefix}-ease-out);
+
+  &.is-leaving {
+    transform: translateY(1.1rem) scale(0.96);
+  }
+}
+
+.#{$prefix}-toast-stack .#{$prefix}-toast:not([data-stack-index="0"]) {
+  animation: none;
+}
+
+.#{$prefix}-toast-stack .#{$prefix}-toast:not([data-stack-index="0"]) .#{$prefix}-toast__progress {
+  animation: none;
+  transform: scaleX(1);
+}
+
+.#{$prefix}-toast-stack .#{$prefix}-toast[data-stack-index="0"] .#{$prefix}-toast__progress {
+  animation-name: #{$prefix}-toast-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes #{$prefix}-toast-in-down {
-  from { opacity: 0; transform: translateY(-0.6rem); }
-  to { opacity: 1; transform: none; }
+  from { opacity: 0; transform: translateY(-0.6rem) scale(1); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes #{$prefix}-toast-in-up {
-  from { opacity: 0; transform: translateY(0.6rem); }
-  to { opacity: 1; transform: none; }
+  from { opacity: 0; transform: translateY(0.6rem) scale(1); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes #{$prefix}-toast-progress {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+
+@include breakpoint-down(md) {
+  .#{$prefix}-toast-stack {
+    right: 0.75rem;
+    left: 0.75rem;
+    width: auto;
+
+    &--down { top: 0.75rem; }
+    &--up { bottom: 0.75rem; }
+  }
 }

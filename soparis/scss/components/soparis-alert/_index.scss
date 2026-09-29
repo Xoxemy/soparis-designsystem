@@ -1,45 +1,86 @@
 @use "../../abstracts/variables" as *;
 
 .#{$prefix}-alert {
+  --_alert-accent: var(--#{$prefix}-color-info);
+
   display: flex;
   gap: 0.75rem;
   align-items: flex-start;
   padding: 0.85rem 1rem;
   border-radius: var(--#{$prefix}-radius-md);
-  border: 1px solid transparent;
+  background: var(--#{$prefix}-color-bg-surface);
+  color: var(--#{$prefix}-color-text);
+  border: 1px solid var(--#{$prefix}-color-border);
+  border-left: 3px solid var(--_alert-accent);
+  box-shadow: var(--#{$prefix}-shadow-xs);
 
-  &--sm { padding: 0.55rem 0.7rem; font-size: var(--#{$prefix}-font-sm); }
+  &--sm { padding: 0.55rem 0.7rem; }
   &--md { padding: 0.85rem 1rem; }
   &--lg { padding: 1.1rem 1.25rem; }
-  &--xl { padding: 1.35rem 1.5rem; font-size: var(--#{$prefix}-font-lg); }
+  &--xl { padding: 1.35rem 1.5rem; }
 
-  &--info {
-    background: var(--#{$prefix}-color-info-bg);
-    color: var(--#{$prefix}-color-info-text);
-    border-color: color-mix(in srgb, var(--#{$prefix}-color-info) 25%, transparent);
+  &--info { --_alert-accent: var(--#{$prefix}-color-info); }
+  &--success { --_alert-accent: var(--#{$prefix}-color-success); }
+  &--warning { --_alert-accent: var(--#{$prefix}-color-warning); }
+  &--danger,
+  &--error { --_alert-accent: var(--#{$prefix}-color-error); }
+  &--premium { --_alert-accent: var(--#{$prefix}-color-primary); }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-top: 0.05rem;
+    border-radius: var(--#{$prefix}-radius-sm);
+    background: color-mix(in srgb, var(--_alert-accent) 14%, transparent);
+    color: var(--_alert-accent);
+    flex-shrink: 0;
+
+    svg,
+    .#{$prefix}-icon,
+    .material-symbols-outlined {
+      width: 1.125rem;
+      height: 1.125rem;
+      font-size: 1.125rem;
+    }
   }
 
-  &--success {
-    background: var(--#{$prefix}-color-success-bg);
-    color: var(--#{$prefix}-color-success-text);
-    border-color: color-mix(in srgb, var(--#{$prefix}-color-success) 25%, transparent);
+  &__body {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding-top: 0.1rem;
   }
 
-  &--warning {
-    background: var(--#{$prefix}-color-warning-bg);
-    color: var(--#{$prefix}-color-warning-text);
-    border-color: color-mix(in srgb, var(--#{$prefix}-color-warning) 25%, transparent);
+  &__title {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-sm);
+    font-weight: var(--#{$prefix}-weight-semibold);
+    line-height: var(--#{$prefix}-leading-snug);
+    letter-spacing: var(--#{$prefix}-tracking-tight);
+    color: var(--#{$prefix}-color-text);
   }
 
-  &--danger {
-    background: var(--#{$prefix}-color-danger-bg);
-    color: var(--#{$prefix}-color-danger-text);
-    border-color: color-mix(in srgb, var(--#{$prefix}-color-danger) 25%, transparent);
+  &__message {
+    margin: 0;
+    font-size: var(--#{$prefix}-font-sm);
+    font-weight: var(--#{$prefix}-weight-regular);
+    line-height: var(--#{$prefix}-leading-snug);
+    color: var(--#{$prefix}-color-text-secondary);
   }
 
-  &--premium {
-    background: var(--#{$prefix}-color-premium-bg);
-    color: var(--#{$prefix}-color-premium-text);
-    border-color: var(--#{$prefix}-color-border-gold);
+  &__close {
+    margin: -0.2rem -0.35rem 0 0;
+    flex-shrink: 0;
+    color: var(--#{$prefix}-color-icon-muted);
+
+    &:hover {
+      color: var(--#{$prefix}-color-icon);
+      background: var(--#{$prefix}-color-bg-surface-hover);
+    }
   }
 }

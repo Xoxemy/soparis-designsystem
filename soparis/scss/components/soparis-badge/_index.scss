@@ -18,18 +18,30 @@
   &--lg { min-height: 1.6rem; font-size: var(--#{$prefix}-font-sm); padding: 0 0.6rem; }
   &--xl { min-height: 1.9rem; font-size: var(--#{$prefix}-font-md); padding: 0 0.75rem; }
 
-  &--gold {
-    background: var(--#{$prefix}-color-premium-bg);
-    color: var(--#{$prefix}-color-premium-text);
+  &--primary {
+    background: var(--#{$prefix}-color-primary-soft);
+    color: var(--#{$prefix}-color-primary-deep);
   }
 
+  &--accent,
   &--connect {
-    background: var(--#{$prefix}-color-success-bg);
-    color: var(--#{$prefix}-color-success-text);
+    background: var(--#{$prefix}-color-success-soft);
+    color: var(--#{$prefix}-color-success-on);
   }
 
+  &--error,
   &--danger {
-    background: var(--#{$prefix}-color-danger-bg);
-    color: var(--#{$prefix}-color-danger-text);
+    background: var(--#{$prefix}-color-error-soft);
+    color: var(--#{$prefix}-color-error-on);
+  }
+
+  &--warning {
+    background: var(--#{$prefix}-color-warning-soft);
+    color: var(--#{$prefix}-color-warning-on);
+  }
+
+  &--info {
+    background: var(--#{$prefix}-color-info-soft);
+    color: var(--#{$prefix}-color-info-on);
   }
 }

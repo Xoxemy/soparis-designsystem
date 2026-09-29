@@ -142,7 +142,7 @@
 
 .#{$prefix}-quote {
   padding-left: var(--#{$prefix}-space-4);
-  border-left: 3px solid var(--#{$prefix}-brand-gold);
+  border-left: 3px solid var(--#{$prefix}-color-primary);
   color: var(--#{$prefix}-color-text-secondary);
   font-family: var(--#{$prefix}-font-display);
   font-size: var(--#{$prefix}-font-lg);
@@ -164,9 +164,9 @@
   font-weight: var(--#{$prefix}-weight-semibold);
   letter-spacing: var(--#{$prefix}-tracking-wide);
   text-transform: uppercase;
-  color: var(--#{$prefix}-brand-gold-deep);
+  color: var(--#{$prefix}-color-primary-hover);
 }
 
 [data-#{$prefix}-theme="dark"] .#{$prefix}-overline {
-  color: var(--#{$prefix}-brand-gold-bright);
+  color: var(--#{$prefix}-color-primary-bright);
 }
